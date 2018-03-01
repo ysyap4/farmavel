@@ -18,13 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('provider');
-            $table->string('provider_id');
             $table->rememberToken();
             $table->timestamps();
         });
-}
-
+    }
 
     /**
      * Reverse the migrations.
