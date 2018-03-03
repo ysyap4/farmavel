@@ -46,8 +46,8 @@
 <body>
 <main class="auth-main">
     <div class="auth-block">
-        <h1>Sign up to Farmavel</h1>
-        <a href="{{ url('/login') }}" class="auth-link">Sign in</a>
+        <h1>Register to <a href="{{ url('/') }}">Farmavel</a></h1>
+        <a href="{{ url('/login') }}" class="auth-link">Login</a>
 
         <form class="form-horizontal" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
@@ -106,14 +106,14 @@
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2"></div>
-                    <button type="submit" class="btn btn-default btn-auth col-sm-2">Sign up</button>
+                    <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2"></div>
                 </div>
             </div>
         </form>
 
-    <div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
+    <div class="auth-sep"><span><span>or Register with one click</span></span></div>
 
     <div class="al-share-auth">
       <ul class="al-share clearfix">

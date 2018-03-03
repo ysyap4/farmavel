@@ -46,7 +46,7 @@
 <body>
     <main class="auth-main">
         <div class="auth-block">
-            <h1>Sign in to <a href="{{ url('/') }}">Farmavel</a></h1>
+            <h1>Login to <a href="{{ url('/') }}">Farmavel</a></h1>
             <a href="{{ url('/register') }}" class="auth-link">Register</a>
 
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -84,7 +84,7 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-2"></div>
-                        <button type="submit" class="btn btn-default btn-auth col-sm-2">Sign in</button>
+                        <button type="submit" class="btn btn-default btn-auth col-sm-2">Login</button>
                         <div class="col-sm-2"></div>
                         <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
                     </div>
@@ -92,7 +92,7 @@
 
             </form>
 
-    <div class="auth-sep"><span><span>or Sign in with one click</span></span></div>
+    <div class="auth-sep"><span><span>or Login with one click</span></span></div>
 
     <div class="al-share-auth">
       <ul class="al-share clearfix">
