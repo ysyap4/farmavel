@@ -86,10 +86,10 @@
                         <div class="col-sm-4"></div>
                         <div class="col-sm-4">
                             <div class="col-sm-1"></div>
-                            <button type="submit" class="btn btn-default btn-auth col-sm-2">Login</button>
+                            <button type="submit" class="btn btn-default btn-auth">Login</button>
                             <div class="col-sm-1"></div>
                         </div>
-                        
+
                         <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
                     </div>
                 </div>
