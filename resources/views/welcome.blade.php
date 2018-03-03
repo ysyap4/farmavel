@@ -10,35 +10,17 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('admin/assets/img/favicon-16x16.png')}}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('admin/assets/img/favicon-32x32.png')}}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{URL::asset('admin/assets/img/favicon-96x96.png')}}">
 
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/ionicons.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-toastr.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/animate.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-select.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-switch.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-tagsinput.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/font-awesome.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/fullcalendar.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/leaflet.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-progress-button-styles.min.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/chartist.min.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/morris.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.skinFlat.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/textAngular.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/xeditable.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/style.css')}}" >
-        <link rel="stylesheet" href="{{URL::asset('admin/lib/select.css')}}" >
-
-        <link rel="stylesheet" href="{{URL::asset('admin/app/auth.css')}}">
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                width: 100%; 
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -91,7 +73,6 @@
     </head>
 
     <body>
-        <main class="auth-main">
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
@@ -110,7 +91,6 @@
                 </div>
             </div>
         </div>
-        </main>
 
     </body>
 </html>
