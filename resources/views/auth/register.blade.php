@@ -105,7 +105,11 @@
             <div class="form-group">
                 <div class="col-sm-12">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4"><button type="submit" class="btn btn-default btn-auth">Register</button></div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-1"></div>
+                        <button type="submit" class="btn btn-default btn-auth">Register</button>
+                        <div class="col-sm-1"></div>
+                    </div>
                     <div class="col-sm-4"></div>
                 </div>
             </div>
