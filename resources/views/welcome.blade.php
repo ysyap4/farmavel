@@ -53,12 +53,6 @@
 
             .content {
                 text-align: center;
-                width: 540px;
-                margin: 0 auto;
-                border-radius: 5px;
-                background: rgba(0, 0, 0, 0.55);
-                color: #fff;
-                padding: 32px;
             }
 
             .title {
