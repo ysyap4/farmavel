@@ -102,15 +102,9 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-2"></div>
+
                     <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-2"></div>
-                </div>
-            </div>
+
         </form>
 
     <div class="auth-sep"><span><span>or Register with one click</span></span></div>
