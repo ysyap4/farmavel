@@ -95,7 +95,7 @@
             </div>
 
             <div class="form-group">
-            <label for="password-confirm" class="col-sm-2 control-label">Password</label>
+            <label for="password-confirm" class="col-sm-2 control-label">Confirm Password</label>
 
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="password-confirm" placeholder="Password" name="password_confirmation" required>
@@ -104,7 +104,10 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default btn-auth">Sign up</button>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <button type="submit" class="btn btn-default btn-auth col-md-2">Sign up</button>
+                    <div class="col-md-2"></div>
                 </div>
             </div>
         </form>
