@@ -82,10 +82,10 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-2"></div>
-                        <button type="submit" class="btn btn-default btn-auth col-md-2">Sign in</button>
-                        <div class="col-md-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <button type="submit" class="btn btn-default btn-auth col-sm-2">Sign in</button>
+                        <div class="col-sm-2"></div>
                         <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
                     </div>
                 </div>

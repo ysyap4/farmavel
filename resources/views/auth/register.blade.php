@@ -53,9 +53,9 @@
         {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-            <label for="name" class="col-sm-2 control-label">Name</label>
+            <label for="name" class="col-sm-3 control-label">Name</label>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="{{ old('name') }}" required autofocus>
 
                     @if ($errors->has('name'))
@@ -67,9 +67,9 @@
             </div>
 
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <label for="email" class="col-sm-2 control-label">Email</label>
+            <label for="email" class="col-sm-3 control-label">Email</label>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{ old('email') }}" required>
 
                     @if ($errors->has('email'))
@@ -81,9 +81,9 @@
             </div>
 
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-            <label for="password" class="col-sm-2 control-label">Password</label>
+            <label for="password" class="col-sm-3 control-label">Password</label>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
 
                     @if ($errors->has('password'))
@@ -95,19 +95,19 @@
             </div>
 
             <div class="form-group">
-            <label for="password-confirm" class="col-sm-2 control-label">Confirm Password</label>
+            <label for="password-confirm" class="col-sm-3 control-label">Confirm Password</label>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <input type="password" class="form-control" id="password-confirm" placeholder="Confirm Password" name="password_confirmation" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2"></div>
-                    <button type="submit" class="btn btn-default btn-auth col-md-2">Sign up</button>
-                    <div class="col-md-2"></div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2"></div>
+                    <button type="submit" class="btn btn-default btn-auth col-sm-2">Sign up</button>
+                    <div class="col-sm-2"></div>
                 </div>
             </div>
         </form>
