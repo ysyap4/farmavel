@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,44 +42,52 @@
   <!-- endinject -->
   <!-- endbuild -->
 </head>
+
 <body>
-<main class="auth-main">
-  <div class="auth-block">
-    <h1>Login to Farmavel</h1>
-    <a href="../../../../../../p2/blur-admin-1.3.1/dev-release/reg.html" class="auth-link">Register</a>
+    <main class="auth-main">
+        <div class="auth-block">
+            <h1>Login to Farmavel</h1>
+            <a href="../../../../../../p2/blur-admin-1.3.1/dev-release/reg.html" class="auth-link">Register</a>
 
-    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-        {{ csrf_field() }}
+            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
 
-      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-sm-2 control-label">Email</label>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                                        
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
 
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
-          @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-        </div>
-      </div>
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
 
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
 
-      <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
 
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-        </div>
-      </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default btn-auth">Sign in</button>
+                        <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
+                    </div>
+                </div>
 
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default btn-auth">Sign in</button>
-          <a href class="forgot-pass">Forgot password?</a>
-        </div>
-      </div>
-    </form>
+            </form>
 
     <div class="auth-sep"><span><span>or Sign in with one click</span></span></div>
 
