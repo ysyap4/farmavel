@@ -283,8 +283,7 @@ a {
 .btn {
   border-radius: 5px;
   -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease; 
-  text-align: center; }
+  transition: all 0.1s ease; }
 
 .btn:hover {
   -webkit-transform: scale(1.2);
