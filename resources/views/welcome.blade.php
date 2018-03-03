@@ -20,10 +20,11 @@
                 height: 100%;
                 top: 0;
                 left: 0;
-                background: url("public/admin/assets/img/blur-bg.jpg") no-repeat center center;
+                background: url("admin/assets/img/blur-bg.jpg") no-repeat center center;
                 background-size: cover;
                 will-change: transform;
                 z-index: -1;
+                color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
