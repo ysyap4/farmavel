@@ -38,7 +38,7 @@
 
   <!-- build:css({.tmp/serve,src}) styles/auth.css -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/app/auth.css')}}">
+  <link rel="stylesheet" href="{{ URL::asset('public/admin/auth.css')}}">
   <!-- endinject -->
   <!-- endbuild -->
 </head>
