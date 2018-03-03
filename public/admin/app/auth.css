@@ -342,7 +342,10 @@ button.btn.btn-default {
   border-width: 1px;
   color: #666666;
   background: transparent;
-  border-color: #d6d6d6; }
+  border-color: #d6d6d6; 
+  text-align: center;
+  display:table-cell;
+  vertical-align:middle; }
   button.btn.btn-default.disabled, button.btn.btn-default[disabled], fieldset[disabled] button.btn.btn-default, button.btn.btn-default.disabled:hover, button.btn.btn-default[disabled]:hover,
   fieldset[disabled] button.btn.btn-default:hover, button.btn.btn-default.disabled:focus, button.btn.btn-default[disabled]:focus, fieldset[disabled] button.btn.btn-default:focus, button.btn.btn-default.disabled.focus, button.btn.btn-default[disabled].focus, fieldset[disabled] button.btn.btn-default.focus, button.btn.btn-default.disabled:active, button.btn.btn-default[disabled]:active, fieldset[disabled] button.btn.btn-default:active, button.btn.btn-default.disabled.active, button.btn.btn-default[disabled].active,
   fieldset[disabled] button.btn.btn-default.active {
