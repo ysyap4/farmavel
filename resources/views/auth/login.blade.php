@@ -46,7 +46,7 @@
 <body>
     <main class="auth-main">
         <div class="auth-block">
-            <h1>Login to Farmavel</h1>
+            <h1>Login to <a href="{{ url('/welcome') }}" class="auth-link">Farmavel</a></h1>
             <a href="{{ url('/register') }}" class="auth-link">Register</a>
 
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
