@@ -33,13 +33,12 @@
   <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/xeditable.css')}}" >
   <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/style.css')}}" >
   <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/select.css')}}" >
-
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:css({.tmp/serve,src}) styles/auth.css -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{asset('admin/app/auth.css')}}">
+  <link rel="stylesheet" href="{{ URL::asset('public/admin/app/auth.css')}}">
   <!-- endinject -->
   <!-- endbuild -->
 </head>
