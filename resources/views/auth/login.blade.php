@@ -8,37 +8,37 @@
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('public/admin/assets/img/favicon-16x16.png')}}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('public/admin/assets/img/favicon-32x32.png')}}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ URL::asset('public/admin/assets/img/favicon-96x96.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('admin/assets/img/favicon-16x16.png')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('admin/assets/img/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{URL::asset('admin/assets/img/favicon-96x96.png')}}">
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/ionicons.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/angular-toastr.css')}}">
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/animate.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/bootstrap.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/bootstrap-select.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/bootstrap-switch.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/bootstrap-tagsinput.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/font-awesome.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/fullcalendar.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/leaflet.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/angular-progress-button-styles.min.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/chartist.min.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/morris.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/ion.rangeSlider.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/ion.rangeSlider.skinFlat.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/textAngular.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/xeditable.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/style.css')}}" >
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/lib/select.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/ionicons.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-toastr.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/animate.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-select.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-switch.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-tagsinput.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/font-awesome.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/fullcalendar.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/leaflet.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-progress-button-styles.min.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/chartist.min.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/morris.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.skinFlat.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/textAngular.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/xeditable.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/style.css')}}" >
+  <link rel="stylesheet" href="{{URL::asset('admin/lib/select.css')}}" >
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:css({.tmp/serve,src}) styles/auth.css -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ URL::asset('public/admin/app/auth.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('admin/app/auth.css')}}">
   <!-- endinject -->
   <!-- endbuild -->
 </head>
