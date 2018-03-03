@@ -1,10 +1,14 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blur Admin</title>
+  <title>Farmavel</title>
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
@@ -45,17 +49,26 @@
 <body>
 <main class="auth-main">
   <div class="auth-block">
-    <h1>Sign in to Blur Admin</h1>
-    <a href="../../../../../../p2/blur-admin-1.3.1/dev-release/reg.html" class="auth-link">New to Blur Admin? Sign up!</a>
+    <h1>Login to Farmavel</h1>
+    <a href="../../../../../../p2/blur-admin-1.3.1/dev-release/reg.html" class="auth-link">Register</a>
 
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+        {{ csrf_field() }}
+
+      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+        <label for="email" class="col-sm-2 control-label">Email</label>
 
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+          @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
         </div>
       </div>
+
+
       <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 
@@ -63,6 +76,7 @@
           <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-default btn-auth">Sign in</button>
