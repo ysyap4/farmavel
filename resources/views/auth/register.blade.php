@@ -103,7 +103,11 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
+                <div class="col-sm-6">
+                    <div class="col-sm-2"></div>
+                    <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
+                    <div class="col-sm-2"></div>
+                </div>
             </div>
         </form>
 
