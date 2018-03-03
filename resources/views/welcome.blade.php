@@ -24,7 +24,6 @@
                 background-size: cover;
                 will-change: transform;
                 z-index: -1;
-                color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
