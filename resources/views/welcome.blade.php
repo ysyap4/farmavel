@@ -35,9 +35,8 @@
         <link rel="stylesheet" href="{{URL::asset('admin/lib/select.css')}}" >
 
         <link rel="stylesheet" href="{{URL::asset('admin/app/auth.css')}}">
-
         <!-- Styles -->
-        <!-- <style>
+        <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -88,12 +87,12 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style> -->
+        </style>
     </head>
 
     <body>
-        <main class="auth-main">
-            <div class="auth-block">
+        <div class="flex-center position-ref full-height">
+            <div class="content">
                 <div class="title m-b-md">
                     Farmavel
                 </div>
@@ -109,7 +108,7 @@
                     @endif
                 </div>
             </div>
-        </main>
+        </div>
 
     </body>
 </html>
