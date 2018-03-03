@@ -283,7 +283,8 @@ a {
 .btn {
   border-radius: 5px;
   -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease; }
+  transition: all 0.1s ease; 
+  text-align: center; }
 
 .btn:hover {
   -webkit-transform: scale(1.2);
@@ -1369,9 +1370,6 @@ a.forgot-pass {
         font-size: 24px; }
 
 .btn-auth {
-  text-align: center;
-  display:table-cell;
-  vertical-align:middle;
   color: #ffffff !important; }
 
 .title {
