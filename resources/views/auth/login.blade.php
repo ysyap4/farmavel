@@ -90,7 +90,9 @@
                             <div class="col-sm-1"></div>
                         </div>
 
-                        <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
+                        <div class="col-sm-4">
+                            <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
+                        </div>
                     </div>
                 </div>
 
