@@ -20,7 +20,7 @@
                 height: 100%;
                 top: 0;
                 left: 0;
-                background: url("/assets/img/blur-bg.jpg") no-repeat center center;
+                background: url("public/admin/assets/img/blur-bg.jpg") no-repeat center center;
                 background-size: cover;
                 will-change: transform;
                 z-index: -1;
