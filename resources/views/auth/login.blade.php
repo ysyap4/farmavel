@@ -47,7 +47,7 @@
     <main class="auth-main">
         <div class="auth-block">
             <h1>Login to Farmavel</h1>
-            <a href="../../../../../../p2/blur-admin-1.3.1/dev-release/reg.html" class="auth-link">Register</a>
+            <a href="{{ url('/register') }}" class="auth-link">Register</a>
 
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
