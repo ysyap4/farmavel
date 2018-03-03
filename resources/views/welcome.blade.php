@@ -14,13 +14,16 @@
         <!-- Styles -->
         <style>
             html, body {
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                width: 100%; 
+                content: '';
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: url("../assets/img/blur-bg.jpg") no-repeat center center;
+                background-size: cover;
+                will-change: transform;
+                z-index: -1;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
