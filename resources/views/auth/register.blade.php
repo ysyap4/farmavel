@@ -102,9 +102,9 @@
                 </div>
             </div>
 
-
-                    <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
-
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-auth col-sm-2">Register</button>
+            </div>
         </form>
 
     <div class="auth-sep"><span><span>or Register with one click</span></span></div>
