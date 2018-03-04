@@ -19,7 +19,7 @@
           title: 'Manage',
           sidebarMeta: {
             icon: 'ion-grid',
-            order: 500,
+            order: 600,
           },
         }).state('manage.user', {
           url: '/user',
