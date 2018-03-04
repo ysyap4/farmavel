@@ -28,15 +28,8 @@
           sidebarMeta: {
             order: 0,
           },
-        }).state('manage.smart', {
-          url: '/smart',
-          templateUrl: adminPath + '/app/pages/manage/smart/tables.html',
-          title: 'Smart Tables',
-          sidebarMeta: {
-            order: 100,
-          },
         });
-    $urlRouterProvider.when('/manage','/manage/basic');
+    $urlRouterProvider.when('/manage','/manage/user');
   }
 
 })();
