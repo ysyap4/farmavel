@@ -17,7 +17,7 @@
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
-    'pages.manage',
+
   ])
       .config(routeConfig);
 
