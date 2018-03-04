@@ -16,68 +16,69 @@
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.manage',
   ])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    
-
-    // baSidebarServiceProvider.addStaticItem({
-    //   title: 'Pages',
-    //   icon: 'ion-document',
-    //   subMenu: [{
-    //     title: 'Sign In',
-    //     fixedHref: 'auth.blade.php',
-    //     blank: true
-    //   }, {
-    //     title: 'Sign Up',
-    //     fixedHref: 'reg.html',
-    //     blank: true
-    //   }, {
-    //     title: 'User Profile',
-    //     stateRef: 'profile'
-    //   }, {
-    //     title: '404 Page',
-    //     fixedHref: '404.html',
-    //     blank: true
-    //   }]
-    // });
-    // baSidebarServiceProvider.addStaticItem({
-    //   title: 'Menu Level 1',
-    //   icon: 'ion-ios-more',
-    //   subMenu: [{
-    //     title: 'Menu Level 1.1',
-    //     disabled: true
-    //   }, {
-    //     title: 'Menu Level 1.2',
-    //     subMenu: [{
-    //       title: 'Menu Level 1.2.1',
-    //       disabled: true
-    //     }]
-    //   }]
-    // });
+    $urlRouterProvider.otherwise('/dashboard');
 
     baSidebarServiceProvider.addStaticItem({
-      title: 'Manage',
-      icon: 'ion-clipboard',
+      title: 'Pages',
+      icon: 'ion-document',
       subMenu: [{
-        title: 'User',
+        title: 'Sign In',
         fixedHref: 'auth.blade.php',
         blank: true
       }, {
-        title: 'Drugs',
+        title: 'Sign Up',
         fixedHref: 'reg.html',
         blank: true
       }, {
-        title: 'Illegal Drugs Report',
+        title: 'User Profile',
         stateRef: 'profile'
       }, {
-        title: 'Appointment',
+        title: '404 Page',
         fixedHref: '404.html',
         blank: true
       }]
     });
+    baSidebarServiceProvider.addStaticItem({
+      title: 'Menu Level 1',
+      icon: 'ion-ios-more',
+      subMenu: [{
+        title: 'Menu Level 1.1',
+        disabled: true
+      }, {
+        title: 'Menu Level 1.2',
+        subMenu: [{
+          title: 'Menu Level 1.2.1',
+          disabled: true
+        }]
+      }]
+    });
+
+    // baSidebarServiceProvider.addStaticItem({
+    //   title: 'Manage',
+    //   icon: 'ion-clipboard',
+    //   subMenu: [{
+    //     title: 'User',
+    //     fixedHref: 'auth.blade.php',
+    //     blank: true
+    //   }, {
+    //     title: 'Drugs',
+    //     fixedHref: 'reg.html',
+    //     blank: true
+    //   }, {
+    //     title: 'Illegal Drugs Report',
+    //     stateRef: 'profile'
+    //   }, {
+    //     title: 'Appointment',
+    //     fixedHref: '404.html',
+    //     blank: true
+    //   }]
+    // });
   }
 
 })();
