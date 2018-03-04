@@ -23,7 +23,7 @@
           },
         }).state('manage.user', {
           url: '/user',
-          templateUrl: adminPath + '/app/pages/manage/user/user_index.blade.php',
+          templateUrl: adminPath + '/app/pages/manage/user/user_index.html',
           title: 'User',
           sidebarMeta: {
             order: 0,
