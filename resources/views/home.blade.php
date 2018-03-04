@@ -52,6 +52,7 @@
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
   <ba-sidebar></ba-sidebar>
+  <ba-sidebar>Logout</ba-sidebar>
   <page-top></page-top>
 
   <div class="al-main">
