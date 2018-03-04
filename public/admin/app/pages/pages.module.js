@@ -23,7 +23,7 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
+  function routeConfig($urlRouterProvider, baSidebarServiceProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider
