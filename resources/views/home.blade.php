@@ -54,24 +54,15 @@
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
   <ba-sidebar>
-    <aside class="al-sidebar" ng-swipe-right="$baSidebarService.setMenuCollapsed(false)" ng-swipe-left="$baSidebarService.setMenuCollapsed(true)"
-       ng-mouseleave="hoverElemTop=selectElemTop">
-  <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight" >
-    <li ng-repeat="item in ::menuItems" class="al-sidebar-list-item"
-        ng-class="::{'with-sub-menu': item.subMenu}" ui-sref-active="selected"
-        ba-sidebar-toggling-item="item">
-
-      <a ng-mouseenter="hoverItem($event, item)" ui-state="item.stateRef || ''" ng-href="{{::(item.fixedHref ? item.fixedHref: '')}}" ng-if="::!item.subMenu" class="al-sidebar-list-link">
-        <i class="{{ ::item.icon }}"></i><span>aa</span>
-      </a>
-
-      
-    </li>
-  </ul>
-  <div class="sidebar-hover-elem" ng-style="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
-       ng-class="{'show-hover-elem': showHoverElem }"></div>
-</aside>
-
+    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="index.html">Dashboard v.1</a></li>
+                            <li ><a href="dashboard_2.html">Dashboard v.2</a></li>
+                            <li ><a href="dashboard_3.html">Dashboard v.3</a></li>
+                            <li ><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        </ul>
+                    </li>
   </ba-sidebar>
   <page-top></page-top>
 
