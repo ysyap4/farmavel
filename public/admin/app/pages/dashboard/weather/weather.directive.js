@@ -13,7 +13,7 @@
     return {
       restrict: 'EA',
       controller: 'WeatherCtrl',
-      templateUrl: adminPath + '/app/pages/dashboard/weather/weather.html'
+      templateUrl: 'app/pages/dashboard/weather/weather.html'
     };
   }
 })();

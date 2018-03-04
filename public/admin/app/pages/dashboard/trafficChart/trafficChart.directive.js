@@ -13,7 +13,7 @@
     return {
       restrict: 'E',
       controller: 'TrafficChartCtrl',
-      templateUrl: adminPath + '/app/pages/dashboard/trafficChart/trafficChart.html'
+      templateUrl: 'app/pages/dashboard/trafficChart/trafficChart.html'
     };
   }
 })();

@@ -13,7 +13,7 @@
     $stateProvider
         .state('maps', {
           url: '/maps',
-          templateUrl: adminPath + '/app/pages/maps/maps.html',
+          templateUrl: 'app/pages/maps/maps.html',
           abstract: true,
           title: 'Maps',
           sidebarMeta: {
@@ -23,7 +23,7 @@
         })
         .state('maps.gmap', {
           url: '/gmap',
-          templateUrl: adminPath + '/app/pages/maps/google-maps/google-maps.html',
+          templateUrl: 'app/pages/maps/google-maps/google-maps.html',
           controller: 'GmapPageCtrl',
           title: 'Google Maps',
           sidebarMeta: {
@@ -32,7 +32,7 @@
         })
         .state('maps.leaflet', {
           url: '/leaflet',
-          templateUrl: adminPath + '/app/pages/maps/leaflet/leaflet.html',
+          templateUrl: 'app/pages/maps/leaflet/leaflet.html',
           controller: 'LeafletPageCtrl',
           title: 'Leaflet Maps',
           sidebarMeta: {
@@ -41,7 +41,7 @@
         })
         .state('maps.bubble', {
           url: '/bubble',
-          templateUrl: adminPath + '/app/pages/maps/map-bubbles/map-bubbles.html',
+          templateUrl: 'app/pages/maps/map-bubbles/map-bubbles.html',
           controller: 'MapBubblePageCtrl',
           title: 'Bubble Maps',
           sidebarMeta: {
@@ -50,7 +50,7 @@
         })
         .state('maps.line', {
           url: '/line',
-          templateUrl: adminPath + '/app/pages/maps/map-lines/map-lines.html',
+          templateUrl: 'app/pages/maps/map-lines/map-lines.html',
           controller: 'MapLinesPageCtrl',
           title: 'Line Maps',
           sidebarMeta: {

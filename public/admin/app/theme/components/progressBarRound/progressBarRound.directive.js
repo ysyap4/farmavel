@@ -12,7 +12,7 @@
     function progressBarRound(baProgressModal) {
         return {
             restrict: 'E',
-            templateUrl: adminPath + '/app/theme/components/progressBarRound/progressBarRound.html',
+            templateUrl: 'app/theme/components/progressBarRound/progressBarRound.html',
             link:function($scope, element, attrs) {
                 $scope.baProgressDialog = baProgressModal;
                 $scope.$watch(function () {

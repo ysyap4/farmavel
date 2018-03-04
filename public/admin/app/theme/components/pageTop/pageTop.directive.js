@@ -12,7 +12,7 @@
   function pageTop() {
     return {
       restrict: 'E',
-      templateUrl: adminPath + '/app/theme/components/pageTop/pageTop.html'
+      templateUrl: 'app/theme/components/pageTop/pageTop.html'
     };
   }
 

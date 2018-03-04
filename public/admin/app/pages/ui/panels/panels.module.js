@@ -13,7 +13,7 @@
     $stateProvider
         .state('ui.panels', {
           url: '/panels',
-          templateUrl: adminPath + '/app/pages/ui/panels/panels.html',
+          templateUrl: 'app/pages/ui/panels/panels.html',
           controller: 'NotificationsPageCtrl',
           title: 'Panels',
           sidebarMeta: {

@@ -28,7 +28,7 @@
       icon: 'ion-document',
       subMenu: [{
         title: 'Sign In',
-        fixedHref: 'auth.blade.php',
+        fixedHref: 'auth.html',
         blank: true
       }, {
         title: 'Sign Up',

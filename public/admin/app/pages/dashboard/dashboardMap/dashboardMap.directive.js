@@ -13,7 +13,7 @@
     return {
       restrict: 'E',
       controller: 'DashboardMapCtrl',
-      templateUrl: adminPath + '/app/pages/dashboard/dashboardMap/dashboardMap.html'
+      templateUrl: 'app/pages/dashboard/dashboardMap/dashboardMap.html'
     };
   }
 })();

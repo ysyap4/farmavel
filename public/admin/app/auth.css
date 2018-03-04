@@ -283,8 +283,7 @@ a {
 .btn {
   border-radius: 5px;
   -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease; 
-}
+  transition: all 0.1s ease; }
 
 .btn:hover {
   -webkit-transform: scale(1.2);
@@ -1371,21 +1370,3 @@ a.forgot-pass {
 
 .btn-auth {
   color: #ffffff !important; }
-
-.title {
-    font-size: 84px;
-}
-
-.links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.m-b-md {
-    margin-bottom: 30px;
-}

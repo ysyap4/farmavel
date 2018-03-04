@@ -11,7 +11,7 @@
   /** @ngInject */
   function baSwitcher() {
     return {
-      templateUrl: adminPath + '/app/theme/inputs/baSwitcher/baSwitcher.html',
+      templateUrl: 'app/theme/inputs/baSwitcher/baSwitcher.html',
       scope: {
         switcherStyle: '@',
         switcherValue: '='

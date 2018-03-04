@@ -13,7 +13,7 @@
     $stateProvider
         .state('ui.icons', {
           url: '/icons',
-          templateUrl: adminPath + '/app/pages/ui/icons/icons.html',
+          templateUrl: 'app/pages/ui/icons/icons.html',
           controller: 'IconsPageCtrl',
           title: 'Icons',
           sidebarMeta: {

@@ -13,7 +13,7 @@
     return {
       restrict: 'E',
       controller: 'DashboardCalendarCtrl',
-      templateUrl: adminPath + '/app/pages/dashboard/dashboardCalendar/dashboardCalendar.html'
+      templateUrl: 'app/pages/dashboard/dashboardCalendar/dashboardCalendar.html'
     };
   }
 })();

@@ -13,7 +13,7 @@
       this.open = function(options){
         return $uibModal.open({
           animation: false,
-          templateUrl: adminPath + '/app/pages/components/mail/composeBox/compose.html',
+          templateUrl: 'app/pages/components/mail/composeBox/compose.html',
           controller: 'composeBoxCtrl',
           controllerAs: 'boxCtrl',
           size: 'compose',

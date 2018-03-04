@@ -12,7 +12,7 @@
   function msgCenter() {
     return {
       restrict: 'E',
-      templateUrl: adminPath + '/app/theme/components/msgCenter/msgCenter.html',
+      templateUrl: 'app/theme/components/msgCenter/msgCenter.html',
       controller: 'MsgCenterCtrl'
     };
   }

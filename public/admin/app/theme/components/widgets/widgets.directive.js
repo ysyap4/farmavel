@@ -15,7 +15,7 @@
       scope: {
         ngModel: '='
       },
-      templateUrl: adminPath + '/app/theme/components/widgets/widgets.html',
+      templateUrl: 'app/theme/components/widgets/widgets.html',
       replace: true
     };
   }
