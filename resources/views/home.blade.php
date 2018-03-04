@@ -16,9 +16,7 @@
       var adminPath="{{asset('admin')}}";
   </script>
 
-  <link rel="stylesheet" href="{{URL::asset('admin/styles/vendor-2cae343ef1.css')}}">
 
-  <link rel="stylesheet" href="{{URL::asset('admin/styles/app-b6796b3788.css)'}}">
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
   <!-- bower:css -->
@@ -295,7 +293,7 @@
 <!-- endinject -->
 <!-- endbuild -->
 
-<script src="{{URL::asset('admin/scripts/app-5a80256787.js)'}}""></script>
+
 
 </body>
 </html>
