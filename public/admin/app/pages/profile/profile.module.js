@@ -14,7 +14,7 @@
         .state('profile', {
           url: '/profile',
           title: 'Profile',
-          templateUrl: 'app/pages/profile/profile.html',
+          templateUrl: adminPath + '/app/pages/profile/profile.html',
           controller: 'ProfilePageCtrl',
         });
   }

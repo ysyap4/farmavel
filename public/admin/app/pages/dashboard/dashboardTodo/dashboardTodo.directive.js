@@ -13,7 +13,7 @@
     return {
       restrict: 'EA',
       controller: 'DashboardTodoCtrl',
-      templateUrl: 'app/pages/dashboard/dashboardTodo/dashboardTodo.html'
+      templateUrl: adminPath + '/app/pages/dashboard/dashboardTodo/dashboardTodo.html'
     };
   }
 })();
