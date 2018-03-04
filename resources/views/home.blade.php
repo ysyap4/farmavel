@@ -53,18 +53,7 @@
 <div class="body-bg"></div>
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
-  <ba-sidebar>
-    <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight" >
-    <li ng-repeat="item in ::menuItems" class="al-sidebar-list-item"
-        ng-class="::{'with-sub-menu': item.subMenu}" ui-sref-active="selected"
-        ba-sidebar-toggling-item="item">
-
-      <a ng-mouseenter="hoverItem($event, item)" ui-state="item.stateRef || ''" ng-href="{{::(item.fixedHref ? item.fixedHref: '')}}" ng-if="::!item.subMenu" class="al-sidebar-list-link">
-        <i class="{{ ::item.icon }}"></i><span>{{ ::item.title }}</span>
-      </a>
-      </li>
-  </ul>
-  </ba-sidebar>
+  <ba-sidebar></ba-sidebar>
   <page-top></page-top>
 
   <div class="al-main">
