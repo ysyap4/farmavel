@@ -26,6 +26,26 @@
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
+    $stateProvider
+        .state('manage', {
+          url: '/manage',
+          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
+          abstract: true,
+          controller: 'ManageCtrl',
+          title: 'Manage',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 800,
+          },
+        }).state('manage.user', {
+          url: '/user',
+          templateUrl: adminPath + '/app/pages/manage/user/user_index.html',
+          title: 'User',
+          sidebarMeta: {
+            order: 0,
+          },
+        });
+
     baSidebarServiceProvider.addStaticItem({
       title: 'Pages',
       icon: 'ion-document',
