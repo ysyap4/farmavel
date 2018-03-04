@@ -54,7 +54,6 @@
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
   <ba-sidebar></ba-sidebar>
-  <ba-sidebar>Logout</ba-sidebar>
   <page-top></page-top>
 
   <div class="al-main">
@@ -73,6 +72,17 @@
         <li><i class="socicon socicon-twitter"></i></li>
         <li><i class="socicon socicon-google"></i></li>
         <li><i class="socicon socicon-github"></i></li>
+        <li>
+        	<a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                Logout
+           	</a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </li>
       </ul>
     </div>
   </footer>
