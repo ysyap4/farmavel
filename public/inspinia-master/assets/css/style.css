@@ -3679,7 +3679,7 @@ body.modal-open {
   top: 50%;
   left: 50%;
   margin-top: -250px;
-  margin-left: -200px;
+  margin-left: -100px;
   z-index: 100;
 }
 .lockscreen.middle-box {
