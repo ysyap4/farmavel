@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard v.4</title>
+    <title>Farmavel | Dashboard</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
     <!-- Morris -->
-    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/morris/morris-0.4.3.min.css')}}" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -36,7 +36,17 @@
                             <li><a href="contacts.html">Contacts</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li>
+                              <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -752,43 +762,43 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
     <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
-    <script src="js/plugins/flot/curvedLines.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.tooltip.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.spline.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/jquery.flot.symbol.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/flot/curvedLines.js')}}"></script>
 
     <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="js/demo/peity-demo.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/peity/jquery.peity.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/demo/peity-demo.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- jQuery UI -->
-    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 
     <!-- Jvectormap -->
-    <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 
     <!-- Sparkline -->
-    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 
     <!-- Sparkline demo data  -->
-    <script src="js/demo/sparkline-demo.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/demo/sparkline-demo.js')}}"></script>
 
     <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     <script>
         $(document).ready(function() {
