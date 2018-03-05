@@ -207,16 +207,16 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Data Tables</h2>
+                    <h2>Manage User</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{ route('/home') }}">Home</a>
                         </li>
                         <li>
-                            <a>Tables</a>
+                            <a>Manage</a>
                         </li>
                         <li class="active">
-                            <strong>Data Tables</strong>
+                            <strong>User</strong>
                         </li>
                     </ol>
                 </div>
@@ -230,7 +230,7 @@
             <div class="col-lg-12">
             <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Editable Table in- combination with jEditable</h5>
+                <h5>User Table</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -253,7 +253,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover " id="editable" >
+            <table class="table table-striped table-bordered table-hover" id="editable" >
             <thead>
             <tr>
                 <th>ID</th>
