@@ -3214,6 +3214,10 @@ table.table-mail tr td {
   font-weight: 100;
   height: 100vh;
   margin: 0;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .gray-bg {
   background-color: #f3f3f4;
