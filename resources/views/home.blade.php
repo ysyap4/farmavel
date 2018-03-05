@@ -84,7 +84,11 @@
         <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-<span class="m-r-sm text-muted welcome-message">Welcome to Farmavel Administration</span>
+            <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                <div class="form-group">
+                    <span class="m-r-sm text-muted welcome-message">Welcome to Farmavel Administration</span>
+                </div>
+            </form>
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
