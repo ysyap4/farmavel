@@ -53,6 +53,9 @@
                         Farmavel
                     </div>
                 </li>
+                <li>
+                    <a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span> </a>
+                </li>
                 <li class="active">
                     <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
