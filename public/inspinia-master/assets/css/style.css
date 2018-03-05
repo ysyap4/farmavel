@@ -3703,6 +3703,7 @@ body.modal-open {
   margin-bottom: 400px;
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
 }
 .middle-box h1 {
   font-size: 140px;
