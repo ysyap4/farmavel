@@ -213,7 +213,7 @@
                 </li>
             </ul>
 
-        </div>
+        </div></div>
     </nav>
 
         <div id="page-wrapper" class="gray-bg">
