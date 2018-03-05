@@ -50,8 +50,17 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        IN+
+                        Farmavel
                     </div>
+                </li>
+                <li class="active">
+                    <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="index.html">User</a></li>
+                        <li><a href="dashboard_2.html">Drugs</a></li>
+                        <li><a href="dashboard_3.html">Illegal Drug Report</a></li>
+                        <li class="active"><a href="dashboard_4_1.html">Appointment</a></li>
+                    </ul>
                 </li>
                 <li class="active">
                     <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
