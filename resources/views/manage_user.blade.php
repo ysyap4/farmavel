@@ -210,7 +210,7 @@
                     <h2>Manage User</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="{{ route('/home') }}">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
                             <a>Manage</a>
@@ -230,7 +230,7 @@
             <div class="col-lg-12">
             <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>User Table</h5>
+                <h5>Editable Table in- combination with jEditable</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -253,7 +253,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover" id="editable" >
+            <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
                 <th>ID</th>
