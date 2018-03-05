@@ -3199,7 +3199,7 @@ table.table-mail tr td {
 }
 /* BACKGROUNDS */
 .blur-bg{
-  background: url("inspinia-master/assets/img/blur-bg.jpg") no-repeat center center;
+  background: url("public/inspinia-master/assets/img/blur-bg.jpg") no-repeat center center;
   background-size: cover;
 }
 .gray-bg {
