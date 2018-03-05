@@ -3691,7 +3691,6 @@ body.modal-open {
   width: 300px;
   margin-left: -150px;
   margin-top: -330px;
-  text-align: center;
 }
 .loginColumns {
   width: 760px;
@@ -3699,7 +3698,7 @@ body.modal-open {
 }
 .logo-name {
   color: #e6e6e6;
-  font-size: 180px;
+  font-size: 100px;
   font-weight: 800;
   letter-spacing: -10px;
   margin-bottom: 0px;
