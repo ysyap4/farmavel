@@ -253,7 +253,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover " id="edit" >
+            <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
                 <th>ID</th>
