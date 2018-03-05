@@ -13,7 +13,7 @@
 
   <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
   <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
-  
+
 </head>
 
 <body class="gray-bg">
@@ -69,8 +69,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="{{asset('inspinia-master/assets/js/jquery-2.1.1.js')}}"></script>
-    <script src="{{asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('/js/bootstrap.min.js')}}"></script>
 
 </body>
 
