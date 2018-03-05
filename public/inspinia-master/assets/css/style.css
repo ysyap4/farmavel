@@ -3689,8 +3689,9 @@ body.modal-open {
 }
 .loginscreen.middle-box {
   width: 300px;
-  margin-left: -10px;
+  margin-left: -150px;
   margin-top: -330px;
+  text-align: center;
 }
 .loginColumns {
   width: 760px;
