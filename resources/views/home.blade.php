@@ -56,10 +56,10 @@
                 <li class="active">
                     <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="index.html">User</a></li>
+                        <li><a href="{{URL::route('manage_user')}}">User</a></li>
                         <li><a href="dashboard_2.html">Drugs</a></li>
                         <li><a href="dashboard_3.html">Illegal Drug Report</a></li>
-                        <li class="active"><a href="dashboard_4_1.html">Appointment</a></li>
+                        <li><a href="dashboard_4_1.html">Appointment</a></li>
                     </ul>
                 </li>
                 <li class="active">

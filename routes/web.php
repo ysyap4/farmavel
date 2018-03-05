@@ -19,10 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('app/{name}', function($name) {
-  return redirect('/public/app/' . $name);
-})->where('name', '[A-Za-z0-9\/\.\-]+');
-
-Route::get('assets/{name}', function($name) {
-  return redirect('/public/assets/' . $name);
-})->where('name', '[A-Za-z0-9\/\.\-]+');
+Route::get('manage_user',[
+	'as' => 'manage_user',
+	'uses' => 'ManageController@manage_user',
+	]);
