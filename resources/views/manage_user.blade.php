@@ -404,6 +404,8 @@
                 <td class="center">{{ $value->password }}</td>
                 <td class="center">{{ $value->created_at }}</td>
             </tr>
+                <?php $no++; ?>
+                @endforeach
             <tr class="gradeX">
                 <td>Trident</td>
                 <td>Internet
