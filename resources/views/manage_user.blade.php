@@ -230,7 +230,7 @@
             <div class="col-lg-12">
             <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Editable Table in- combination with jEditable</h5>
+                <h5>User Table</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -722,6 +722,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/dist/jquery.jeditable.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
