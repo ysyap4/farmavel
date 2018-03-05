@@ -91,7 +91,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to Farmavel Administration</span>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -191,15 +191,9 @@
 
 
                 <li>
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
+                    <a href="login.html">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
                 </li>
             </ul>
 
@@ -207,16 +201,16 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage User</h2>
+                    <h2>Data Tables</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="{{ route('/home') }}">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a>Manage</a>
+                            <a>Tables</a>
                         </li>
                         <li class="active">
-                            <strong>User</strong>
+                            <strong>Data Tables</strong>
                         </li>
                     </ol>
                 </div>
@@ -230,7 +224,7 @@
             <div class="col-lg-12">
             <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>User Table</h5>
+                <h5>Editable Table in- combination with jEditable</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -253,7 +247,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover" id="editable" >
+            <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
                 <th>ID</th>
@@ -722,7 +716,6 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/dist/jquery.jeditable.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
