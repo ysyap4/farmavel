@@ -213,7 +213,7 @@
                 </li>
             </ul>
 
-        </div></div>
+        </div>
     </nav>
 
         <div id="page-wrapper" class="gray-bg">
@@ -356,7 +356,7 @@
 
                 </div>
             </div>
-            
+
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
             <div class="col-lg-12">
@@ -831,14 +831,7 @@
             </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
-            <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
-            </div>
-        </div>
+        
 
         </div>
         </div>
