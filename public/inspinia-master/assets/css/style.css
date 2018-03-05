@@ -3704,11 +3704,10 @@ body.modal-open {
   margin-bottom: 0px;
 }
 .middle-box h1 {
-  font-size: 100px;
-  text-align: center;
+  font-size: 140px;
 }
 .wrapper .middle-box {
-  margin-top: 140px;
+  margin-top: 500px;
 }
 .lock-word {
   z-index: 10;
