@@ -3198,6 +3198,10 @@ table.table-mail tr td {
   right: 0;
 }
 /* BACKGROUNDS */
+.blur-bg{
+  background: url("inspinia-master/assets/img/blur-bg.jpg") no-repeat center center;
+  background-size: cover;
+}
 .gray-bg {
   background-color: #f3f3f4;
 }

@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="gray-bg">
+<body class="blur-bg">
 
   <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
@@ -69,8 +69,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="{{URL::asset('/js/jquery-2.1.1.js')}}"></script>
-    <script src="{{URL::asset('/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/jquery-2.1.1.js')}}" type="text/javascript"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
 
 </body>
 
