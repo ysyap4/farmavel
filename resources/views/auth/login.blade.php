@@ -10,7 +10,6 @@
 
   <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-
   <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
   <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
@@ -18,14 +17,10 @@
 
 <body class="blur-bg">
 
-<h1 class="logo-name">Farmavel</h1>
-  <div class="middle-box text-center loginscreen  animated fadeInDown">
+    <h1 class="logo-name">Farmavel</h1>
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        
         <div>
-            <div>
-
-                
-
-            </div>
             <h3>Welcome to <a href="{{ url('/') }}">Farmavel</a> Administration</h3>
 
             <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
@@ -70,8 +65,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="{{URL::asset('inspinia-master/assets/js/jquery-2.1.1.js')}}" type="text/javascript"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 
