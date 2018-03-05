@@ -34,29 +34,29 @@
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <!--<label for="email" class="col-sm-2 control-label">Email</label>-->
                     
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                    
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
                                         
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
-                    </div>
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                    
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <!--<label for="password" class="col-sm-2 control-label">Password</label>-->
 
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
 
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
-                    </div>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                    
                 </div>
 
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
