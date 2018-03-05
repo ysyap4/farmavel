@@ -60,7 +60,7 @@
             }
 
             .links > a {
-                color: #BFC9CA;
+                color: #99A3A4;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
