@@ -841,7 +841,7 @@
 
         </div>
         </div>
-
+</div>
 
 
     <!-- Mainly scripts -->
