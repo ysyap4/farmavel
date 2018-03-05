@@ -86,7 +86,7 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
                 <div class="form-group">
-                    <span class="m-r-sm text-muted welcome-message">Welcome to Farmavel Administration</span>
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
