@@ -17,7 +17,7 @@
 
 <body class="blur-bg">
 
-    <h1 class="logo-name">Farmavel</h1>
+    <h1 class="logo-name"><a href="{{ url('/') }}">Farmavel</a></h1>
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         
         <div>
