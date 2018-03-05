@@ -13,6 +13,8 @@
   <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
   <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
 </head>
 
 <body class="blur-bg">
