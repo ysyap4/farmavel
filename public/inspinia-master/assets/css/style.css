@@ -3698,11 +3698,12 @@ body.modal-open {
 }
 .logo-name {
   color: #e6e6e6;
-  font-size: 180px;
+  font-size: 140px;
   font-weight: 800;
   letter-spacing: -10px;
-  margin-bottom: 70px;
+  margin-bottom: 400px;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 .middle-box h1 {
   font-size: 140px;
