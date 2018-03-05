@@ -837,7 +837,7 @@
 
         <div class="footer">
             <div>
-                <strong>Copyright</strong> Farmavel Company &copy; 2018
+                <strong>Copyright</strong> Farmavel &copy; 2018
             </div>
         </div>
         </div>
