@@ -1,55 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Farmavel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+  <title>Farmavel | Login</title>
 
-  <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('admin/assets/img/favicon-16x16.png')}}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('admin/assets/img/favicon-32x32.png')}}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{URL::asset('admin/assets/img/favicon-96x96.png')}}">
+  <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
-  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/ionicons.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-toastr.css')}}">
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/animate.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-select.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-switch.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/bootstrap-tagsinput.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/font-awesome.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/fullcalendar.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/leaflet.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/angular-progress-button-styles.min.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/chartist.min.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/morris.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/ion.rangeSlider.skinFlat.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/textAngular.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/xeditable.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/style.css')}}" >
-  <link rel="stylesheet" href="{{URL::asset('admin/lib/select.css')}}" >
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:css({.tmp/serve,src}) styles/auth.css -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="{{URL::asset('admin/app/auth.css')}}">
-  <!-- endinject -->
-  <!-- endbuild -->
+  <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 </head>
 
-<body>
-    <main class="auth-main">
-        <div class="auth-block">
-            <h1>Login to <a href="{{ url('/') }}">Farmavel</a></h1>
-            <a href="{{ url('/register') }}" class="auth-link">Register</a>
+<body class="gray-bg">
 
-            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+  <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">Farmavel</h1>
+
+            </div>
+            <h3>Welcome to <a href="{{ url('/') }}">Farmavel</a> Administration</h3>
+
+            <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -80,33 +57,20 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
-                            <div class="col-sm-1"></div>
-                            <button type="submit" class="btn btn-default btn-auth">Login</button>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <a href="{{ route('password.request') }}" class="forgot-pass">Forgot password?</a>
-                        </div>
-                    </div>
-                </div>
-
+                <a href="{{ route('password.request') }}" class="forgot-pass"><small>Forgot password?</small></a>
+                <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                <a href="{{ url('/register') }}" class="btn btn-sm btn-white btn-block">Create an account</a>
             </form>
-
-    <div class="auth-sep"><span><span>or Login with one click</span></span></div>
-
-    <div class="al-share-auth">
-      <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
-        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
-        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
-      </ul>
+            <p class="m-t"> <small>Farmavel &copy; 2018</small> </p>
+        </div>
     </div>
-  </div>
-</main>
+
+    <!-- Mainly scripts -->
+    <script src="{{URL::asset('inspinia-master/assets/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
+
 </body>
+
 </html>
