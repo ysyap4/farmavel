@@ -253,7 +253,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover " id="editable" >
+            <table class="table table-striped table-bordered table-hover " id="edit" >
             <thead>
             <tr>
                 <th>ID</th>
@@ -758,6 +758,24 @@
                 "width": "90%",
                 "height": "100%"
             } );
+
+        $(document).ready(function() {
+            $('.edit').editable('save.php', {
+                indicator : 'Saving…',
+                event     : 'dbclick',
+                cssclass  : 'custom-css',
+                submit    : 'Save',
+                tooltip   : 'Double click to edit…'
+            });
+        
+            $('.edit_area').editable('save.php', {
+                type      : 'textarea',
+                cancel    : 'Cancel',
+                submit    : 'OK',
+                indicator : '<img src="img/spinner.svg" />',
+                tooltip   : 'Click to edit…'
+            });
+        });
 
 
         });
