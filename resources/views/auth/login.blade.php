@@ -21,7 +21,7 @@
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         
         <div>
-            <h3>Welcome to <a href="{{ url('/') }}">Farmavel</a> Administration</h3>
+            <h3>Welcome to Farmavel Administration</h3>
 
             <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
