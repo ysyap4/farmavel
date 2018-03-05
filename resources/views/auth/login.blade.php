@@ -18,11 +18,12 @@
 
 <body class="blur-bg">
 
+<h1 class="logo-name">Farmavel</h1>
   <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <div>
 
-                <h1 class="logo-name">Farmavel</h1>
+                
 
             </div>
             <h3>Welcome to <a href="{{ url('/') }}">Farmavel</a> Administration</h3>
