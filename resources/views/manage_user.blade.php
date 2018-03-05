@@ -210,7 +210,7 @@
                     <h2>Manage User</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{ url('/home') }}">Home</a>
                         </li>
                         <li>
                             <a>Manage</a>
