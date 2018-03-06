@@ -781,41 +781,41 @@
                 "height": "100%"
             } );
 
-            oTable.$('td').editable("{{URL::asset('node_modules/jquery-jeditable/demos/save.php')}}", {
-                indicator : "<img src='img/spinner.svg' />",
-                type : "text",
-                // only limit to three letters example
-                //pattern: "[A-Za-z]{3}",
-                onedit : function() { console.log('If I return false edition will be canceled'); return true;},
-                before : function() { console.log('Triggered before form appears');},
-                callback : function(result, settings, submitdata) {
-                    console.log('Callback function: triggered after submit');
-                    console.log('Result: ' + result);
-                    console.log('Settings.width: ' + settings.width);
-                    console.log('Submitdata: ' + submitdata.pwet);
-                },
-                cancel : 'Cancel',
-                cssclass : 'custom-class',
-                cancelcssclass : 'btn btn-danger',
-                // select all text
-                select : true,
-                submitcssclass : 'btn btn-success',
-                maxlength : 200,
-                label : 'This is a label',
-                onreset : function() { console.log('Triggered before reset') },
-                onblur : function() { console.log('Triggered on blur event');return true; },
-                onsubmit : function() { console.log('Triggered before submit') },
-                showfn : function(elem) { elem.fadeIn('slow') },
-                submit : 'Save',
-                submitdata : submitdata,
-                submitdata : function(revert, settings, submitdata) {
-                    console.log("Revert text: " + revert);
-                    console.log(settings);
-                    console.log("User submitted text: " + submitdata.value);
-                },
-                tooltip : "Click to edit...",
-                width : 160
-            } );
+            // oTable.$('td').editable("{{URL::asset('node_modules/jquery-jeditable/demos/save.php')}}", {
+            //     indicator : "<img src='img/spinner.svg' />",
+            //     type : "text",
+            //     // only limit to three letters example
+            //     //pattern: "[A-Za-z]{3}",
+            //     onedit : function() { console.log('If I return false edition will be canceled'); return true;},
+            //     before : function() { console.log('Triggered before form appears');},
+            //     callback : function(result, settings, submitdata) {
+            //         console.log('Callback function: triggered after submit');
+            //         console.log('Result: ' + result);
+            //         console.log('Settings.width: ' + settings.width);
+            //         console.log('Submitdata: ' + submitdata.pwet);
+            //     },
+            //     cancel : 'Cancel',
+            //     cssclass : 'custom-class',
+            //     cancelcssclass : 'btn btn-danger',
+            //     // select all text
+            //     select : true,
+            //     submitcssclass : 'btn btn-success',
+            //     maxlength : 200,
+            //     label : 'This is a label',
+            //     onreset : function() { console.log('Triggered before reset') },
+            //     onblur : function() { console.log('Triggered on blur event');return true; },
+            //     onsubmit : function() { console.log('Triggered before submit') },
+            //     showfn : function(elem) { elem.fadeIn('slow') },
+            //     submit : 'Save',
+            //     submitdata : submitdata,
+            //     submitdata : function(revert, settings, submitdata) {
+            //         console.log("Revert text: " + revert);
+            //         console.log(settings);
+            //         console.log("User submitted text: " + submitdata.value);
+            //     },
+            //     tooltip : "Click to edit...",
+            //     width : 160
+            // } );
 
 
         });
