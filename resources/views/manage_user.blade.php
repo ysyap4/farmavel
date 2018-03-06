@@ -743,7 +743,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( 'save.php', {
+            oTable.$('td').editable( '../example_ajax.php', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
@@ -758,24 +758,6 @@
                 "width": "90%",
                 "height": "100%"
             } );
-
-        // $(document).ready(function() {
-        //     $('.edit').editable('save.php', {
-        //         indicator : 'Saving…',
-        //         event     : 'dbclick',
-        //         cssclass  : 'custom-css',
-        //         submit    : 'Save',
-        //         tooltip   : 'Double click to edit…'
-        //     });
-        
-        //     $('.edit_area').editable('save.php', {
-        //         type      : 'textarea',
-        //         cancel    : 'Cancel',
-        //         submit    : 'OK',
-        //         indicator : '<img src="img/spinner.svg" />',
-        //         tooltip   : 'Click to edit…'
-        //     });
-        // });
 
 
         });
