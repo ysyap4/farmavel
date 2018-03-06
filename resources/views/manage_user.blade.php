@@ -19,6 +19,28 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
+    <!-- LOAD JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- LOAD JQUERY UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel='stylesheet' />
+
+    <!-- LOAD JQUERY-JEDITABLE -->
+    <script src="{{URL::asset('node_modules/jquery-jeditable//src/jquery.jeditable.js')}}"></script>
+
+    <!-- JEDITABLE PLUGINS -->
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.charcounter.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.checkbox.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.datepicker.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.masked.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.time.js')}}"></script>
+    <!-- EXTERNAL LIBS -->
+    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.autogrowtextarea.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.charcounter.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.maskedinput.js')}}"></script>
+
 </head>
 
 <body>
