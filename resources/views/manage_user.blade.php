@@ -253,7 +253,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <table class="table table-striped table-bordered table-hover " id="editable-text-full" >
+            <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
                 <th>ID</th>
@@ -743,7 +743,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td', oTable.fnGetNodes()).editable( '../example_ajax.php', {
+            oTable.$('td').editable( '../example_ajax.php', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
@@ -757,51 +757,25 @@
 
                 "width": "90%",
                 "height": "100%"
-            });
+            } );
 
-            // FULL EXAMPLE WITH PLENTY OF OPTIONS
-            // custom submitted data fields
-            var submitdata = {}
-            submitdata['slow'] = true;
-            submitdata['pwet'] = 'youpla';
-
-            $(".editable-text-full").editable("save.php", {
-                indicator : "<img src='img/spinner.svg' />",
-                type : "text",
-                // only limit to three letters example
-                //pattern: "[A-Za-z]{3}",
-                onedit : function() { console.log('If I return false edition will be canceled'); return true;},
-                before : function() { console.log('Triggered before form appears');},
-                callback : function(result, settings, submitdata) {
-                    console.log('Callback function: triggered after submit');
-                    console.log('Result: ' + result);
-                    console.log('Settings.width: ' + settings.width);
-                    console.log('Submitdata: ' + submitdata.pwet);
-                },
-                cancel : 'Cancel',
-                cssclass : 'custom-class',
-                cancelcssclass : 'btn btn-danger',
-                // select all text
-                select : true,
-                submitcssclass : 'btn btn-success',
-                maxlength : 200,
-                label : 'This is a label',
-                onreset : function() { console.log('Triggered before reset') },
-                onblur : function() { console.log('Triggered on blur event');return true; },
-                onsubmit : function() { console.log('Triggered before submit') },
-                showfn : function(elem) { elem.fadeIn('slow') },
-                submit : 'Save',
-                submitdata : submitdata,
-                /* submitdata as a function example
-                submitdata : function(revert, settings, submitdata) {
-                    console.log("Revert text: " + revert);
-                    console.log(settings);
-                    console.log("User submitted text: " + submitdata.value);
-                },
-                */
-                tooltip : "Click to edit...",
-                width : 160
-            });
+        // $(document).ready(function() {
+        //     $('.edit').editable('save.php', {
+        //         indicator : 'Saving…',
+        //         event     : 'dbclick',
+        //         cssclass  : 'custom-css',
+        //         submit    : 'Save',
+        //         tooltip   : 'Double click to edit…'
+        //     });
+        
+        //     $('.edit_area').editable('save.php', {
+        //         type      : 'textarea',
+        //         cancel    : 'Cancel',
+        //         submit    : 'OK',
+        //         indicator : '<img src="img/spinner.svg" />',
+        //         tooltip   : 'Click to edit…'
+        //     });
+        // });
 
 
         });
