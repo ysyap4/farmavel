@@ -685,11 +685,11 @@
             </tbody>
             <tfoot>
             <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Created At</th>
             </tr>
             </tfoot>
             </table>
@@ -735,7 +735,7 @@
                 responsive: true,
                 "dom": 'T<"clear">lfrtip',
                 "tableTools": {
-                    "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf')}}"
                 }
             });
 
@@ -743,7 +743,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '../example_ajax.php', {
+            oTable.$('td', oTable.fnGetNodes()).editable( '../example_ajax.php', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
