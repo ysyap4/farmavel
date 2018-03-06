@@ -765,7 +765,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( 'save.php', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/demos/save.php')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
@@ -781,7 +781,7 @@
                 "height": "100%"
             } );
 
-            oTable.$('td').editable("save.php", {
+            oTable.$('td').editable("{{URL::asset('node_modules/jquery-jeditable/demos/save.php')}}", {
                 indicator : "<img src='img/spinner.svg' />",
                 type : "text",
                 // only limit to three letters example
@@ -808,13 +808,11 @@
                 showfn : function(elem) { elem.fadeIn('slow') },
                 submit : 'Save',
                 submitdata : submitdata,
-                /* submitdata as a function example
                 submitdata : function(revert, settings, submitdata) {
                     console.log("Revert text: " + revert);
                     console.log(settings);
                     console.log("User submitted text: " + submitdata.value);
                 },
-                */
                 tooltip : "Click to edit...",
                 width : 160
             } );
