@@ -735,7 +735,7 @@
                 responsive: true,
                 "dom": 'T<"clear">lfrtip',
                 "tableTools": {
-                    "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf')}}"
                 }
             });
 
@@ -759,23 +759,23 @@
                 "height": "100%"
             } );
 
-        $(document).ready(function() {
-            $('.edit').editable('save.php', {
-                indicator : 'Saving…',
-                event     : 'dbclick',
-                cssclass  : 'custom-css',
-                submit    : 'Save',
-                tooltip   : 'Double click to edit…'
-            });
+        // $(document).ready(function() {
+        //     $('.edit').editable('save.php', {
+        //         indicator : 'Saving…',
+        //         event     : 'dbclick',
+        //         cssclass  : 'custom-css',
+        //         submit    : 'Save',
+        //         tooltip   : 'Double click to edit…'
+        //     });
         
-            $('.edit_area').editable('save.php', {
-                type      : 'textarea',
-                cancel    : 'Cancel',
-                submit    : 'OK',
-                indicator : '<img src="img/spinner.svg" />',
-                tooltip   : 'Click to edit…'
-            });
-        });
+        //     $('.edit_area').editable('save.php', {
+        //         type      : 'textarea',
+        //         cancel    : 'Cancel',
+        //         submit    : 'OK',
+        //         indicator : '<img src="img/spinner.svg" />',
+        //         tooltip   : 'Click to edit…'
+        //     });
+        // });
 
 
         });
