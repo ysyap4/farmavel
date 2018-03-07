@@ -363,7 +363,7 @@
 
             /* Apply the jEditable handlers to the table */
             //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
-            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.blade.php')}}', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
                     // var value = document.getElementById(this).value;
                     // document.get_value.action = "{{URL::route('manage_user_edit')}}";
