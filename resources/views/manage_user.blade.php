@@ -387,16 +387,6 @@
         }
     </script>
 
-    <script type="text/javascript">
-    function user_edit()
-    {
-
-        var x = document.getElementById("selected_user").value;
-        document.get_checkbox.action = "{{URL::route('user_edit')}}";
-        document.get_checkbox.submit();
-    }
-    </script>
-
 <style>
     body.DTTT_Print {
         background: #fff;
