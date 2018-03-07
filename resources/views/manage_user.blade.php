@@ -275,6 +275,7 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
+            <form method="POST" name="get_value">
             <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
@@ -308,6 +309,7 @@
             </tr>
             </tfoot>
             </table>
+            </form>
 
             </div>
             </div>
@@ -344,7 +346,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
-    <script type="text/javascript">
+    <script>
         $(document).ready(function() {
             $('.dataTables-example').dataTable({
                 responsive: true,
@@ -356,11 +358,11 @@
 
             /* Init DataTables */
             var oTable = $('#editable').dataTable();
-            var d = "{{URL::route('manage_user_edit')}}";
+            //var d = "{{URL::route('manage_user_edit')}}";
 
             /* Apply the jEditable handlers to the table */
             //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
-            oTable.$('td').editable( 'd', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
@@ -370,7 +372,12 @@
                         "row_id": this.parentNode.getAttribute('id'),
                         "column": oTable.fnGetPosition( this )[2]
                     };
+                var value = document.getElementById(value).value;
+                document.get_value.action = "{{URL::route('manage_user_edit')}}";
+                document.get_value.submit();
                 },
+
+
 
                 "width": "90%",
                 "height": "100%"
