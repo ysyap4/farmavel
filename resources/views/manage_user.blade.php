@@ -275,8 +275,8 @@
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
-            <form method="POST" name="get_value">
-                
+            <!-- <form method="POST" name="get_value">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
             <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
@@ -310,7 +310,7 @@
             </tr>
             </tfoot>
             </table>
-            </form>
+            <!-- </form> -->
 
             </div>
             </div>
