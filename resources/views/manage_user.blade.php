@@ -358,7 +358,8 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
+            //node_modules/jquery-jeditable/save.php
+            oTable.$('td').editable( '{{URL::asset('{{URL::route('manage_user_edit')}}')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
