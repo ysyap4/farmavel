@@ -353,33 +353,18 @@
                 responsive: true,
                 "dom": 'T<"clear">lfrtip',
                 "tableTools": {
-                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf')}}"
+                    "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
                 }
             });
 
             /* Init DataTables */
             var oTable = $('#editable').dataTable();
-            //var d = "{{URL::route('manage_user_edit')}}";
 
             /* Apply the jEditable handlers to the table */
-            //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
             oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
-                    // var value = document.getElementById(this).value;
-                    // document.get_value.action = "{{URL::route('manage_user_edit')}}";
-                    // document.get_value.submit();
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-
-                        // $.ajax({
-                        //     url: '{{URL::route('manage_user_edit')}}',
-                        //     type: 'post',
-                        //     data: {'_token':'{{ csrf_token() }}', 'value':this},
-                        //     success: function(response)
-                        //     {
-                        //         // do something
-                        //     }
-                        // });
                 },
                 "submitdata": function ( value, settings ) {
                     return {
@@ -391,6 +376,7 @@
                 "width": "90%",
                 "height": "100%"
             } );
+
 
         });
 
@@ -404,8 +390,6 @@
 
         }
     </script>
-
-
 <style>
     body.DTTT_Print {
         background: #fff;
