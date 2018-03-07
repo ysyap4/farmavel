@@ -28,24 +28,24 @@ class ManageController extends Controller
         return View::make('manage_user',array('user' => $user));
     }
 
-    // public function manage_user_edit($x)
-    // {
-    //     if ($_POST['slow']) 
-    //     {
-    //         usleep(500000);
-    //     }
+    public function manage_user_edit($x)
+    {
+        if ($_POST['slow']) 
+        {
+            usleep(500000);
+        }
         
-    //     if (is_array($x)) 
-    //     {
-    //         echo implode(', ', $x) . "1";
-    //     } 
-    //     else 
-    //     {
-    //         echo $x . "2";
-    //     }
+        if (is_array($x)) 
+        {
+            echo implode(', ', $x) . "controller 1";
+        } 
+        else 
+        {
+            echo $x . "controller 2";
+        }
 
-    //     return Redirect::to('manage_user');
-    // }
+        return Redirect::to('manage_user');
+    }
 
     /**
      * Show the form for creating a new resource.
