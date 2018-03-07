@@ -364,6 +364,9 @@
             //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
             oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
+                    var value = document.getElementById(this).value;
+                    document.get_value.action = "{{URL::route('manage_user_edit')}}";
+                    document.get_value.submit();
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
                 },
@@ -372,9 +375,6 @@
                         "row_id": this.parentNode.getAttribute('id'),
                         "column": oTable.fnGetPosition( this )[2]
                     };
-                var value = document.getElementById(value).value;
-                document.get_value.action = "{{URL::route('manage_user_edit')}}";
-                document.get_value.submit();
                 },
 
 
