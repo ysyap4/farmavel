@@ -276,6 +276,7 @@
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
             </div>
             <form method="POST" name="get_value">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <table class="table table-striped table-bordered table-hover " id="editable" >
             <thead>
             <tr>
@@ -364,11 +365,21 @@
             //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
             oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
-                    var value = document.getElementById(this).value;
-                    document.get_value.action = "{{URL::route('manage_user_edit')}}";
-                    document.get_value.submit();
+                    // var value = document.getElementById(this).value;
+                    // document.get_value.action = "{{URL::route('manage_user_edit')}}";
+                    // document.get_value.submit();
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+
+                        $.ajax({
+                            url: '{{URL::route('manage_user_edit')}}',
+                            type: 'post',
+                            data: {'_token':'{{ csrf_token() }}', 'value':'<?php $this-> ?>'},
+                            success: function(response)
+                            {
+                                // do something
+                            }
+                        });
                 },
                 "submitdata": function ( value, settings ) {
                     return {
