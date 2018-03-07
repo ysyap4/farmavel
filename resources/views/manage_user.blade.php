@@ -358,7 +358,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/demos/save.php')}}', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
@@ -386,6 +386,17 @@
 
         }
     </script>
+
+    <script type="text/javascript">
+    function user_edit()
+    {
+
+        var x = document.getElementById("selected_user").value;
+        document.get_checkbox.action = "{{URL::route('user_edit')}}";
+        document.get_checkbox.submit();
+    }
+    </script>
+
 <style>
     body.DTTT_Print {
         background: #fff;
