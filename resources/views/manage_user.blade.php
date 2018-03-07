@@ -344,7 +344,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
-    <script>
+    <script type="text/javascript">
         $(document).ready(function() {
             $('.dataTables-example').dataTable({
                 responsive: true,
@@ -359,7 +359,7 @@
             var d = "{{URL::route('manage_user_edit')}}";
 
             /* Apply the jEditable handlers to the table */
-            //node_modules/jquery-jeditable/save.php
+            //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
             oTable.$('td').editable( 'd', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
