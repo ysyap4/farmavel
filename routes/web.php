@@ -23,3 +23,8 @@ Route::get('manage_user',[
 	'as' => 'manage_user',
 	'uses' => 'ManageController@manage_user',
 	]);
+
+Route::post('manage_user_edit',[
+	'as' => 'manage_user_edit',
+	'uses' => 'ManageController@manage_user_edit',
+	]);
