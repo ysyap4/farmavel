@@ -288,7 +288,7 @@
             </tr>
             </thead>
             <tbody>
-                <?php $no = 1; ?>
+                <!-- <?php $no = 1; ?>
                 @foreach($user as $value)
             <tr>
                 <td><?php echo $no ?></td>
@@ -298,7 +298,7 @@
                 <td class="center">{{ $value->created_at }}</td>
             </tr>
                 <?php $no++; ?>
-                @endforeach
+                @endforeach -->
             </tbody>
             <tfoot>
             <tr>
