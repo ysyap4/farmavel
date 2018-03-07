@@ -43,6 +43,8 @@ class ManageController extends Controller
         {
             echo $_POST['value'] . "2";
         }
+
+        return Redirect::to('manage_user');
     }
 
     /**
