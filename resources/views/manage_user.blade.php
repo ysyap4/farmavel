@@ -364,7 +364,7 @@
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
                 },
                 "submitdata": function ( value, settings ) {
-                    x: 1, y: 2
+                    var x: 1; var y: 2;
                     return {
                         "row_id": this.parentNode.getAttribute('id'),
                         "column": oTable.fnGetPosition( this )[2]
