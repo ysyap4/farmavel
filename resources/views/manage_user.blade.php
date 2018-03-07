@@ -371,15 +371,15 @@
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
 
-                        $.ajax({
-                            url: '{{URL::route('manage_user_edit')}}',
-                            type: 'post',
-                            data: {'_token':'{{ csrf_token() }}', 'value':this},
-                            success: function(response)
-                            {
-                                // do something
-                            }
-                        });
+                        // $.ajax({
+                        //     url: '{{URL::route('manage_user_edit')}}',
+                        //     type: 'post',
+                        //     data: {'_token':'{{ csrf_token() }}', 'value':this},
+                        //     success: function(response)
+                        //     {
+                        //         // do something
+                        //     }
+                        // });
                 },
                 "submitdata": function ( value, settings ) {
                     return {
@@ -388,11 +388,19 @@
                     };
                 },
 
-
-
                 "width": "90%",
                 "height": "100%"
             } );
+
+            oTable.$('td').editable('{{URL::route('manage_user_edit')}}', {
+                console.log(this);
+                console.log(value);
+                console.log(settings);
+                return(value);
+            }, {
+                type    : 'textarea',
+                submit  : 'OK',
+            });
 
         });
 
