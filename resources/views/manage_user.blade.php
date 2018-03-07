@@ -374,7 +374,7 @@
                         $.ajax({
                             url: '{{URL::route('manage_user_edit')}}',
                             type: 'post',
-                            data: {'_token':'{{ csrf_token() }}', 'value':'<?php $this-> ?>'},
+                            data: {'_token':'{{ csrf_token() }}', 'value':this},
                             success: function(response)
                             {
                                 // do something
