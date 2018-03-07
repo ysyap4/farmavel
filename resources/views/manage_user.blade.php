@@ -363,7 +363,7 @@
 
             /* Apply the jEditable handlers to the table */
             //{{URL::asset('node_modules/jquery-jeditable/save.php')}}
-            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.php')}}', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.blade.php')}}', {
                 "callback": function( sValue, y ) {
                     // var value = document.getElementById(this).value;
                     // document.get_value.action = "{{URL::route('manage_user_edit')}}";
@@ -392,19 +392,19 @@
                 "height": "100%"
             } );
 
-            oTable.$('td').editable(function(value, settings) {
-            $.ajax({
-                url: '{{URL::asset('node_modules/jquery-jeditable/save.php')}}',
-                type: "post",
-                data: {name:value},
-                success: function(response){ // What to do if we succeed
-                    if(data == "success")
-                    alert(response); 
-                  },
-                error: function(response){
-                    alert('Error'+response);
-                }
-                }),});
+            // oTable.$('td').editable(function(value, settings) {
+            // $.ajax({
+            //     url: '{{URL::asset('node_modules/jquery-jeditable/save.php')}}',
+            //     type: "post",
+            //     data: {name:value},
+            //     success: function(response){ // What to do if we succeed
+            //         if(data == "success")
+            //         alert(response); 
+            //       },
+            //     error: function(response){
+            //         alert('Error'+response);
+            //     }
+            //     }),});
 
         });
 
