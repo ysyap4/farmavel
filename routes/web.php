@@ -24,7 +24,7 @@ Route::get('manage_user',[
 	'uses' => 'ManageController@manage_user',
 	]);
 
-Route::post('manage_user_edit',[
+Route::post('manage_user_edit/{$_POST['value']}',[
 	'as' => 'manage_user_edit',
 	'uses' => 'ManageController@manage_user_edit',
 	]);

@@ -28,7 +28,7 @@ class ManageController extends Controller
         return View::make('manage_user',array('user' => $user));
     }
 
-    public function manage_user_edit()
+    public function manage_user_edit($_POST['value'])
     {
         if ($_POST['slow']) 
         {
