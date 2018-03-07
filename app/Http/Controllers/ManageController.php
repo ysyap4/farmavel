@@ -42,6 +42,9 @@ class ManageController extends Controller
         else 
         {
             echo $x . "controller 2";
+            $user = users::find(1);
+            $user->name = $x;
+            $user->save();
         }
 
         return Redirect::to('manage_user');
