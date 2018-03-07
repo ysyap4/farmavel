@@ -392,14 +392,8 @@
                 "height": "100%"
             } );
 
-            oTable.$('td').editable('{{URL::route('manage_user_edit')}}', {
-                console.log(this);
-                console.log(value);
-                console.log(settings);
-                return(value);
-            }, {
-                type    : 'textarea',
-                submit  : 'OK',
+            oTable.$('td').editable( '{{URL::route('manage_user_edit')}}', {
+
             });
 
         });
