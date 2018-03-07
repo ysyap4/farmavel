@@ -358,7 +358,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '{{URL::asset('/app/Http/Controllers/save.php')}}', {
+            oTable.$('td').editable( '{{URL::asset('app/Http/Controllers/save.php')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
