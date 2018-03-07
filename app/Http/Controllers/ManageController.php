@@ -13,7 +13,6 @@ use Redirect;
 use Auth;
 use Session;
 use App\Model\users;
-use JasperPHP\JasperPHP;
 
 class ManageController extends Controller
 {
@@ -27,6 +26,23 @@ class ManageController extends Controller
         $user = users::all();
 
         return View::make('manage_user',array('user' => $user));
+    }
+
+    public function manage_user_edit()
+    {
+        if ($_POST['slow']) 
+        {
+            usleep(500000);
+        }
+        
+        if (is_array($_POST['value'])) 
+        {
+            echo implode(', ', $_POST['value']) . "1";
+        } 
+        else 
+        {
+            echo $_POST['value'] . "2";
+        }
     }
 
     /**
