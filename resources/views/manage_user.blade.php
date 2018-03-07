@@ -392,20 +392,6 @@
                 "height": "100%"
             } );
 
-            // oTable.$('td').editable(function(value, settings) {
-            // $.ajax({
-            //     url: '{{URL::asset('node_modules/jquery-jeditable/save.php')}}',
-            //     type: "post",
-            //     data: {name:value},
-            //     success: function(response){ // What to do if we succeed
-            //         if(data == "success")
-            //         alert(response); 
-            //       },
-            //     error: function(response){
-            //         alert('Error'+response);
-            //     }
-            //     }),});
-
         });
 
         function fnClickAddRow() {
