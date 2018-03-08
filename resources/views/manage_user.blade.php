@@ -340,14 +340,13 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/dist/jquery.jeditable.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
-        <script>
+    <script>
         $(document).ready(function() {
             $('.dataTables-example').dataTable({
                 responsive: true,
