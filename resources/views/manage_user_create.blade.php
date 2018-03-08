@@ -274,7 +274,7 @@
             <div class="ibox-content">
             <div class="">
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
-            <a href="{{URL::route('manage_user_create')}}" class="btn btn-primary">Add</a>
+            <a onclick="fnClickAddRow();" href="{{URL::route('manage_user_create')}} class="btn btn-primary ">Add a new row</a>
             </div>
             <!-- <form method="POST" name="get_value">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->

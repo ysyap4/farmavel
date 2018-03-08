@@ -28,12 +28,17 @@ class ManageController extends Controller
         return View::make('manage_user',array('user' => $user));
     }
 
+    public function user_create()
+    {
+        return View::make('manage_user_create');
+    }
+
     public function manage_user_edit(Request $request)
     {
         $data = $request->all();
 
         $user = users::find(1);
-        $user->name = $data;
+        $user->name = $data->get(value);
         $user->save();
         dd($data);
 

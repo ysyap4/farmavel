@@ -24,6 +24,11 @@ Route::get('manage_user',[
 	'uses' => 'ManageController@manage_user',
 	]);
 
+Route::get('manage_user_create', [
+	'as' => 'manage_user_create',
+	'uses' => 'ManageController@manage_user_create',
+	]);
+
 // Route::post('manage_user_edit/{$x}',[
 // 	'as' => 'manage_user_edit',
 // 	'uses' => 'ManageController@manage_user_edit',
