@@ -21,7 +21,7 @@ class ManageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function manage_user()
+    public function manage_user_index()
     {
         $user = users::all();
 

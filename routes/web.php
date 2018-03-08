@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('manage_user',[
+Route::get('manage_user_index',[
 	'as' => 'manage_user',
 	'uses' => 'ManageController@manage_user',
 	]);
