@@ -241,7 +241,7 @@
                             <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Normal</label>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
 
                                     <div class="col-sm-10"><input type="text" class="form-control"></div>
                                 </div>
