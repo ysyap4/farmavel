@@ -246,7 +246,60 @@
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
 
-                                    <div class="col-sm-10"><input type="text" id="name" class="form-control" name="name" placeholder="Your Name" value="{{ Input::old('name')}}"></div>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" value="{{ Input::old('name')}}">
+                                        @if ($errors->has('name'))
+                                            <p class="help-block">{{$errors ->first('name')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="Email" value="{{ Input::old('email')}}">
+                                        @if ($errors->has('email'))
+                                            <p class="help-block">{{$errors ->first('email')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone" value="{{ Input::old('phone')}}">
+                                        @if ($errors->has('phone'))
+                                            <p class="help-block">{{$errors ->first('phone')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" id="password" class="form-control" name="password" placeholder="Password" value="">
+                                        @if ($errors->has('password'))
+                                            <p class="help-block">{{$errors ->first('password')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="c_password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
+                                        @if ($errors->has('c_password'))
+                                            <p class="help-block">{{$errors ->first('c_password')}}</p>
+                                        @endif
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
