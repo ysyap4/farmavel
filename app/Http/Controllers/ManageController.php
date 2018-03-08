@@ -33,28 +33,60 @@ class ManageController extends Controller
         return View::make('manage_user_create');
     }
 
+    public function manage_user_create_process()
+    {
+         $rules = array(
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required',
+            'password' => 'required',
+            'c_password' => 'required|same:password',
+            );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        if($validator -> fails()){
+
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_user_create')
+            -> withErrors($validator)
+            ->withInput (Input::except('password','c_password'));
+        }
+        else
+        {
+            $add = new users;
+            $add->name = Input::get('name');
+            $add->email = Input::get('email');
+            $add->phone = Input::get('phone');
+            $add->password = Hash::make(Input::get('password'));
+
+            $add->save();
+
+            Session::flash('message','Successfully created user!');
+            return Redirect::to('manage_user_create');
+        }
+    }
+
     public function manage_user_edit(Request $request)
     {
-        $data = $request->all();
+        $user = users::all();
 
-        $user = users::find(1);
-        $user->name = $data->get(value);
-        $user->save();
-        dd($data);
+        $selected_user = Input::get('selected_user');
 
+        $edit_selected_user = array();
 
-        //return Redirect::to('manage_user');
+        for ($i=0; $i < sizeof($selected_user); $i++)
+        {
+            $edit_selected_user[$i] = '';
+            $edit_selected_user[$i] = users::find($selected_user[$i]);
+        }
+
+        
+        return View::make('user_edit')->with(array('edit_selected_user'=>$edit_selected_user));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function user_create()
-    {
-        return View::make('user_create');
-    }
+
 
      public function home()
     {
@@ -84,17 +116,7 @@ class ManageController extends Controller
         return View::make('home');
     }
 
-     public function users()
-    {
-        return View::make('users');
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function user_create_process()
     {
          $rules = array(
