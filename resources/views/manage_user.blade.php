@@ -347,7 +347,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
-    <script>
+        <script>
         $(document).ready(function() {
             $('.dataTables-example').dataTable({
                 responsive: true,
