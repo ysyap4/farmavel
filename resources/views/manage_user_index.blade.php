@@ -243,11 +243,11 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Number</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Time Created</th>
+                        <th>Phone</th>
+                        <th>Time Registered</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -257,7 +257,7 @@
                         <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
-                        <td class="center">{{ $value->password }}</td>
+                        <td class="center">{{ $value->phone }}</td>
                         <td class="center">{{ $value->created_at }}</td>
                     </tr>
                         <?php $no++; ?>
@@ -265,11 +265,11 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>ID</th>
+                        <th>Number</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Created At</th>
+                        <th>Phone</th>
+                        <th>Time Registered</th>
                     </tr>
                     </tfoot>
                     </table>
