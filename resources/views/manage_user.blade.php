@@ -27,7 +27,7 @@
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel='stylesheet' />
 
     <!-- LOAD JQUERY-JEDITABLE -->
-    <script src="{{URL::asset('node_modules/jquery-jeditable//src/jquery.jeditable.js')}}"></script>
+    <!-- <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.js')}}"></script> -->
 
     <!-- JEDITABLE PLUGINS -->
     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js')}}"></script>
@@ -333,6 +333,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.js')}}"></script>
 
     <!-- Data Tables -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
