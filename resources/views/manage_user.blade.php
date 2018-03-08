@@ -239,7 +239,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-
+                        <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">ADD</a>
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
