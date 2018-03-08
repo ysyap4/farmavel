@@ -47,7 +47,7 @@ class ManageController extends Controller
             $user->save();
         }
 
-        return Redirect::to('manage_user');
+        //return Redirect::to('manage_user');
     }
 
     /**
