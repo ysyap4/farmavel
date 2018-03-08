@@ -29,3 +29,27 @@ Route::get('manage_user_create', [
 	'uses' => 'ManageController@manage_user_create',
 	]);
 
+Route::post('manage_user_create_process', [
+	'as' => 'manage_user_create_process',
+	'uses' => 'ManageController@manage_user_create_process',
+	]);
+
+Route::get('manage_user_show',[
+	'as' => 'manage_user_show',
+	'uses' => 'ManageController@manage_user_show',
+	]);
+
+Route::get('manage_user_edit',[
+	'as' => 'manage_user_edit',
+	'uses' => 'ManageController@manage_user_edit',
+	]);
+
+Route::post('manage_user_edit_process',[
+	'as' => 'manage_user_edit_process',
+	'uses' => 'ManageController@manage_user_edit_process',
+	]);
+
+Route::get('manage_user_delete',[
+	'as' => 'manage_user_delete',
+	'uses' => 'ManageController@manage_user_delete',
+	]);
