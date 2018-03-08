@@ -37,13 +37,13 @@
                             <li><a href="profile.html">Profile</a></li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{ route('logout') }}"
+                              <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
@@ -179,13 +179,13 @@
 
 
                 <li>
-                    <a href="{{ route('logout') }}"
+                    <a href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 </li>
