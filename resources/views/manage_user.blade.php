@@ -292,21 +292,21 @@
 
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/plugins/jeditable/jquery.jeditable.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/jquery-3.3.1.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script> -->
 
     <!-- Data Tables -->
-    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
     <script>
@@ -323,7 +323,7 @@
             var oTable = $('#editable').dataTable();
 
             /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '../example_ajax.php', {
+            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.blade.php')}}', {
                 "callback": function( sValue, y ) {
                     var aPos = oTable.fnGetPosition( this );
                     oTable.fnUpdate( sValue, aPos[0], aPos[1] );
