@@ -30,16 +30,16 @@
     <!-- <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.js')}}"></script> -->
 
     <!-- JEDITABLE PLUGINS -->
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js')}}"></script>
+<!--     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js')}}"></script>
     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.charcounter.js')}}"></script>
     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.checkbox.js')}}"></script>
     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.datepicker.js')}}"></script>
     <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.masked.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.time.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.time.js')}}"></script> -->
     <!-- EXTERNAL LIBS -->
-    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.autogrowtextarea.js')}}"></script>
+<!--     <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.autogrowtextarea.js')}}"></script>
     <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.charcounter.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.maskedinput.js')}}"></script>
+    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.maskedinput.js')}}"></script> -->
 
 </head>
 
