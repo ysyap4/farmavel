@@ -28,24 +28,15 @@ class ManageController extends Controller
         return View::make('manage_user',array('user' => $user));
     }
 
-    public function manage_user_edit($x)
+    public function manage_user_edit(Request $request)
     {
-        if ($_POST['slow']) 
-        {
-            usleep(500000);
-        }
-        
-        if (is_array($x)) 
-        {
-            echo implode(', ', $x) . "controller 1";
-        } 
-        else 
-        {
-            echo $x . "controller 2";
-            $user = users::find(1);
-            $user->name = $x;
-            $user->save();
-        }
+        $data = $request->all();
+
+        $user = users::find(1);
+        $user->name = $data;
+        $user->save();
+        dd($data);
+
 
         //return Redirect::to('manage_user');
     }
