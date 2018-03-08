@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                    <input type="text" class="form-control" id="phone" placeholder="Email" name="phone" value="{{ old('phone') }}" required>
+                    <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" value="{{ old('phone') }}" required>
 
                     @if ($errors->has('phone'))
                         <span class="help-block">
