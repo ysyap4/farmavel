@@ -362,41 +362,20 @@
 
             /* Apply the jEditable handlers to the table */
             oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.blade.php')}}', {
-    indicator : "&lt;img src='img/spinner.svg' /&gt;",
-    type : "text",
-    // only limit to three letters example
-    //pattern: "[A-Za-z]{3}",
-    onedit : function() { console.log('If I return false edition will be canceled'); return true;},
-    before : function() { console.log('Triggered before form appears')},
-    callback : function(result, settings, submitdata) {
-        console.log('Triggered after submit');
-        console.log('Result: ' + result);
-        console.log('Settings.width: ' + settings.width);
-        console.log('Submitdata: ' + submitdata.pwet);
-    },
-    cancel : 'Cancel',
-    cssclass : 'custom-class',
-    cancelcssclass : 'btn btn-danger',
-    submitcssclass : 'btn btn-success',
-    maxlength : 200,
-    // select all text
-    select : true,
-    label : 'This is a label',
-    onreset : function() { console.log('Triggered before reset') },
-    onsubmit : function() { console.log('Triggered before submit') },
-    showfn : function(elem) { elem.fadeIn('slow') },
-    submit : 'Save',
-    submitdata : submitdata,
-    /* submitdata as a function example
-    submitdata : function(revert, settings, submitdata) {
-        console.log("Revert text: " + revert);
-        console.log(settings);
-        console.log("User submitted text: " + submitdata.value);
-    },
-    */
-    tooltip : "Click to edit...",
-    width : 160
-});
+                "callback": function( sValue, y ) {
+                    var aPos = oTable.fnGetPosition( this );
+                    oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+                },
+                "submitdata": function ( value, settings ) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition( this )[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            } );
 
 
         });
