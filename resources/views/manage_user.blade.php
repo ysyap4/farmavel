@@ -329,7 +329,7 @@
 
 
     <!-- Mainly scripts -->
-    <script src="{{URL::asset('inspinia-master/assets/js/jquery-3.3.1.slim.js')}}"></script>
+    
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
