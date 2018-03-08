@@ -25,7 +25,7 @@ class ManageController extends Controller
     {
         $user = users::all();
 
-        return View::make('manage_user',array('user' => $user));
+        return View::make('manage_user_index',array('user' => $user));
     }
 
     public function manage_user_create()
