@@ -48,7 +48,15 @@
                     @endif
                 </div>
 
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" value="{{ old('phone') }}" required>
 
+                    @if ($errors->has('phone'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                    @endif
+                </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
