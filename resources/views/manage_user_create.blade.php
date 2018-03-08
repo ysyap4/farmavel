@@ -248,7 +248,7 @@
                                         @if ($errors->has('name'))
                                             <p class="help-block">{{$errors ->first('name')}}</p>
                                         @endif
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
@@ -260,7 +260,7 @@
                                         @if ($errors->has('email'))
                                             <p class="help-block">{{$errors ->first('email')}}</p>
                                         @endif
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
@@ -272,7 +272,7 @@
                                         @if ($errors->has('phone'))
                                             <p class="help-block">{{$errors ->first('phone')}}</p>
                                         @endif
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
@@ -284,7 +284,7 @@
                                         @if ($errors->has('password'))
                                             <p class="help-block">{{$errors ->first('password')}}</p>
                                         @endif
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
@@ -298,14 +298,14 @@
                                         @if ($errors->has('c_password'))
                                             <p class="help-block">{{$errors ->first('c_password')}}</p>
                                         @endif
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
+                                        <a class="btn btn-white" href="">Cancel</a>
                                         <button class="btn btn-primary" type="submit">Add User</button>
                                     </div>
                                 </div>
