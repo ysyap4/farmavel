@@ -238,7 +238,7 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}">
+                            <form method="POST" class="form-horizontal" action="">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                 <div class="form-group @if ($errors ->has ('name')) has-error @endif"><label class="col-sm-2 control-label">Full Name</label>
