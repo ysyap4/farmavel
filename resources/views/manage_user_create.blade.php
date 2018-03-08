@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    use Illuminate\Support\Facades\Input;
+?>
 <html>
 
 <head>
