@@ -241,7 +241,7 @@
                             <form method="POST" class="form-horizontal" action="">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group @if ($errors ->has ('name')) has-error @endif"><label class="col-sm-2 control-label">Full Name</label>
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" value="{{ Input::old('name')}}">
@@ -253,7 +253,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group @if ($errors ->has ('email')) has-error @endif"><label class="col-sm-2 control-label">Email</label>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" id="email" class="form-control" name="email" placeholder="Email" value="{{ Input::old('email')}}">
@@ -265,7 +265,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group @if ($errors ->has ('phone')) has-error @endif"><label class="col-sm-2 control-label">Phone</label>
+                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone" value="{{ Input::old('phone')}}">
@@ -277,7 +277,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group @if ($errors ->has ('password')) has-error @endif"><label class="col-sm-2 control-label">Password</label>
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
 
                                     <div class="col-sm-10">
                                         <input type="password" id="password" class="form-control" name="password" placeholder="Password" value="">
@@ -289,9 +289,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
-
-                                    <div class="form-group @if ($errors ->has ('c_password')) has-error @endif"><label class="col-sm-2 control-label">Confirm Password</label>
+                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
 
                                     <div class="col-sm-10">
                                         <input type="c_password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
