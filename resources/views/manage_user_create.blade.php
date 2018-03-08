@@ -19,28 +19,6 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
-    <!-- LOAD JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- LOAD JQUERY UI -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel='stylesheet' />
-
-    <!-- LOAD JQUERY-JEDITABLE -->
-    <!-- <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.js')}}"></script> -->
-
-    <!-- JEDITABLE PLUGINS -->
-    <!-- <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.autogrow.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.charcounter.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.checkbox.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.datepicker.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.masked.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/src/jquery.jeditable.time.js')}}"></script> -->
-    <!-- EXTERNAL LIBS -->
-    <!-- <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.autogrowtextarea.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.charcounter.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/demos/js/jquery.maskedinput.js')}}"></script> -->
-
 </head>
 
 <body>
@@ -89,17 +67,7 @@
                         <li><a href="dashboard_4_1.html">Appointment</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="graph_flot.html">Flot Charts</a></li>
-                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="graph_peity.html">Peity Charts</a></li>
-                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
-                    </ul>
-                </li>
+                
             </ul>
 
         </div>
@@ -246,84 +214,78 @@
 
                 </div>
             </div>
-
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
-            <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>User Table</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>User Table</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">ADD</a>
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Time Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no = 1; ?>
+                        @foreach($user as $value)
+                    <tr>
+                        <td><?php echo $no ?></td>
+                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->email }}</td>
+                        <td class="center">{{ $value->password }}</td>
+                        <td class="center">{{ $value->created_at }}</td>
+                    </tr>
+                        <?php $no++; ?>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Created At</th>
+                    </tr>
+                    </tfoot>
+                    </table>
+
+                    </div>
                 </div>
             </div>
-            <div class="ibox-content">
-            <div class="">
-            <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">Add a new row</a>
-            <a onclick="fnClickAddRow();" href="{{URL::route('manage_user_create')}} class="btn btn-primary ">Add a new row</a>
-            </div>
-            <!-- <form method="POST" name="get_value">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
-            <table class="table table-striped table-bordered table-hover " id="editable" >
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Time Created</th>
-            </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1; ?>
-                @foreach($user as $value)
-            <tr>
-                <td><?php echo $no ?></td>
-                <td>{{ $value->name }}</td>
-                <td>{{ $value->email }}</td>
-                <td class="center">{{ $value->password }}</td>
-                <td class="center">{{ $value->created_at }}</td>
-            </tr>
-                <?php $no++; ?>
-                @endforeach
-            </tbody>
-            <tfoot>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Created At</th>
-            </tr>
-            </tfoot>
-            </table>
-            <!-- </form> -->
-
-            </div>
-            </div>
-            </div>
+            
             </div>
         </div>
-
         <div class="footer">
             <div>
                 <strong>Copyright</strong> Farmavel &copy; 2018
             </div>
         </div>
+
         </div>
         </div>
 
@@ -341,7 +303,6 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
-    <script src="{{URL::asset('node_modules/jquery-jeditable/dist/jquery.jeditable.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
@@ -354,7 +315,7 @@
                 responsive: true,
                 "dom": 'T<"clear">lfrtip',
                 "tableTools": {
-                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf')}}"
+                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/pace/copy_csv_xls_pdf.swf')}}"
                 }
             });
 
