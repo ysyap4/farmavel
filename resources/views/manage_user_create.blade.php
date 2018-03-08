@@ -238,16 +238,28 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="">
+                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" value="{{ Input::old('name')}}">
+                                        @if ($errors->has('name'))
+                                            <p class="help-block">{{$errors ->first('name')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+
 
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <a class="btn btn-white" href="">Cancel</a>
+                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
                                         <button class="btn btn-primary" type="submit">Add User</button>
                                     </div>
                                 </div>
