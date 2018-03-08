@@ -291,7 +291,7 @@
 
                                 <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
 
-                                    <div class="form-group @if ($errors ->has ('c_password')) has-error @endif"><label class="col-sm-2 control-label">Password</label>
+                                    <div class="form-group @if ($errors ->has ('c_password')) has-error @endif"><label class="col-sm-2 control-label">Confirm Password</label>
 
                                     <div class="col-sm-10">
                                         <input type="c_password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
@@ -305,7 +305,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <a class="btn btn-white" href="{{URL::route('manage_user_index')}}">Cancel</a>
+                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
                                         <button class="btn btn-primary" type="submit">Add User</button>
                                     </div>
                                 </div>
