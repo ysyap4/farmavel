@@ -295,7 +295,7 @@
                                    <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
 
                                     <div class="col-sm-10">
-                                        <input type="c_password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
+                                        <input type="password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
                                         @if ($errors->has('c_password'))
                                             <p class="help-block">{{$errors ->first('c_password')}}</p>
                                         @endif
