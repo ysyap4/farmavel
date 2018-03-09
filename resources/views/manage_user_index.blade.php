@@ -19,6 +19,8 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('node_modules/sweetalert/dist/sweetalert.css')}}">
+
 </head>
 
 <body>
