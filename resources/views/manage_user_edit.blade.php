@@ -219,7 +219,7 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-    <form method="POST" class="form-horizontal" name="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
+    <form method="POST" class="form-horizontal" name="manage_user_edit_process" id="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     @for ($i=0; $i < sizeof($edit_selected_user); $i++)
                 <div class="col-lg-6">
