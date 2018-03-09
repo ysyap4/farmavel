@@ -240,7 +240,7 @@
                     </div>
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
-                        <a class="btn btn-primary" href="{{URL::route('manage_user_edit')}}">Edit</a>
+                        <a class="btn btn-primary" onClick="manage_user_edit()">Edit</a>
                         <a class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</a>
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
@@ -359,7 +359,7 @@
     </script>
 
     <script type="text/javascript">
-    function user_edit()
+    function manage_user_edit()()
     {
         var x =[];
 
@@ -373,7 +373,7 @@
         }
 
         x = document.getElementById("selected_user").value;
-        document.get_checkbox.action = "{{URL::route('user_edit')}}";
+        document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
         document.get_checkbox.submit();
     }
     </script>
