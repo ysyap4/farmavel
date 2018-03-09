@@ -361,43 +361,23 @@
     </script>
 
     <script type="text/javascript">
-        function user_show()
-        {
-            var x =[];
-    
-            if (this.checked)
-            {
-              $('#selected_user').removeAttr('disabled');
-              $('#allBlogs :checked').each(function()
-              {
-                x.push($(this).val());
-              });
-            }
-    
-            x = document.getElementById("selected_user").value;
-            document.get_checkbox.action = "{{URL::route('user_show')}}";
-            document.get_checkbox.submit();
-        }
-    </script>
+    function manage_user_edit()
+    {
+        var x =[];
 
-    <script type="text/javascript">
-        function manage_user_edit()
+        if (this.checked)
         {
-            var x =[];
-    
-            if (this.checked)
-            {
-              $('#selected_user').removeAttr('disabled');
-              $('#allBlogs :checked').each(function()
-              {
-                x.push($(this).val());
-              });
-            }
-    
-            x = document.getElementById("selected_user").value;
-            document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
-            document.get_checkbox.submit();
+          $('#selected_user').removeAttr('disabled');
+          $('#allBlogs :checked').each(function()
+          {
+            x.push($(this).val());
+          });
         }
+
+        x = document.getElementById("selected_user").value;
+        document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
+        document.get_checkbox.submit();
+    }
     </script>
 
 <style>
