@@ -222,7 +222,7 @@
     @for ($i=0; $i < sizeof($edit_selected_user); $i++)
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Edit User {{$edit_selected_user[$i]->id}} </h5>

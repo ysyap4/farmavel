@@ -242,7 +242,7 @@
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
                         <a class="btn btn-primary" href="{{URL::route('manage_user_edit')}}">Edit</a>
                         <a class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</a>
-                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
                     <tr>
                         <th>Select</th>
@@ -357,6 +357,27 @@
 
         }
     </script>
+
+    <script type="text/javascript">
+    function user_edit()
+    {
+        var x =[];
+
+        if (this.checked)
+        {
+          $('#selected_user').removeAttr('disabled');
+          $('#allBlogs :checked').each(function()
+          {
+            x.push($(this).val());
+          });
+        }
+
+        x = document.getElementById("selected_user").value;
+        document.get_checkbox.action = "{{URL::route('user_edit')}}";
+        document.get_checkbox.submit();
+    }
+    </script>
+
 <style>
     body.DTTT_Print {
         background: #fff;
