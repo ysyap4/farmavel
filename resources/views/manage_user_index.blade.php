@@ -242,6 +242,7 @@
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
                         <button type="submit" class="btn btn-primary" onClick="manage_user_edit()">Edit</button>
                         <button type="submit" class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</button>
+                    <form method="GET" name="get_checkbox">
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
                     <tr>
@@ -278,6 +279,7 @@
                     </tr>
                     </tfoot>
                     </table>
+                    </form>
 
                     </div>
                 </div>
