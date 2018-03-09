@@ -218,8 +218,7 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-                <div class="col-lg-12">
-                <div class="col-lg-3"> </div>
+                <div class="col-lg-10">
                     <div class="ibox float-e-margins col-lg-6">
                         <div class="ibox-title">
                             <h5>Add new User </h5>
@@ -314,7 +313,6 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-3"> </div>
                 </div>
             </div>
         </div>
