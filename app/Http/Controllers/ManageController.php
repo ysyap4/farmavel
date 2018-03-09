@@ -68,7 +68,7 @@ class ManageController extends Controller
         }
     }
 
-    public function manage_user_edit(Request $request)
+    public function manage_user_edit()
     {
         $user = users::all();
 
