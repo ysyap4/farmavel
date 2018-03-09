@@ -304,7 +304,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{URL::asset('node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
 
     <!-- Data Tables -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
@@ -389,22 +389,49 @@
         $('button#manage_user_delete').on('click',
             function(){
               swal({
-                  title: "Are you sure?",
-                  text: "Once deleted, you will not be able to recover this imaginary file!",
-                  icon: "warning",
-                  buttons: true,
-                  dangerMode: true,
-                })
-                .then((willDelete) => {
-                  if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                      icon: "success",
-                    });
-                  } else {
-                    swal("Your imaginary file is safe!");
-                  }
-                });
-                       
+               title: "Are you sure?",
+               text: "You will not be able to recover this user!",
+               type: "warning",
+               html: true,
+               showCancelButton: true,
+               confirmButtonColor: '#3ebf8f',
+               confirmButtonText: 'Yes,delete it!',
+               closeOnConfirm: true,
+               showLoaderOnConfirm: false
+              },
+              function(){
+                $.ajax({
+                     success: function (userRows) {
+                         swal({
+                               title: "Data Removed!",
+                               type: "success",
+                               html: true,
+                               showCancelButton: false,
+                               confirmButtonColor: '#3ebf8f',
+                               confirmButtonText: 'OK',
+                               closeOnConfirm: true
+                               },
+                               function(){
+        
+                                 if (this.checked)
+                {
+                  $('#selected_user').removeAttr('disabled');
+                  $('#allBlogs :checked').each(function()
+                  {
+                    x.push($(this).val());
+                  });
+                }
+        
+                x = document.getElementById("selected_user").value;
+                document.get_checkbox.action = "{{URL::route('manage_user_delete')}}";
+                document.get_checkbox.submit();
+                         
+           });
+          }
+        });
+      });
+    })
+       
     }
     </script>
 
