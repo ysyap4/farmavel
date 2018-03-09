@@ -216,13 +216,14 @@
                 </div>
             </div>
 
+
+    <form method="POST" class="form-horizontal" name="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    @for ($i=0; $i < sizeof($edit_selected_user); $i++)
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <form method="POST" class="form-horizontal" name="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="col-lg-8">
                     <div class="ibox float-e-margins">
-                        @for ($i=0; $i < sizeof($edit_selected_user); $i++)
                         <div class="ibox-title">
                             <h5>Edit User {{$edit_selected_user[$i]->id}} </h5>
                             <input type="hidden" name="edit_selected_user[]" value="{{ $edit_selected_user[$i]->id }}">
@@ -304,7 +305,13 @@
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
-                                @endfor
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                        @endfor
                                 </form>
 
                                 <div class="form-group">
@@ -313,12 +320,6 @@
                                         <button class="btn btn-primary" type="submit" form="manage_user_edit_process">Update</button>
                                     </div>
                                 </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer">
             <div>
                 <strong>Copyright</strong> Farmavel &copy; 2018
