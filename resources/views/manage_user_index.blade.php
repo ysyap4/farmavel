@@ -241,7 +241,7 @@
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
                         <a class="btn btn-primary" onClick="manage_user_edit()">Edit</a>
-                        <a class="btn btn-primary" onClick="manage_user_delete()">Delete</a>
+                        <a class="btn btn-primary" id="manage_user_delete" onClick="manage_user_delete()">Delete</a>
                     <form method="GET" name="get_checkbox">
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
@@ -378,6 +378,60 @@
         x = document.getElementById("selected_user").value;
         document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
         document.get_checkbox.submit();
+    }
+    </script>
+
+    <script type="text/javascript">
+    function user_delete()
+    {
+        var x =[];
+
+        $('button#manage_user_delete').on('click',
+            function(){
+              swal({
+               title: "Are you sure?",
+               text: "You will not be able to recover this user!",
+               type: "warning",
+               html: true,
+               showCancelButton: true,
+               confirmButtonColor: '#3ebf8f',
+               confirmButtonText: 'Yes,delete it!',
+               closeOnConfirm: true,
+               showLoaderOnConfirm: false
+              },
+              function(){
+                $.ajax({
+                     success: function (userRows) {
+                         swal({
+                               title: "Data Removed!",
+                               type: "success",
+                               html: true,
+                               showCancelButton: false,
+                               confirmButtonColor: '#3ebf8f',
+                               confirmButtonText: 'OK',
+                               closeOnConfirm: true
+                               },
+                               function(){
+        
+                                 if (this.checked)
+                {
+                  $('#selected_user').removeAttr('disabled');
+                  $('#allBlogs :checked').each(function()
+                  {
+                    x.push($(this).val());
+                  });
+                }
+        
+                x = document.getElementById("selected_user").value;
+                document.get_checkbox.action = "{{URL::route('manage_user_delete')}}";
+                document.get_checkbox.submit();
+                         
+           });
+          }
+        });
+      });
+    })
+       
     }
     </script>
 
