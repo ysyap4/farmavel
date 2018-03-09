@@ -83,7 +83,7 @@ class ManageController extends Controller
         }
 
         
-        return View::make('user_edit')->with(array('edit_selected_user'=>$edit_selected_user));
+        return View::make('manage_user_edit')->with(array('edit_selected_user'=>$edit_selected_user));
     }
 
 

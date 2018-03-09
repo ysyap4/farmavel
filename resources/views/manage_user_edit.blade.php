@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    use Illuminate\Support\Facades\Input;
+?>
 <html>
 
 <head>
@@ -6,16 +9,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Manage User</title>
+    <title>Farmavel | Edit User</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-
-    <!-- Data Tables -->
-    <link href="{{URL::asset('inspinia-master/assets/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('inspinia-master/assets/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('inspinia-master/assets/css/plugins/dataTables/dataTables.tableTools.min.css')}}" rel="stylesheet">
-
+    <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
@@ -39,13 +37,13 @@
                             <li><a href="profile.html">Profile</a></li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{ route('logout') }}"
+                              <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
@@ -181,13 +179,13 @@
 
 
                 <li>
-                    <a href="{{ route('logout') }}"
+                    <a href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 </li>
@@ -205,8 +203,11 @@
                         <li>
                             <a>Manage</a>
                         </li>
+                        <li>
+                            <a>User</a>
+                        </li>
                         <li class="active">
-                            <strong>User</strong>
+                            <strong>Edit</strong>
                         </li>
                     </ol>
                 </div>
@@ -214,75 +215,108 @@
 
                 </div>
             </div>
-        <div class="wrapper wrapper-content animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>User Table</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <form method="POST" class="form-horizontal" name="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="col-lg-8">
+                    <div class="ibox float-e-margins">
+                        @for ($i=0; $i < sizeof($edit_selected_user); $i++)
+                        <div class="ibox-title">
+                            <h5>Edit User {{$edit_selected_user[$i]->id}} </h5>
+                            <input type="hidden" name="edit_selected_user[]" value="{{ $edit_selected_user[$i]->id }}">
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="name" class="form-control" name="name[]" placeholder="Full Name" value="{{$edit_selected_user[$i]->name}}">
+                                        @if ($errors->has('name'))
+                                            <p class="help-block">{{$errors ->first('name')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="email" class="form-control" name="email[]" placeholder="Email" value="{{$edit_selected_user[$i]->email}}">
+                                        @if ($errors->has('email'))
+                                            <p class="help-block">{{$errors ->first('email')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" id="phone" class="form-control" name="phone[]" placeholder="Phone" value="{{$edit_selected_user[$i]->phone}}">
+                                        @if ($errors->has('phone'))
+                                            <p class="help-block">{{$errors ->first('phone')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" id="password" class="form-control" name="password[]" placeholder="Password" value="">
+                                        @if ($errors->has('password'))
+                                            <p class="help-block">{{$errors ->first('password')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" id="c_password" class="form-control" name="c_password[]" placeholder="Confirm Password" value="">
+                                        @if ($errors->has('c_password'))
+                                            <p class="help-block">{{$errors ->first('c_password')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+                                @endfor
+                                </form>
+
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
+                                        <button class="btn btn-primary" type="submit" form="manage_user_edit_process">Update</button>
+                                    </div>
+                                </div>
+
                         </div>
                     </div>
-                    <div class="ibox-content">
-                        <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
-                        <a class="btn btn-primary" href="{{URL::route('manage_user_edit')}}">Edit</a>
-                        <a class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</a>
-                    <table class="table table-striped table-bordered table-hover dataTables-example">
-                    <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Time Registered</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 1; ?>
-                        @foreach($user as $value)
-                    <tr>
-                        <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
-                        <td><?php echo $no ?></td>
-                        <td>{{ $value->name }}</td>
-                        <td>{{ $value->email }}</td>
-                        <td class="center">{{ $value->phone }}</td>
-                        <td class="center">{{ $value->created_at }}</td>
-                    </tr>
-                        <?php $no++; ?>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>Select</th>
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Time Registered</th>
-                    </tr>
-                    </tfoot>
-                    </table>
-
-                    </div>
                 </div>
-            </div>
-            
             </div>
         </div>
         <div class="footer">
@@ -301,92 +335,23 @@
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script> -->
-
-    <!-- Data Tables -->
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
-    <!-- Page-Level Scripts -->
+        <!-- iCheck -->
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
+
     <script>
-        $(document).ready(function() {
-            $('.dataTables-example').dataTable({
-                responsive: true,
-                "dom": 'T<"clear">lfrtip',
-                "tableTools": {
-                    "sSwfPath": "{{URL::asset('inspinia-master/assets/js/plugins/pace/copy_csv_xls_pdf.swf')}}"
-                }
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
             });
-
-            /* Init DataTables */
-            var oTable = $('#editable').dataTable();
-
-            /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '{{URL::asset('node_modules/jquery-jeditable/save.blade.php')}}', {
-                "callback": function( sValue, y ) {
-                    var aPos = oTable.fnGetPosition( this );
-                    oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-                },
-                "submitdata": function ( value, settings ) {
-                    return {
-                        "row_id": this.parentNode.getAttribute('id'),
-                        "column": oTable.fnGetPosition( this )[2]
-                    };
-                },
-
-                "width": "90%",
-                "height": "100%"
-            } );
-
-
         });
-
-        function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData( [
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row" ] );
-
-        }
     </script>
-<style>
-    body.DTTT_Print {
-        background: #fff;
 
-    }
-    .DTTT_Print #page-wrapper {
-        margin: 0;
-        background:#fff;
-    }
-
-    button.DTTT_button, div.DTTT_button, a.DTTT_button {
-        border: 1px solid #e7eaec;
-        background: #fff;
-        color: #676a6c;
-        box-shadow: none;
-        padding: 6px 8px;
-    }
-    button.DTTT_button:hover, div.DTTT_button:hover, a.DTTT_button:hover {
-        border: 1px solid #d2d2d2;
-        background: #fff;
-        color: #676a6c;
-        box-shadow: none;
-        padding: 6px 8px;
-    }
-
-    .dataTables_filter label {
-        margin-right: 5px;
-
-    }
-</style>
 </body>
 
 </html>
