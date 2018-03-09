@@ -244,7 +244,7 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
-                        <th></th>
+                        <th>Select</th>
                         <th>Number</th>
                         <th>Name</th>
                         <th>Email</th>
@@ -268,6 +268,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
+                        <th>Select</th>
                         <th>Number</th>
                         <th>Name</th>
                         <th>Email</th>
