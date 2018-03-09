@@ -310,22 +310,17 @@
                     </div>
                 </div>
             @endfor
-                    <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-2">
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-1">
                 <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
-                <button class="btn btn-primary" type="submit" form="manage_user_edit_process">Update</button>
+                <button class="btn btn-primary" type="submit">Update</button>
             </div>
         </div>
+
             </div>
         </div>
         </form>
 
-        <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-2">
-                <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
-                <button class="btn btn-primary" type="submit" form="manage_user_edit_process">Update</button>
-            </div>
-        </div>
 
         <div class="footer">
             <div>
