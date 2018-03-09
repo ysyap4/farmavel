@@ -382,7 +382,7 @@
     </script>
 
     <script type="text/javascript">
-    function user_delete()
+    function manage_user_delete()
     {
         var x =[];
 
