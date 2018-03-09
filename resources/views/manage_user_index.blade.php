@@ -303,7 +303,8 @@
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script> -->
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script>
+    <script src="{{URL::asset('node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
 
     <!-- Data Tables -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
@@ -358,26 +359,6 @@
                 "New row" ] );
 
         }
-    </script>
-
-    <script type="text/javascript">
-        function user_show()
-        {
-            var x =[];
-    
-            if (this.checked)
-            {
-              $('#selected_user').removeAttr('disabled');
-              $('#allBlogs :checked').each(function()
-              {
-                x.push($(this).val());
-              });
-            }
-    
-            x = document.getElementById("selected_user").value;
-            document.get_checkbox.action = "{{URL::route('user_show')}}";
-            document.get_checkbox.submit();
-    }
     </script>
 
     <script type="text/javascript">
