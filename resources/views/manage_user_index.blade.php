@@ -241,7 +241,7 @@
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
                         <a class="btn btn-primary" onClick="manage_user_edit()">Edit</a>
-                        <button type="submit" class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</button>
+                        <a class="btn btn-primary" onClick="manage_user_delete()">Delete</button>
                     <form method="GET" name="get_checkbox">
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
