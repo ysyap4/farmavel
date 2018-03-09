@@ -19,8 +19,6 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('node_modules/sweetalert/dist/sweetalert.css')}}">
-
 </head>
 
 <body>
@@ -391,49 +389,22 @@
         $('button#manage_user_delete').on('click',
             function(){
               swal({
-               title: "Are you sure?",
-               text: "You will not be able to recover this user!",
-               type: "warning",
-               html: true,
-               showCancelButton: true,
-               confirmButtonColor: '#3ebf8f',
-               confirmButtonText: 'Yes,delete it!',
-               closeOnConfirm: true,
-               showLoaderOnConfirm: false
-              },
-              function(){
-                $.ajax({
-                     success: function (userRows) {
-                         swal({
-                               title: "Data Removed!",
-                               type: "success",
-                               html: true,
-                               showCancelButton: false,
-                               confirmButtonColor: '#3ebf8f',
-                               confirmButtonText: 'OK',
-                               closeOnConfirm: true
-                               },
-                               function(){
-        
-                                 if (this.checked)
-                {
-                  $('#selected_user').removeAttr('disabled');
-                  $('#allBlogs :checked').each(function()
-                  {
-                    x.push($(this).val());
-                  });
-                }
-        
-                x = document.getElementById("selected_user").value;
-                document.get_checkbox.action = "{{URL::route('manage_user_delete')}}";
-                document.get_checkbox.submit();
-                         
-           });
-          }
-        });
-      });
-    })
-       
+                  title: "Are you sure?",
+                  text: "Once deleted, you will not be able to recover this imaginary file!",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+                })
+                .then((willDelete) => {
+                  if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                      icon: "success",
+                    });
+                  } else {
+                    swal("Your imaginary file is safe!");
+                  }
+                });
+                       
     }
     </script>
 
