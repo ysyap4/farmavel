@@ -361,6 +361,26 @@
     </script>
 
     <script type="text/javascript">
+        function user_show()
+        {
+            var x =[];
+    
+            if (this.checked)
+            {
+              $('#selected_user').removeAttr('disabled');
+              $('#allBlogs :checked').each(function()
+              {
+                x.push($(this).val());
+              });
+            }
+    
+            x = document.getElementById("selected_user").value;
+            document.get_checkbox.action = "{{URL::route('user_show')}}";
+            document.get_checkbox.submit();
+    }
+    </script>
+
+    <script type="text/javascript">
     function manage_user_edit()
     {
         var x =[];
