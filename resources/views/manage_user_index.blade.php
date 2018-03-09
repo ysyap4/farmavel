@@ -19,6 +19,8 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('node_modules/sweetalert/dist/sweetalert.css')}}">
+
 </head>
 
 <body>
@@ -304,7 +306,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script>
-    <script src="{{URL::asset('public/node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
+    <script src="{{URL::asset('node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
 
     <!-- Data Tables -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
