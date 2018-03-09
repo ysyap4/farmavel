@@ -64,7 +64,7 @@ class ManageController extends Controller
             $add->save();
 
             Session::flash('message','Successfully created user!');
-            return Redirect::to('manage_user_create');
+            return Redirect::to('manage_user_index');
         }
     }
 

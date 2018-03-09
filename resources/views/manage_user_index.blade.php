@@ -240,9 +240,11 @@
                     </div>
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">ADD</a>
+                        <a class="btn btn-primary" href="{{URL::route('manage_user_edit')}}">ADD</a>
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
+                        <th></th>
                         <th>Number</th>
                         <th>Name</th>
                         <th>Email</th>
@@ -254,6 +256,7 @@
                         <?php $no = 1; ?>
                         @foreach($user as $value)
                     <tr>
+                        <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
                         <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
