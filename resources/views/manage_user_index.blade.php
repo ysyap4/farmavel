@@ -300,7 +300,7 @@
 
 
 
-    <!-- Mainly scripts -->
+    <!-- Mainly script.s -->
     <script src="{{URL::asset('inspinia-master/assets/js/jquery-3.3.1.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
