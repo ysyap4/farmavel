@@ -86,6 +86,32 @@ class ManageController extends Controller
         return View::make('manage_user_edit')->with(array('edit_selected_user'=>$edit_selected_user));
     }
 
+    public function manage_user_edit_process()
+    {
+        $user = users::all();
+        $edit_selected_user = Input::get('edit_selected_user');
+        $name = Input::get('name');
+        $email = Input::get('email');
+        $phone = Input::get('phone');
+        $password = Input::get('password');
+        $edit = array();
+
+        for ($i=0; $i < sizeof($edit_selected_user); $i++)
+        {
+            $edit[$i] = '';
+            $edit[$i] = users::find($edit_selected_user[$i]);
+            $edit[$i]->name = $name[$i];
+            $edit[$i]->email = $email[$i];
+            $edit[$i]->phone = $phone[$i];
+            $edit[$i]->password = Hash::make($password[$i]);
+
+            $edit[$i]->save();
+        }
+
+        Session::flash('message','Successfully Update User!');
+        return Redirect::to('manage_user_index');
+    }
+
 
 
      public function home()
