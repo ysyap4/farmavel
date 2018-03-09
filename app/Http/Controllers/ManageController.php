@@ -112,6 +112,19 @@ class ManageController extends Controller
         return Redirect::to('manage_user_index');
     }
 
+    public function manage_user_delete()
+    {
+        $selected_user = Input::get('selected_user');
+
+        for ($i=0; $i < sizeof($selected_user); $i++)
+        {
+            $delete_selected_user[$i] = users::where('id',$selected_user[$i])->delete();
+        }
+
+        Session::flash('message','Successfully deleted user!');
+        return Redirect::to('manage_user_index');
+    }
+
 
 
      public function home()

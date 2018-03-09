@@ -240,8 +240,8 @@
                     </div>
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
-                        <button type="submit" class="btn btn-primary" onClick="manage_user_edit()">Edit</button>
-                        <button type="submit" class="btn btn-primary" href="{{URL::route('manage_user_delete')}}">Delete</button>
+                        <a class="btn btn-primary" onClick="manage_user_edit()">Edit</button>
+                        <a class="btn btn-primary" onClick="manage_user_delete()">Delete</button>
                     <form method="GET" name="get_checkbox">
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
@@ -303,7 +303,8 @@
     <script src="{{URL::asset('inspinia-master/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script> -->
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jeditable/jquery.jeditable.js')}}"></script>
+    <script src="{{URL::asset('node_modules/sweetalert/dist/sweetalert.min.js')}}"></script>
 
     <!-- Data Tables -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
@@ -361,22 +362,96 @@
     </script>
 
     <script type="text/javascript">
-    function manage_user_edit()
-    {
-        var x =[];
-
-        if (this.checked)
+        function user_show()
         {
-          $('#selected_user').removeAttr('disabled');
-          $('#allBlogs :checked').each(function()
-          {
-            x.push($(this).val());
-          });
+            var x =[];
+    
+            if (this.checked)
+            {
+              $('#selected_user').removeAttr('disabled');
+              $('#allBlogs :checked').each(function()
+              {
+                x.push($(this).val());
+              });
+            }
+    
+            x = document.getElementById("selected_user").value;
+            document.get_checkbox.action = "{{URL::route('user_show')}}";
+            document.get_checkbox.submit();
         }
+    </script>
 
-        x = document.getElementById("selected_user").value;
-        document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
-        document.get_checkbox.submit();
+    <script type="text/javascript">
+        function manage_user_edit()
+        {
+            var x =[];
+    
+            if (this.checked)
+            {
+              $('#selected_user').removeAttr('disabled');
+              $('#allBlogs :checked').each(function()
+              {
+                x.push($(this).val());
+              });
+            }
+    
+            x = document.getElementById("selected_user").value;
+            document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
+            document.get_checkbox.submit();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function manage_user_delete()
+        {
+            var x =[];
+    
+              $('button#user_delete').on('click',
+        function(){
+          swal({
+           title: "Are you sure?",
+           text: "You will not be able to recover this user!",
+           type: "warning",
+           html: true,
+           showCancelButton: true,
+           confirmButtonColor: '#3ebf8f',
+           confirmButtonText: 'Yes,delete it!',
+           closeOnConfirm: true,
+           showLoaderOnConfirm: false
+          },
+          function(){
+            $.ajax({
+                 success: function (userRows) {
+                     swal({
+                           title: "Data is removed!",
+                           type: "success",
+                           html: true,
+                           showCancelButton: false,
+                           confirmButtonColor: '#3ebf8f',
+                           confirmButtonText: 'OK',
+                           closeOnConfirm: true
+                           },
+                           function(){
+    
+                             if (this.checked)
+            {
+              $('#selected_user').removeAttr('disabled');
+              $('#allBlogs :checked').each(function()
+              {
+                x.push($(this).val());
+              });
+            }
+    
+            x = document.getElementById("selected_user").value;
+            document.get_checkbox.action = "{{URL::route('manage_user_delete')}}";
+            document.get_checkbox.submit();
+                             
+                });
+              }
+            });
+          });
+        })
+       
     }
     </script>
 
