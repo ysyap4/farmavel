@@ -359,7 +359,7 @@
     </script>
 
     <script type="text/javascript">
-    function manage_user_edit()()
+    function manage_user_edit()
     {
         var x =[];
 
