@@ -91,7 +91,7 @@
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">4</span>
+                        <i class="fa fa-bell"></i>  <span class="label label-warning">4</span>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
@@ -101,8 +101,8 @@
                                 </a>
                                 <div>
                                     <small class="pull-right text-navy">NEW user</small>
-                                    <strong> {{$user->name}} </strong> is registered to <strong>Farmavel</strong>. <br>
-                                    <small class="text-muted"> {{$user->created_at}} </small>
+                                    <strong> {{$lastest_user->name}} </strong> is registered to <strong>Farmavel</strong>. <br>
+                                    <small class="text-muted"> {{$lastest_user->created_at}} </small>
                                 </div>
                             </div>
                         </li>
@@ -165,13 +165,13 @@
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-success pull-right">Monthly</span>
-                        <h5>Views</h5>
+                        <span class="label label-success pull-right">in total</span>
+                        <h5>Users</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">386,200</h1>
+                        <h1 class="no-margins"> {{$user_count}} </h1>
                         <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                        <small>Total views</small>
+                        <small>Total users</small>
                     </div>
                 </div>
             </div>
