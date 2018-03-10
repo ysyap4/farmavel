@@ -189,13 +189,14 @@ class ManageController extends Controller
 
         $validator = Validator::make(Input::all(),$rules);
 
-        if($validator -> fails()){
+        if($validator -> fails())
+        {
 
             $messages = $validator->messages();
             
             return Redirect::to('manage_medicine_create')
             -> withErrors($validator)
-            ->withInput (Input::except('med_info'));;
+            ->withInput (Input::except('med_info'));
         }
         else
         {
