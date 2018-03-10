@@ -176,6 +176,7 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
+        <div class="form-horizontal">
         @for ($i=0; $i < sizeof($show_selected_user); $i++)
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
