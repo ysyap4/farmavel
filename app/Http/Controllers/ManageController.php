@@ -26,12 +26,14 @@ class ManageController extends Controller
         $user = users::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_user_index',array('user' => $user, 'lastest_user' => $lastest_user));
+        return View::make('manage_user_index', array('user' => $user, 'lastest_user' => $lastest_user));
     }
 
     public function manage_user_create()
     {
-        return View::make('manage_user_create');
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_user_create', array('lastest_user' => $lastest_user));
     }
 
     public function manage_user_create_process()
@@ -72,6 +74,7 @@ class ManageController extends Controller
     public function manage_user_edit()
     {
         $user = users::all();
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
 
         $selected_user = Input::get('selected_user');
 
@@ -84,7 +87,7 @@ class ManageController extends Controller
         }
 
         
-        return View::make('manage_user_edit')->with(array('edit_selected_user'=>$edit_selected_user));
+        return View::make('manage_user_edit')->with(array('edit_selected_user'=>$edit_selected_user, 'lastest_user' => $lastest_user));
     }
 
     public function manage_user_edit_process()
