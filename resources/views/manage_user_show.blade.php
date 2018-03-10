@@ -194,7 +194,7 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->name}}">
+                                        <div class="form-control"> {{$show_selected_user[$i]->name}} </div>
                                     </div>
                                 </div>
 
@@ -223,6 +223,12 @@
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
+
+                                <div class="form-group"><label class="col-sm-2 control-label">Register with</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->provider}}">
+                                    </div>
+                                </div>
 
                         </div>
                     </div>
