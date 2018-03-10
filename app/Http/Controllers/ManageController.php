@@ -180,7 +180,7 @@ class ManageController extends Controller
     {
          $rules = array(
             'med_name' => 'required',
-            'med_number' => 'required|unique:medicine|max:255',
+            'med_number' => 'required',
             'med_category' => 'required',
             'med_authenticity' => 'required',
             'med_ingredient' => 'required',
