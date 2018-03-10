@@ -183,8 +183,8 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Edit User ID {{$edit_selected_med[$i]->med_id}} </h5>
-                            <input type="hidden" name="edit_selected_med[]" value="{{ $edit_selected_med[$i]->med_id }}">
+                            <h5>Edit User ID {{$edit_selected_med[$i]->id}} </h5>
+                            <input type="hidden" name="edit_selected_med[]" value="{{ $edit_selected_med[$i]->id }}">
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>

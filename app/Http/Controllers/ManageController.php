@@ -163,7 +163,7 @@ class ManageController extends Controller
         $user = users::all();
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
-        $lastest_med = medicine::orderBy('med_id', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         return View::make('manage_medicine_index', array('med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
@@ -171,7 +171,7 @@ class ManageController extends Controller
     public function manage_medicine_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
-        $lastest_med = medicine::orderBy('med_id', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }

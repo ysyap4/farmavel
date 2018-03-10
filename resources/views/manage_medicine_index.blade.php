@@ -212,7 +212,7 @@
                         <?php $no = 1; ?>
                         @foreach($med as $value)
                     <tr>
-                        <td><input type="checkbox" name="selected_med[]" value="{{ $value->med_id }}" id="selected_med"></td>
+                        <td><input type="checkbox" name="selected_med[]" value="{{ $value->id }}" id="selected_med"></td>
                         <td><?php echo $no ?></td>
                         <td>{{ $value->med_number }}</td>
                         <td>{{ $value->med_name }}</td>

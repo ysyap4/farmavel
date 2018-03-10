@@ -182,7 +182,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Show User ID {{$show_selected_med[$i]->med_id}} </h5>
+                            <h5>Show User ID {{$show_selected_med[$i]->id}} </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
