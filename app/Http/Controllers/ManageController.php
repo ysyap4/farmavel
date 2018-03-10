@@ -24,8 +24,9 @@ class ManageController extends Controller
     public function manage_user_index()
     {
         $user = users::all();
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_user_index',array('user' => $user));
+        return View::make('manage_user_index',array('user' => $user, 'lastest_user' => $lastest_user));
     }
 
     public function manage_user_create()
