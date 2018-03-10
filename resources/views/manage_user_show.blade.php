@@ -193,7 +193,7 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        {{$show_selected_user[$i]->name}}
+                                        <p class="help-block">{{$show_selected_user[$i]->name}}</p>
                                     </div>
                                 </div>
 
@@ -201,7 +201,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
-                                        {{$show_selected_user[$i]->email}}
+                                        <p class="help-block">{{$show_selected_user[$i]->email}}</p>
                                     </div>
                                 </div>
 
@@ -209,7 +209,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        {{$show_selected_user[$i]->phone}}
+                                        <p class="help-block">{{$show_selected_user[$i]->phone}}</p>
                                     </div>
                                 </div>
 
@@ -217,11 +217,10 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
-                                        {{$show_selected_user[$i]->type}}
+                                        <p class="help-block">{{$show_selected_user[$i]->type}}</p>
                                     </div>
                                 </div>
 
-                                <div class="hr-line-dashed"></div>
 
                         </div>
                     </div>
