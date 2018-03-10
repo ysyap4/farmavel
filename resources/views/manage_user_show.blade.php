@@ -60,9 +60,10 @@
                     <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li class="active"><a href="{{URL::route('manage_user_index')}}">User</a></li>
-                        <li><a href="dashboard_2.html">Medicine</a></li>
-                        <li><a href="dashboard_3.html">Illegal Medicine Report</a></li>
-                        <li><a href="dashboard_4_1.html">Appointment</a></li>
+                        <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
+                        <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
+                        <li><a href="{{URL::route('manage_appointment_index')}}">Appointment</a></li>
+                        <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
                     </ul>
                 </li>
                 

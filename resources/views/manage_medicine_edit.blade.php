@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Add User</title>
+    <title>Farmavel | Edit Medicine</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -59,8 +59,8 @@
                 <li class="active">
                     <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="{{URL::route('manage_user_index')}}">User</a></li>
-                        <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
+                        <li><a href="{{URL::route('manage_user_index')}}">User</a></li>
+                        <li class="active"><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
                         <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
                         <li><a href="{{URL::route('manage_appointment_index')}}">Appointment</a></li>
                         <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
@@ -106,9 +106,9 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
                                 </a>
                                 <div class="media-body ">
-                                    <small class="pull-right text-navy">5h ago</small>
-                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                    <small class="pull-right text-navy">NEW medicine</small>
+                                    <strong> {{$lastest_med->med_name}} </strong> is added as <strong> {{$lastest_med->med_number}} </strong>. <br>
+                                    <small class="text-muted">{{$lastest_med->med_category}} category</small>
                                 </div>
                             </div>
                         </li>
@@ -135,7 +135,7 @@
                         </li>
                     </ul>
                 </li>
-
+                
                 <li>
                     <a href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
@@ -153,7 +153,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage User</h2>
+                    <h2>Manage Medicine</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -162,10 +162,10 @@
                             <a>Manage</a>
                         </li>
                         <li>
-                            <a>User</a>
+                            <a>Medicine</a>
                         </li>
                         <li class="active">
-                            <strong>Add</strong>
+                            <strong>Edit</strong>
                         </li>
                     </ol>
                 </div>
@@ -174,12 +174,17 @@
                 </div>
             </div>
 
+
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-                <div class="col-lg-8">
+    <form method="POST" class="form-horizontal" name="manage_medicine_edit_process" id="manage_medicine_edit_process" action="{{ URL::route ('manage_medicine_edit_process')}}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    @for ($i=0; $i < sizeof($edit_selected_med); $i++)
+                <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Add new User </h5>
+                            <h5>Edit User ID {{$edit_selected_med[$i]->med_id}} </h5>
+                            <input type="hidden" name="edit_selected_med[]" value="{{ $edit_selected_med[$i]->med_id }}">
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -190,93 +195,94 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
+                                <div class="form-group{{ $errors->has('med_number') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Number</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" value="{{ Input::old('name')}}">
-                                        @if ($errors->has('name'))
-                                            <p class="help-block">{{$errors ->first('name')}}</p>
+                                        <input type="text" id="med_number[]" class="form-control" name="med_number[]" placeholder="Medicine Number" value="{{$edit_selected_med[$i]->med_number}}">
+                                        @if ($errors->has('med_number'))
+                                            <p class="help-block">{{$errors ->first('med_number')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+                                <div class="form-group{{ $errors->has('med_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="Email" value="{{ Input::old('email')}}">
-                                        @if ($errors->has('email'))
-                                            <p class="help-block">{{$errors ->first('email')}}</p>
+                                        <input type="text" id="med_name[]" class="form-control" name="med_name[]" placeholder="Medicine Name" value="{{$edit_selected_med[$i]->med_name}}">
+                                        @if ($errors->has('med_name'))
+                                            <p class="help-block">{{$errors ->first('med_name')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
+                                <div class="form-group{{ $errors->has('med_category') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Category</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone" value="{{ Input::old('phone')}}">
-                                        @if ($errors->has('phone'))
-                                            <p class="help-block">{{$errors ->first('phone')}}</p>
+                                        <input type="text" id="med_category[]" class="form-control" name="med_category[]" placeholder="Category" value="{{$edit_selected_med[$i]->med_category}}">
+                                        @if ($errors->has('med_category'))
+                                            <p class="help-block">{{$errors ->first('med_category')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
+                                <div class="form-group{{ $errors->has('med_authenticity') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Authenticity</label>
 
                                     <div class="col-sm-10">
-                                        <input type="password" id="password" class="form-control" name="password" placeholder="Password" value="">
-                                        @if ($errors->has('password'))
-                                            <p class="help-block">{{$errors ->first('password')}}</p>
+                                        <input type="text" id="med_authenticity[]" class="form-control" name="med_authenticity[]" placeholder="Authenticity" value="{{$edit_selected_med[$i]->med_authenticity}}">
+                                        @if ($errors->has('med_authenticity'))
+                                            <p class="help-block">{{$errors ->first('med_authenticity')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
+                                <div class="form-group{{ $errors->has('med_ingredient') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Ingredient</label>
 
                                     <div class="col-sm-10">
-                                        <input type="password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
-                                        @if ($errors->has('c_password'))
-                                            <p class="help-block">{{$errors ->first('c_password')}}</p>
+                                        <input type="text" id="med_ingredient[]" class="form-control" name="med_ingredient[]" placeholder="Ingredient" value="{{$edit_selected_med[$i]->med_ingredient}}">
+                                        @if ($errors->has('med_ingredient'))
+                                            <p class="help-block">{{$errors ->first('med_ingredient')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
+                                <div class="form-group{{ $errors->has('med_info') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Info</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="type" class="form-control" name="type" placeholder="Type" value="{{ Input::old('type')}}">
-                                        @if ($errors->has('type'))
-                                            <p class="help-block">{{$errors ->first('type')}}</p>
+                                        <input type="text" id="med_info[]" class="form-control" name="med_info[]" placeholder="Medicine Info" value="{{$edit_selected_med[$i]->med_info}}">
+                                        @if ($errors->has('med_info'))
+                                            <p class="help-block">{{$errors ->first('med_info')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
-                                        <button class="btn btn-primary" type="submit">Add User</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
+            @endfor
+        <div class="form-group">
+            <div class="col-sm-12 col-sm-offset-1">
+                <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
+                <button class="btn btn-primary" type="submit">Update</button>
             </div>
         </div>
+
+            </div>
+        </div>
+        </form>
+
+
         <div class="footer">
             <div>
                 <strong>Copyright</strong> Farmavel &copy; 2018

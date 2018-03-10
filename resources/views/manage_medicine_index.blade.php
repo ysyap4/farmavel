@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Manage User</title>
+    <title>Farmavel | Manage Medicine</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -63,8 +63,8 @@
                 <li class="active">
                     <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="{{URL::route('manage_user_index')}}">User</a></li>
-                        <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
+                        <li><a href="{{URL::route('manage_user_index')}}">User</a></li>
+                        <li class="active"><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
                         <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
                         <li><a href="{{URL::route('manage_appointment_index')}}">Appointment</a></li>
                         <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
@@ -110,9 +110,9 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
                                 </a>
                                 <div class="media-body ">
-                                    <small class="pull-right text-navy">5h ago</small>
-                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                    <small class="pull-right text-navy">NEW medicine</small>
+                                    <strong> {{$lastest_med->med_name}} </strong> is added as <strong> {{$lastest_med->med_number}} </strong>. <br>
+                                    <small class="text-muted">{{$lastest_med->med_category}} category</small>
                                 </div>
                             </div>
                         </li>
@@ -157,7 +157,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage User</h2>
+                    <h2>Manage Medicine</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -166,7 +166,7 @@
                             <a>Manage</a>
                         </li>
                         <li class="active">
-                            <strong>User</strong>
+                            <strong>Medicine</strong>
                         </li>
                     </ol>
                 </div>
@@ -179,7 +179,7 @@
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>User Table</h5>
+                        <h5>Medicine Table</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -190,34 +190,36 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
-                        <a class="btn btn-primary" onClick="manage_user_show()">Show</a>
-                        <a class="btn btn-primary" onClick="manage_user_edit()">Edit</a>
-                        <button class="btn btn-primary" id="manage_user_delete" onClick="manage_user_delete()">Delete</button>
+                        <a class="btn btn-primary" href="{{URL::route('manage_medicine_create')}}">Add</a>
+                        <a class="btn btn-primary" onClick="manage_medicine_show()">Show</a>
+                        <a class="btn btn-primary" onClick="manage_medicine_edit()">Edit</a>
+                        <button class="btn btn-primary" id="manage_medicine_delete" onClick="manage_medicine_delete()">Delete</button>
                     <form method="GET" name="get_checkbox">
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
                     <tr>
                         <th>Select</th>
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Type</th>
-                        <th>Time Registered</th>
+                        <th>Index</th>
+                        <th>Medicine Number</th>
+                        <th>Medicine Name</th>
+                        <th>Category</th>
+                        <th>Authenticity</th>
+                        <th>Ingredient</th>
+                        <th>Info</th>
                     </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1; ?>
-                        @foreach($user as $value)
+                        @foreach($med as $value)
                     <tr>
-                        <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
+                        <td><input type="checkbox" name="selected_med[]" value="{{ $value->id }}" id="selected_med"></td>
                         <td><?php echo $no ?></td>
-                        <td>{{ $value->name }}</td>
-                        <td>{{ $value->email }}</td>
-                        <td>{{ $value->phone }}</td>
-                        <td>{{ $value->type }}</td>
-                        <td>{{ $value->created_at }}</td>
+                        <td>{{ $value->med_number }}</td>
+                        <td>{{ $value->med_name }}</td>
+                        <td>{{ $value->med_category }}</td>
+                        <td>{{ $value->med_authenticity }}</td>
+                        <td>{{ $value->med_ingredient }}</td>
+                        <td>{{ $value->med_info }}</td>
                     </tr>
                         <?php $no++; ?>
                         @endforeach
@@ -225,12 +227,13 @@
                     <tfoot>
                     <tr>
                         <th>Select</th>
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Type</th>
-                        <th>Time Registered</th>
+                        <th>Index</th>
+                        <th>Medicine Number</th>
+                        <th>Medicine Name</th>
+                        <th>Category</th>
+                        <th>Authenticity</th>
+                        <th>Ingredient</th>
+                        <th>Info</th>
                     </tr>
                     </tfoot>
                     </table>
@@ -317,51 +320,51 @@
     </script>
 
     <script type="text/javascript">
-    function manage_user_show()
+    function manage_medicine_show()
     {
         var x =[];
 
         if (this.checked)
         {
-          $('#selected_user').removeAttr('disabled');
+          $('#selected_med').removeAttr('disabled');
           $('#allBlogs :checked').each(function()
           {
             x.push($(this).val());
           });
         }
 
-        x = document.getElementById("selected_user").value;
-        document.get_checkbox.action = "{{URL::route('manage_user_show')}}";
+        x = document.getElementById("selected_med").value;
+        document.get_checkbox.action = "{{URL::route('manage_medicine_show')}}";
         document.get_checkbox.submit();
     }
     </script>
 
     <script type="text/javascript">
-    function manage_user_edit()
+    function manage_medicine_edit()
     {
         var x =[];
 
         if (this.checked)
         {
-          $('#selected_user').removeAttr('disabled');
+          $('#selected_med').removeAttr('disabled');
           $('#allBlogs :checked').each(function()
           {
             x.push($(this).val());
           });
         }
 
-        x = document.getElementById("selected_user").value;
-        document.get_checkbox.action = "{{URL::route('manage_user_edit')}}";
+        x = document.getElementById("selected_med").value;
+        document.get_checkbox.action = "{{URL::route('manage_medicine_edit')}}";
         document.get_checkbox.submit();
     }
     </script>
 
     <script type="text/javascript">
-    function manage_user_delete()
+    function manage_medicine_delete()
     {
         var x =[];
 
-        $('button#manage_user_delete').on('click',
+        $('button#manage_medicine_delete').on('click',
             function(){
               swal({
                title: "Are you sure?",
@@ -390,15 +393,15 @@
         
                                  if (this.checked)
                 {
-                  $('#selected_user').removeAttr('disabled');
+                  $('#selected_med').removeAttr('disabled');
                   $('#allBlogs :checked').each(function()
                   {
                     x.push($(this).val());
                   });
                 }
         
-                x = document.getElementById("selected_user").value;
-                document.get_checkbox.action = "{{URL::route('manage_user_delete')}}";
+                x = document.getElementById("selected_med").value;
+                document.get_checkbox.action = "{{URL::route('manage_medicine_delete')}}";
                 document.get_checkbox.submit();
                          
            });
