@@ -28,6 +28,6 @@ class HomeController extends Controller
     {
         $user = users::all(); //orderBy('created_at', 'desc')->first();
 
-        return View::make('user_index',array('user' => $user));
+        return View::make('home',array('user' => $user));
     }
 }
