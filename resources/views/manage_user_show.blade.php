@@ -176,11 +176,11 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-        @for ($i=0; $i < sizeof($edit_selected_user); $i++)
+        @for ($i=0; $i < sizeof($show_selected_user); $i++)
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Show User ID {{$edit_selected_user[$i]->id}} </h5>
+                            <h5>Show User ID {{$show_selected_user[$i]->id}} </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -193,7 +193,7 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        {{$edit_selected_user[$i]->name}}
+                                        {{$show_selected_user[$i]->name}}
                                     </div>
                                 </div>
 
@@ -201,7 +201,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
-                                        {{$edit_selected_user[$i]->email}}
+                                        {{$show_selected_user[$i]->email}}
                                     </div>
                                 </div>
 
@@ -209,7 +209,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        {{$edit_selected_user[$i]->phone}}
+                                        {{$show_selected_user[$i]->phone}}
                                     </div>
                                 </div>
 
@@ -217,7 +217,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
-                                        {{$edit_selected_user[$i]->type}}
+                                        {{$show_selected_user[$i]->type}}
                                     </div>
                                 </div>
 
