@@ -18,7 +18,7 @@ class CreateReportTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('rep_medicine');
             $table->string('rep_location');
-            $table->string('rep_info');
+            $table->string('rep_info')->nullable();;
         });
     }
 
