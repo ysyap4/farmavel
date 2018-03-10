@@ -368,7 +368,7 @@
             function(){
               swal({
                title: "Are you sure?",
-               text: "You will not be able to recover this user!",
+               text: "You will not be able to recover this medicine!",
                type: "warning",
                html: true,
                showCancelButton: true,

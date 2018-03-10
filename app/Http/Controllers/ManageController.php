@@ -49,7 +49,8 @@ class ManageController extends Controller
 
         $validator = Validator::make(Input::all(),$rules);
 
-        if($validator -> fails()){
+        if($validator->fails())
+        {
 
             $messages = $validator->messages();
             
@@ -189,7 +190,7 @@ class ManageController extends Controller
 
         $validator = Validator::make(Input::all(),$rules);
 
-        if($validator -> fails())
+        if($validator->fails())
         {
 
             $messages = $validator->messages();
@@ -201,8 +202,8 @@ class ManageController extends Controller
         else
         {
             $add = new medicine;
-            $add->med_name = Input::get('med_name');
             $add->med_number = Input::get('med_number');
+            $add->med_name = Input::get('med_name');
             $add->med_category = Input::get('med_category');
             $add->med_authenticity = Input::get('med_authenticity');
             $add->med_ingredient = Input::get('med_ingredient');
