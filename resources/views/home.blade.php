@@ -59,9 +59,9 @@
                     <ul class="nav nav-second-level">
                         <li><a href="{{URL::route('manage_user_index')}}">User</a></li>
                         <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
-                        <!-- <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
+                        <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
                         <li><a href="{{URL::route('manage_appointment_index')}}">Appointment</a></li>
-                        <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li> -->
+                        <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
                     </ul>
                 </li>
                 <li>
@@ -108,18 +108,18 @@
                             </div>
                         </li>
                         <li class="divider"></li>
-<!--                         <li>
+                        <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
                                 </a>
-                                <div class="media-body ">
-                                    <small class="pull-right text-navy">NEW medicine</small>
-                                    <strong> {{$lastest_med->med_name}} </strong> is added as <strong> {{$lastest_med->med_number}} </strong>. <br>
-                                    <small class="text-muted">{{$lastest_med->med_category}} category</small>
+                                <div>
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                                 </div>
                             </div>
-                        </li> -->
+                        </li>
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
