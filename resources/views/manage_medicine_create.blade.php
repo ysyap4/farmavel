@@ -100,7 +100,7 @@
                             </div>
                         </li>
                         <li class="divider"></li>
-                        <li>
+<!--                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
@@ -111,7 +111,7 @@
                                     <small class="text-muted">{{$lastest_med->med_category}} category</small>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
