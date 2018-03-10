@@ -59,9 +59,9 @@
                     <ul class="nav nav-second-level">
                         <li><a href="{{URL::route('manage_user_index')}}">User</a></li>
                         <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
-                        <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
+                        <!-- <li><a href="{{URL::route('manage_report_index')}}">Illegal Medicine Report</a></li>
                         <li><a href="{{URL::route('manage_appointment_index')}}">Appointment</a></li>
-                        <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
+                        <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li> -->
                     </ul>
                 </li>
                 <li>
