@@ -165,7 +165,7 @@ class ManageController extends Controller
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('med_id', 'desc')->first();
 
-        return View::make('manage_medicine_index', array('medicine' => $med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_medicine_index', array('med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
     public function manage_medicine_create()
@@ -179,11 +179,10 @@ class ManageController extends Controller
     public function manage_medicine_create_process()
     {
          $rules = array(
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required',
-            'password' => 'required',
-            'c_password' => 'required|same:password',
+            'med_name' => 'required',
+            'med_number' => 'required|unique:medicine',
+            'med_category' => 'required',
+            'med_authenticity' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
@@ -193,21 +192,21 @@ class ManageController extends Controller
             $messages = $validator->messages();
             
             return Redirect::to('manage_medicine_create')
-            -> withErrors($validator)
-            ->withInput (Input::except('password','c_password'));
+            -> withErrors($validator);
         }
         else
         {
-            $add = new users;
-            $add->name = Input::get('name');
-            $add->email = Input::get('email');
-            $add->phone = Input::get('phone');
-            $add->password = Hash::make(Input::get('password'));
-            $add->type = Input::get('type');;
+            $add = new medicine;
+            $add->med_name = Input::get('med_name');
+            $add->med_number = Input::get('med_number');
+            $add->med_category = Input::get('med_category');
+            $add->med_authenticity = Input::get('med_authenticity');
+            $add->med_ingredient = Input::get('med_ingredient');
+            $add->med_info = Input::get('med_info');
 
             $add->save();
 
-            Session::flash('message','Successfully created user!');
+            Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
         }
     }

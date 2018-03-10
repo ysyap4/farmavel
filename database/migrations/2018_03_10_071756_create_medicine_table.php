@@ -17,10 +17,11 @@ class CreateMedicineTable extends Migration
             $table->increments('med_id');
             $table->string('med_number')->unique();
             $table->string('med_name');
-            $table->string('med_ingredient');
-            $table->string('med_info');
             $table->string('med_category');
             $table->string('med_authenticity');
+            $table->string('med_ingredient');
+            $table->string('med_info');
+
         });
     }
 
