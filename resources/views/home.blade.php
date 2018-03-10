@@ -100,9 +100,9 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a7.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right">46h ago</small>
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                    <small class="pull-right text-navy">NEW user</small>
+                                    <strong>{{$user->name}}</strong> is registered to <strong>Farmavel</strong>. <br>
+                                    <small class="text-muted">{{$user->created_at}}</small>
                                 </div>
                             </div>
                         </li>
