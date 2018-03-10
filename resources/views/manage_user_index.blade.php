@@ -196,39 +196,39 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
                     <tr>
-                        <th class="center">Select</th>
-                        <th class="center">Number</th>
-                        <th class="center">Name</th>
-                        <th class="center">Email</th>
-                        <th class="center">Phone</th>
-                        <th class="center">Type</th>
-                        <th class="center">Time Registered</th>
+                        <th>Select</th>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                        <th>Time Registered</th>
                     </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1; ?>
                         @foreach($user as $value)
                     <tr>
-                        <td class="center"><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
-                        <td class="center"><?php echo $no ?></td>
+                        <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
+                        <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
-                        <td class="center">{{ $value->phone }}</td>
-                        <td class="center">{{ $value->type }}</td>
-                        <td class="center">{{ $value->created_at }}</td>
+                        <td>{{ $value->phone }}</td>
+                        <td>{{ $value->type }}</td>
+                        <td>{{ $value->created_at }}</td>
                     </tr>
                         <?php $no++; ?>
                         @endforeach
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th class="center">Select</th>
-                        <th class="center">Number</th>
-                        <th class="center">Name</th>
-                        <th class="center">Email</th>
-                        <th class="center">Phone</th>
-                        <th class="center">Type</th>
-                        <th class="center">Time Registered</th>
+                        <th>Select</th>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                        <th>Time Registered</th>
                     </tr>
                     </tfoot>
                     </table>
