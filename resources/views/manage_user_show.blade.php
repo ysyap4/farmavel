@@ -193,7 +193,7 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <p class="help-block">{{$show_selected_user[$i]->name}}</p>
+                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->name}}">
                                     </div>
                                 </div>
 
@@ -201,7 +201,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
-                                        <p class="help-block">{{$show_selected_user[$i]->email}}</p>
+                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->email}}">
                                     </div>
                                 </div>
 
@@ -209,7 +209,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <p class="help-block">{{$show_selected_user[$i]->phone}}</p>
+                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->phone}}">
                                     </div>
                                 </div>
 
@@ -217,10 +217,11 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
-                                        <p class="help-block">{{$show_selected_user[$i]->type}}</p>
+                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$show_selected_user[$i]->type}}">
                                     </div>
                                 </div>
 
+                                <div class="hr-line-dashed"></div>
 
                         </div>
                     </div>
