@@ -201,6 +201,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Type</th>
                         <th>Time Registered</th>
                     </tr>
                     </thead>
@@ -212,6 +213,7 @@
                         <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
+                        <td>{{ $value->type }}</td>
                         <td class="center">{{ $value->phone }}</td>
                         <td class="center">{{ $value->created_at }}</td>
                     </tr>
