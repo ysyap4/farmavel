@@ -63,7 +63,7 @@ class ManageController extends Controller
             $add->email = Input::get('email');
             $add->phone = Input::get('phone');
             $add->password = Hash::make(Input::get('password'));
-            $add->type = 'client';
+            $add->type = Input::get('type');;
 
             $add->save();
 
