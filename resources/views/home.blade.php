@@ -165,12 +165,11 @@
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-success pull-right">in total</span>
+                        <span class="label label-success pull-right">in system</span>
                         <h5>Users</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"> {{$user_count}} </h1>
-                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                        <h1 class="no-margins font-bold text-success"> {{$user_count}} </h1>
                         <small>Total users</small>
                     </div>
                 </div>
