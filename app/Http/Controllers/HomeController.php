@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
-        $lastest_med = medicine::orderBy('med_id', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         $user_count = users::count();
 
