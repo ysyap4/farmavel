@@ -199,7 +199,6 @@
                     <tr>
                         <th>Select</th>
                         <th>Number</th>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
@@ -213,7 +212,6 @@
                     <tr>
                         <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
                         <td><?php echo $no ?></td>
-                        <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->phone }}</td>
@@ -227,7 +225,6 @@
                     <tr>
                         <th>Select</th>
                         <th>Number</th>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
