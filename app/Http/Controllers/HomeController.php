@@ -26,8 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = users::all();
+        $user = users::orderBy('created_at', 'desc')->first();
 
-        return View::make('home',array('user' => $user));
+        return View::make('user_index',array('user' => $user));
     }
 }
