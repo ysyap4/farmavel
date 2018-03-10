@@ -63,6 +63,7 @@ class ManageController extends Controller
             $add->email = Input::get('email');
             $add->phone = Input::get('phone');
             $add->password = Hash::make(Input::get('password'));
+            $add->type = 'client';
 
             $add->save();
 
@@ -98,6 +99,7 @@ class ManageController extends Controller
         $email = Input::get('email');
         $phone = Input::get('phone');
         $password = Input::get('password');
+        $type = Input::get('type');
         $edit = array();
 
         for ($i=0; $i < sizeof($edit_selected_user); $i++)
@@ -108,6 +110,7 @@ class ManageController extends Controller
             $edit[$i]->email = $email[$i];
             $edit[$i]->phone = $phone[$i];
             $edit[$i]->password = Hash::make($password[$i]);
+            $edit[$i]->type = $type[$i];
 
             $edit[$i]->save();
         }
