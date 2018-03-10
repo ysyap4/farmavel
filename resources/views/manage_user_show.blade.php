@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Add User</title>
+    <title>Farmavel | Show User</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -134,7 +134,7 @@
                         </li>
                     </ul>
                 </li>
-
+                
                 <li>
                     <a href="{{ url('/logout') }}"
                         onclick="event.preventDefault();
@@ -164,7 +164,7 @@
                             <a>User</a>
                         </li>
                         <li class="active">
-                            <strong>Add</strong>
+                            <strong>Show</strong>
                         </li>
                     </ol>
                 </div>
@@ -173,12 +173,14 @@
                 </div>
             </div>
 
+
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-                <div class="col-lg-8">
+        @for ($i=0; $i < sizeof($edit_selected_user); $i++)
+                <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Add new User </h5>
+                            <h5>Show User ID {{$edit_selected_user[$i]->id}} </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -189,93 +191,53 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
-
+                                <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" value="{{ Input::old('name')}}">
-                                        @if ($errors->has('name'))
-                                            <p class="help-block">{{$errors ->first('name')}}</p>
-                                        @endif
+                                        {{$edit_selected_user[$i]->name}}
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
-
+                                <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="Email" value="{{ Input::old('email')}}">
-                                        @if ($errors->has('email'))
-                                            <p class="help-block">{{$errors ->first('email')}}</p>
-                                        @endif
+                                        {{$edit_selected_user[$i]->email}}
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
-
+                                <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone" value="{{ Input::old('phone')}}">
-                                        @if ($errors->has('phone'))
-                                            <p class="help-block">{{$errors ->first('phone')}}</p>
-                                        @endif
+                                        {{$edit_selected_user[$i]->phone}}
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
-
+                                <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
-                                        <input type="password" id="password" class="form-control" name="password" placeholder="Password" value="">
-                                        @if ($errors->has('password'))
-                                            <p class="help-block">{{$errors ->first('password')}}</p>
-                                        @endif
+                                        {{$edit_selected_user[$i]->type}}
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
-                                        @if ($errors->has('c_password'))
-                                            <p class="help-block">{{$errors ->first('c_password')}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" id="type" class="form-control" name="type" placeholder="Type" value="{{ Input::old('type')}}">
-                                        @if ($errors->has('type'))
-                                            <p class="help-block">{{$errors ->first('type')}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Cancel</a>
-                                        <button class="btn btn-primary" type="submit">Add User</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
+            @endfor
+        <div class="form-group">
+            <div class="col-sm-12 col-sm-offset-1">
+                <a class="btn btn-white" href="{{ url('/manage_user_index') }}">Back</a>
             </div>
         </div>
+
+            </div>
+        </div>
+
+
+
         <div class="footer">
             <div>
                 <strong>Copyright</strong> Farmavel &copy; 2018

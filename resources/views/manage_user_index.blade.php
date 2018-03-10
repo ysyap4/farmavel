@@ -190,6 +190,7 @@
                     </div>
                     <div class="ibox-content">
                         <a class="btn btn-primary" href="{{URL::route('manage_user_create')}}">Add</a>
+                        <a class="btn btn-primary" onClick="manage_user_show()">Show</a>
                         <a class="btn btn-primary" onClick="manage_user_edit()">Edit</a>
                         <button class="btn btn-primary" id="manage_user_delete" onClick="manage_user_delete()">Delete</button>
                     <form method="GET" name="get_checkbox">
@@ -312,6 +313,26 @@
                 "New row" ] );
 
         }
+    </script>
+
+    <script type="text/javascript">
+    function manage_user_show()
+    {
+        var x =[];
+
+        if (this.checked)
+        {
+          $('#selected_user').removeAttr('disabled');
+          $('#allBlogs :checked').each(function()
+          {
+            x.push($(this).val());
+          });
+        }
+
+        x = document.getElementById("selected_user").value;
+        document.get_checkbox.action = "{{URL::route('manage_user_show')}}";
+        document.get_checkbox.submit();
+    }
     </script>
 
     <script type="text/javascript">
