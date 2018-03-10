@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use View;
 use App\Model\users;
+use App\Model\medicine;
 
 class HomeController extends Controller
 {
