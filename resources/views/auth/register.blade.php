@@ -27,7 +27,7 @@
             <h3>Welcome to Farmavel Administration</h3>
             <form class="m-t" role="form" method="POST" action="{{ route('register') }}">
             {{ csrf_field() }}
-            <input type="hidden" class="form-control" id="type" placeholder="Email" name="type" value="0" required>
+            <input type="hidden" class="form-control" id="type" name="type" value="0">
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" value="{{ old('name') }}" required autofocus>
