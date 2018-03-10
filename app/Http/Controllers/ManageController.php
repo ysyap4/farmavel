@@ -183,6 +183,8 @@ class ManageController extends Controller
             'med_number' => 'required|unique:medicine',
             'med_category' => 'required',
             'med_authenticity' => 'required',
+            'med_ingredient' => 'required',
+            'med_info' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
