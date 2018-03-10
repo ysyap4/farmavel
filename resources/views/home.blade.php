@@ -170,6 +170,8 @@
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success"> {{$user_count}} </h1>
+                        <h1 class="no-margins stat-percent font-bold text-success"> {{$user_count}} </h1>
+                        <small>Total users</small>
                         <small>Total users</small>
                     </div>
                 </div>
