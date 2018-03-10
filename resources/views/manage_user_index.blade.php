@@ -97,8 +97,8 @@
                                 </a>
                                 <div class="media-body">
                                     <small class="pull-right text-navy">NEW user</small>
-                                    <strong>{{ $user->name }}</strong> is registered to <strong>Farmavel</strong>. <br>
-                                    <small class="text-muted">{{ $user->created_at }}</small>
+                                    <strong>{{ $user[1]->name }}</strong> is registered to <strong>Farmavel</strong>. <br>
+                                    <small class="text-muted">{{ $user[1]->created_at }}</small>
                                 </div>
                             </div>
                         </li>
