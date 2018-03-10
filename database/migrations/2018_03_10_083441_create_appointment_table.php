@@ -18,7 +18,7 @@ class CreateAppointmentTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('med_id')->unsigned();
-            $table->foreign('med_id')->references('med_id')->on('medicine');
+            $table->foreign('med_id')->references('id')->on('medicine');
             $table->string('app_date');
             $table->string('app_time');
             $table->string('app_location');
