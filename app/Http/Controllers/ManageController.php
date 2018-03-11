@@ -65,7 +65,7 @@ class ManageController extends Controller
             $add->email = Input::get('email');
             $add->phone = Input::get('phone');
             $add->password = Hash::make(Input::get('password'));
-            $add->type = Input::get('type');;
+            $add->type = Input::get('type');
 
             $add->save();
 
@@ -179,41 +179,41 @@ class ManageController extends Controller
 
     public function manage_medicine_create_process()
     {
-        //  $rules = array(
-        //     'med_name' => 'required',
-        //     'med_number' => 'required',
-        //     'med_category' => 'required',
-        //     'med_authenticity' => 'required',
-        //     'med_ingredient' => 'required',
-        //     'med_info' => 'required',
-        //     );
+         $rules = array(
+            'med_name' => 'required',
+            'med_number' => 'required',
+            'med_category' => 'required',
+            'med_authenticity' => 'required',
+            'med_ingredient' => 'required',
+            'med_info' => 'required',
+            );
 
-        // $validator = Validator::make(Input::all(),$rules);
+        $validator = Validator::make(Input::all(),$rules);
 
-        // if($validator->fails())
-        // {
+        if($validator->fails())
+        {
 
-        //     $messages = $validator->messages();
+            $messages = $validator->messages();
             
-        //     return Redirect::to('manage_medicine_create')
-        //     -> withErrors($validator)
-        //     ->withInput (Input::except('med_info'));
-        // }
-        // else
-        // {
-        //     $add = new medicine;
-        //     $add->med_number = Input::get('med_number');
-        //     $add->med_name = Input::get('med_name');
-        //     $add->med_category = Input::get('med_category');
-        //     $add->med_authenticity = Input::get('med_authenticity');
-        //     $add->med_ingredient = Input::get('med_ingredient');
-        //     $add->med_info = Input::get('med_info');
+            return Redirect::to('manage_medicine_create')
+            -> withErrors($validator)
+            ->withInput (Input::except('med_info'));
+        }
+        else
+        {
+            $add = new medicine;
+            $add->med_number = Input::get('med_number');
+            $add->med_name = Input::get('med_name');
+            $add->med_category = Input::get('med_category');
+            $add->med_authenticity = Input::get('med_authenticity');
+            $add->med_ingredient = Input::get('med_ingredient');
+            $add->med_info = Input::get('med_info');
 
-        //     $add->save();
+            $add->save();
 
             Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
-        //}
+        }
     }
 
     public function manage_medicine_show()
