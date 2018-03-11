@@ -402,7 +402,7 @@ class ManageController extends Controller
         $edit_selected_rep = array();
         $get_selected_user = array();
 
-        for ($i=0; $i < sizeof($selected_med); $i++)
+        for ($i=0; $i < sizeof($selected_rep); $i++)
         {
             $edit_selected_rep[$i] = '';
             $edit_selected_rep[$i] = report::find($selected_rep[$i]);
