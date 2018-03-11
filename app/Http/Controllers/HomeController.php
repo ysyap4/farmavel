@@ -31,7 +31,8 @@ class HomeController extends Controller
         $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         $user_count = users::count();
+        $med_count = medicine::count();
 
-        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count));
+        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count));
     }
 }
