@@ -245,7 +245,7 @@
             @endfor
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-1">
-                <a class="btn btn-white" href="{{ url('/manage_medicine_index') }}">Back</a>
+                <a class="btn btn-white" href="{{ url()->previous() }}">Back</a>
             </div>
         </div>
 

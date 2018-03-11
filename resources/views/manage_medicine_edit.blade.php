@@ -273,7 +273,7 @@
             @endfor
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-1">
-                <a class="btn btn-white" href="{{ url('/manage_medicine_index') }}">Cancel</a>
+                <a class="btn btn-white" href="{{ url()->previous() }}">Cancel</a>
                 <button class="btn btn-primary" type="submit">Update</button>
             </div>
         </div>

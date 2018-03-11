@@ -211,7 +211,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_rep[$i]->user_id}} </div>
+                                        <div class="form-control"> {{$show_selected_rep[$i]->user_name}} </div>
                                     </div>
                                 </div>
 
@@ -229,7 +229,7 @@
             @endfor
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-1">
-                <a class="btn btn-white" href="{{ url('/manage_report_index') }}">Back</a>
+                <a class="btn btn-white" href="{{ url()->previous() }}">Back</a>
             </div>
         </div>
 

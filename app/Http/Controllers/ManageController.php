@@ -400,14 +400,16 @@ class ManageController extends Controller
         $selected_rep = Input::get('selected_rep');
 
         $edit_selected_rep = array();
+        $get_selected_user = array();
 
         for ($i=0; $i < sizeof($selected_med); $i++)
         {
             $edit_selected_rep[$i] = '';
             $edit_selected_rep[$i] = report::find($selected_rep[$i]);
+            $get_selected_user[$i] = users::where('id', $selected_rep[$i])->first();
         }
         
-        return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
     public function manage_report_edit_process()
