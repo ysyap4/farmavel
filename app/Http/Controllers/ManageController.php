@@ -302,5 +302,149 @@ class ManageController extends Controller
         return Redirect::to('manage_medicine_index');
     }
 
+
+
+
+
+
+
+
+    public function manage_report_index()
+    {
+        $report = report::all();
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_report_index', array('rep' => $report, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_medicine_create()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_medicine_create_process()
+    {
+        $rules = array(
+            'med_number' => 'required',
+            'med_name' => 'required',
+            'med_category' => 'required',
+            'med_authenticity' => 'required',
+            'med_ingredient' => 'required',
+            'med_info' => 'required',
+            );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        if($validator->fails())
+        {
+
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_medicine_create')
+            -> withErrors($validator)
+            ->withInput (Input::except('med_number'));
+        }
+        else
+        {
+            $add = new medicine;
+            $add->med_number = Input::get('med_number');
+            $add->med_name = Input::get('med_name');
+            $add->med_category = Input::get('med_category');
+            $add->med_authenticity = Input::get('med_authenticity');
+            $add->med_ingredient = Input::get('med_ingredient');
+            $add->med_info = Input::get('med_info');
+
+            $add->save();
+
+            Session::flash('message','Successfully created medicine!');
+            return Redirect::to('manage_medicine_index');
+        }
+    }
+
+    public function manage_medicine_show()
+    {
+        $medicine = medicine::all();
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_med = Input::get('selected_med');
+
+        $show_selected_med = array();
+
+        for ($i=0; $i < sizeof($selected_med); $i++)
+        {
+            $show_selected_med[$i] = '';
+            $show_selected_med[$i] = medicine::find($selected_med[$i]);
+        }
+
+        return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_medicine_edit()
+    {
+        $medicine = medicine::all();
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_med = Input::get('selected_med');
+
+        $edit_selected_med = array();
+
+        for ($i=0; $i < sizeof($selected_med); $i++)
+        {
+            $edit_selected_med[$i] = '';
+            $edit_selected_med[$i] = medicine::find($selected_med[$i]);
+        }
+
+        
+        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_medicine_edit_process()
+    {
+        $medicine = medicine::all();
+        $edit_selected_med = Input::get('edit_selected_med');
+        $med_number = Input::get('med_number');
+        $med_name = Input::get('med_name');
+        $med_category = Input::get('med_category');
+        $med_authenticity = Input::get('med_authenticity');
+        $med_ingredient = Input::get('med_ingredient');
+        $med_info = Input::get('med_info');
+        $edit = array();
+
+        for ($i=0; $i < sizeof($edit_selected_med); $i++)
+        {
+            $edit[$i] = '';
+            $edit[$i] = medicine::find($edit_selected_med[$i]);
+            $edit[$i]->med_number = $med_number[$i];
+            $edit[$i]->med_name = $med_name[$i];
+            $edit[$i]->med_category = $med_category[$i];
+            $edit[$i]->med_authenticity = $med_authenticity[$i];
+            $edit[$i]->med_ingredient = $med_ingredient[$i];
+            $edit[$i]->med_info = $med_info[$i];
+
+            $edit[$i]->save();
+        }
+
+        Session::flash('message','Successfully updated medicine(s)!');
+        return Redirect::to('manage_medicine_index');
+    }
+
+    public function manage_medicine_delete()
+    {
+        $selected_med = Input::get('selected_med');
+
+        for ($i=0; $i < sizeof($selected_med); $i++)
+        {
+            $delete_selected_med[$i] = medicine::where('id',$selected_med[$i])->delete();
+        }
+
+        Session::flash('message','Successfully deleted medicine(s)!');
+        return Redirect::to('manage_medicine_index');
+    }
 }
 
