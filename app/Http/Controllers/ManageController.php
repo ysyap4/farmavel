@@ -210,7 +210,7 @@ class ManageController extends Controller
             $add->med_info = Input::get('med_info');
 
             $add->save();
-            dd($add);
+            var_dump($add);
 
             Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
