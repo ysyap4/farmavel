@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Show Medicine</title>
+    <title>Farmavel | Show Report</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -153,7 +153,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage Medicine</h2>
+                    <h2>Manage Report</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -162,7 +162,7 @@
                             <a>Manage</a>
                         </li>
                         <li>
-                            <a>Medicine</a>
+                            <a>Report</a>
                         </li>
                         <li class="active">
                             <strong>Show</strong>
@@ -178,11 +178,11 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
         <div class="form-horizontal">
-        @for ($i=0; $i < sizeof($show_selected_med); $i++)
+        @for ($i=0; $i < sizeof($show_selected_rep); $i++)
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Show User ID {{$show_selected_med[$i]->id}} </h5>
+                            <h5>Show Report ID {{$show_selected_rep[$i]->id}} </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -193,49 +193,33 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                                <div class="form-group"><label class="col-sm-2 control-label">Medicine Number</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Reported Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_number}} </div>
+                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_medicine}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Medicine Name</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Reported Location</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_name}} </div>
+                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_location}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_category}} </div>
+                                        <div class="form-control"> {{$show_selected_rep[$i]->user_id}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Authenticity</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Report Info</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_authenticity}} </div>
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group"><label class="col-sm-2 control-label">Ingredient</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_ingredient}} </div>
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group"><label class="col-sm-2 control-label">Medicine Info</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_info}} </div>
+                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_info}} </div>
                                     </div>
                                 </div>
 
@@ -245,7 +229,7 @@
             @endfor
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-1">
-                <a class="btn btn-white" href="{{ url('/manage_medicine_index') }}">Back</a>
+                <a class="btn btn-white" href="{{ url('/manage_report_index') }}">Back</a>
             </div>
         </div>
 

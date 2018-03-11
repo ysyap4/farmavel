@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Edit Medicine</title>
+    <title>Farmavel | Edit Report</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -153,7 +153,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage Medicine</h2>
+                    <h2>Manage Report</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -162,7 +162,7 @@
                             <a>Manage</a>
                         </li>
                         <li>
-                            <a>Medicine</a>
+                            <a>Report</a>
                         </li>
                         <li class="active">
                             <strong>Edit</strong>
@@ -177,14 +177,14 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-    <form method="POST" class="form-horizontal" name="manage_medicine_edit_process" id="manage_medicine_edit_process" action="{{ URL::route ('manage_medicine_edit_process')}}">
+    <form method="POST" class="form-horizontal" name="manage_report_edit_process" id="manage_report_edit_process" action="{{ URL::route ('manage_report_edit_process')}}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    @for ($i=0; $i < sizeof($edit_selected_med); $i++)
+    @for ($i=0; $i < sizeof($edit_selected_rep); $i++)
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Edit User ID {{$edit_selected_med[$i]->id}} </h5>
-                            <input type="hidden" name="edit_selected_med[]" value="{{ $edit_selected_med[$i]->id }}">
+                            <h5>Edit Report ID {{$edit_selected_rep[$i]->id}} </h5>
+                            <input type="hidden" name="edit_selected_rep[]" value="{{ $edit_selected_rep[$i]->id }}">
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -195,72 +195,48 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                                <div class="form-group{{ $errors->has('med_number') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Number</label>
+                                <div class="form-group{{ $errors->has('rep_medicine') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Reported Medicine Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_number[]" class="form-control" name="med_number[]" placeholder="Medicine Number" value="{{$edit_selected_med[$i]->med_number}}">
-                                        @if ($errors->has('med_number'))
-                                            <p class="help-block">{{$errors ->first('med_number')}}</p>
+                                        <input type="text" id="rep_medicine[]" class="form-control" name="rep_medicine[]" placeholder="Reported Medicine Name" value="{{$edit_selected_rep[$i]->rep_medicine}}">
+                                        @if ($errors->has('rep_medicine'))
+                                            <p class="help-block">{{$errors ->first('rep_medicine')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Name</label>
+                                <div class="form-group{{ $errors->has('rep_location') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Report Location</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_name[]" class="form-control" name="med_name[]" placeholder="Medicine Name" value="{{$edit_selected_med[$i]->med_name}}">
-                                        @if ($errors->has('med_name'))
-                                            <p class="help-block">{{$errors ->first('med_name')}}</p>
+                                        <input type="text" id="rep_location[]" class="form-control" name="rep_location[]" placeholder="Report Location" value="{{$edit_selected_rep[$i]->rep_location}}">
+                                        @if ($errors->has('rep_location'))
+                                            <p class="help-block">{{$errors ->first('rep_location')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_category') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Category</label>
+                                <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Reported by</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_category[]" class="form-control" name="med_category[]" placeholder="Category" value="{{$edit_selected_med[$i]->med_category}}">
-                                        @if ($errors->has('med_category'))
-                                            <p class="help-block">{{$errors ->first('med_category')}}</p>
+                                        <input type="text" id="user_id[]" class="form-control" name="user_id[]" placeholder="Reported by" value="{{$edit_selected_rep[$i]->user_id}}">
+                                        @if ($errors->has('user_id'))
+                                            <p class="help-block">{{$errors ->first('user_id')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_authenticity') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Authenticity</label>
+                                <div class="form-group{{ $errors->has('rep_info') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Report Info</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_authenticity[]" class="form-control" name="med_authenticity[]" placeholder="Authenticity" value="{{$edit_selected_med[$i]->med_authenticity}}">
-                                        @if ($errors->has('med_authenticity'))
-                                            <p class="help-block">{{$errors ->first('med_authenticity')}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group{{ $errors->has('med_ingredient') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Ingredient</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" id="med_ingredient[]" class="form-control" name="med_ingredient[]" placeholder="Ingredient" value="{{$edit_selected_med[$i]->med_ingredient}}">
-                                        @if ($errors->has('med_ingredient'))
-                                            <p class="help-block">{{$errors ->first('med_ingredient')}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group{{ $errors->has('med_info') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Info</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="text" id="med_info[]" class="form-control" name="med_info[]" placeholder="Medicine Info" value="{{$edit_selected_med[$i]->med_info}}">
-                                        @if ($errors->has('med_info'))
-                                            <p class="help-block">{{$errors ->first('med_info')}}</p>
+                                        <input type="text" id="rep_info[]" class="form-control" name="rep_info[]" placeholder="Report Info" value="{{$edit_selected_rep[$i]->rep_info}}">
+                                        @if ($errors->has('rep_info'))
+                                            <p class="help-block">{{$errors ->first('rep_info')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -273,7 +249,7 @@
             @endfor
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-1">
-                <a class="btn btn-white" href="{{ url('/manage_medicine_index') }}">Cancel</a>
+                <a class="btn btn-white" href="{{ url('/manage_report_index') }}">Cancel</a>
                 <button class="btn btn-primary" type="submit">Update</button>
             </div>
         </div>
