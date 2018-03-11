@@ -66,7 +66,7 @@ class ManageController extends Controller
             $add->phone = Input::get('phone');
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');;
-            dd($add);
+
             $add->save();
 
             Session::flash('message','Successfully created user!');
@@ -201,18 +201,18 @@ class ManageController extends Controller
         // }
         // else
         // {
-            $add = new medicine;
-            $add->med_number = Input::get('med_number');
-            $add->med_name = Input::get('med_name');
-            $add->med_category = Input::get('med_category');
-            $add->med_authenticity = Input::get('med_authenticity');
-            $add->med_ingredient = Input::get('med_ingredient');
-            $add->med_info = Input::get('med_info');
-            dd($add);
-            $add->save();
+        //     $add = new medicine;
+        //     $add->med_number = Input::get('med_number');
+        //     $add->med_name = Input::get('med_name');
+        //     $add->med_category = Input::get('med_category');
+        //     $add->med_authenticity = Input::get('med_authenticity');
+        //     $add->med_ingredient = Input::get('med_ingredient');
+        //     $add->med_info = Input::get('med_info');
+
+        //     $add->save();
 
             Session::flash('message','Successfully created medicine!');
-            return Redirect::to('manage_medicine_create');
+            return Redirect::to('manage_medicine_index');
         //}
     }
 
