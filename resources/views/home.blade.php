@@ -115,7 +115,7 @@
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">NEW medicine</small>
-                                    <strong>{{$lastest_med->med_name}}</strong> is added as <strong>{{$lastest_med->med_number}}</strong> in <strong>{{$lastest_med->med_category}}</strong> category. <br>
+                                    <strong>{{$lastest_med->med_name}}</strong> is added as <strong>{{$lastest_med->med_number}}</strong>. <br>
                                     <small class="text-muted">{{$lastest_med->created_at}}</small>
                                 </div>
                             </div>
