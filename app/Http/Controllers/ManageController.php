@@ -218,20 +218,20 @@ class ManageController extends Controller
 
     public function manage_medicine_show()
     {
-        $user = users::all();
+        $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
 
-        $selected_user = Input::get('selected_user');
+        $selected_med = Input::get('selected_med');
 
-        $show_selected_user = array();
+        $show_selected_med = array();
 
-        for ($i=0; $i < sizeof($selected_user); $i++)
+        for ($i=0; $i < sizeof($selected_med); $i++)
         {
-            $show_selected_user[$i] = '';
-            $show_selected_user[$i] = users::find($selected_user[$i]);
+            $show_selected_med[$i] = '';
+            $show_selected_med[$i] = medicine::find($selected_med[$i]);
         }
 
-        return View::make('manage_medicine_show',array('show_selected_user' => $show_selected_user, 'lastest_user' => $lastest_user));
+        return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user));
     }
 
     public function manage_medicine_edit()
