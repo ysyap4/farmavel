@@ -317,8 +317,12 @@ class ManageController extends Controller
     public function manage_report_index()
     {
         $report = report::all();
+
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $get_user = users::where('id', $report->user_id)->first()->name;
+        dd($get_user);
 
         return View::make('manage_report_index', array('rep' => $report, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
