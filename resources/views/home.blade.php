@@ -178,13 +178,12 @@
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">Annual</span>
-                        <h5>Orders</h5>
+                        <span class="label label-info pull-right">in system</span>
+                        <h5>Medicine</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">80,800</h1>
-                        <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                        <small>New orders</small>
+                        <h1 class="no-margins font-bold text-success">{{$med_count}}</h1>
+                        <small>Total medicine</small>
                     </div>
                 </div>
             </div>
