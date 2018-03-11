@@ -215,13 +215,11 @@
                         <td><?php echo $no ?></td>
                         <td>{{ $value->rep_medicine }}</td>
                         <td>{{ $value->rep_location }}</td>
-                        <td>
-                            @foreach($user as $value2)
-                                @if($value->user_id === $value2->id)
-                                    $value2->name
-                                @endif
-                            @endforeach
-                        </td>
+                        @foreach($user as $value2)
+                            @if($value->user_id === $value2->id)
+                                <td> {{$value2->name}} </td>
+                            @endif
+                        @endforeach
                         <td>{{ $value->rep_info }}</td>
                         <td>{{ $value->created_at }}</td>
                     </tr>
