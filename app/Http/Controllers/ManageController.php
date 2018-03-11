@@ -179,9 +179,9 @@ class ManageController extends Controller
 
     public function manage_medicine_create_process()
     {
-         $rules = array(
-            'med_name' => 'required',
+        $rules = array(
             'med_number' => 'required',
+            'med_name' => 'required',
             'med_category' => 'required',
             'med_authenticity' => 'required',
             'med_ingredient' => 'required',
@@ -197,7 +197,7 @@ class ManageController extends Controller
             
             return Redirect::to('manage_medicine_create')
             -> withErrors($validator)
-            ->withInput (Input::except('med_info'));
+            ->withInput (Input::except('med_number'));
         }
         else
         {
