@@ -332,12 +332,10 @@ class ManageController extends Controller
     public function manage_report_create_process()
     {
         $rules = array(
-            'med_number' => 'required',
-            'med_name' => 'required',
-            'med_category' => 'required',
-            'med_authenticity' => 'required',
-            'med_ingredient' => 'required',
-            'med_info' => 'required',
+            'rep_medicine' => 'required',
+            'rep_location' => 'required',
+            'user_id' => 'required',
+            'rep_info' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
@@ -347,106 +345,96 @@ class ManageController extends Controller
 
             $messages = $validator->messages();
             
-            return Redirect::to('manage_medicine_create')
-            -> withErrors($validator)
-            ->withInput (Input::except('med_number'));
+            return Redirect::to('manage_report_create')
+            ->withErrors($validator)
+            ->withInput();
         }
         else
         {
-            $add = new medicine;
-            $add->med_number = Input::get('med_number');
-            $add->med_name = Input::get('med_name');
-            $add->med_category = Input::get('med_category');
-            $add->med_authenticity = Input::get('med_authenticity');
-            $add->med_ingredient = Input::get('med_ingredient');
-            $add->med_info = Input::get('med_info');
+            $add = new report;
+            $add->rep_medicine = Input::get('rep_medicine');
+            $add->rep_location = Input::get('rep_location');
+            $add->user_id = Input::get('user_id');
+            $add->rep_info = Input::get('rep_info');
 
             $add->save();
 
-            Session::flash('message','Successfully created medicine!');
+            Session::flash('message','Successfully created report!');
             return Redirect::to('manage_report_index');
         }
     }
 
     public function manage_report_show()
     {
-        $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $selected_med = Input::get('selected_med');
+        $selected_rep = Input::get('selected_rep');
 
-        $show_selected_med = array();
+        $show_selected_rep = array();
 
-        for ($i=0; $i < sizeof($selected_med); $i++)
+        for ($i=0; $i < sizeof($selected_rep); $i++)
         {
-            $show_selected_med[$i] = '';
-            $show_selected_med[$i] = medicine::find($selected_med[$i]);
+            $show_selected_rep[$i] = '';
+            $show_selected_rep[$i] = medicine::find($selected_rep[$i]);
         }
 
-        return View::make('manage_report_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_show',array('show_selected_rep' => $show_selected_rep, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
     public function manage_report_edit()
     {
-        $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $selected_med = Input::get('selected_med');
+        $selected_rep = Input::get('selected_rep');
 
-        $edit_selected_med = array();
+        $edit_selected_rep = array();
 
         for ($i=0; $i < sizeof($selected_med); $i++)
         {
-            $edit_selected_med[$i] = '';
-            $edit_selected_med[$i] = medicine::find($selected_med[$i]);
+            $edit_selected_rep[$i] = '';
+            $edit_selected_rep[$i] = report::find($selected_rep[$i]);
         }
-
         
-        return View::make('manage_report_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
     public function manage_report_edit_process()
     {
-        $medicine = medicine::all();
-        $edit_selected_med = Input::get('edit_selected_med');
-        $med_number = Input::get('med_number');
-        $med_name = Input::get('med_name');
-        $med_category = Input::get('med_category');
-        $med_authenticity = Input::get('med_authenticity');
-        $med_ingredient = Input::get('med_ingredient');
-        $med_info = Input::get('med_info');
+        $edit_selected_rep = Input::get('edit_selected_rep');
+        $rep_medicine = Input::get('rep_medicine');
+        $rep_location = Input::get('rep_location');
+        $user_id = Input::get('user_id');
+        $rep_info = Input::get('rep_info');
         $edit = array();
 
-        for ($i=0; $i < sizeof($edit_selected_med); $i++)
+        for ($i=0; $i < sizeof($edit_selected_rep); $i++)
         {
             $edit[$i] = '';
-            $edit[$i] = medicine::find($edit_selected_med[$i]);
-            $edit[$i]->med_number = $med_number[$i];
-            $edit[$i]->med_name = $med_name[$i];
-            $edit[$i]->med_category = $med_category[$i];
-            $edit[$i]->med_authenticity = $med_authenticity[$i];
-            $edit[$i]->med_ingredient = $med_ingredient[$i];
-            $edit[$i]->med_info = $med_info[$i];
+            $edit[$i] = report::find($edit_selected_rep[$i]);
+            $edit[$i]->rep_medicine = $rep_medicine[$i];
+            $edit[$i]->rep_location = $rep_location[$i];
+            $edit[$i]->user_id = $user_id[$i];
+            $edit[$i]->rep_info = $rep_info[$i];
 
             $edit[$i]->save();
         }
 
-        Session::flash('message','Successfully updated medicine(s)!');
+        Session::flash('message','Successfully updated report(s)!');
         return Redirect::to('manage_report_index');
     }
 
     public function manage_report_delete()
     {
-        $selected_med = Input::get('selected_med');
+        $selected_rep = Input::get('selected_rep');
 
-        for ($i=0; $i < sizeof($selected_med); $i++)
+        for ($i=0; $i < sizeof($selected_rep); $i++)
         {
-            $delete_selected_med[$i] = medicine::where('id',$selected_med[$i])->delete();
+            $delete_selected_rep[$i] = report::where('id',$selected_rep[$i])->delete();
         }
 
-        Session::flash('message','Successfully deleted medicine(s)!');
+        Session::flash('message','Successfully deleted report(s)!');
         return Redirect::to('manage_report_index');
     }
 }

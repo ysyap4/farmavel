@@ -200,9 +200,9 @@
                     <tr>
                         <th>Select</th>
                         <th>Index</th>
-                        <th>Report Medicine</th>
+                        <th>Reported Medicine Name</th>
                         <th>Location</th>
-                        <th>Report by</th>
+                        <th>Reported by</th>
                         <th>Report Info</th>
                         <th>Time Reported</th>
                     </tr>
@@ -226,9 +226,9 @@
                     <tr>
                         <th>Select</th>
                         <th>Index</th>
-                        <th>Report Medicine</th>
+                        <th>Reported Medicine Name</th>
                         <th>Location</th>
-                        <th>Report by</th>
+                        <th>Reported by</th>
                         <th>Report Info</th>
                         <th>Time Reported</th>
                     </tr>
