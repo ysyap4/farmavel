@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="divider"></li>
+<!--                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
@@ -119,7 +119,7 @@
                                     <small class="text-muted">{{$lastest_med->created_at}}</small>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+<!--             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <span class="label label-info pull-right">in system</span>
@@ -186,7 +186,7 @@
                         <small>Total medicine</small>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-md-4">
                 <div class="ibox float-e-margins">
