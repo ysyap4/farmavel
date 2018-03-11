@@ -211,7 +211,7 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_rep[$i]->user_name}} </div>
+                                        <div class="form-control"> {{$get_selected_user[$i]->name}} </div>
                                     </div>
                                 </div>
 
