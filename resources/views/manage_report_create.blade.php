@@ -217,12 +217,12 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Report by</label>
+                                <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Report by</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="user_id" class="form-control" name="user_id" placeholder="Report by" value="{{ Input::old('user_id')}}">
-                                        @if ($errors->has('user_id'))
-                                            <p class="help-block">{{$errors ->first('user_id')}}</p>
+                                        <input type="text" id="user_name" class="form-control" name="user_name" placeholder="Report by" value="{{ Input::old('user_name')}}">
+                                        @if ($errors->has('user_name'))
+                                            <p class="help-block">{{$errors ->first('user_name')}}</p>
                                         @endif
                                     </div>
                                 </div>

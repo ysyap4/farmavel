@@ -334,15 +334,14 @@ class ManageController extends Controller
         $rules = array(
             'rep_medicine' => 'required',
             'rep_location' => 'required',
-            'user_id' => 'required',
+            'user_name' => 'required',
             'rep_info' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
 
-        $get_user_name = Input::get('user_id');
-        $get_user_name = users::where('name', $get_user_name)->first();
-
+        $get_user_name = Input::get('user_name');
+        $get_user = users::where('name', $get_user_name)->first();
 
         if($validator->fails())
         {
@@ -352,7 +351,7 @@ class ManageController extends Controller
             ->withErrors($validator)
             ->withInput();
         }
-        else if (is_null($get_user_name)) 
+        else if (is_null($get_user)) 
         {
             $messages = $validator->messages();
             
@@ -365,7 +364,7 @@ class ManageController extends Controller
             $add = new report;
             $add->rep_medicine = Input::get('rep_medicine');
             $add->rep_location = Input::get('rep_location');
-            $add->user_id = $get_user_name->id;
+            $add->user_id = $get_user->id;
             $add->rep_info = Input::get('rep_info');
 
             $add->save();
