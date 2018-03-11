@@ -212,7 +212,7 @@
                         <?php $no = 1; ?>
                         @foreach($user as $value)
                     <tr>
-                        <td class="checkbox i-checks"><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
+                        <div class="checkbox i-checks"><td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td></div>
                         <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
