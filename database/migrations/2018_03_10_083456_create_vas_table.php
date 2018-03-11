@@ -14,7 +14,7 @@ class CreateVasTable extends Migration
     public function up()
     {
         Schema::create('vas', function (Blueprint $table) {
-            $table->increments('vas_id');
+            $table->increments('id');
             $table->integer('med_id')->unsigned();
             $table->foreign('med_id')->references('id')->on('medicine');
             $table->string('vas_availability_batupahat');

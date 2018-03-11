@@ -14,7 +14,7 @@ class CreateAppointmentTable extends Migration
     public function up()
     {
         Schema::create('appointment', function (Blueprint $table) {
-            $table->increments('app_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('med_id')->unsigned();
