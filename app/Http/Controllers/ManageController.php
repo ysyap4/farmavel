@@ -220,7 +220,7 @@ class ManageController extends Controller
     {
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
-        $lastest_med = med::orderBy('id', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         $selected_med = Input::get('selected_med');
 
