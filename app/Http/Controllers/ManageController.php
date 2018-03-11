@@ -318,15 +318,15 @@ class ManageController extends Controller
         return View::make('manage_report_index', array('rep' => $report, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
-    public function manage_medicine_create()
+    public function manage_report_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
-    public function manage_medicine_create_process()
+    public function manage_report_create_process()
     {
         $rules = array(
             'med_number' => 'required',
@@ -361,11 +361,11 @@ class ManageController extends Controller
             $add->save();
 
             Session::flash('message','Successfully created medicine!');
-            return Redirect::to('manage_medicine_index');
+            return Redirect::to('manage_report_index');
         }
     }
 
-    public function manage_medicine_show()
+    public function manage_report_show()
     {
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
@@ -381,10 +381,10 @@ class ManageController extends Controller
             $show_selected_med[$i] = medicine::find($selected_med[$i]);
         }
 
-        return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
-    public function manage_medicine_edit()
+    public function manage_report_edit()
     {
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
@@ -401,10 +401,10 @@ class ManageController extends Controller
         }
 
         
-        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
-    public function manage_medicine_edit_process()
+    public function manage_report_edit_process()
     {
         $medicine = medicine::all();
         $edit_selected_med = Input::get('edit_selected_med');
@@ -431,10 +431,10 @@ class ManageController extends Controller
         }
 
         Session::flash('message','Successfully updated medicine(s)!');
-        return Redirect::to('manage_medicine_index');
+        return Redirect::to('manage_report_index');
     }
 
-    public function manage_medicine_delete()
+    public function manage_report_delete()
     {
         $selected_med = Input::get('selected_med');
 
@@ -444,7 +444,7 @@ class ManageController extends Controller
         }
 
         Session::flash('message','Successfully deleted medicine(s)!');
-        return Redirect::to('manage_medicine_index');
+        return Redirect::to('manage_report_index');
     }
 }
 
