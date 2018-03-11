@@ -28,11 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
-        //$lastest_med = medicine::orderBy('id', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         $user_count = users::count();
-        //$med_count = medicine::count();
-        //, 'med_count' => $med_count
-        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count));
+        $med_count = medicine::count();
+
+        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count));
     }
 }

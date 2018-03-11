@@ -100,7 +100,18 @@
                             </div>
                         </li>
                         <li class="divider"></li>
-
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">NEW medicine</small>
+                                    <strong> {{$lastest_med->med_name}} </strong> is added as <strong>{{$lastest_med->med_number}}</strong>. <br>
+                                    <small class="text-muted">{{$lastest_med->created_at}}</small>
+                                </div>
+                            </div>
+                        </li>
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
