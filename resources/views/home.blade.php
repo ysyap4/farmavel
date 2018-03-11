@@ -101,10 +101,9 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a7.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right text-navy">NEW user</small> <br>
-                                    <small class="pull-right text-navy">{{$lastest_user->type}}</small>
-                                    <strong>{{$lastest_user->name}}</strong> is registered to <strong>Farmavel</strong>. <br>
-                                    <small class="text-muted"> {{$lastest_user->created_at}} </small>
+                                    <small class="pull-right text-navy">NEW user</small>
+                                    <strong>{{$lastest_user->name}}</strong> is registered to <strong>{{$lastest_user->type}}</strong>. <br>
+                                    <small class="text-muted">{{$lastest_user->created_at}}</small>
                                 </div>
                             </div>
                         </li>
@@ -116,9 +115,8 @@
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">NEW medicine</small>
-                                    <small class="pull-right text-navy">{{$lastest_med->med_category}} category</small>
-                                    <strong>{{$lastest_med->med_name}}</strong> is added as <strong>{{$lastest_med->med_number}}</strong>. <br>
-                                    <small class="text-muted">{{$lastest_med->created_at}} category</small>
+                                    <strong>{{$lastest_med->med_name}}</strong> is added as <strong>{{$lastest_med->med_number}}</strong> in <strong>{{$lastest_med->med_category}}</strong> category. <br>
+                                    <small class="text-muted">{{$lastest_med->created_at}}</small>
                                 </div>
                             </div>
                         </li>
