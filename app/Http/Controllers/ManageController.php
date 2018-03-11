@@ -340,9 +340,20 @@ class ManageController extends Controller
 
         $validator = Validator::make(Input::all(),$rules);
 
+        $get_user_name = Input::get('user_id');
+        $get_user_name = users::where('name', $get_user_name)->first();
+        dd($get_user_name);
+
         if($validator->fails())
         {
-
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_report_create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else if (condition) 
+        {
             $messages = $validator->messages();
             
             return Redirect::to('manage_report_create')
@@ -354,7 +365,7 @@ class ManageController extends Controller
             $add = new report;
             $add->rep_medicine = Input::get('rep_medicine');
             $add->rep_location = Input::get('rep_location');
-            $add->user_id = Input::get('user_id');
+            $add->user_id = $get_user_name->id;
             $add->rep_info = Input::get('rep_info');
 
             $add->save();
