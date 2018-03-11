@@ -209,7 +209,7 @@ class ManageController extends Controller
             $add->med_ingredient = Input::get('med_ingredient');
             $add->med_info = Input::get('med_info');
 
-            dd($add);
+            
             $add->save();
 
             Session::flash('message','Successfully created medicine!');
