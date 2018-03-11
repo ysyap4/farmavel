@@ -407,7 +407,7 @@ class ManageController extends Controller
             $edit_selected_rep[$i] = '';
             $get_selected_user[$i] = '';
             $edit_selected_rep[$i] = report::find($selected_rep[$i]);
-            $get_selected_user[$i] = users::where('id', $selected_rep[$i])->first();
+            $get_selected_user[$i] = users::where('id', $edit_selected_rep[$i]->user_id)->first();
         }
         
         return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
