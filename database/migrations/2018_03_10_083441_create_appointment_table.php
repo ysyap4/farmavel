@@ -23,6 +23,7 @@ class CreateAppointmentTable extends Migration
             $table->string('app_time');
             $table->string('app_location');
             $table->string('app_method');
+            $table->timestamps();
         });
     }
 

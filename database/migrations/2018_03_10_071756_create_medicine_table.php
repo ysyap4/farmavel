@@ -21,7 +21,7 @@ class CreateMedicineTable extends Migration
             $table->string('med_authenticity');
             $table->string('med_ingredient');
             $table->string('med_info');
-
+            $table->timestamps();
         });
     }
 

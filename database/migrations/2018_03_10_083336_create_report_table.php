@@ -20,6 +20,7 @@ class CreateReportTable extends Migration
             $table->string('rep_medicine');
             $table->string('rep_location');
             $table->string('rep_info')->nullable();;
+            $table->timestamps();
         });
     }
 

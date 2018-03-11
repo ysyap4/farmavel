@@ -22,6 +22,7 @@ class CreateVasTable extends Migration
             $table->string('vas_availability_muar');
             $table->string('vas_availability_segamat');
             $table->string('vas_availability_kulaijaya');
+            $table->timestamps();
         });
     }
 
