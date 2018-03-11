@@ -127,6 +127,7 @@ class ManageController extends Controller
         $phone = Input::get('phone');
         $password = Input::get('password');
         $type = Input::get('type');
+
         $edit = array();
 
         for ($i=0; $i < sizeof($edit_selected_user); $i++)
@@ -272,6 +273,7 @@ class ManageController extends Controller
         $med_authenticity = Input::get('med_authenticity');
         $med_ingredient = Input::get('med_ingredient');
         $med_info = Input::get('med_info');
+
         $edit = array();
 
         for ($i=0; $i < sizeof($edit_selected_med); $i++)
@@ -421,17 +423,21 @@ class ManageController extends Controller
         $edit_selected_rep = Input::get('edit_selected_rep');
         $rep_medicine = Input::get('rep_medicine');
         $rep_location = Input::get('rep_location');
-        $user_id = Input::get('user_id');
+        $get_user_name = Input::get('user_name');
         $rep_info = Input::get('rep_info');
+
         $edit = array();
+        $get_selected_user = array();
 
         for ($i=0; $i < sizeof($edit_selected_rep); $i++)
         {
             $edit[$i] = '';
+            $get_selected_user[$i] = '';
             $edit[$i] = report::find($edit_selected_rep[$i]);
             $edit[$i]->rep_medicine = $rep_medicine[$i];
             $edit[$i]->rep_location = $rep_location[$i];
-            $edit[$i]->user_id = $user_id[$i];
+            $get_selected_user[$i] = users::where('id', $edit[$i]->user_id)->first();
+            $edit[$i]->user_id = $get_selected_user[$i]->id;
             $edit[$i]->rep_info = $rep_info[$i];
 
             $edit[$i]->save();
