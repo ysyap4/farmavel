@@ -405,6 +405,7 @@ class ManageController extends Controller
         for ($i=0; $i < sizeof($selected_rep); $i++)
         {
             $edit_selected_rep[$i] = '';
+            $get_selected_user[$i] = '';
             $edit_selected_rep[$i] = report::find($selected_rep[$i]);
             $get_selected_user[$i] = users::where('id', $selected_rep[$i])->first();
         }
