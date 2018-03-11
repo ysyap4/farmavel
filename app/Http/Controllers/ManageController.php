@@ -179,28 +179,28 @@ class ManageController extends Controller
 
     public function manage_medicine_create_process()
     {
-         $rules = array(
-            'med_name' => 'required',
-            'med_number' => 'required',
-            'med_category' => 'required',
-            'med_authenticity' => 'required',
-            'med_ingredient' => 'required',
-            'med_info' => 'required',
-            );
+        //  $rules = array(
+        //     'med_name' => 'required',
+        //     'med_number' => 'required',
+        //     'med_category' => 'required',
+        //     'med_authenticity' => 'required',
+        //     'med_ingredient' => 'required',
+        //     'med_info' => 'required',
+        //     );
 
-        $validator = Validator::make(Input::all(),$rules);
+        // $validator = Validator::make(Input::all(),$rules);
 
-        if($validator->fails())
-        {
+        // if($validator->fails())
+        // {
 
-            $messages = $validator->messages();
+        //     $messages = $validator->messages();
             
-            return Redirect::to('manage_medicine_create')
-            -> withErrors($validator)
-            ->withInput (Input::except('med_info'));
-        }
-        else
-        {
+        //     return Redirect::to('manage_medicine_create')
+        //     -> withErrors($validator)
+        //     ->withInput (Input::except('med_info'));
+        // }
+        // else
+        // {
             $add = new medicine;
             $add->med_number = Input::get('med_number');
             $add->med_name = Input::get('med_name');
@@ -213,7 +213,7 @@ class ManageController extends Controller
 
             Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
-        }
+        //}
     }
 
     public function manage_medicine_show()
