@@ -101,7 +101,7 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a7.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right text-navy">NEW user</small>
+                                    <small class="pull-right text-navy">NEW user</small> <br>
                                     <small class="pull-right text-navy">{{$lastest_user->type}}</small>
                                     <strong>{{$lastest_user->name}}</strong> is registered to <strong>Farmavel</strong>. <br>
                                     <small class="text-muted"> {{$lastest_user->created_at}} </small>
