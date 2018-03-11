@@ -342,7 +342,7 @@ class ManageController extends Controller
 
         $get_user_name = Input::get('user_id');
         $get_user_name = users::where('name', $get_user_name)->first();
-        dd($get_user_name);
+
 
         if($validator->fails())
         {
@@ -352,7 +352,7 @@ class ManageController extends Controller
             ->withErrors($validator)
             ->withInput();
         }
-        else if (condition) 
+        else if (is_null($get_user_name)) 
         {
             $messages = $validator->messages();
             
