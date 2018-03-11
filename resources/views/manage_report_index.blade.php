@@ -218,7 +218,7 @@
                         <td>
                             @foreach($user as $value2)
                                 @if( {{ $value->user_id }} === $value2->id)
-                                    {{ $value2->name }}
+                                    {{{ $value2->name }}}
                                 @endif
                             @endforeach
                         </td>
