@@ -14,6 +14,9 @@ use Auth;
 use Session;
 use App\Model\users;
 use App\Model\medicine;
+use App\Model\report;
+use App\Model\appointment;
+use App\Model\vas;
 
 class ManageController extends Controller
 {
