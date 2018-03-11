@@ -209,8 +209,8 @@ class ManageController extends Controller
             $add->med_ingredient = Input::get('med_ingredient');
             $add->med_info = Input::get('med_info');
 
+            dd($add);
             $add->save();
-            var_dump($add);
 
             Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
