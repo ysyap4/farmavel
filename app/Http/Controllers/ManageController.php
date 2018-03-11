@@ -66,7 +66,7 @@ class ManageController extends Controller
             $add->phone = Input::get('phone');
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');;
-
+            dd($add);
             $add->save();
 
             Session::flash('message','Successfully created user!');
