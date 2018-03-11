@@ -236,61 +236,63 @@ class ManageController extends Controller
 
     public function manage_medicine_edit()
     {
-        $user = users::all();
+        $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
 
-        $selected_user = Input::get('selected_user');
+        $selected_med = Input::get('selected_med');
 
-        $edit_selected_user = array();
+        $edit_selected_med = array();
 
-        for ($i=0; $i < sizeof($selected_user); $i++)
+        for ($i=0; $i < sizeof($selected_med); $i++)
         {
-            $edit_selected_user[$i] = '';
-            $edit_selected_user[$i] = users::find($selected_user[$i]);
+            $edit_selected_med[$i] = '';
+            $edit_selected_med[$i] = medicine::find($selected_med[$i]);
         }
 
         
-        return View::make('manage_medicine_edit')->with(array('edit_selected_user' => $edit_selected_user, 'lastest_user' => $lastest_user));
+        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user));
     }
 
     public function manage_medicine_edit_process()
     {
-        $user = users::all();
-        $edit_selected_user = Input::get('edit_selected_user');
-        $name = Input::get('name');
-        $email = Input::get('email');
-        $phone = Input::get('phone');
-        $password = Input::get('password');
-        $type = Input::get('type');
+        $medicine = medicine::all();
+        $edit_selected_med = Input::get('edit_selected_med');
+        $med_number = Input::get('med_number');
+        $med_name = Input::get('med_name');
+        $med_category = Input::get('med_category');
+        $med_authenticity = Input::get('med_authenticity');
+        $med_ingredient = Input::get('med_ingredient');
+        $med_info = Input::get('med_info');
         $edit = array();
 
-        for ($i=0; $i < sizeof($edit_selected_user); $i++)
+        for ($i=0; $i < sizeof($edit_selected_med); $i++)
         {
             $edit[$i] = '';
-            $edit[$i] = users::find($edit_selected_user[$i]);
-            $edit[$i]->name = $name[$i];
-            $edit[$i]->email = $email[$i];
-            $edit[$i]->phone = $phone[$i];
-            $edit[$i]->password = Hash::make($password[$i]);
-            $edit[$i]->type = $type[$i];
+            $edit[$i] = medicine::find($edit_selected_med[$i]);
+            $edit[$i]->med_number = $med_number[$i];
+            $edit[$i]->med_name = $med_name[$i];
+            $edit[$i]->med_category = $med_category[$i];
+            $edit[$i]->med_authenticity = $med_authenticity[$i];
+            $edit[$i]->med_ingredient = $med_ingredient[$i];
+            $edit[$i]->med_info = $med_info[$i];
 
             $edit[$i]->save();
         }
 
-        Session::flash('message','Successfully updated user(s)!');
+        Session::flash('message','Successfully updated medicine(s)!');
         return Redirect::to('manage_medicine_index');
     }
 
     public function manage_medicine_delete()
     {
-        $selected_user = Input::get('selected_user');
+        $selected_med = Input::get('selected_med');
 
-        for ($i=0; $i < sizeof($selected_user); $i++)
+        for ($i=0; $i < sizeof($selected_med); $i++)
         {
-            $delete_selected_user[$i] = users::where('id',$selected_user[$i])->delete();
+            $delete_selected_med[$i] = medicine::where('id',$selected_med[$i])->delete();
         }
 
-        Session::flash('message','Successfully deleted user(s)!');
+        Session::flash('message','Successfully deleted medicine(s)!');
         return Redirect::to('manage_medicine_index');
     }
 
