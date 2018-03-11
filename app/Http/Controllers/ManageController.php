@@ -239,6 +239,7 @@ class ManageController extends Controller
     {
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('id', 'desc')->first();
 
         $selected_med = Input::get('selected_med');
 
@@ -251,7 +252,7 @@ class ManageController extends Controller
         }
 
         
-        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user));
+        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
     public function manage_medicine_edit_process()
