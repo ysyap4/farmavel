@@ -153,7 +153,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage Medicine</h2>
+                    <h2>Manage Appointment</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -162,7 +162,7 @@
                             <a>Manage</a>
                         </li>
                         <li>
-                            <a>Medicine</a>
+                            <a>Appointment</a>
                         </li>
                         <li class="active">
                             <strong>Add</strong>
@@ -179,7 +179,7 @@
                 <div class="col-lg-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Add new Medicine </h5>
+                            <h5>Add new Appointment </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -190,15 +190,15 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_medicine_create_process')}}">
+                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_appointment_create_process')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group{{ $errors->has('med_number') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Number</label>
+                                <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Client Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_number" class="form-control" name="med_number" placeholder="Medicine Number" value="{{ Input::old('med_number')}}">
-                                        @if ($errors->has('med_number'))
-                                            <p class="help-block">{{$errors ->first('med_number')}}</p>
+                                        <input type="text" id="user_name" class="form-control" name="user_name" placeholder="Client Name" value="{{ Input::old('user_name')}}">
+                                        @if ($errors->has('user_name'))
+                                            <p class="help-block">{{$errors ->first('user_name')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -217,48 +217,48 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_category') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Category</label>
+                                <div class="form-group{{ $errors->has('app_date') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Date</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_category" class="form-control" name="med_category" placeholder="Category" value="{{ Input::old('med_category')}}">
-                                        @if ($errors->has('med_category'))
-                                            <p class="help-block">{{$errors ->first('med_category')}}</p>
+                                        <input type="text" id="app_date" class="form-control" name="app_date" placeholder="Date" value="{{ Input::old('app_date')}}">
+                                        @if ($errors->has('app_date'))
+                                            <p class="help-block">{{$errors ->first('app_date')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_authenticity') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Authenticity</label>
+                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_authenticity" class="form-control" name="med_authenticity" placeholder="Authenticity" value="{{ Input::old('med_authenticity')}}">
-                                        @if ($errors->has('med_authenticity'))
-                                            <p class="help-block">{{$errors ->first('med_authenticity')}}</p>
+                                        <input type="text" id="app_time" class="form-control" name="app_time" placeholder="Time" value="{{ Input::old('app_time')}}">
+                                        @if ($errors->has('app_time'))
+                                            <p class="help-block">{{$errors ->first('app_time')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_ingredient') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Ingredient</label>
+                                <div class="form-group{{ $errors->has('app_location') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Location</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_ingredient" class="form-control" name="med_ingredient" placeholder="Ingredient" value="{{ Input::old('med_ingredient')}}">
-                                        @if ($errors->has('med_ingredient'))
-                                            <p class="help-block">{{$errors ->first('med_ingredient')}}</p>
+                                        <input type="text" id="app_location" class="form-control" name="app_location" placeholder="Location" value="{{ Input::old('app_location')}}">
+                                        @if ($errors->has('app_location'))
+                                            <p class="help-block">{{$errors ->first('app_location')}}</p>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('med_info') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Info</label>
+                                <div class="form-group{{ $errors->has('app_method') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Method</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_info" class="form-control" name="med_info" placeholder="Medicine Info" value="{{ Input::old('med_info')}}">
-                                        @if ($errors->has('med_info'))
-                                            <p class="help-block">{{$errors ->first('med_info')}}</p>
+                                        <input type="text" id="app_method" class="form-control" name="app_method" placeholder="Method" value="{{ Input::old('app_method')}}">
+                                        @if ($errors->has('app_method'))
+                                            <p class="help-block">{{$errors ->first('app_method')}}</p>
                                         @endif
                                     </div>
                                 </div>
