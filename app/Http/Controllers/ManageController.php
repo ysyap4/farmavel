@@ -638,11 +638,174 @@ class ManageController extends Controller
 
         for ($i=0; $i < sizeof($selected_app); $i++)
         {
-            $delete_selected_rep[$i] = report::where('id',$selected_app[$i])->delete();
+            $delete_selected_app[$i] = appointment::where('id',$selected_app[$i])->delete();
         }
 
-        Session::flash('message','Successfully deleted report(s)!');
+        Session::flash('message','Successfully deleted appointment(s)!');
         return Redirect::to('manage_appointment_index');
     }
-}
 
+
+
+
+
+
+
+
+
+    public function manage_vas_index()
+    {
+        $vas = vas::all();
+        $medicine = medicine::all();
+
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_vas_index', array('vas' => $vas, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_vas_create()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_vas_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_vas_create_process()
+    {
+        $rules = array(
+            'med_name' => 'required',
+            'vas_availability_batupahat' => 'required',
+            'vas_availability_johorbahru' => 'required',
+            'vas_availability_muar' => 'required',
+            'vas_availability_segamat' => 'required',
+            'vas_availability_kulaijaya' => 'required',
+            );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        $get_med_name = Input::get('med_name');
+        $get_med = medicine::where('med_name', $get_med_name)->first();
+
+        if($validator->fails())
+        {
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_vas_create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else if (is_null($get_med)) 
+        {
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_vas_create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else
+        {
+            $add = new vas;
+            $add->med_id = $get_med->id;
+            $add->vas_availability_batupahat = Input::get('vas_availability_batupahat');
+            $add->vas_availability_johorbahru = Input::get('vas_availability_johorbahru');
+            $add->vas_availability_muar = Input::get('vas_availability_muar');
+            $add->vas_availability_segamat = Input::get('vas_availability_segamat');
+            $add->vas_availability_kulaijaya = Input::get('vas_availability_kulaijaya');
+
+            $add->save();
+
+            Session::flash('message','Successfully created VAS!');
+            return Redirect::to('manage_vas_index');
+        }
+    }
+
+    public function manage_vas_show()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_vas = Input::get('selected_vas');
+
+        $show_selected_vas = array();
+        $get_selected_med = array();
+
+        for ($i=0; $i < sizeof($selected_vas); $i++)
+        {
+            $show_selected_vas[$i] = '';
+            $get_selected_med[$i] = '';
+            $show_selected_vas[$i] = vas::find($selected_vas[$i]);
+            $get_selected_med[$i] = medicine::where('id', $show_selected_vas[$i]->med_id)->first();
+        }
+
+        return View::make('manage_vas_show',array('show_selected_vas' => $show_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_vas_edit()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_vas = Input::get('selected_vas');
+
+        $edit_selected_vas = array();
+        $get_selected_med = array();
+
+        for ($i=0; $i < sizeof($selected_vas); $i++)
+        {
+            $edit_selected_vas[$i] = '';
+            $get_selected_med[$i] = '';
+            $edit_selected_vas[$i] = vas::find($selected_vas[$i]);
+            $get_selected_med[$i] = medicine::where('id', $edit_selected_vas[$i]->med_id)->first();
+        }
+        
+        return View::make('manage_vas_edit')->with(array('edit_selected_vas' => $edit_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_vas_edit_process()
+    {
+        $edit_selected_vas = Input::get('edit_selected_vas');
+        $get_med_name = Input::get('med_name');
+        $vas_availability_batupahat = Input::get('vas_availability_batupahat');
+        $vas_availability_johorbahru = Input::get('vas_availability_johorbahru');
+        $vas_availability_muar = Input::get('vas_availability_muar');
+        $vas_availability_segamat = Input::get('vas_availability_segamat');
+        $vas_availability_kulaijaya = Input::get('vas_availability_kulaijaya');
+
+        $edit = array();
+        $get_selected_med = array();
+
+        for ($i=0; $i < sizeof($edit_selected_vas); $i++)
+        {
+            $edit[$i] = '';
+            $get_selected_med[$i] = '';
+            $edit[$i] = vas::find($edit_selected_vas[$i]);
+            $get_selected_med[$i] = medicine::where('med_name', $get_med_name[$i])->first();
+            $edit[$i]->med_id = $get_selected_med[$i]->id;
+            $edit[$i]->vas_availability_batupahat = $vas_availability_batupahat[$i];
+            $edit[$i]->vas_availability_johorbahru = $vas_availability_johorbahru[$i];
+            $edit[$i]->vas_availability_muar = $vas_availability_muar[$i];
+            $edit[$i]->vas_availability_segamat = $vas_availability_segamat[$i];
+            $edit[$i]->vas_availability_kulaijaya = $vas_availability_kulaijaya[$i];
+
+            $edit[$i]->save();
+        }
+
+        Session::flash('message','Successfully updated VAS(s)!');
+        return Redirect::to('manage_vas_index');
+    }
+
+    public function manage_vas_delete()
+    {
+        $selected_vas = Input::get('selected_vas');
+
+        for ($i=0; $i < sizeof($selected_vas); $i++)
+        {
+            $delete_selected_vas[$i] = vas::where('id', $selected_vas[$i])->delete();
+        }
+
+        Session::flash('message','Successfully deleted VAS(s)!');
+        return Redirect::to('manage_vas_index');
+    }
+}
