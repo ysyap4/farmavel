@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Show Medicine</title>
+    <title>Farmavel | Show Appointment</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -153,7 +153,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Manage Medicine</h2>
+                    <h2>Manage Appointment</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="{{ url('/home') }}">Home</a>
@@ -162,7 +162,7 @@
                             <a>Manage</a>
                         </li>
                         <li>
-                            <a>Medicine</a>
+                            <a>Appointment</a>
                         </li>
                         <li class="active">
                             <strong>Show</strong>
@@ -178,11 +178,11 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
         <div class="form-horizontal">
-        @for ($i=0; $i < sizeof($show_selected_med); $i++)
+        @for ($i=0; $i < sizeof($show_selected_app); $i++)
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Show User ID {{$show_selected_med[$i]->id}} </h5>
+                            <h5>Show User ID {{$show_selected_app[$i]->id}} </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -193,9 +193,9 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                                <div class="form-group"><label class="col-sm-2 control-label">Medicine Number</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Patient Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_number}} </div>
+                                        <div class="form-control"> {{$get_selected_user[$i]->name}} </div>
                                     </div>
                                 </div>
 
@@ -203,39 +203,39 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_name}} </div>
+                                        <div class="form-control"> {{$get_selected_med[$i]->med_name}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Date</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_category}} </div>
+                                        <div class="form-control"> {{$show_selected_app[$i]->app_date}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Authenticity</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Time</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_authenticity}} </div>
+                                        <div class="form-control"> {{$show_selected_app[$i]->app_time}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Ingredient</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Location</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_ingredient}} </div>
+                                        <div class="form-control"> {{$show_selected_app[$i]->app_location}} </div>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Medicine Info</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Method</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_info}} </div>
+                                        <div class="form-control"> {{$show_selected_app[$i]->app_method}} </div>
                                     </div>
                                 </div>
 
