@@ -438,7 +438,7 @@ class ManageController extends Controller
             $edit[$i] = report::find($edit_selected_rep[$i]);
             $edit[$i]->rep_medicine = $rep_medicine[$i];
             $edit[$i]->rep_location = $rep_location[$i];
-            $get_selected_user[$i] = users::where('id', $edit[$i]->user_id)->first();
+            $get_selected_user[$i] = users::where('name', $get_user_name[$i])->first();
             $edit[$i]->user_id = $get_selected_user[$i]->id;
             $edit[$i]->rep_info = $rep_info[$i];
 
@@ -616,9 +616,9 @@ class ManageController extends Controller
             $get_selected_user[$i] = '';
             $get_selected_med[$i] = '';
             $edit[$i] = appointment::find($edit_selected_app[$i]);
-            $get_selected_user[$i] = users::where('id', $edit[$i]->user_id)->first();
+            $get_selected_user[$i] = users::where('name', $get_user_name[$i])->first();
             $edit[$i]->user_id = $get_selected_user[$i]->id;
-            $get_selected_med[$i] = medicine::where('id', $edit[$i]->med_id)->first();
+            $get_selected_med[$i] = medicine::where('med_name', $get_med_name[$i])->first();
             $edit[$i]->med_id = $get_selected_med[$i]->id;
             $edit[$i]->app_date = $app_date[$i];
             $edit[$i]->app_time = $app_time[$i];
