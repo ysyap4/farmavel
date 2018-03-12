@@ -473,7 +473,7 @@ class ManageController extends Controller
     {
         $appointment = appointment::all();
         $user = users::all();
-        $med = medicine::all();
+        $medicine = medicine::all();
 
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
