@@ -461,5 +461,164 @@ class ManageController extends Controller
         Session::flash('message','Successfully deleted report(s)!');
         return Redirect::to('manage_report_index');
     }
+
+
+
+
+
+
+
+
+    public function manage_appointment_index()
+    {
+        $appointment = appointment::all();
+        $user = users::all();
+        $med = medicine::all();
+
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_appointment_index', array('app' => $appointment, 'user' => $user, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_appointment_create()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('manage_appointment_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_appointment_create_process()
+    {
+        $rules = array(
+            'rep_medicine' => 'required',
+            'rep_location' => 'required',
+            'user_name' => 'required',
+            'rep_info' => 'required',
+            );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        $get_user_name = Input::get('user_name');
+        $get_user = users::where('name', $get_user_name)->first();
+
+        if($validator->fails())
+        {
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_appointment_create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else if (is_null($get_user)) 
+        {
+            $messages = $validator->messages();
+            
+            return Redirect::to('manage_appointment_create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+        else
+        {
+            $add = new report;
+            $add->rep_medicine = Input::get('rep_medicine');
+            $add->rep_location = Input::get('rep_location');
+            $add->user_id = $get_user->id;
+            $add->rep_info = Input::get('rep_info');
+
+            $add->save();
+
+            Session::flash('message','Successfully created report!');
+            return Redirect::to('manage_appointment_index');
+        }
+    }
+
+    public function manage_appointment_show()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_rep = Input::get('selected_rep');
+
+        $show_selected_rep = array();
+        $get_selected_user = array();
+
+        for ($i=0; $i < sizeof($selected_rep); $i++)
+        {
+            $show_selected_rep[$i] = '';
+            $get_selected_user[$i] = '';
+            $show_selected_rep[$i] = report::find($selected_rep[$i]);
+            $get_selected_user[$i] = users::where('id', $show_selected_rep[$i]->user_id)->first();
+        }
+
+        return View::make('manage_appointment_show',array('show_selected_rep' => $show_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_appointment_edit()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        $selected_rep = Input::get('selected_rep');
+
+        $edit_selected_rep = array();
+        $get_selected_user = array();
+        $get_selected_med = array();
+
+        for ($i=0; $i < sizeof($selected_rep); $i++)
+        {
+            $edit_selected_rep[$i] = '';
+            $get_selected_user[$i] = '';
+            $get_selected_med[$i] = '';
+            $edit_selected_rep[$i] = report::find($selected_rep[$i]);
+            $get_selected_user[$i] = users::where('id', $edit_selected_rep[$i]->user_id)->first();
+            $get_selected_med[$i] = medicine::where('id', $edit_selected_rep[$i]->med_id)->first();
+        }
+        
+        return View::make('manage_appointment_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
+    public function manage_appointment_edit_process()
+    {
+        $edit_selected_rep = Input::get('edit_selected_rep');
+        $rep_medicine = Input::get('rep_medicine');
+        $rep_location = Input::get('rep_location');
+        $get_user_name = Input::get('user_name');
+        $rep_info = Input::get('rep_info');
+
+        $edit = array();
+        $get_selected_user = array();
+
+        for ($i=0; $i < sizeof($edit_selected_rep); $i++)
+        {
+            $edit[$i] = '';
+            $get_selected_user[$i] = '';
+            $edit[$i] = report::find($edit_selected_rep[$i]);
+            $edit[$i]->rep_medicine = $rep_medicine[$i];
+            $edit[$i]->rep_location = $rep_location[$i];
+            $get_selected_user[$i] = users::where('id', $edit[$i]->user_id)->first();
+            $edit[$i]->user_id = $get_selected_user[$i]->id;
+            $edit[$i]->rep_info = $rep_info[$i];
+
+            $edit[$i]->save();
+        }
+
+        Session::flash('message','Successfully updated report(s)!');
+        return Redirect::to('manage_appointment_index');
+    }
+
+    public function manage_appointment_delete()
+    {
+        $selected_rep = Input::get('selected_rep');
+
+        for ($i=0; $i < sizeof($selected_rep); $i++)
+        {
+            $delete_selected_rep[$i] = report::where('id',$selected_rep[$i])->delete();
+        }
+
+        Session::flash('message','Successfully deleted report(s)!');
+        return Redirect::to('manage_appointment_index');
+    }
 }
 
