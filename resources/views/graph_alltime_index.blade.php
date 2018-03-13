@@ -356,6 +356,11 @@
             text-align:center; 
             vertical-align:middle;
         }
+
+        .tr {
+            text-align:center; 
+            vertical-align:middle;
+        }
     </style>
 
 
