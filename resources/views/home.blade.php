@@ -55,7 +55,7 @@
                     <a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span> </a>
                 </li>
                 <li>
-                    <a href="{{ url('/home') }}"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Manage</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{URL::route('manage_user_index')}}">User</a></li>
                         <li><a href="{{URL::route('manage_medicine_index')}}">Medicine</a></li>
@@ -65,14 +65,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graph</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="graph_flot.html">Flot Charts</a></li>
-                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="graph_peity.html">Peity Charts</a></li>
-                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                        <li><a href="{{URL::route('graph_alltime_index')}}">All-Time Charts</a></li>
+                        <li><a href="{{URL::route('graph_periodic_index')}}">Periodic Charts</a></li>
                     </ul>
                 </li>
             </ul>

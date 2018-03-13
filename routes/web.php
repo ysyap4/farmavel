@@ -209,3 +209,16 @@ Route::get('manage_vas_delete',[
 	'as' => 'manage_vas_delete',
 	'uses' => 'ManageController@manage_vas_delete',
 	]);
+
+
+
+
+Route::get('graph_alltime_index',[
+	'as' => 'graph_alltime_index',
+	'uses' => 'GraphController@graph_alltime_index',
+	]);
+
+Route::get('graph_periodic_index',[
+	'as' => 'graph_periodic_index',
+	'uses' => 'GraphController@graph_periodic_index',
+	]);
