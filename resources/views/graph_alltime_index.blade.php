@@ -280,7 +280,7 @@
     <!-- ChartJS-->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
-    <script type="css" rel="stylesheet">
+    <style type="text/css">
         .foo {
           float: left;
           width: 20px;
@@ -300,7 +300,7 @@
         .wine {
           background: #ae163e;
         }
-    </script>
+    </style>
 
 
     <script type="text/javascript">
