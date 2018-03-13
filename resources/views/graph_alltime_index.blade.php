@@ -222,7 +222,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Polar Area</h5>
+                            <h5>Polar Area: Medicine Categories</h5>
 
                             <div ibox-tools></div>
                         </div>
@@ -230,6 +230,9 @@
                             <div class="text-center">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
+                            <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Legal </h5>
+                            <h5><div class="color-box dedede"></div> {{$polar_medicine_natural_count}} Illegal </h5>
+                            <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Illegal </h5>
                         </div>
                     </div>
                 </div>
@@ -286,7 +289,7 @@
           float: left;
           width: 13px;
           height: 13px;
-          margin-top: 5px;;
+          margin-right: 5px;;
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
@@ -298,8 +301,8 @@
           background: #dedede;
         }
         
-        .wine {
-          background: #ae163e;
+        .b5b8cf {
+          background: #b5b8cf;
         }
     </style>
 
@@ -392,22 +395,22 @@
     
         var polarData = [
             {
-                value: 300,
+                value: {{$polar_medicine_traditional_count}},
                 color: "#a3e1d4",
                 highlight: "#1ab394",
-                label: "App"
+                label: "Traditional"
             },
             {
-                value: 140,
+                value: {{$polar_medicine_natural_count}},
                 color: "#dedede",
                 highlight: "#1ab394",
-                label: "Software"
+                label: "Natural ingredient"
             },
             {
-                value: 200,
+                value: {{$polar_medicine_supplement_count}},
                 color: "#b5b8cf",
                 highlight: "#1ab394",
-                label: "Laptop"
+                label: "Supplement"
             }
         ];
     
