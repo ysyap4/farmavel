@@ -214,6 +214,7 @@
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
+                            <h5>Pie Chart: Legal and Illegal Medicine</h5>
                         </div>
                     </div>
                 </div>
