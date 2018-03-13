@@ -214,8 +214,8 @@
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
-                            <div class="color-box #a3e1d4"></div><h5>Legal</h5>
-                            <div class="color-box #dedede"></div><h5>Illegal</h5>
+                            <div class="color-box a3e1d4"></div><h5>Legal</h5>
+                            <div class="color-box dedede"></div><h5>Illegal</h5>
                         </div>
                     </div>
                 </div>
@@ -290,11 +290,11 @@
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
-        .#a3e1d4 {
+        .a3e1d4 {
           background: #a3e1d4;
         }
         
-        .#dedede {
+        .dedede {
           background: #dedede;
         }
         
