@@ -249,11 +249,14 @@
                                 <canvas id="radarChart"></canvas>
                             </div>
                             <table class="table-align-center">
+                            <thead>
                                 <tr>
                                     <th><h5>Area</h5></th>
                                     <th><h5><div class="color-box a3e1d4"></div>VnG400</h5></th>
                                     <th><h5><div class="color-box dedede"></div>Promax Capsule</h5></th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td><h5>Batu Pahat</h5></td>
                                     <td><h5>{{$radar_report_batupahat_count}}</h5></td>
@@ -289,6 +292,7 @@
                                     <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
                                     <td><h5>100</h5></td>
                                 </tr>
+                            </tbody>
                             </table>
                         </div>
                     </div>
@@ -347,19 +351,12 @@
           background: #b5b8cf;
         }
 
-        .th {
-            text-align:center; 
-            vertical-align:middle;
+        .thead {
+            text-align: center;
         }
 
-        .td {
-            text-align:center; 
-            vertical-align:middle;
-        }
-
-        .tr {
-            text-align:center; 
-            vertical-align:middle;
+        .tbody {
+            text-align: center;
         }
     </style>
 
