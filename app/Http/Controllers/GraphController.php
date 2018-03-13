@@ -43,12 +43,27 @@ class GraphController extends Controller
         $polar_medicine_natural_count = medicine::where('med_category', 'Natural ingredient')->count();
         $polar_medicine_supplement_count = medicine::where('med_category', 'Supplement')->count();
 
+        $radar_report_batupahat_count = report::where('rep_location', 'Batu Pahat')->count();
+        $radar_report_johorbahru_count = report::where('rep_location', 'Johor Bahru')->count();
+        $radar_report_muar_count = report::where('rep_location', 'Muar')->count();
+        $radar_report_segamat_count = report::where('rep_location', 'Segamat')->count();
+        $radar_report_kulaijaya_count = report::where('rep_location', 'Kulaijaya')->count();
+        $radar_report_skudai_count = report::where('rep_location', 'Skudai')->count();
+        $radar_report_pasirgudang_count = report::where('rep_location', 'Pasir Gudang')->count();
+
         return View::make('graph_alltime_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 
             'pie_medicine_legal_count' => $pie_medicine_legal_count, 
             'pie_medicine_illegal_count' => $pie_medicine_illegal_count, 
             'polar_medicine_traditional_count' => $polar_medicine_traditional_count, 
             'polar_medicine_natural_count' => $polar_medicine_natural_count, 
-            'polar_medicine_supplement_count' => $polar_medicine_supplement_count));
+            'polar_medicine_supplement_count' => $polar_medicine_supplement_count,
+            'radar_report_batupahat_count' => $radar_report_batupahat_count,
+            'radar_report_johorbahru_count' => $radar_report_johorbahru_count,
+            'radar_report_muar_count' => $radar_report_muar_count,
+            'radar_report_segamat_count' => $radar_report_segamat_count,
+            'radar_report_kulaijaya_count' => $radar_report_kulaijaya_count,
+            'radar_report_skudai_count' => $radar_report_skudai_count,
+            'radar_report_pasirgudang_count' => $radar_report_pasirgudang_count));
     }
 
     public function manage_user_index()

@@ -230,9 +230,9 @@
                             <div class="text-center">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
-                            <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Legal </h5>
-                            <h5><div class="color-box dedede"></div> {{$polar_medicine_natural_count}} Illegal </h5>
-                            <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Illegal </h5>
+                            <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
+                            <h5><div class="color-box dedede"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
+                            <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
                         </div>
                     </div>
                 </div>
@@ -468,17 +468,23 @@
     
     
         var radarData = {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+            labels: ["Batu Pahat", "Johor Bahru", "Muar", "Segamat", "Kulaijaya", "Skudai", "Pasir Gudang"],
             datasets: [
                 {
-                    label: "My First dataset",
+                    label: "VnG400",
                     fillColor: "rgba(220,220,220,0.2)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(220,220,220,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 90, 81, 56, 55, 40]
+                    data: [{{$radar_report_batupahat_count}}, 
+                            {{$radar_report_johorbahru_count}}, 
+                            {{$radar_report_muar_count}}, 
+                            {{$radar_report_segamat_count}}, 
+                            {{$radar_report_kulaijaya_count}}, 
+                            {{$radar_report_skudai_count}}, 
+                            {{$radar_report_pasirgudang_count}}]
                 },
                 {
                     label: "My Second dataset",
