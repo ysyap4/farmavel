@@ -280,8 +280,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     <script type="text/javascript">
-    function manage_vas_show()
-    {
+    
         $(function () {
 
             var lineData = {
@@ -499,7 +498,7 @@
             var myNewChart = new Chart(ctx).Radar(radarData, radarOptions);
 
         });
-    }
+    
     </script>
 
 
