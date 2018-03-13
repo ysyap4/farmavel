@@ -294,8 +294,8 @@
           background: #a3e1d4;
         }
         
-        .purple {
-          background: #ab3fdd;
+        .#dedede {
+          background: #dedede;
         }
         
         .wine {
