@@ -347,7 +347,12 @@
           background: #b5b8cf;
         }
 
-        .table-align-center {
+        .th {
+            text-align:center; 
+            vertical-align:middle;
+        }
+
+        .td {
             text-align:center; 
             vertical-align:middle;
         }
