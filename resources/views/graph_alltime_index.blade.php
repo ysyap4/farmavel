@@ -213,6 +213,7 @@
                         <div class="ibox-content">
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
+                                <h5>Pie Chart: Legal and Illegal Medicine</h5>
                             </div>
                             <h5>Pie Chart: Legal and Illegal Medicine</h5>
                         </div>
