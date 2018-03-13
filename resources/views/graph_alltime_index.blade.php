@@ -248,6 +248,48 @@
                             <div>
                                 <canvas id="radarChart"></canvas>
                             </div>
+                            <table>
+                                <tr>
+                                    <td><h5>Area</h5></td>
+                                    <td><h5><div class="color-box a3e1d4"></div>VnG400</h5></td>
+                                    <td><h5><div class="color-box dedede"></div>Promax Capsule</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Batu Pahat</h5></td>
+                                    <td><h5>{{$radar_report_batupahat_count}}</h5></td>
+                                    <td><h5>28</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Johor Bahru</h5></td>
+                                    <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
+                                    <td><h5>>48</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Muar</h5></td>
+                                    <td><h5>{{$radar_report_muar_count}}</h5></td>
+                                    <td><h5>40</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Segamat</h5></td>
+                                    <td><h5>{{$radar_report_segamat_count}}</h5></td>
+                                    <td><h5>19</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Kulaijaya</h5></td>
+                                    <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
+                                    <td><h5>96</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Skudai</h5></td>
+                                    <td><h5>{{$radar_report_skudai_count}}</h5></td>
+                                    <td><h5>27</h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>Pasir Gudang</h5></td>
+                                    <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
+                                    <td><h5>100</h5></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
