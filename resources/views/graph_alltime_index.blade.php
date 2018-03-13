@@ -286,7 +286,7 @@
           float: left;
           width: 13px;
           height: 13px;
-          margin-top: 5px;;
+          margin: 5px;;
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
