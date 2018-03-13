@@ -214,7 +214,8 @@
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
-                            <div class="foo blue"></div><h5>Legal</h5>
+                            <div class="color-box #a3e1d4"></div><h5>Legal</h5>
+                            <div class="color-box #dedede"></div><h5>Illegal</h5>
                         </div>
                     </div>
                 </div>
@@ -281,16 +282,16 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     <style type="text/css">
-        .foo {
+        .color-box {
           float: left;
-          width: 20px;
-          height: 20px;
+          width: 13px;
+          height: 13px;
           margin: 5px;
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
-        .blue {
-          background: #13b4ff;
+        .#a3e1d4 {
+          background: #a3e1d4;
         }
         
         .purple {
