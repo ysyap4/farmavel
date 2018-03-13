@@ -351,12 +351,12 @@
           background: #b5b8cf;
         }
 
-        .thead {
+        .thead th, thead td {
             text-align: center;
             margin-right: 5px;
         }
 
-        .tbody {
+        .tbody th, tbody td {
             text-align: center;
             margin-right: 5px;
         }
