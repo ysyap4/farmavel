@@ -214,8 +214,8 @@
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
-                            <div class="color-box a3e1d4"></div>{{$pie_medicine_legal_count}} Legal <br>
-                            <div class="color-box dedede"></div>{{$pie_medicine_illegal_count}} Illegal <br>
+                            <div class="color-box a3e1d4"> {{$pie_medicine_legal_count}} Legal </div>
+                            <div class="color-box dedede"> {{$pie_medicine_illegal_count}} Illegal </div>
                         </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@
           float: left;
           width: 13px;
           height: 13px;
-          margin: 5px;
+          margin-top: 5px;;
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
