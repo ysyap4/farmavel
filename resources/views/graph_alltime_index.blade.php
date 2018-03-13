@@ -48,7 +48,7 @@
                         Farmavel
                     </div>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span> </a>
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                         <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graph</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li class="active"><a href="{{URL::route('graph_alltime_index')}}">All-Time Charts</a></li>
@@ -172,36 +172,6 @@
             </div>
         </div>
         <div class="wrapper wrapper-content animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Line Chart Example
-                                <small>With custom colors.</small>
-                            </h5>
-                            <div ibox-tools></div>
-                        </div>
-                        <div class="ibox-content">
-                            <div>
-                                <canvas id="lineChart" height="140"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Bar Chart Example</h5>
-                            <div ibox-tools></div>
-                        </div>
-                        <div class="ibox-content">
-                            <div>
-                                <canvas id="barChart" height="140"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
