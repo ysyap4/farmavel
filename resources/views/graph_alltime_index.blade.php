@@ -249,11 +249,11 @@
                                 <canvas id="radarChart"></canvas>
                             </div>
                             <table class="table-align-center">
-                                <th>
-                                    <td><h5>Area</h5></td>
-                                    <td><h5><div class="color-box a3e1d4"></div>VnG400</h5></td>
-                                    <td><h5><div class="color-box dedede"></div>Promax Capsule</h5></td>
-                                </th>
+                                <tr>
+                                    <th><h5>Area</h5></th>
+                                    <th><h5><div class="color-box a3e1d4"></div>VnG400</h5></th>
+                                    <th><h5><div class="color-box dedede"></div>Promax Capsule</h5></th>
+                                </tr>
                                 <tr>
                                     <td><h5>Batu Pahat</h5></td>
                                     <td><h5>{{$radar_report_batupahat_count}}</h5></td>
