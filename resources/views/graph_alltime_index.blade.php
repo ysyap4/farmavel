@@ -335,7 +335,7 @@
           float: left;
           width: 13px;
           height: 13px;
-          margin-right: 5px;;
+          margin-right: 5px;
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
@@ -353,10 +353,12 @@
 
         .thead {
             text-align: center;
+            margin-right: 5px;
         }
 
         .tbody {
             text-align: center;
+            margin-right: 5px;
         }
     </style>
 
