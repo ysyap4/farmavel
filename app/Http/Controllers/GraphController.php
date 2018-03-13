@@ -43,7 +43,7 @@ class GraphController extends Controller
         $polar_medicine_natural_count = medicine::where('med_category', 'natural ingredient')->count();
         $polar_medicine_supplement_count = medicine::where('med_category', 'supplement')->count();
 
-        return View::make('manage_user_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 
+        return View::make('graph_alltime_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 
             'pie_medicine_legal_count' => $pie_medicine_legal_count, 
             'pie_medicine_illegal_count' => $pie_medicine_illegal_count, 
             'polar_medicine_traditional_count' => $polar_medicine_traditional_count, 
