@@ -36,12 +36,12 @@ class GraphController extends Controller
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $pie_medicine_legal_count = medicine::where('med_authenticity', 'legal')->count();
-        $pie_medicine_illegal_count = medicine::where('med_authenticity', 'illegal')->count();
+        $pie_medicine_legal_count = medicine::where('med_authenticity', 'Legal')->count();
+        $pie_medicine_illegal_count = medicine::where('med_authenticity', 'Illegal')->count();
 
-        $polar_medicine_traditional_count = medicine::where('med_category', 'traditional')->count();
-        $polar_medicine_natural_count = medicine::where('med_category', 'natural ingredient')->count();
-        $polar_medicine_supplement_count = medicine::where('med_category', 'supplement')->count();
+        $polar_medicine_traditional_count = medicine::where('med_category', 'Traditional')->count();
+        $polar_medicine_natural_count = medicine::where('med_category', 'Natural ingredient')->count();
+        $polar_medicine_supplement_count = medicine::where('med_category', 'Supplement')->count();
 
         return View::make('graph_alltime_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 
             'pie_medicine_legal_count' => $pie_medicine_legal_count, 
