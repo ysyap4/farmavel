@@ -213,9 +213,8 @@
                         <div class="ibox-content">
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
-                                <h5>Pie Chart: Legal and Illegal Medicine</h5>
                             </div>
-                            <h5>Pie Chart: Legal and Illegal Medicine</h5>
+                            <div class="foo blue"></div><h5>Legal</h5>
                         </div>
                     </div>
                 </div>
@@ -280,6 +279,29 @@
 
     <!-- ChartJS-->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
+
+    <script type="text/javascript">
+        .foo {
+          float: left;
+          width: 20px;
+          height: 20px;
+          margin: 5px;
+          border: 1px solid rgba(0, 0, 0, .2);
+        }
+        
+        .blue {
+          background: #13b4ff;
+        }
+        
+        .purple {
+          background: #ab3fdd;
+        }
+        
+        .wine {
+          background: #ae163e;
+        }
+    </script>
+
 
     <script type="text/javascript">
     $(function () {
