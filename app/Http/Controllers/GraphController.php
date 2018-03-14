@@ -67,10 +67,37 @@ class GraphController extends Controller
             'radar_report_pasirgudang_count' => $radar_report_pasirgudang_count));
     }
 
-    public function print_alltime_charts()
+    public function graph_alltime_index_pdf()
     {
-        $pdf = PDF::loadView('graph_alltime_index');
-        return $pdf->download('alltime_charts.pdf');
+        $user = users::all();
+        $medicine = medicine::all();
+        $report = report::all();
+        $appointment = appointment::all();
+        $vas = vas::all();
+
+        $pie_medicine_legal_count = medicine::where('med_authenticity', 'Legal')->count();
+        $pie_medicine_illegal_count = medicine::where('med_authenticity', 'Illegal')->count();
+
+        $polar_medicine_traditional_count = medicine::where('med_category', 'Traditional')->count();
+        $polar_medicine_natural_count = medicine::where('med_category', 'Natural ingredient')->count();
+        $polar_medicine_supplement_count = medicine::where('med_category', 'Supplement')->count();
+
+        $radar_report_batupahat_count = report::where('rep_location', 'Batu Pahat')->count();
+        $radar_report_johorbahru_count = report::where('rep_location', 'Johor Bahru')->count();
+        $radar_report_muar_count = report::where('rep_location', 'Muar')->count();
+        $radar_report_segamat_count = report::where('rep_location', 'Segamat')->count();
+        $radar_report_kulaijaya_count = report::where('rep_location', 'Kulaijaya')->count();
+        $radar_report_skudai_count = report::where('rep_location', 'Skudai')->count();
+        $radar_report_pasirgudang_count = report::where('rep_location', 'Pasir Gudang')->count();
+
+        $data = array();
+        $pdf = PDF::loadView('graph_alltime_index_pdf', $data);
+        $pdf->setOption('enable-javascript', true);
+        $pdf->setOption('javascript-delay', 13500);
+        $pdf->setOption('enable-smart-shrinking', true);
+        $pdf->setOption('no-stop-slow-scripts', true);
+        
+        return $pdf->download('graph_alltime_index.pdf');
     }
 
     public function manage_user_index()
