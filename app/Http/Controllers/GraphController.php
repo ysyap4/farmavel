@@ -66,6 +66,12 @@ class GraphController extends Controller
             'radar_report_pasirgudang_count' => $radar_report_pasirgudang_count));
     }
 
+    public function print_alltime_charts()
+    {
+        $pdf = PDF::loadView('graph_alltime_index', $data);
+        return $pdf->download('alltime_charts.pdf');
+    }
+
     public function manage_user_index()
     {
         $user = users::all();

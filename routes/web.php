@@ -222,3 +222,8 @@ Route::get('graph_periodic_index',[
 	'as' => 'graph_periodic_index',
 	'uses' => 'GraphController@graph_periodic_index',
 	]);
+
+Route::get('print_alltime_charts',[
+	'as' => 'print_alltime_charts',
+	'uses' => 'GraphController@print_alltime_charts',
+	]);

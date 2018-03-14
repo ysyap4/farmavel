@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Farmavel | All-Time Charts</title>
@@ -168,7 +168,7 @@
                 </ol>
             </div>
             <div class="col-lg-2">
-
+                <a href="{{URL::route('print_alltime_charts')}}">Download PDF</a>
             </div>
         </div>
         <div class="wrapper wrapper-content animated fadeInRight">
