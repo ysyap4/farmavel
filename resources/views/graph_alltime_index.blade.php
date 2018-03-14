@@ -223,7 +223,7 @@
                             <thead class="thead">
                                 <tr>
                                     <th><h5>Area</h5></th>
-                                    <th><h5><div class="color-box a3e1d4"></div>VnG400</h5></th>
+                                    <th><h5><div class="color-box a3e1d4"></div>Number</h5></th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
