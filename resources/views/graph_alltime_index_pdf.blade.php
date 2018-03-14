@@ -59,7 +59,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Radar Chart: Different Reported Illegal Medicines by Respective Locations </h5>
+                            <h5>Radar Chart: Number of Illegal Medicine Reports by Respective Locations </h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
@@ -70,45 +70,37 @@
                             <thead class="thead">
                                 <tr>
                                     <th><h5>Area</h5></th>
-                                    <th><h5><div class="color-box a3e1d4"></div>VnG400</h5></th>
-                                    <th><h5><div class="color-box dedede"></div>Promax Capsule</h5></th>
+                                    <th><h5><div class="color-box a3e1d4"></div>Number</h5></th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
                                 <tr>
                                     <td><h5>Batu Pahat</h5></td>
                                     <td><h5>{{$radar_report_batupahat_count}}</h5></td>
-                                    <td><h5>28</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Johor Bahru</h5></td>
                                     <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
-                                    <td><h5>48</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Muar</h5></td>
                                     <td><h5>{{$radar_report_muar_count}}</h5></td>
-                                    <td><h5>40</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Segamat</h5></td>
                                     <td><h5>{{$radar_report_segamat_count}}</h5></td>
-                                    <td><h5>19</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Kulaijaya</h5></td>
                                     <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
-                                    <td><h5>96</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Skudai</h5></td>
                                     <td><h5>{{$radar_report_skudai_count}}</h5></td>
-                                    <td><h5>27</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Pasir Gudang</h5></td>
                                     <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
-                                    <td><h5>100</h5></td>
                                 </tr>
                             </tbody>
                             </table>

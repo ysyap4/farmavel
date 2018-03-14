@@ -224,44 +224,36 @@
                                 <tr>
                                     <th><h5>Area</h5></th>
                                     <th><h5><div class="color-box a3e1d4"></div>VnG400</h5></th>
-                                    <th><h5><div class="color-box dedede"></div>Promax Capsule</h5></th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
                                 <tr>
                                     <td><h5>Batu Pahat</h5></td>
                                     <td><h5>{{$radar_report_batupahat_count}}</h5></td>
-                                    <td><h5>28</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Johor Bahru</h5></td>
                                     <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
-                                    <td><h5>48</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Muar</h5></td>
                                     <td><h5>{{$radar_report_muar_count}}</h5></td>
-                                    <td><h5>40</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Segamat</h5></td>
                                     <td><h5>{{$radar_report_segamat_count}}</h5></td>
-                                    <td><h5>19</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Kulaijaya</h5></td>
                                     <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
-                                    <td><h5>96</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Skudai</h5></td>
                                     <td><h5>{{$radar_report_skudai_count}}</h5></td>
-                                    <td><h5>27</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Pasir Gudang</h5></td>
                                     <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
-                                    <td><h5>100</h5></td>
                                 </tr>
                             </tbody>
                             </table>
@@ -416,12 +408,12 @@
             datasets: [
                 {
                     label: "VnG400",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
+                    fillColor: "rgba(26,179,148,0.2)",
+                    strokeColor: "rgba(26,179,148,1)",
+                    pointColor: "rgba(26,179,148,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
                     data: [{{$radar_report_batupahat_count}}, 
                             {{$radar_report_johorbahru_count}}, 
                             {{$radar_report_muar_count}}, 
@@ -429,16 +421,6 @@
                             {{$radar_report_kulaijaya_count}}, 
                             {{$radar_report_skudai_count}}, 
                             {{$radar_report_pasirgudang_count}}]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(26,179,148,0.2)",
-                    strokeColor: "rgba(26,179,148,1)",
-                    pointColor: "rgba(26,179,148,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
                 }
             ]
         };
