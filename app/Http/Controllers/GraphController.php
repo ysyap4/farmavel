@@ -69,7 +69,7 @@ class GraphController extends Controller
 
     public function print_alltime_charts()
     {
-        $pdf = PDF::loadView('graph_alltime_index', $data);
+        $pdf = PDF::loadView('graph_alltime_index');
         return $pdf->download('alltime_charts.pdf');
     }
 
