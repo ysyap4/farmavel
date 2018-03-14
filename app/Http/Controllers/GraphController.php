@@ -107,7 +107,7 @@ class GraphController extends Controller
 
         $pdf = PDF::loadView('graph_alltime_index_pdf', $data);
         $pdf->setOption('enable-javascript', true);
-        $pdf->setOption('javascript-delay', 13500);
+        $pdf->setOption('javascript-delay', 5000);
         $pdf->setOption('enable-smart-shrinking', true);
         $pdf->setOption('no-stop-slow-scripts', true);
         
