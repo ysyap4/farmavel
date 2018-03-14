@@ -59,7 +59,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Radar Chart Example</h5>
+                            <h5>Radar Chart: Different Reported Illegal Medicines by Respective Locations </h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
@@ -263,12 +263,12 @@
             datasets: [
                 {
                     label: "VnG400",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
+                    fillColor: "rgba(26,179,148,0.2)",
+                    strokeColor: "rgba(26,179,148,1)",
+                    pointColor: "rgba(26,179,148,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
                     data: [{{$radar_report_batupahat_count}}, 
                             {{$radar_report_johorbahru_count}}, 
                             {{$radar_report_muar_count}}, 
@@ -276,16 +276,6 @@
                             {{$radar_report_kulaijaya_count}}, 
                             {{$radar_report_skudai_count}}, 
                             {{$radar_report_pasirgudang_count}}]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(26,179,148,0.2)",
-                    strokeColor: "rgba(26,179,148,1)",
-                    pointColor: "rgba(26,179,148,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
                 }
             ]
         };
