@@ -31,7 +31,7 @@
                         <div class="ibox-content">
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
-                            </div>
+                            </div style="width:800px;height:200;">
                             <h5><div class="color-box a3e1d4"></div> {{$pie_medicine_legal_count}} Legal </h5>
                             <h5><div class="color-box dedede"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
                         </div>
