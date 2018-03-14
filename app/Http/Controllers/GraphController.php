@@ -105,7 +105,7 @@ class GraphController extends Controller
         $data[10] = $radar_report_skudai_count;
         $data[11] = $radar_report_pasirgudang_count;
 
-        $pdf = PDF::loadView('graph_alltime_index_pdf', $data);
+        $pdf = PDF::loadView('graph_alltime_index_pdf', array('data' => $data);
         $pdf->setOption('enable-javascript', true);
         $pdf->setOption('javascript-delay', 13500);
         $pdf->setOption('enable-smart-shrinking', true);
