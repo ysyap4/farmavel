@@ -17,6 +17,7 @@ use App\Model\medicine;
 use App\Model\report;
 use App\Model\appointment;
 use App\Model\vas;
+use PDF;
 
 class GraphController extends Controller
 {
