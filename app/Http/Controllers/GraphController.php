@@ -90,22 +90,22 @@ class GraphController extends Controller
         $radar_report_skudai_count = report::where('rep_location', 'Skudai')->count();
         $radar_report_pasirgudang_count = report::where('rep_location', 'Pasir Gudang')->count();
 
-        $data = array();
+        $data = array(
+            'pie_medicine_legal_count' => $pie_medicine_legal_count,
+            'pie_medicine_illegal_count' => $pie_medicine_illegal_count,
+            'polar_medicine_traditional_count' => $polar_medicine_traditional_count,
+            'polar_medicine_natural_count' => $polar_medicine_natural_count,
+            'polar_medicine_supplement_count' => $polar_medicine_supplement_count,
+            'radar_report_batupahat_count' => $radar_report_batupahat_count,
+            'radar_report_johorbahru_count' => $radar_report_johorbahru_count,
+            'radar_report_muar_count' => $radar_report_muar_count,
+            'radar_report_segamat_count' => $radar_report_segamat_count,
+            'radar_report_kulaijaya_count' => $radar_report_kulaijaya_count,
+            'radar_report_skudai_count' => $radar_report_skudai_count,
+            'radar_report_pasirgudang_count' => $radar_report_pasirgudang_count
+        );
 
-        $data[0] = $pie_medicine_legal_count;
-        $data[1] = $pie_medicine_illegal_count;
-        $data[2] = $polar_medicine_traditional_count;
-        $data[3] = $polar_medicine_natural_count;
-        $data[4] = $polar_medicine_supplement_count;
-        $data[5] = $radar_report_batupahat_count;
-        $data[6] = $radar_report_johorbahru_count;
-        $data[7] = $radar_report_muar_count;
-        $data[8] = $radar_report_segamat_count;
-        $data[9] = $radar_report_kulaijaya_count;
-        $data[10] = $radar_report_skudai_count;
-        $data[11] = $radar_report_pasirgudang_count;
-
-        $pdf = PDF::loadView('graph_alltime_index_pdf', array('data' => $data);
+        $pdf = PDF::loadView('graph_alltime_index_pdf', $data);
         $pdf->setOption('enable-javascript', true);
         $pdf->setOption('javascript-delay', 13500);
         $pdf->setOption('enable-smart-shrinking', true);

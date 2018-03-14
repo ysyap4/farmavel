@@ -32,8 +32,8 @@
                             <div>
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
-                            <h5><div class="color-box a3e1d4"></div> {{$data[0]}} Legal </h5>
-                            <h5><div class="color-box dedede"></div> {{$data[1]}} Illegal </h5>
+                            <h5><div class="color-box a3e1d4"></div> {{$pie_medicine_legal_count}} Legal </h5>
+                            <h5><div class="color-box dedede"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,9 @@
                             <div class="text-center">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
-                            <h5><div class="color-box a3e1d4"></div> {{$data[2]}} Traditional </h5>
-                            <h5><div class="color-box dedede"></div> {{$data[3]}} Natural ingredient </h5>
-                            <h5><div class="color-box b5b8cf"></div> {{$data[4]}} Supplement </h5>
+                            <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
+                            <h5><div class="color-box dedede"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
+                            <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
                         </div>
                     </div>
                 </div>
@@ -77,37 +77,37 @@
                             <tbody class="tbody">
                                 <tr>
                                     <td><h5>Batu Pahat</h5></td>
-                                    <td><h5>{{$data[5]}}</h5></td>
+                                    <td><h5>{{$radar_report_batupahat_count}}</h5></td>
                                     <td><h5>28</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Johor Bahru</h5></td>
-                                    <td><h5>{{$data[6]}}</h5></td>
+                                    <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
                                     <td><h5>48</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Muar</h5></td>
-                                    <td><h5>{{$data[7]}}</h5></td>
+                                    <td><h5>{{$radar_report_muar_count}}</h5></td>
                                     <td><h5>40</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Segamat</h5></td>
-                                    <td><h5>{{$data[8]}}</h5></td>
+                                    <td><h5>{{$radar_report_segamat_count}}</h5></td>
                                     <td><h5>19</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Kulaijaya</h5></td>
-                                    <td><h5>{{$data[9]}}</h5></td>
+                                    <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
                                     <td><h5>96</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Skudai</h5></td>
-                                    <td><h5>{{$data[10]}}</h5></td>
+                                    <td><h5>{{$radar_report_skudai_count}}</h5></td>
                                     <td><h5>27</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Pasir Gudang</h5></td>
-                                    <td><h5>{{$data[11]}}</h5></td>
+                                    <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
                                     <td><h5>100</h5></td>
                                 </tr>
                             </tbody>
