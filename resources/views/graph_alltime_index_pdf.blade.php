@@ -29,11 +29,11 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div style="width:800px; height:200; background-color: transparent;">
+                            <div style="width:800px; height:200;">
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
-                            <h5><div class="color-box a3e1d4"></div> {{$pie_medicine_legal_count}} Legal </h5>
-                            <h5><div class="color-box 5F6A6A"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
+                            <h5><div class="color-box blue"></div> {{$pie_medicine_legal_count}} Legal </h5>
+                            <h5><div class="color-box grey"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
                         </div>
                     </div>
                 </div>
@@ -45,12 +45,12 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div class="text-center" style="width:800px; height:200;background-color: transparent;">
+                            <div class="text-center" style="width:800px; height:200;">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
-                            <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
-                            <h5><div class="color-box 5F6A6A"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
-                            <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
+                            <h5><div class="color-box blue"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
+                            <h5><div class="color-box grey"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
+                            <h5><div class="color-box purple"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
                         </div>
                     </div>
                 </div>
@@ -63,14 +63,14 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div style="width:800px; height:200; background-color: transparent;">
+                            <div style="width:800px; height:200;">
                                 <canvas id="radarChart"></canvas>
                             </div>
                             <table class="table-align-center">
                             <thead class="thead">
                                 <tr>
                                     <th><h5>Area</h5></th>
-                                    <th><h5><div class="color-box a3e1d4"></div>Number</h5></th>
+                                    <th><h5><div class="color-box blue"></div>Number</h5></th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
@@ -149,16 +149,16 @@
           border: 1px solid rgba(0, 0, 0, .2);
         }
         
-        .a3e1d4 {
-          background: #a3e1d4;
+        .blue {
+          background: #117A65;
         }
         
-        .5F6A6A {
-          background: #5F6A6A;
+        .grey {
+          background: #626567;
         }
         
-        .b5b8cf {
-          background: #b5b8cf;
+        .purple {
+          background: #633974;
         }
 
         .thead th, thead td {
@@ -179,19 +179,19 @@
         var polarData = [
             {
                 value: {{$polar_medicine_traditional_count}},
-                color: "#a3e1d4",
+                color: "#117A65",
                 highlight: "#1ab394",
                 label: "Traditional"
             },
             {
                 value: {{$polar_medicine_natural_count}},
-                color: "#5F6A6A",
+                color: "#626567",
                 highlight: "#1ab394",
                 label: "Natural ingredient"
             },
             {
                 value: {{$polar_medicine_supplement_count}},
-                color: "#b5b8cf",
+                color: "#633974",
                 highlight: "#1ab394",
                 label: "Supplement"
             }
@@ -221,13 +221,13 @@
         var doughnutData = [
             {
                 value: {{$pie_medicine_legal_count}},
-                color: "#a3e1d4",
+                color: "#117A65",
                 highlight: "#1ab394",
                 label: "Legal"
             },
             {
                 value: {{$pie_medicine_illegal_count}},
-                color: "#5F6A6A",
+                color: "#626567",
                 highlight: "#1ab394",
                 label: "Illegal"
             },
