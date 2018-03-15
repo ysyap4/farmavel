@@ -149,7 +149,7 @@ Route::get('manage_appointment_create', [
 
 Route::post('manage_appointment_create_process', [
 	'as' => 'manage_appointment_create_process',
-	'uses' => 'ManageController@manage_mappointment_create_process',
+	'uses' => 'ManageController@manage_appointment_create_process',
 	]);
 
 Route::get('manage_appointment_show',[
