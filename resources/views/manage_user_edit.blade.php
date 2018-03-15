@@ -31,7 +31,7 @@
                             <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile_small.jpg')}}" />
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"></strong>
                              </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Profile</a></li>
@@ -258,15 +258,11 @@
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
 
                                     <div class="col-sm-10">
-                                        @if ($edit_selected_user[$i]->type === 'Patient')
-                                        <div class="radio"><label> <input type="radio" value="Patient" id="type[]" name="type[$i]" checked> Patient </label></div>
-                                        <div class="radio"><label> <input type="radio" value="Admin" id="type[]" name="type[$i]"> Admin </label></div>
-                                        @elseif ($edit_selected_user[$i]->type === 'Admin')
-                                        <div class="radio"><label> <input type="radio" value="Patient" id="type[]" name="type[$i]"> Patient </label></div>
-                                        <div class="radio"><label> <input type="radio" value="Admin" id="type[]" name="type[$i]" checked> Admin </label></div>
+                                        <input type="text" id="type[]" class="form-control" name="type[]" placeholder="Type" value="{{$edit_selected_user[$i]->type}}">
+                                        @if ($errors->has('type'))
+                                            <p class="help-block">{{$errors ->first('type')}}</p>
                                         @endif
                                     </div>
-
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
