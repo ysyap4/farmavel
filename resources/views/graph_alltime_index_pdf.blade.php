@@ -33,7 +33,7 @@
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box a3e1d4"></div> {{$pie_medicine_legal_count}} Legal </h5>
-                            <h5><div class="color-box dedede"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
+                            <h5><div class="color-box 5F6A6A"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box a3e1d4"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
-                            <h5><div class="color-box dedede"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
+                            <h5><div class="color-box 5F6A6A"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
                             <h5><div class="color-box b5b8cf"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
                         </div>
                     </div>
@@ -153,8 +153,8 @@
           background: #a3e1d4;
         }
         
-        .dedede {
-          background: #dedede;
+        .5F6A6A {
+          background: #5F6A6A;
         }
         
         .b5b8cf {
@@ -185,7 +185,7 @@
             },
             {
                 value: {{$polar_medicine_natural_count}},
-                color: "#dedede",
+                color: "#5F6A6A",
                 highlight: "#1ab394",
                 label: "Natural ingredient"
             },
@@ -227,7 +227,7 @@
             },
             {
                 value: {{$pie_medicine_illegal_count}},
-                color: "#dedede",
+                color: "#5F6A6A",
                 highlight: "#1ab394",
                 label: "Illegal"
             },
