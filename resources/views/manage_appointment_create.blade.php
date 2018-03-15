@@ -329,6 +329,11 @@
                 calendarWeeks: true,
                 autoclose: true
             });
+
+        $(".dial").knob({
+            'min':8,
+            'max':18
+        });
     </script>
 
 </body>
