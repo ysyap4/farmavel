@@ -266,6 +266,15 @@
                                             <p class="help-block">{{$errors ->first('app_method')}}</p>
                                         @endif
                                     </div>
+                                    <div class="col-sm-10">
+                                        <select class="form-control m-b" name="app_method" id="app_method">
+                                            <option value="OTC">Over The Counter</option>
+                                            <option value="PDT">Pharmacy Drive Thru</option>
+                                            <option value="L4U">Locker4U</option>
+                                            <option value="UMP1M">Ubat Melalui Pos 1Malaysia</option>
+                                        </select>
+                                    </div>
+
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
