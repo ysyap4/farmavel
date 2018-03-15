@@ -9,13 +9,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farmavel | Add Medicine</title>
+    <title>Farmavel | Add Appointment</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
 
 </head>
 
@@ -217,13 +218,12 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('app_date') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Date</label>
+                                <div class="form-group{{ $errors->has('app_date') ? ' has-error' : '' }}" id="data_1"><label class="col-sm-2 control-label">Date</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="app_date" class="form-control" name="app_date" placeholder="Date" value="{{ Input::old('app_date')}}">
-                                        @if ($errors->has('app_date'))
-                                            <p class="help-block">{{$errors ->first('app_date')}}</p>
-                                        @endif
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="{{ Input::old('app_date')}}">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -306,8 +306,10 @@
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
-        <!-- iCheck -->
+    <!-- iCheck -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
+
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
 
     <script>
         $(document).ready(function () {
@@ -316,6 +318,16 @@
                 radioClass: 'iradio_square-green',
             });
         });
+    </script>
+
+    <script type="text/javascript">
+        $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
     </script>
 
 </body>
