@@ -201,7 +201,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Reported Location</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Batu Pahat Availability</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_batupahat}} </div>
                                     </div>
@@ -209,7 +209,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Johor Bahru Availability</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_johorbahru}} </div>
                                     </div>
@@ -217,7 +217,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Report Info</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Muar Availability</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_muar}} </div>
                                     </div>
@@ -225,7 +225,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Segamat Availability</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_segamat}} </div>
                                     </div>
@@ -233,7 +233,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">Report Info</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Kulaijaya Availability</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_kulaijaya}} </div>
                                     </div>

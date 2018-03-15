@@ -505,7 +505,7 @@ class ManageController extends Controller
         $get_user_name = Input::get('user_name');
         $get_user = users::where('name', $get_user_name)->first();
         $get_med_name = Input::get('med_name');
-        $get_med = medicine::where(['med_name', '=', $get_med_name], ['med_authenticity', '=', 'Legal'])->first();
+        $get_med = medicine::where('med_name', $get_med_name)->where('med_authenticity', 'Legal')->first();
 
         if($validator->fails())
         {
@@ -618,8 +618,7 @@ class ManageController extends Controller
             $edit[$i] = appointment::find($edit_selected_app[$i]);
             $get_selected_user[$i] = users::where('name', $get_user_name[$i])->first();
             $edit[$i]->user_id = $get_selected_user[$i]->id;
-            $get_selected_med[$i] = medicine::where(['med_name', '=', $get_med_name[$i]], 
-                                                    ['med_authenticity', '=', 'Legal'])->first();
+            $get_selected_med[$i] = medicine::where('med_name', $get_med_name[$i])->where('med_authenticity', 'Legal')->first();
             $edit[$i]->med_id = $get_selected_med[$i]->id;
             $edit[$i]->app_date = $app_date[$i];
             $edit[$i]->app_time = $app_time[$i];
@@ -782,8 +781,7 @@ class ManageController extends Controller
             $edit[$i] = '';
             $get_selected_med[$i] = '';
             $edit[$i] = vas::find($edit_selected_vas[$i]);
-            $get_selected_med[$i] = medicine::where(['med_name', '=', $get_med_name[$i]], 
-                                                    ['med_authenticity', '=', 'Legal'])->first();
+            $get_selected_med[$i] = medicine::where('med_name', $get_med_name[$i])->where('med_authenticity', 'Legal')->first();
             $edit[$i]->med_id = $get_selected_med[$i]->id;
             $edit[$i]->vas_availability_batupahat = $vas_availability_batupahat[$i];
             $edit[$i]->vas_availability_johorbahru = $vas_availability_johorbahru[$i];
