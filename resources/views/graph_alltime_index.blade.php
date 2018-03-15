@@ -212,7 +212,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Radar Chart Example</h5>
+                            <h5>Radar Chart: Number of Illegal Medicine Reports by Respective Locations </h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
