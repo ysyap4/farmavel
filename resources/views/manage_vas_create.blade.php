@@ -268,7 +268,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <a class="btn btn-white" href="{{ url()->previous() }}">Cancel</a>
-                                        <button class="btn btn-primary" type="submit">Add Report</button>
+                                        <button class="btn btn-primary" type="submit">Add VAS</button>
                                     </div>
                                 </div>
                             </form>

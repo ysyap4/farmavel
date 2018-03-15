@@ -687,8 +687,7 @@ class ManageController extends Controller
         $validator = Validator::make(Input::all(),$rules);
 
         $get_med_name = Input::get('med_name');
-        $get_med = medicine::where(['med_name', '=', $get_med_name], 
-                                    ['med_authenticity', '=', 'Legal'])->first();
+        $get_med = medicine::where('med_name', $get_med_name)->where('med_authenticity', 'Legal')->first();
 
         if($validator->fails())
         {
