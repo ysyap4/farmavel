@@ -261,12 +261,6 @@
                                 <div class="form-group{{ $errors->has('app_method') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Method</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="app_method" class="form-control" name="app_method" placeholder="Method" value="{{ Input::old('app_method')}}">
-                                        @if ($errors->has('app_method'))
-                                            <p class="help-block">{{$errors ->first('app_method')}}</p>
-                                        @endif
-                                    </div>
-                                    <div class="col-sm-10">
                                         <select class="form-control m-b" name="app_method" id="app_method">
                                             <option value="OTC">Over The Counter (OTC)</option>
                                             <option value="PDT">Pharmacy Drive Thru (PDT)</option>
