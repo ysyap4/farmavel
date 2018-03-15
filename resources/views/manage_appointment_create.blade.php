@@ -232,10 +232,9 @@
                                 <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="app_time" class="form-control" name="app_time" placeholder="Time" value="{{ Input::old('app_time')}}">
-                                        @if ($errors->has('app_time'))
-                                            <p class="help-block">{{$errors ->first('app_time')}}</p>
-                                        @endif
+                                        <div class="m-r-md inline">
+                                            <input type="text" id="app_time" name="app_time" value="{{ Input::old('app_time')}}" class="dial m-r-sm" data-fgColor="#ED5565" data-width="85" data-height="85" data-cursor=true data-thickness=.3/>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -310,6 +309,7 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
 
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/jsKnob/jquery.knob.js')}}"></script>
 
     <script>
         $(document).ready(function () {
