@@ -13,7 +13,7 @@
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
@@ -268,10 +268,10 @@
                                     </div>
                                     <div class="col-sm-10">
                                         <select class="form-control m-b" name="app_method" id="app_method">
-                                            <option value="OTC">Over The Counter</option>
-                                            <option value="PDT">Pharmacy Drive Thru</option>
-                                            <option value="L4U">Locker4U</option>
-                                            <option value="UMP1M">Ubat Melalui Pos 1Malaysia</option>
+                                            <option value="OTC">Over The Counter (OTC)</option>
+                                            <option value="PDT">Pharmacy Drive Thru (PDT)</option>
+                                            <option value="L4U">Locker4U (L4U)</option>
+                                            <option value="UMP1M">Ubat Melalui Pos 1Malaysia (UMP1M)</option>
                                         </select>
                                     </div>
 

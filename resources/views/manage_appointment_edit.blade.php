@@ -13,7 +13,7 @@
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
