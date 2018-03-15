@@ -194,10 +194,10 @@
                             <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_appointment_create_process')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Client Name</label>
+                                <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Patient Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="user_name" class="form-control" name="user_name" placeholder="Client Name" value="{{ Input::old('user_name')}}">
+                                        <input type="text" id="user_name" class="form-control" name="user_name" placeholder="Patient Name" value="{{ Input::old('user_name')}}">
                                         @if ($errors->has('user_name'))
                                             <p class="help-block">{{$errors ->first('user_name')}}</p>
                                         @endif
@@ -229,13 +229,14 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label><label class="col-sm-2 control-label">8:00-18:00</label>
+                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label>
 
                                     <div class="col-sm-10">
                                         <div class="m-r-md inline">
                                             <input type="text" id="app_time" name="app_time" value="{{ Input::old('app_time')}}" class="dial m-r-sm" data-fgColor="#ED5565" data-width="85" data-height="85" data-cursor=true data-thickness=.3/>
                                         </div>
                                     </div>
+                                    <label class="col-sm-2 control-label">8:00-18:00</label>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
