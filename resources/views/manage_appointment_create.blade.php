@@ -222,7 +222,7 @@
 
                                     <div class="col-sm-10">
                                         <div class="input-group date">
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="{{ Input::old('app_date')}}">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" id="app_date" name="app_date" value="{{ Input::old('app_date')}}">
                                         </div>
                                     </div>
                                 </div>
