@@ -258,10 +258,15 @@
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
 
                                     <div class="col-sm-10">
+                                        @if ($edit_selected_user[$i]->type === 'Patient')
                                         <div class="radio"><label> <input type="radio" checked="" value="Patient" id="type[]" name="type[]"> Patient </label></div>
                                         <div class="radio"><label> <input type="radio" value="Admin" id="type[]" name="type[]"> Admin </label></div>
+                                        @elseif ($edit_selected_user[$i]->type === 'Admin')
+                                        <div class="radio"><label> <input type="radio" value="Patient" id="type[]" name="type[]"> Patient </label></div>
+                                        <div class="radio"><label> <input type="radio" checked="" value="Admin" id="type[]" name="type[]"> Admin </label></div>
+                                        @endif
                                     </div>
-                                    
+
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
