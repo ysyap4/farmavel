@@ -229,14 +229,13 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label>
+                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label> <br/> <p class="col-sm-2 control-label">8:00-18:00</p>
 
                                     <div class="col-sm-10">
                                         <div class="m-r-md inline">
                                             <input type="text" id="app_time" name="app_time" value="{{ Input::old('app_time')}}" class="dial m-r-sm" data-fgColor="#ED5565" data-width="85" data-height="85" data-cursor=true data-thickness=.3/>
                                         </div>
                                     </div>
-                                    <label class="col-sm-2 control-label">8:00-18:00</label>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
