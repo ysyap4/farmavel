@@ -331,8 +331,11 @@
             });
 
         $(".dial").knob({
-            'min':8,
-            'max':18
+            'min':8:00,
+            'max':18:00,
+            'step':11,
+            'angleOffset':240,
+            'angleArc':300
         });
     </script>
 
