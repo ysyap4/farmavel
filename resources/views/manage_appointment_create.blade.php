@@ -249,6 +249,16 @@
                                             <p class="help-block">{{$errors ->first('app_location')}}</p>
                                         @endif
                                     </div>
+                                    <div class="col-sm-10">
+                                        <select class="form-control m-b" name="app_location" id="app_location">
+                                            <option value="Batu Pahat">Batu Pahat</option>
+                                            <option value="Johor Bahru">Johor Bahru</option>
+                                            <option value="Muar">Muar</option>
+                                            <option value="Segamat">Segamat</option>
+                                            <option value="Kulaijaya">Kulaijaya</option>
+                                            <option value="Skudai">Skudai</option>
+                                            <option value="Pasir Gudang">Pasir Gudang</option>
+                                        </select>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>

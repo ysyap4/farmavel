@@ -220,10 +220,9 @@
                                 <div class="form-group{{ $errors->has('med_category') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Category</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_category" class="form-control" name="med_category" placeholder="Category" value="{{ Input::old('med_category')}}">
-                                        @if ($errors->has('med_category'))
-                                            <p class="help-block">{{$errors ->first('med_category')}}</p>
-                                        @endif
+                                        <div class="radio"><label> <input type="radio" checked="" value="Traditional" id="med_category" name="med_category"> Traditional </label></div>
+                                        <div class="radio"><label> <input type="radio" value="Natural ingredient" id="med_category" name="med_category"> Natural ingredient </label></div>
+                                        <div class="radio"><label> <input type="radio" value="Supplement" id="med_category" name="med_category"> Supplement </label></div>
                                     </div>
                                 </div>
 
@@ -232,10 +231,8 @@
                                 <div class="form-group{{ $errors->has('med_authenticity') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Authenticity</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_authenticity" class="form-control" name="med_authenticity" placeholder="Authenticity" value="{{ Input::old('med_authenticity')}}">
-                                        @if ($errors->has('med_authenticity'))
-                                            <p class="help-block">{{$errors ->first('med_authenticity')}}</p>
-                                        @endif
+                                        <div class="radio"><label> <input type="radio" checked="" value="Legal" id="med_authenticity" name="med_authenticity"> Legal </label></div>
+                                        <div class="radio"><label> <input type="radio" value="Illegal" id="med_authenticity" name="med_authenticity"> Illegal </label></div>
                                     </div>
                                 </div>
 
