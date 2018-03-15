@@ -199,7 +199,7 @@
     
         var polarOptions = {
             scaleShowLabelBackdrop: true,
-            
+            scaleBackdropColor: "rgba(255,255,255,0.75)",
             scaleBeginAtZero: true,
             scaleBackdropPaddingY: 1,
             scaleBackdropPaddingX: 1,
@@ -216,6 +216,7 @@
         };
     
         var ctx = document.getElementById("polarChart").getContext("2d");
+        document.getElementById('polarChart').style.opacity="1";
         var myNewChart = new Chart(ctx).PolarArea(polarData, polarOptions);
     
         var doughnutData = [
