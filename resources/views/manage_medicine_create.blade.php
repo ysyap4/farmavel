@@ -13,7 +13,7 @@
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
@@ -220,9 +220,9 @@
                                 <div class="form-group{{ $errors->has('med_category') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Category</label>
 
                                     <div class="col-sm-10">
-                                        <div class="radio"><label> <input type="radio" checked="" value="Traditional" id="med_category" name="med_category"> Traditional </label></div>
-                                        <div class="radio"><label> <input type="radio" value="Natural ingredient" id="med_category" name="med_category"> Natural ingredient </label></div>
-                                        <div class="radio"><label> <input type="radio" value="Supplement" id="med_category" name="med_category"> Supplement </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" checked="" value="Traditional" id="med_category" name="med_category"> Traditional </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" value="Natural ingredient" id="med_category" name="med_category"> Natural ingredient </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" value="Supplement" id="med_category" name="med_category"> Supplement </label></div>
                                     </div>
                                 </div>
 
@@ -231,8 +231,8 @@
                                 <div class="form-group{{ $errors->has('med_authenticity') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Authenticity</label>
 
                                     <div class="col-sm-10">
-                                        <div class="radio"><label> <input type="radio" checked="" value="Legal" id="med_authenticity" name="med_authenticity"> Legal </label></div>
-                                        <div class="radio"><label> <input type="radio" value="Illegal" id="med_authenticity" name="med_authenticity"> Illegal </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" checked="" value="Legal" id="med_authenticity" name="med_authenticity"> Legal </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" value="Illegal" id="med_authenticity" name="med_authenticity"> Illegal </label></div>
                                     </div>
                                 </div>
 
