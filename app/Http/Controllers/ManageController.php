@@ -507,6 +507,8 @@ class ManageController extends Controller
         $get_med_name = Input::get('med_name');
         $get_med = medicine::where('med_name', $get_med_name)->where('med_authenticity', 'Legal')->first();
 
+        dd(Input::get('app_date'));
+
         if($validator->fails())
         {
             $messages = $validator->messages();
