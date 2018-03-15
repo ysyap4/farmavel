@@ -199,7 +199,7 @@
     
         var polarOptions = {
             scaleShowLabelBackdrop: true,
-            scaleBackdropColor: "rgba(255,255,255,0.75)",
+            
             scaleBeginAtZero: true,
             scaleBackdropPaddingY: 1,
             scaleBackdropPaddingX: 1,
