@@ -229,7 +229,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time</label> <br/> <p class="col-sm-2 control-label">8:00-18:00</p>
+                                <div class="form-group{{ $errors->has('app_time') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Time <br/> <p >8:00-18:00</p> </label> 
 
                                     <div class="col-sm-10">
                                         <div class="m-r-md inline">
