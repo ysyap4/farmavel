@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_report_create_process')}}">
+                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_vas_create_process')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                 <div class="form-group{{ $errors->has('med_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">VAS Medicine Name</label>
