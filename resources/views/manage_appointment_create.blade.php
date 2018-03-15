@@ -333,7 +333,6 @@
         $(".dial").knob({
             'min':8,
             'max':18,
-            'step':11,
             'angleOffset':240,
             'angleArc':300
         });
