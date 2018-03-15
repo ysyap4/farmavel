@@ -253,6 +253,7 @@
                                             <option value="Skudai">Skudai</option>
                                             <option value="Pasir Gudang">Pasir Gudang</option>
                                         </select>
+                                    </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
