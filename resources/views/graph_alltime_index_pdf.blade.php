@@ -29,7 +29,7 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div style="width:800px; height:200;">
+                            <div style="width:200px; height:200px;">
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box blue"></div> {{$pie_medicine_legal_count}} Legal </h5>
@@ -45,7 +45,7 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div class="text-center" style="width:800px; height:200;">
+                            <div class="text-center" style="width:200px; height:200px;">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box blue"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
@@ -63,7 +63,7 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div style="width:800px; height:200;">
+                            <div style="width:900px; height:200px;">
                                 <canvas id="radarChart"></canvas>
                             </div>
                             <table class="table-align-center">
@@ -216,7 +216,6 @@
         };
     
         var ctx = document.getElementById("polarChart").getContext("2d");
-        document.getElementById('polarChart').style.opacity="1";
         var myNewChart = new Chart(ctx).PolarArea(polarData, polarOptions);
     
         var doughnutData = [
