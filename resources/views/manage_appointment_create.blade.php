@@ -322,7 +322,7 @@
 
     <script type="text/javascript">
         $('#data_1 .input-group.date').datepicker({
-                format: "dd-mm-yyyy",
+                format: "dd/mm/yyyy",
                 todayBtn: "linked",
                 keyboardNavigation: false,
                 forceParse: false,
