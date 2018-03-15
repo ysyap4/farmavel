@@ -244,12 +244,6 @@
                                 <div class="form-group{{ $errors->has('app_location') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Location</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="app_location" class="form-control" name="app_location" placeholder="Location" value="{{ Input::old('app_location')}}">
-                                        @if ($errors->has('app_location'))
-                                            <p class="help-block">{{$errors ->first('app_location')}}</p>
-                                        @endif
-                                    </div>
-                                    <div class="col-sm-10">
                                         <select class="form-control m-b" name="app_location" id="app_location">
                                             <option value="Batu Pahat">Batu Pahat</option>
                                             <option value="Johor Bahru">Johor Bahru</option>
