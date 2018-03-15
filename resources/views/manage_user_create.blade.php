@@ -254,7 +254,6 @@
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
-
                                     <div class="col-sm-10">
                                         <div class="radio"><label> <input type="radio" checked="" value="Patient" id="type" name="type"> Patient </label></div>
                                         <div class="radio"><label> <input type="radio" value="Admin" id="type" name="type"> Admin </label></div>
