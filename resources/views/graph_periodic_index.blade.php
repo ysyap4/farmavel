@@ -264,7 +264,7 @@
             behaviour: 'drag',
             tooltips: true,
             connect: true,
-            decimal: 0,
+            decimals: 0,
             range: {
                 'min':  1,
                 'max':  12
