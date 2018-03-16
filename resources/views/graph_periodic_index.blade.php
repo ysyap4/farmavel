@@ -277,11 +277,9 @@
             })
         });
 
-        var min=dragSlider.noUiSlider.get()[0];
-        var max=dragSlider.noUiSlider.get()[1];
-        dd(max);
-        $("#get_slider_value1").val(min);
-        $("#get_slider_value2").val(max);
+        document.getElementById('submit_periodic').addEventListener('click', function(){
+            alert( dragSlider.noUiSlider.get()[1] );
+        });
         
     </script>
 
