@@ -277,9 +277,10 @@
             })
         });
 
-        document.getElementById('submit_periodic').addEventListener('click', function(){
-            alert( dragSlider.noUiSlider.get()[1] );
-        });
+        var min = dragSlider.noUiSlider.get()[0];
+        var max = dragSlider.noUiSlider.get()[1];
+        $("#get_slider_value1").val(min);
+        $("#get_slider_value2").val(max);
         
     </script>
 
