@@ -274,11 +274,18 @@
             })
         });
 
-        
-        document.getElementById('submit').addEventListener('click', function(){
-            alert( dragSlider.noUiSlider.get()[0] );
-        });
+        // dragSlider.noUiSlider.get()[0];
+        // dragSlider.noUiSlider.get()[1];
 
+        
+        // document.getElementById('submit').addEventListener('click', function(){
+        //     alert( dragSlider.noUiSlider.get()[0] );
+        // });
+
+        document.get_slider.action = "{{URL::route('graph_periodic_results', ':dragSlider')}}";
+        url = url.replace(':dragSlider', dragSlider);
+        window.location.href=url;
+        document.get_slider.submit();
         
     </script>
 
