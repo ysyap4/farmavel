@@ -196,9 +196,9 @@
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
                                     </div>
                             </div>
-                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select range<small>to be displayed.</small> </h4>
+                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
-                                    <div id="range_slider"></div>
+                                    <div id="range_slider" class="noUi-active"></div>
                                     <div class="form-group">
                                         <br>
                                         <br>
