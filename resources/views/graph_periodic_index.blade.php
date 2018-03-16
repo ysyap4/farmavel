@@ -202,7 +202,7 @@
                                     <div id="range_slider"><input type="hidden" name="get_slider[]" id="get_slider" value=""></div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" onClick="submit_periodic()"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -274,12 +274,10 @@
             })
         });
 
-        function submit_periodic()
-        {
-            document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
-            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-            document.get_slider.submit();
-        }
+        document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
+        document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
+        document.get_slider.submit();
+        
     </script>
 
     <style type="text/css">
