@@ -276,7 +276,7 @@
 
         
         document.getElementById('submit').addEventListener('click', function(){
-            alert( slider.noUiSlider.get()[0] );
+            alert( dragSlider.noUiSlider.get()[0] );
         });
 
         
