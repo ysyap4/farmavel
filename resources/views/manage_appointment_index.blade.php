@@ -18,6 +18,7 @@
 
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{URL::asset('node_modules/sweetalert/dist/sweetalert.css')}}">
 
@@ -281,6 +282,7 @@
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
     <script>
@@ -419,6 +421,15 @@
     })
        
     }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
     </script>
 
 <style>

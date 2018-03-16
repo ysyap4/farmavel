@@ -212,7 +212,7 @@
                         <?php $no = 1; ?>
                         @foreach($user as $value)
                     <tr>
-                        <td><input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"></td>
+                        <td><div class="checkbox i-checks"> <input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"> <i></i> </div></td>
                         <td><?php echo $no ?></td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
@@ -271,6 +271,7 @@
     <!-- Custom and plugin javascript -->
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
 
     <!-- Page-Level Scripts -->
     <script>
@@ -409,6 +410,15 @@
     })
        
     }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
     </script>
 
 <style>
