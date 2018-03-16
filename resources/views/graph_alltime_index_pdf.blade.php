@@ -29,7 +29,7 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div style="width:800px; height:140px;">
+                            <div style="width:800px; height:200;">
                                 <canvas id="doughnutChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box blue"></div> {{$pie_medicine_legal_count}} Legal </h5>
@@ -45,7 +45,7 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div class="text-center" style="width:800px; height:140px;">
+                            <div class="text-center" style="width:800px; height:200;">
                                 <canvas id="polarChart" height="140"></canvas>
                             </div>
                             <h5><div class="color-box blue"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
