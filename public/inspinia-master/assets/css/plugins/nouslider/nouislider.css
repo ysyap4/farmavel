@@ -128,6 +128,14 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .noUi-active {
   box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
 }
+
+.noUi-tooltip {
+    display: none;
+}
+.noUi-active .noUi-tooltip {
+    display: block;
+}
+
 /* Handle stripes;
  */
 .noUi-handle:before,
