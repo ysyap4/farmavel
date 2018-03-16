@@ -15,6 +15,7 @@
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/nouslider/jquery.nouislider.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
 
 </head>
 
@@ -190,15 +191,18 @@
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
                                 <form role="form">
-                                    <div class="form-group"><label>Information</label> <input type="email" placeholder="Enter email" class="form-control"></div>
+                                    <div class="form-group"><label>Information</label> 
+                                        <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
+                                    </div>
                             </div>
-                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select range of months <small>to be displayed.</small> </h4>
-                                    <div class="form-group"><label>Range</label></div>
+                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select range<small>to be displayed.</small> </h4>
+                                    <div class="form-group"><label>Range of months</label></div>
                                     <div id="range_slider"></div>
                                     <div class="form-group">
                                         <br>
                                         <br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -240,15 +244,25 @@
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/nouslider/jquery.nouislider.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         $("#range_slider").noUiSlider({
-            start: [ 40, 60 ],
+            start: [ 1, 3 ],
             behaviour: 'drag',
             connect: true,
             range: {
-                'min':  20,
-                'max':  80
+                'min':  1,
+                'max':  12
             }
         });
     </script>
