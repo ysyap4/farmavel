@@ -198,7 +198,7 @@
                             </div>
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
-                                    <div id="range_slider" class="noUi-tooltip"></div>
+                                    <div id="range_slider" class=""></div>
                                     <div class="form-group">
                                         <br>
                                         <br>
@@ -262,10 +262,19 @@
         noUiSlider.create(dragSlider, {
             start: [ 1, 3 ],
             behaviour: 'drag',
+            tooltips: true,
             connect: true,
             range: {
                 'min':  1,
                 'max':  12
+            },
+            format: {
+                to: function (value) {
+                    return value + '';
+                },
+                from: function (value) {
+                    return value.replace('', '');
+                }
             }
 });
     </script>
