@@ -263,7 +263,8 @@
             start: [ 1, 3 ],
             behaviour: 'drag',
             tooltips: true,
-            connect: false,
+            connect: true,
+            step: Number(data(dragSlider, 'step')) || 1,
             range: {
                 'min':  1,
                 'max':  12
