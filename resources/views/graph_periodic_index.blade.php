@@ -279,6 +279,8 @@
             alert( slider.noUiSlider.get() );
         });
 
+        dd(slider.noUiSlider.get());
+
         
     </script>
 
