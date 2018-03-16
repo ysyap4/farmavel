@@ -275,7 +275,7 @@
         });
 
         document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-        document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
+        document.getElementById('get_slider').value = dragSlider;
         document.get_slider.submit();
         
     </script>
