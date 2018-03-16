@@ -256,7 +256,10 @@
     </script>
 
     <script type="text/javascript">
-        $("#range_slider").noUiSlider({
+
+        var dragSlider = document.getElementById('range_slider');
+
+        noUiSlider.create(dragSlider, {
             start: [ 1, 3 ],
             behaviour: 'drag',
             connect: true,
@@ -264,7 +267,7 @@
                 'min':  1,
                 'max':  12
             }
-        });
+});
     </script>
 
     <style type="text/css">
