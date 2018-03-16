@@ -277,10 +277,6 @@
             })
         });
 
-        document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
-        document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-        document.get_slider.submit();
-
         var min=dragSlider.noUiSlider.get()[0];
         var max=dragSlider.noUiSlider.get()[1];
         $("#get_slider_value1").val(max);
