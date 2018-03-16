@@ -271,15 +271,7 @@
             },
             format: wNumb({
                 decimals: 0,
-            }),
-            format: {
-                to: function (value) {
-                    return value + '';
-                },
-                from: function (value) {
-                    return value.replace('', '');
-                }
-            }
+            })
         });
     </script>
 
