@@ -396,7 +396,15 @@
             animateRotate: true,
             animateScale: false,
             responsive: true,
-            showTooltips: false,
+
+            tooltipTemplate: "<%= value %>",
+
+  showTooltips: true,
+
+  onAnimationComplete: function() {
+    this.showTooltip(this.datasets[0].points, true);
+  },
+  tooltipEvents: []
         };
     
     
