@@ -297,6 +297,13 @@
             text-align: center;
             margin-right: 5px;
         }
+
+        .noUi-tooltip {
+            display: none;
+        }
+        .noUi-active .noUi-tooltip {
+            display: block;
+        }
     </style>
 
 </body>
