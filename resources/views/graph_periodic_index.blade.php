@@ -201,7 +201,7 @@
                                     <br><br>
                                     <div id="range_slider">
                                         <input type="hidden" name="get_slider_value1" id="get_slider_value1" value="">
-                                        <input type="hidden" name="get_slider_value2" id="get_slider_value2" value=""
+                                        <input type="hidden" name="get_slider_value2" id="get_slider_value2" value="">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
