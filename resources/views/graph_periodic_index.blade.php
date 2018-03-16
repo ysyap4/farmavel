@@ -264,7 +264,7 @@
             behaviour: 'drag',
             tooltips: true,
             connect: true,
-            decimals: 0,
+            step: Number(data(slider, 'step')) || 1,
             range: {
                 'min':  1,
                 'max':  12
