@@ -199,7 +199,10 @@
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
-                                    <div id="range_slider"><input type="hidden" name="get_slider[]" id="get_slider" value=""></div>
+                                    <div id="range_slider">
+                                        <input type="hidden" name="get_slider_value1" id="get_slider_value1" value="">
+                                        <input type="hidden" name="get_slider_value2" id="get_slider_value2" value=""
+                                    </div>
                                     <div class="form-group">
                                         <br><br>
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
@@ -277,6 +280,11 @@
         document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
         document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
         document.get_slider.submit();
+
+        var min=dragSlider.noUiSlider.get()[0];
+        var max=dragSlider.noUiSlider.get()[1];
+        $("#get_slider_value1").val(max);
+        $("#get_slider_value2").val(min);
         
     </script>
 
