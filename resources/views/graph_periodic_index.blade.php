@@ -188,13 +188,13 @@
                     </div>
                     <div class="ibox-content">
                         <div class="row">
-                            <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select period <small>to be displayed.</small> </h4>
+                            <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
                                 <form role="form">
                                     <div class="form-group"><label>Information</label> <input type="email" placeholder="Enter email" class="form-control"></div>
                             </div>
-                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                    <div class="form-group"><label>Information</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                    <div id="range_slider"></div>
+                            <div class="col-sm-6"><h4 class="m-t-none m-b">Select range of months <small>to be displayed.</small> </h4>
+                                    <div class="form-group"><label>Range</label></div>
+                                    <div id="range_slider"><input type="email"></div>
                                     <div>
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
                                     </div>
