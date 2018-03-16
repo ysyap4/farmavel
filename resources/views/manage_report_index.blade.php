@@ -199,8 +199,8 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example" id="allBlogs">
                     <thead>
                     <tr>
-                        <th>Select</th>
-                        <th>Index</th>
+                        <th style="text-align: center;">Select</th>
+                        <th style="text-align: center;">Index</th>
                         <th>Reported Medicine Name</th>
                         <th>Location</th>
                         <th>Reported by</th>
@@ -212,8 +212,8 @@
                         <?php $no = 1; ?>
                         @foreach($rep as $value)
                     <tr>
-                        <td><input type="checkbox" name="selected_rep[]" value="{{ $value->id }}" id="selected_rep"></td>
-                        <td><?php echo $no ?></td>
+                        <td style="text-align: center;"><div class="checkbox i-checks"> <input type="checkbox" name="selected_rep[]" value="{{ $value->id }}" id="selected_rep"> <i></i> </div></td>
+                        <td style="text-align: center;"><?php echo $no ?></td>
                         <td>{{ $value->rep_medicine }}</td>
                         <td>{{ $value->rep_location }}</td>
                         @foreach($user as $value2)
@@ -229,8 +229,8 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>Select</th>
-                        <th>Index</th>
+                        <th style="text-align: center;">Select</th>
+                        <th style="text-align: center;">Index</th>
                         <th>Reported Medicine Name</th>
                         <th>Location</th>
                         <th>Reported by</th>

@@ -225,8 +225,8 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>Select</th>
-                        <th>Number</th>
+                        <th style="text-align: center;">Select</th>
+                        <th style="text-align: center;">Number</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
