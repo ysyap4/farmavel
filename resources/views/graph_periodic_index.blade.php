@@ -279,6 +279,7 @@
 
         var min=dragSlider.noUiSlider.get()[0];
         var max=dragSlider.noUiSlider.get()[1];
+        dd(max);
         $("#get_slider_value1").val(min);
         $("#get_slider_value2").val(max);
         
