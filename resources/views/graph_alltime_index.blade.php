@@ -165,9 +165,9 @@
                     <li class="active">
                         <strong>All-Time Charts</strong>
                     </li>
-                    <li>
-                        <a class="btn btn-sm btn-primary pull-right m-t-n-xs" href="{{URL::route('graph_alltime_index_pdf')}}"><strong>Download PDF</strong> </a>
-                    </li>
+                    <div class="col-lg-2-offset-2">
+                        <a class="btn btn-sm btn-primary pull-right m-t-n-xs" href="{{URL::route('graph_alltime_index_pdf')}}" style="color:#fff;"><strong>Download PDF</strong> </a>
+                    </div>
                 </ol>
             </div>
         </div>
