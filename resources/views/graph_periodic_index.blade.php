@@ -263,7 +263,7 @@
             start: [ 1, 3 ],
             behaviour: 'drag',
             tooltips: true,
-            connect: true,
+            connect: false,
             range: {
                 'min':  1,
                 'max':  12
