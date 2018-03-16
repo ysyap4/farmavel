@@ -227,3 +227,8 @@ Route::get('graph_alltime_index_pdf',[
 	'as' => 'graph_alltime_index_pdf',
 	'uses' => 'GraphController@graph_alltime_index_pdf',
 	]);
+
+Route::post('graph_periodic_results', [
+	'as' => 'graph_periodic_results',
+	'uses' => 'GraphController@graph_periodic_results',
+	]);

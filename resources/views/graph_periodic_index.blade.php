@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form">
+                                <form role="form" method="POST" action="">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -202,7 +202,7 @@
                                     <div id="range_slider"></div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -273,6 +273,13 @@
                 decimals: 0,
             })
         });
+
+        
+        document.getElementById('submit').addEventListener('click', function(){
+            alert( slider.noUiSlider.get() );
+        });
+
+        
     </script>
 
     <style type="text/css">
