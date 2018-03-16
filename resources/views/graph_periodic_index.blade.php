@@ -243,6 +243,7 @@
     <!-- ChartJS-->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/nouslider/wNumb.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/nouslider/nouislider.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
 
@@ -264,11 +265,13 @@
             behaviour: 'drag',
             tooltips: true,
             connect: true,
-            step: Number(data(dragSlider, 'step')) || 1,
             range: {
                 'min':  1,
                 'max':  12
             },
+            format: wNumb({
+                decimals: 0,
+            }),
             format: {
                 to: function (value) {
                     return value + '';
