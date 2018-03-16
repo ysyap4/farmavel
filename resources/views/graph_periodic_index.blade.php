@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="POST" action="">
+                                <form role="form" method="GET" name="get_slider">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -278,8 +278,6 @@
         document.getElementById('submit').addEventListener('click', function(){
             alert( slider.noUiSlider.get() );
         });
-
-        dd(slider.noUiSlider.get());
 
         
     </script>
