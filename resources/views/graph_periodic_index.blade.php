@@ -195,8 +195,11 @@
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range of months <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range</label></div>
                                     <div id="range_slider"></div>
-                                    <div class="form-group"> <label>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></label></button>
+                                    <div class="form-group">
+                                        <br>
+                                        <br>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
