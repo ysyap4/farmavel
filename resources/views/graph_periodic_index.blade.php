@@ -14,7 +14,7 @@
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
 
-    <link href="{{URL::asset('inspinia-master/assets/css/plugins/nouslider/jquery.nouislider.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/nouslider/nouislider.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
 
 </head>
@@ -243,7 +243,7 @@
     <!-- ChartJS-->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/chartJs/Chart.min.js')}}"></script>
 
-    <script src="{{URL::asset('inspinia-master/assets/js/plugins/nouslider/jquery.nouislider.min.js')}}"></script>
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/nouslider/nouislider.min.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
 
     <script>
@@ -296,13 +296,6 @@
         .tbody th, tbody td {
             text-align: center;
             margin-right: 5px;
-        }
-
-        .noUi-tooltip {
-            display: none;
-        }
-        .noUi-active .noUi-tooltip {
-            display: block;
         }
     </style>
 
