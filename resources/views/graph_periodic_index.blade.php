@@ -198,7 +198,7 @@
                             </div>
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
-                                    <div id="range_slider" class="noUi-active"></div>
+                                    <div id="range_slider" class="noUi-tooltip"></div>
                                     <div class="form-group">
                                         <br>
                                         <br>
