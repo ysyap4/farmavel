@@ -199,7 +199,7 @@
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
-                                    <div id="range_slider"></div>
+                                    <div id="range_slider"><input type="hidden" name="get_slider" id="get_slider" value=""></div>
                                     <div class="form-group">
                                         <br><br>
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit" type="submit"><strong>Submit</strong>
@@ -282,9 +282,8 @@
         //     alert( dragSlider.noUiSlider.get()[0] );
         // });
 
-        document.get_slider.action = "{{URL::route('graph_periodic_results', ':dragSlider')}}";
-        url = url.replace(':dragSlider', dragSlider);
-        window.location.href=url;
+        document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
+        document.getElementById('get_slider').value = dragSlider;
         document.get_slider.submit();
         
     </script>
