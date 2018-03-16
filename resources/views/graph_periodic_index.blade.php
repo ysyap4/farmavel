@@ -274,16 +274,8 @@
             })
         });
 
-        // dragSlider.noUiSlider.get()[0];
-        // dragSlider.noUiSlider.get()[1];
-
-        
-        // document.getElementById('submit').addEventListener('click', function(){
-        //     alert( dragSlider.noUiSlider.get()[0] );
-        // });
-
         document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-        document.getElementById('get_slider').value = dragSlider;
+        document.getElementById('get_slider').value = dragSlider.noUiSlider.get();
         document.get_slider.submit();
         
     </script>
