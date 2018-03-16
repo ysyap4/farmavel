@@ -396,6 +396,7 @@
             animateRotate: true,
             animateScale: false,
             responsive: true,
+            showTooltips: true,
         };
     
     
