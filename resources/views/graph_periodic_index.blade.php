@@ -198,7 +198,7 @@
                             </div>
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
-                                    <div id="range_slider" class=""></div>
+                                    <div id="range_slider" data-step="1"></div>
                                     <div class="form-group">
                                         <br>
                                         <br>
@@ -264,7 +264,6 @@
             behaviour: 'drag',
             tooltips: true,
             connect: true,
-            step: Number(data(slider, 'step')) || 1,
             range: {
                 'min':  1,
                 'max':  12
