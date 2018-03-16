@@ -114,6 +114,14 @@ class GraphController extends Controller
         return $pdf->download('graph_alltime_index.pdf');
     }
 
+    public function graph_periodic_index()
+    {
+        $lastest_user = users::orderBy('created_at', 'desc')->first();
+        $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+
+        return View::make('graph_periodic_index', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+    }
+
     public function manage_user_index()
     {
         $user = users::all();
