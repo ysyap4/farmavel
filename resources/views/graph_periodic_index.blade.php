@@ -259,6 +259,7 @@
     <script type="text/javascript">
 
         var dragSlider = [];
+        dragSlider = document.getElementById('range_slider').value;
 
         noUiSlider.create(dragSlider, {
             start: [ 1, 3 ],
@@ -274,7 +275,6 @@
             })
         });
 
-        dragSlider = document.getElementById('range_slider').value;
         document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
         document.get_slider.submit();
         
