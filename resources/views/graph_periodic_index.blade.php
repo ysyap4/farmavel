@@ -292,7 +292,7 @@
                     {
                         min: dragSlider.noUiSlider.get()[0],
                         max: dragSlider.noUiSlider.get()[1]
-                    }
+                    },
                     success: function(data) {
                         console.log("Value added");
                     }
