@@ -284,14 +284,17 @@
         {
             var form = $("#get_slider");
 
-            $jquery.ajax({
+            var a = min.val();
+            var b = max.val();
+
+            $.ajax({
     
                     type:"GET",
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: dragSlider.noUiSlider.get()[0],
-                        max: dragSlider.noUiSlider.get()[1]
+                        min: a,
+                        max: b
                     },
                     success: function(data) {
                         console.log("Value added");
