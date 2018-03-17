@@ -288,11 +288,11 @@
             return dragSlider.noUiSlider.get()[1];
         }
         
+        document.getElementById("get_slider_value1").value = get_a(dragSlider);
+        document.getElementById("get_slider_value2").value = get_b(dragSlider);
 
         function get_slider_value()
         {
-            document.getElementById("get_slider_value1").value = get_a(dragSlider);
-            document.getElementById("get_slider_value2").value = get_b(dragSlider);
             document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
             document.get_slider.submit();
         }
