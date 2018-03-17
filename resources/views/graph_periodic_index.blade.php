@@ -287,8 +287,8 @@
                     data:
                     {
                         min: dragSlider.noUiSlider.get()[0],
-                        max: dragSlider.noUiSlider.get()[1]
-                        _token: $('#token').val(),
+                        max: dragSlider.noUiSlider.get()[1],
+                        _token: {{ csrf_token() }}
                     },
                     success: function (response) {
 
