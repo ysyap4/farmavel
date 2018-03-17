@@ -201,8 +201,8 @@
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
                                     <div id="range_slider">
-                                        <input type="hidden" name="get_slider_value1">
-                                        <input type="hidden" name="get_slider_value2">
+                                        <input type="hidden" id="get_slider_value1">
+                                        <input type="hidden" id="get_slider_value2">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
@@ -281,17 +281,8 @@
 
         function get_slider_value()
         {
-            var x =[];
-    
-            if (this.checked)
-            {
-              $('#range_slider').each(function()
-              {
-                x.push($(this).val());
-              });
-            }
-    
-            x = document.getElementById("range_slider").value;
+            document.getElementById("get_slider_value1").value = dragSlider.noUiSlider.get()[0];
+            document.getElementById("get_slider_value2").value = dragSlider.noUiSlider.get()[1];
             document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
             document.get_slider.submit();
         }
