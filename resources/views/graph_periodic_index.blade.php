@@ -288,8 +288,8 @@
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: min,
-                        max: max
+                        min: dragSlider.noUiSlider.get()[0],
+                        max: dragSlider.noUiSlider.get()[1]
                     },
                     headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
