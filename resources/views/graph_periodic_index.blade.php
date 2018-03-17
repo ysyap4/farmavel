@@ -278,18 +278,10 @@
             })
         });
 
-        function get_a(dragSlider)
-        {
-            return dragSlider.noUiSlider.get()[0];
-        }
 
-        function get_b(dragSlider)
-        {
-            return dragSlider.noUiSlider.get()[1];
-        }
         
-        document.getElementById("get_slider_value1").value = get_a(dragSlider);
-        document.getElementById("get_slider_value2").value = get_b(dragSlider);
+        document.getElementById("get_slider_value1").value = dragSlider.noUiSlider.get()[0];
+        document.getElementById("get_slider_value2").value = dragSlider.noUiSlider.get()[1];
 
         function get_slider_value()
         {
