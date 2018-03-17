@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="POST" name="get_slider" id="get_slider">
+                                <form role="form" method="POST" name="get_slider" id="get_slider" action="{{URL::route('graph_periodic_results')}}">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -199,10 +199,7 @@
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
-                                    <div id="range_slider">
-                                        <input type="hidden" name="get_slider_value1" id="get_slider_value1" value="">
-                                        <input type="hidden" name="get_slider_value2" id="get_slider_value2" value="">
-                                    </div>
+                                    <div id="range_slider"></div>
                                     <div class="form-group">
                                         <br><br>
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
