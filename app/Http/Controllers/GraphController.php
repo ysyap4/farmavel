@@ -128,8 +128,10 @@ class GraphController extends Controller
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
         $a = Input::get('get_slider_value1');
+        $b = Input::get('get_slider_value2');
 
         dd($a);
+        dd($b);
 
 
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
