@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="GET" name="get_slider" id="get_slider">
+                                <form role="form" method="POST" name="get_slider" id="get_slider">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -205,7 +205,7 @@
                                     </div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" onClick="get_slider()" id="submit_periodic" type="submit"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -280,29 +280,25 @@
         var min = dragSlider.noUiSlider.get()[0];
         var max = dragSlider.noUiSlider.get()[1];
         
-        function get_slider()
-        {
-            var form = $("#get_slider");
 
-            var a = min.val();
-            var b = max.val();
-
-            jQuery.ajax({
+        document.getElementById('submit_periodic').addEventListener('click', function(){
+            $.ajax({
     
-                    type:"GET",
+                    type:"POST",
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: a,
-                        max: b
+                        min: min,
+                        max: max
+                    },
+                    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(data) {
                         console.log("Value added");
                     }
                 });
-
-            return false;
-        }
+        });
         
     </script>
 
