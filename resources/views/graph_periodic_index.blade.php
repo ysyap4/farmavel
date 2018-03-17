@@ -191,7 +191,7 @@
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
                                 <form role="form" method="POST" name="get_slider" id="get_slider" action="{{URL::route('graph_periodic_results')}}">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -288,7 +288,7 @@
                     {
                         min: dragSlider.noUiSlider.get()[0],
                         max: dragSlider.noUiSlider.get()[1]
-                        "_token": $('#token').val(),
+                        _token: $('#token').val(),
                     },
                     success: function (response) {
 
