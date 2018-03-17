@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="POST" name="get_slider" id="get_slider" action="{{URL::route('graph_periodic_results')}}">
+                                <form role="form" method="GET" name="get_slider" id="get_slider">
                                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
@@ -201,12 +201,12 @@
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
                                     <div id="range_slider">
-                                        <input type="hidden" name="get_slider_value1" onsubmit="return get_slider_value1();">
-                                        <input type="hidden" name="get_slider_value2" onsubmit="return get_slider_value2();">
+                                        <input type="hidden" name="get_slider_value1">
+                                        <input type="hidden" name="get_slider_value2">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit" onClick="get_slider_value()"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -279,14 +279,21 @@
         });
         
 
-        function get_slider_value1()
+        function get_slider_value()
         {
-            return dragSlider.noUiSlider.get()[0];
-        }
-
-        function get_slider_value2()
-        {
-            return dragSlider.noUiSlider.get()[1];
+            var x =[];
+    
+            if (this.checked)
+            {
+              $('#range_slider').each(function()
+              {
+                x.push($(this).val());
+              });
+            }
+    
+            x = document.getElementById("range_slider").value;
+            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
+            document.get_slider.submit();
         }
         
     </script>
