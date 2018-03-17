@@ -279,12 +279,10 @@
         });
 
 
-        
-        dragSlider.noUiSlider.get()[0] = document.getElementById("get_slider_value1").value;
-        dragSlider.noUiSlider.get()[1] = document.getElementById("get_slider_value2").value;
-
         function get_slider_value()
         {
+            dragSlider.noUiSlider.get()[0] = document.getElementById("get_slider_value1").value;
+            dragSlider.noUiSlider.get()[1] = document.getElementById("get_slider_value2").value;
             document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
             document.get_slider.submit();
         }
