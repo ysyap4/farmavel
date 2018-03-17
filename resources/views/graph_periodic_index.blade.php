@@ -280,7 +280,7 @@
         var min = dragSlider.noUiSlider.get()[0];
         var max = dragSlider.noUiSlider.get()[1];
         
-        function get_slider()
+        function get_slider(min, max)
         {
             var form = $("#get_slider");
 
