@@ -286,8 +286,8 @@
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: dragSlider.noUiSlider.get()[0],
-                        max: dragSlider.noUiSlider.get()[1],
+                        min: min,
+                        max: max,
                         token: $('#token').val(),
                     },
                     success: function (response) {
