@@ -288,7 +288,7 @@
                     {
                         min: dragSlider.noUiSlider.get()[0],
                         max: dragSlider.noUiSlider.get()[1],
-                        _token: {{ csrf_token() }}
+                        token: $('#token').val(),
                     },
                     success: function (response) {
 
