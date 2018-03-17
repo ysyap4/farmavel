@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit" onClick="get_slider_value()"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
@@ -278,14 +278,13 @@
             })
         });
 
+        document.getElementById('submit_periodic').addEventListener('click', function(){
 
-        function get_slider_value()
-        {
-            dragSlider.noUiSlider.get()[0] = document.getElementById("get_slider_value1").value;
-            dragSlider.noUiSlider.get()[1] = document.getElementById("get_slider_value2").value;
+            document.getElementById("get_slider_value1").value = dragSlider.noUiSlider.get()[0];
+            document.getElementById("get_slider_value2").value = dragSlider.noUiSlider.get()[1];
             document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
             document.get_slider.submit();
-        }
+        });
         
     </script>
 
