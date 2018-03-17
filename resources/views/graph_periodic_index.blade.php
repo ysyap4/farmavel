@@ -200,8 +200,8 @@
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
                                     <div id="range_slider">
-                                        <input type="hidden" id="get_slider_value1" value="1">
-                                        <input type="hidden" id="get_slider_value2" value="">
+                                        <input type="hidden" id="get_slider_value1" name="get_slider_value1" value="1">
+                                        <input type="hidden" id="get_slider_value2" name="get_slider_value2" value="">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
