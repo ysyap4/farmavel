@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="GET" name="get_slider" onClick="get_slider()" id="get_slider">
+                                <form role="form" method="GET" name="get_slider" id="get_slider">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -205,7 +205,7 @@
                                     </div>
                                     <div class="form-group">
                                         <br><br>
-                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" onClick="get_slider()" id="submit_periodic" type="submit"><strong>Submit</strong>
                                         </button>
                                     </div>
                                 </form>
