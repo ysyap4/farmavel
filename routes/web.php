@@ -228,7 +228,7 @@ Route::get('graph_alltime_index_pdf',[
 	'uses' => 'GraphController@graph_alltime_index_pdf',
 	]);
 
-Route::get('graph_periodic_results/{min}/{max}', [
+Route::get('graph_periodic_results', [
 	'as' => 'graph_periodic_results',
 	'uses' => 'GraphController@graph_periodic_results',
 	]);

@@ -122,13 +122,13 @@ class GraphController extends Controller
         return View::make('graph_periodic_index', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
 
-    public function graph_periodic_results($min, $max)
+    public function graph_periodic_results(Request $request)
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $get_slider = $min;
-        dd($get_slider);
+        $min = $request->input( 'min' );
+        dd($min);
 
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }

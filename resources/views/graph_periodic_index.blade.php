@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="GET" action="{{URL('graph_periodic_results')}}" name="get_slider" onsubmit="return get_slider();" id="get_slider">
+                                <form role="form" method="GET" action="{{URL::route('graph_periodic_results')}}" name="get_slider" onsubmit="return get_slider();" id="get_slider">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Appointment" name="information"> <i></i> Appointment </label></div>
@@ -287,7 +287,12 @@
             $.ajax({
     
                     type:"GET",
-                    url:"{{URL('graph_periodic_results')}}/"+min+"/"+max,
+                    url:"{{URL::route('graph_periodic_results')}}",
+                    data:
+                    {
+                        min: dragSlider.noUiSlider.get()[0];
+                        max: dragSlider.noUiSlider.get()[1];
+                    }
                     success: function(data) {
                         console.log("Value added");
                     }
