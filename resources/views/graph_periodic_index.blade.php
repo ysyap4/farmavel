@@ -284,14 +284,14 @@
         {
             var form = $("#get_slider");
 
-            $.ajax({
+            $jquery.ajax({
     
                     type:"GET",
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: dragSlider.noUiSlider.get()[0];
-                        max: dragSlider.noUiSlider.get()[1];
+                        min: dragSlider.noUiSlider.get()[0],
+                        max: dragSlider.noUiSlider.get()[1]
                     }
                     success: function(data) {
                         console.log("Value added");
