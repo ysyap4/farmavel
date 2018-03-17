@@ -290,8 +290,8 @@
                         max: max,
                         token: $('#token').val(),
                     },
-                    success: function (response) {
-
+                    success: function (data) {
+                        $('#get_slider').html(data)
                     }
                 });
         });
