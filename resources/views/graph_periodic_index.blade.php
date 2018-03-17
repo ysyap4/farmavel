@@ -288,9 +288,6 @@
                         min: dragSlider.noUiSlider.get()[0],
                         max: dragSlider.noUiSlider.get()[1]
                     },
-                    headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
                     success: function(data) {
                         console.log("Value added");
                     }
