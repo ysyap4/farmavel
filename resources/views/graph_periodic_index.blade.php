@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="POST" name="get_slider" id="get_slider">
+                                <form role="form" method="GET" name="get_slider" id="get_slider">
                                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
