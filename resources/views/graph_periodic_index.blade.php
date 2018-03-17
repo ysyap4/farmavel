@@ -288,11 +288,10 @@
                     {
                         min: dragSlider.noUiSlider.get()[0],
                         max: dragSlider.noUiSlider.get()[1]
-
-                        var_dump(min)
+                        "_token": $('#token').val(),
                     },
-                    success: function(data) {
-                        console.log("Value added");
+                    success: function (response) {
+
                     }
                 });
         });

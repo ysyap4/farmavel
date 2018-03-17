@@ -127,8 +127,8 @@ class GraphController extends Controller
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $min = $request->min;
-        dd($min);
+        dd($request->all());
+
 
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
     }
