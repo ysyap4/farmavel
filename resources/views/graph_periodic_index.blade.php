@@ -201,8 +201,8 @@
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
                                     <div id="range_slider">
-                                        <input type="hidden" name="get_slider_value1" value="">
-                                        <input type="hidden" name="get_slider_value2" value="">
+                                        <input type="hidden" name="get_slider_value1" value="return get_slider_value1();">
+                                        <input type="hidden" name="get_slider_value2" value="return get_slider_value2();">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
@@ -279,14 +279,15 @@
         });
         
 
-        document.getElementById('submit_periodic').addEventListener('click', function(){
-            var min = document.getElementById("get_slider_value1");
-            var max = document.getElementById("get_slider_value2");
-            min.value = dragSlider.noUiSlider.get()[0];
-            max.value = dragSlider.noUiSlider.get()[1];
-            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-            document.get_slider.submit();
-        });
+        function get_slider_value1()
+        {
+            return dragSlider.noUiSlider.get()[0];
+        }
+
+        function get_slider_value2()
+        {
+            return dragSlider.noUiSlider.get()[1];
+        }
         
     </script>
 
