@@ -282,8 +282,7 @@
         document.getElementById('submit_periodic').addEventListener('click', function(){
 
             get_slider_value1.value = dragSlider.noUiSlider.get()[0];
-            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-            document.get_slider.submit();
+
         });
         
     </script>
