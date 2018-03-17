@@ -286,12 +286,12 @@
                     url:"{{URL::route('graph_periodic_results')}}",
                     data:
                     {
-                        min: min,
-                        max: max,
+                        min: dragSlider.noUiSlider.get()[0],
+                        max: dragSlider.noUiSlider.get()[1],
+                        a: 1,
                         token: $('#token').val(),
                     },
                     success: function (data) {
-                        $('#get_slider').html(data)
                     }
                 });
         });
