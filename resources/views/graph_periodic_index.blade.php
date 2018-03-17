@@ -277,12 +277,25 @@
                 decimals: 0,
             })
         });
+
+        var a = dragSlider.noUiSlider.get()[0];
+        var b = dragSlider.noUiSlider.get()[1];
+
+        function get_a(a)
+        {
+            return a;
+        }
+
+        function get_b(b)
+        {
+            return b;
+        }
         
 
         function get_slider_value()
         {
-            document.getElementById("get_slider_value1").value = (dragSlider.noUiSlider.get()[0]);
-            document.getElementById("get_slider_value2").value = (dragSlider.noUiSlider.get()[1]);
+            document.getElementById("get_slider_value1").value = get_a(a);
+            document.getElementById("get_slider_value2").value = get_b(b);
             document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
             document.get_slider.submit();
         }
