@@ -263,6 +263,7 @@
     <script type="text/javascript">
 
         var dragSlider = document.getElementById('range_slider');
+        var get_slider_value1 = document.getElementById('get_slider_value1');
 
         noUiSlider.create(dragSlider, {
             start: [ 1, 3 ],
@@ -278,13 +279,11 @@
             })
         });
 
-        document.getElementById('submit_periodic').addEventListener('click', function(){
+            dragSlider.noUiSlider.on('update', function( values, handle ) {
+            dragSliderValueElement.innerHTML = values[handle];
+            get_slider_value1.value = values[handle];
+            });
 
-            document.getElementById("get_slider_value1").value = dragSlider.noUiSlider.get()[0];
-            document.getElementById("get_slider_value2").value = dragSlider.noUiSlider.get()[1];
-            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-            document.get_slider.submit();
-        });
         
     </script>
 
