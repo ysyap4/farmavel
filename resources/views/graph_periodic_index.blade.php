@@ -280,7 +280,8 @@
 
         document.getElementById('submit_periodic').addEventListener('click', function(){
 
-            document.getElementById('get_slider_value1').value = dragSlider.noUiSlider.get()[0];
+            alert (dragSlider.noUiSlider.get()[0]);
+            alert (dragSlider.noUiSlider.get()[1]);
 
         });
         
