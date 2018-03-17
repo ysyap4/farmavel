@@ -284,6 +284,8 @@
             var max = document.getElementById("get_slider_value2");
             min.value = dragSlider.noUiSlider.get()[0];
             max.value = dragSlider.noUiSlider.get()[1];
+            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
+            document.get_slider.submit();
         });
         
     </script>
