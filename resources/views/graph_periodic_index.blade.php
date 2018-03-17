@@ -17,6 +17,48 @@
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/nouslider/nouislider.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
 
+        <script type="text/javascript">
+
+        var dragSlider = document.getElementById('range_slider');
+
+        noUiSlider.create(dragSlider, {
+            start: [ 1, 3 ],
+            behaviour: 'drag',
+            tooltips: true,
+            connect: true,
+            range: {
+                'min':  1,
+                'max':  12
+            },
+            format: wNumb({
+                decimals: 0,
+            })
+        });
+
+        var a = dragSlider.noUiSlider.get()[0];
+        var b = dragSlider.noUiSlider.get()[1];
+
+        function get_a(a)
+        {
+            return a;
+        }
+
+        function get_b(b)
+        {
+            return b;
+        }
+        
+
+        function get_slider_value()
+        {
+            document.getElementById("get_slider_value1").value = get_a(a);
+            document.getElementById("get_slider_value2").value = get_b(b);
+            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
+            document.get_slider.submit();
+        }
+        
+    </script>
+
 </head>
 
 <body>
@@ -260,47 +302,7 @@
         });
     </script>
 
-    <script type="text/javascript">
 
-        var dragSlider = document.getElementById('range_slider');
-
-        noUiSlider.create(dragSlider, {
-            start: [ 1, 3 ],
-            behaviour: 'drag',
-            tooltips: true,
-            connect: true,
-            range: {
-                'min':  1,
-                'max':  12
-            },
-            format: wNumb({
-                decimals: 0,
-            })
-        });
-
-        var a = dragSlider.noUiSlider.get()[0];
-        var b = dragSlider.noUiSlider.get()[1];
-
-        function get_a(a)
-        {
-            return a;
-        }
-
-        function get_b(b)
-        {
-            return b;
-        }
-        
-
-        function get_slider_value()
-        {
-            document.getElementById("get_slider_value1").value = get_a(a);
-            document.getElementById("get_slider_value2").value = get_b(b);
-            document.get_slider.action = "{{URL::route('graph_periodic_results')}}";
-            document.get_slider.submit();
-        }
-        
-    </script>
 
     <style type="text/css">
         .color-box {
