@@ -200,7 +200,10 @@
                             <div class="col-sm-6"><h4 class="m-t-none m-b">Select range <small>to be displayed.</small> </h4>
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
-                                    <div id="range_slider"></div>
+                                    <div id="range_slider">
+                                        <input type="hidden" name="get_slider_value1" value="">
+                                        <input type="hidden" name="get_slider_value2" value="">
+                                    </div>
                                     <div class="form-group">
                                         <br><br>
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" id="submit_periodic" type="submit"><strong>Submit</strong>
@@ -274,26 +277,13 @@
                 decimals: 0,
             })
         });
-
-        var min = dragSlider.noUiSlider.get()[0];
-        var max = dragSlider.noUiSlider.get()[1];
         
 
         document.getElementById('submit_periodic').addEventListener('click', function(){
-            $.ajax({
-    
-                    type:"POST",
-                    url:"{{URL::route('graph_periodic_results')}}",
-                    data:
-                    {
-                        min: dragSlider.noUiSlider.get()[0],
-                        max: dragSlider.noUiSlider.get()[1],
-                        a: 1,
-                        token: $('#token').val(),
-                    },
-                    success: function (data) {
-                    }
-                });
+            var min = document.getElementById("get_slider_value1");
+            var max = document.getElementById("get_slider_value2");
+            min.value = dragSlider.noUiSlider.get()[0];
+            max.value = dragSlider.noUiSlider.get()[1];
         });
         
     </script>
