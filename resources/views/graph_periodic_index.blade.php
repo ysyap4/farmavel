@@ -201,8 +201,8 @@
                                     <div class="form-group"><label>Range of months</label></div>
                                     <br><br>
                                     <div id="range_slider">
-                                        <input type="hidden" name="get_slider_value1" value="return get_slider_value1();">
-                                        <input type="hidden" name="get_slider_value2" value="return get_slider_value2();">
+                                        <input type="hidden" name="get_slider_value1" onsubmit="return get_slider_value1();">
+                                        <input type="hidden" name="get_slider_value2" onsubmit="return get_slider_value2();">
                                     </div>
                                     <div class="form-group">
                                         <br><br>
