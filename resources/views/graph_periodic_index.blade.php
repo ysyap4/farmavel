@@ -190,7 +190,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r"><h4 class="m-t-none m-b">Select information <small>to be displayed.</small> </h4>
-                                <form role="form" method="GET" name="get_slider" id="get_slider">
+                                <form role="form" method="POST" name="get_slider" id="get_slider">
                                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group"><label>Information</label> 
                                         <div class="radio i-checks"><label> <input type="radio" value="Report" name="information" checked=""> <i></i> Report </label></div>
@@ -263,7 +263,6 @@
     <script type="text/javascript">
 
         var dragSlider = document.getElementById('range_slider');
-        var get_slider_value1 = document.getElementById('get_slider_value1');
 
         noUiSlider.create(dragSlider, {
             start: [ 1, 3 ],
@@ -281,7 +280,7 @@
 
         document.getElementById('submit_periodic').addEventListener('click', function(){
 
-            get_slider_value1.value = dragSlider.noUiSlider.get()[0];
+            document.getElementById('get_slider_value1').value = dragSlider.noUiSlider.get()[0];
 
         });
         
