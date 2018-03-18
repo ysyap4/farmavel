@@ -134,7 +134,10 @@ class GraphController extends Controller
         $end_month = Input::get('get_slider_value2');
         $display_results = Input::get('display_results');
 
-        $display_results = report::get('name')->groupBy('name')->orderBy('count(*) as order_count', 'desc')->limit(3);
+        $display_results = report::orderBy(DB::raw('count(*) as order_count', 'desc'))
+                            ->groupBy('rep_medicine')
+                            ->take(3)
+                            ->get();
 
         dd($display_results);
 
