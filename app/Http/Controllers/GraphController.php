@@ -140,31 +140,6 @@ class GraphController extends Controller
             {
                 $month[$i] = '';
                 $month[$i] = $start_month + $i;
-
-                if ($month[$i] = 1)
-                    {$month[$i] = "Jan";}
-                else if ($month[$i] = 2)
-                    {$month[$i] = "Feb";}
-                else if ($month[$i] = 3)
-                    {$month[$i] = "Mar";}
-                else if ($month[$i] = 4)
-                    {$month[$i] = "Apr";}
-                else if ($month[$i] = 5)
-                    {$month[$i] = "May";}
-                else if ($month[$i] = 6)
-                    {$month[$i] = "Jun";}
-                else if ($month[$i] = 7)
-                    {$month[$i] = "Jul";}
-                else if ($month[$i] = 8)
-                    {$month[$i] = "Aug";}
-                else if ($month[$i] = 9)
-                    {$month[$i] = "Sep";}
-                else if ($month[$i] = 10)
-                    {$month[$i] = "Oct";}
-                else if ($month[$i] = 11)
-                    {$month[$i] = "Nov";}
-                else if ($month[$i] = 12)
-                    {$month[$i] = "Dec";}
             }
 
         dd($month);
