@@ -134,6 +134,10 @@ class GraphController extends Controller
         $end_month = Input::get('get_slider_value2');
         $display_results = Input::get('display_results');
 
+        $display_results = report::get('name')->groupBy('name')->orderBy('count(*) as order_count', 'desc')->limit(3);
+
+        dd($display_results);
+
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results));
     }
 

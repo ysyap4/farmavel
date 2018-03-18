@@ -64,8 +64,8 @@
                 <li class="active">
                     <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graph</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="{{URL::route('graph_alltime_index')}}">All-Time Charts</a></li>
-                        <li><a href="{{URL::route('graph_periodic_index')}}">Periodic Charts</a></li>
+                        <li><a href="{{URL::route('graph_alltime_index')}}">All-Time Charts</a></li>
+                        <li class="active"><a href="{{URL::route('graph_periodic_index')}}">Periodic Charts</a></li>
                     </ul>
                 </li>
             </ul>
@@ -154,7 +154,7 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>All-Time Charts</h2>
+                <h2>Periodic Charts</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{ url('/home') }}">Home</a>
@@ -364,15 +364,19 @@
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
 
             var i;
-            var arr = new Array();
+            var month = new Array();
+            var rep_medicine_first = new Array();
+            var rep_medicine_second = new Array();
+            var rep_medicine_third = new Array();
+            
             for (i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
-                arr[i] = '';
-                arr[i] = {{$start_month}} + i;
+                month[i] = '';
+                month[i] = {{$start_month}} + i;
             }
         
             var barData = {
-                labels: arr,
+                labels: month,
                 datasets: [
                     {
                         label: "My First dataset",
