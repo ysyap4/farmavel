@@ -134,15 +134,7 @@ class GraphController extends Controller
         $end_month = Input::get('get_slider_value2');
         $display_results = Input::get('display_results');
 
-        $month = array();
-
-        for ($i = 0; $i < $end_month - $start_month + 1; $i++) 
-        {
-            $month[$i] = '';
-            $month[$i] = strval($start_month + $i);
-        }
-
-        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'month' => $month, 'display_results' => $display_results));
+        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results));
     }
 
     public function manage_user_index()
