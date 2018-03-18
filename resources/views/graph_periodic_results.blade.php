@@ -363,7 +363,7 @@
             var ctx = document.getElementById("lineChart").getContext("2d");
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
 
-            var i;
+            var i; var j;
             var month = new Array();
             var display_results = new Array();
 
@@ -371,8 +371,12 @@
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
-                display_results[i] = '';
-                display_results[i] = {{$display_results[i]->display_count}};
+
+                for( j = 0; j < {{$end_month}} - {{$start_month}} + 1; j++)
+                {   
+                    display_results[i][j] = '';
+                    display_results[i][j] = {{$display_results[i][j]->display_count}};
+                }
             }
         
             var barData = {
