@@ -367,13 +367,11 @@
             var month = new Array();
             var display_results = new Array();
 
-            {{$display_results[0]->display_count}} {{$display_results[0]->rep_medicine}} {{$display_results[1]->display_count}} {{$display_results[1]->rep_medicine}} {{$display_results[2]->display_count}} {{$display_results[2]->rep_medicine}}
-
             for (i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
-                display_results[i] = {{$display_results[i]}};
+                display_results[i] = {{$display_results[i]->$display_count}};
             }
         
             var barData = {
