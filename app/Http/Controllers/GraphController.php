@@ -136,10 +136,10 @@ class GraphController extends Controller
 
         $month = array();
 
-        for ($i = $start_month; $i < $end_month+1; $i++) 
+        for ($i = 0; $i < $end_month - $start_month + 1; $i++) 
             {
-                $month[$i-1] = '';
-                $month[$i-1] = $i;
+                $month[$i] = '';
+                $month[$i] = $start_month + $i;
             }
 
             dd($month);
