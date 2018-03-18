@@ -364,13 +364,15 @@
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
 
             var i;
+            var arr = new Array();
             for (i = {{$start_month}}; i < {{$end_month}}; i++) 
             {
-                barData[0].push(i);
+                arr[i] = '';
+                arr[i] = i;
             }
         
             var barData = {
-                labels: [ ],
+                labels: arr,
                 datasets: [
                     {
                         label: "My First dataset",
