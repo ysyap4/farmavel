@@ -368,7 +368,7 @@
             var rep_medicine_first = new Array();
             var rep_medicine_second = new Array();
             var rep_medicine_third = new Array();
-
+            
             for (i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
