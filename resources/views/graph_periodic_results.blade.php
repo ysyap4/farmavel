@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Periodic Charts Results</title>
+    <title>Farmavel | Periodic Charts Results</title>
 
     <link href="{{URL::asset('inspinia-master/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -364,7 +364,7 @@
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
         
             var barData = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: [ ],
                 datasets: [
                     {
                         label: "My First dataset",
@@ -384,6 +384,12 @@
                     }
                 ]
             };
+
+            var i;
+            for (i = {{$start_month}}; i < {{$end_month}}; i++) 
+            {
+                barData[0].labels.push(i);
+            }
         
             var barOptions = {
                 scaleBeginAtZero: true,
