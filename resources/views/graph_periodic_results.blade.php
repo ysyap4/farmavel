@@ -365,42 +365,43 @@
 
             var i;
             var month = new Array();
-            var rep_medicine_first = new Array();
-            var rep_medicine_second = new Array();
-            var rep_medicine_third = new Array();
-            
+            var display_results = new Array();
+
+            {{$display_results[0]->display_count}} {{$display_results[0]->rep_medicine}} {{$display_results[1]->display_count}} {{$display_results[1]->rep_medicine}} {{$display_results[2]->display_count}} {{$display_results[2]->rep_medicine}}
+
             for (i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
+                display_results[i] = {{$display_results[i]}};
             }
         
             var barData = {
                 labels: month,
                 datasets: [
                     {
-                        label: "My First dataset",
+                        label: {{$display_results[0]->rep_medicine}},
                         fillColor: "rgba(220,220,220,0.5)",
                         strokeColor: "rgba(220,220,220,0.8)",
                         highlightFill: "rgba(220,220,220,0.75)",
                         highlightStroke: "rgba(220,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40]
+                        data: display_results[0]
                     },
                     {
-                        label: "My Second dataset",
+                        label: {{$display_results[1]->rep_medicine}},
                         fillColor: "rgba(26,179,148,0.5)",
                         strokeColor: "rgba(26,179,148,0.8)",
                         highlightFill: "rgba(26,179,148,0.75)",
                         highlightStroke: "rgba(26,179,148,1)",
-                        data: [28, 48, 40, 19, 86, 27, 90]
+                        data: display_results[1]
                     },
                     {
-                        label: "My First dataset",
+                        label: {{$display_results[2]->rep_medicine}},
                         fillColor: "rgba(220,220,220,0.5)",
                         strokeColor: "rgba(220,220,220,0.8)",
                         highlightFill: "rgba(220,220,220,0.75)",
                         highlightStroke: "rgba(220,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40]
+                        data: display_results[2]
                     }
                 ]
             };

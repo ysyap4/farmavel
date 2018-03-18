@@ -134,15 +134,19 @@ class GraphController extends Controller
 
         $start_month = Input::get('get_slider_value1');
         $end_month = Input::get('get_slider_value2');
-        $display_results = Input::get('display_results');
 
-        $display_results = report::select(DB::raw('count(*) as display_count, rep_medicine'))
-                            ->whereMonth('created_at','>=', $start_month)
-                            ->whereMonth('created_at','<=', $end_month)
-                            ->groupBy('rep_medicine')
-                            ->orderBy('display_count', 'desc')
-                            ->take(3)
-                            ->get();
+        $display_results = array();
+
+        for ($i = 0; $i < $end_month - $start_month + 1; $i++) 
+            {
+                $display_results[$i] = '';
+                $display_results[$i] = report::select(DB::raw('count(*) as display_count, rep_medicine'))
+                                        ->whereMonth('created_at', $start_month + $i)
+                                        ->groupBy('rep_medicine')
+                                        ->orderBy('display_count', 'desc')
+                                        ->take(3)
+                                        ->get();
+            }
 
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results));
     }
