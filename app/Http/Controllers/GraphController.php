@@ -137,6 +137,7 @@ class GraphController extends Controller
         $display_results = Input::get('display_results');
 
         $display_results = report::select(DB::raw('count(*) as display_count, rep_medicine'))
+                            ->whereBetween('created_at', [whereMonth('created_at', $start_month), whereMonth('created_at', $end_month)])
                             ->groupBy('rep_medicine')
                             ->orderBy('display_count', 'desc')
                             ->take(3)
