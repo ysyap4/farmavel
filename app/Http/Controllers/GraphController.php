@@ -137,7 +137,7 @@ class GraphController extends Controller
 
         $display_results = report::select(DB::raw('count(rep_medicine) as display_count'))
                             ->groupBy('rep_medicine')
-                            ->orderBy('rep_medicine', 'desc')
+                            ->orderBy('display_count', 'desc')
                             ->take(3)
                             ->get();
 
