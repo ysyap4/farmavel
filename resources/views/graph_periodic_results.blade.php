@@ -368,7 +368,7 @@
             for (i = {{$start_month}}; i < {{$end_month}}; i++) 
             {
                 arr[i] = '';
-                arr[i] = i+1;
+                arr[i] = i;
             }
         
             var barData = {
