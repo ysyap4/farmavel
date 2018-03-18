@@ -365,48 +365,36 @@
 
 
             var month = new Array();
-            var display_results = new Array();
+            var dataset_value = new Array();
+            var dataset_name = new Array();
 
             for (var i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
+            };
 
-                for(var j = 0; j < {{$end_month}} - {{$start_month}} + 1; j++)
-                {   
-                    display_results[i][j] = '';
-                    display_results[i][j] = {{$display_results[i][j]->display_count}};
-                }
-            }
+            for (var j = 0; j < {{$end_month}} - {{$start_month}} + 1; j++) 
+            {
+                display_results[j] = '';
+
+                for (var k = 0; k < 3; k++) 
+                {
+                    display_results[j] = 
+                    {
+                        label: {{$dataset_name <?php echo [k] ?> }},
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,0.8)",
+                        highlightFill: "rgba(220,220,220,0.75)",
+                        highlightStroke: "rgba(220,220,220,1)",
+                        data: {{$dataset_value <?php echo [k] ?> }}
+                    }
+                };
+            };
         
             var barData = {
                 labels: month,
-                datasets: [
-                    {
-                        label: {{$display_results[0][0]->rep_medicine}},
-                        fillColor: "rgba(220,220,220,0.5)",
-                        strokeColor: "rgba(220,220,220,0.8)",
-                        highlightFill: "rgba(220,220,220,0.75)",
-                        highlightStroke: "rgba(220,220,220,1)",
-                        data: display_results[0][]
-                    },
-                    {
-                        label: {{$display_results[0][1]->rep_medicine}},
-                        fillColor: "rgba(26,179,148,0.5)",
-                        strokeColor: "rgba(26,179,148,0.8)",
-                        highlightFill: "rgba(26,179,148,0.75)",
-                        highlightStroke: "rgba(26,179,148,1)",
-                        data: display_results[1][]
-                    },
-                    {
-                        label: {{$display_results[0][2]->rep_medicine}},
-                        fillColor: "rgba(220,220,220,0.5)",
-                        strokeColor: "rgba(220,220,220,0.8)",
-                        highlightFill: "rgba(220,220,220,0.75)",
-                        highlightStroke: "rgba(220,220,220,1)",
-                        data: display_results[2][]
-                    }
-                ]
+                datasets: display_results
             };
         
             var barOptions = {
