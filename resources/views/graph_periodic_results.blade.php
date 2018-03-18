@@ -371,6 +371,7 @@
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
+                display_results[i] = '';
                 display_results[i] = {{$display_results[i]->display_count}};
             }
         
