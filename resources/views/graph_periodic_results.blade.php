@@ -383,7 +383,7 @@
                 labels: month,
                 datasets: [
                     {
-                        label: {{$display_results[0]->rep_medicine}},
+                        label: {{$display_results[0][0]->rep_medicine}},
                         fillColor: "rgba(220,220,220,0.5)",
                         strokeColor: "rgba(220,220,220,0.8)",
                         highlightFill: "rgba(220,220,220,0.75)",
@@ -391,7 +391,7 @@
                         data: display_results[0][]
                     },
                     {
-                        label: {{$display_results[1]->rep_medicine}},
+                        label: {{$display_results[0][1]->rep_medicine}},
                         fillColor: "rgba(26,179,148,0.5)",
                         strokeColor: "rgba(26,179,148,0.8)",
                         highlightFill: "rgba(26,179,148,0.75)",
@@ -399,7 +399,7 @@
                         data: display_results[1][]
                     },
                     {
-                        label: {{$display_results[2]->rep_medicine}},
+                        label: {{$display_results[0][2]->rep_medicine}},
                         fillColor: "rgba(220,220,220,0.5)",
                         strokeColor: "rgba(220,220,220,0.8)",
                         highlightFill: "rgba(220,220,220,0.75)",
