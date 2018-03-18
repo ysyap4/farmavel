@@ -194,7 +194,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Bar Chart Example</h5>
+                            <h5>Bar Chart Example {{$display_results->rep_location}}</h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
@@ -368,7 +368,7 @@
             var rep_medicine_first = new Array();
             var rep_medicine_second = new Array();
             var rep_medicine_third = new Array();
-            
+
             for (i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';

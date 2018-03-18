@@ -141,8 +141,6 @@ class GraphController extends Controller
                             ->take(3)
                             ->get();
 
-        dd($display_results);
-
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results));
     }
 
