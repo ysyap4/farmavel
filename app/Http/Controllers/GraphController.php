@@ -18,6 +18,7 @@ use App\Model\report;
 use App\Model\appointment;
 use App\Model\vas;
 use PDF;
+use Illuminate\Support\Facades\DB;
 
 class GraphController extends Controller
 {
