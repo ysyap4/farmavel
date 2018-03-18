@@ -137,11 +137,11 @@ class GraphController extends Controller
         $month = array();
 
         for ($i = 0; $i < $end_month - $start_month + 1; $i++) 
-            {
-                $month[$i] = '';
-                $month[$i] = strval($start_month + $i);
-            }
-dd($month);
+        {
+            $month[$i] = '';
+            $month[$i] = strval($start_month + $i);
+        }
+
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'month' => $month, 'display_results' => $display_results));
     }
 
