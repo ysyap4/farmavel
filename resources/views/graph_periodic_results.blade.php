@@ -365,7 +365,7 @@
 
             var i;
             var arr = new Array();
-            for (i = {{$start_month}}; i < {{$end_month}}; i++) 
+            for (i = {{$start_month}}; i < {{$end_month}}+1; i++) 
             {
                 arr[i-1] = '';
                 arr[i-1] = i;
