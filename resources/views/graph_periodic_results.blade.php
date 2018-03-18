@@ -362,9 +362,17 @@
         
             var ctx = document.getElementById("lineChart").getContext("2d");
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+
+
         
             var barData = {
-                labels: [ ],
+                labels: [
+                            var i;
+                            for (i = {{$start_month}}; i < {{$end_month}}; i++) 
+                            {
+                                barData[0].labels.push(i);
+                            }
+                ],
                 datasets: [
                     {
                         label: "My First dataset",
@@ -384,12 +392,6 @@
                     }
                 ]
             };
-
-            var i;
-            for (i = {{$start_month}}; i < {{$end_month}}; i++) 
-            {
-                barData[0].labels.push(i);
-            }
         
             var barOptions = {
                 scaleBeginAtZero: true,
