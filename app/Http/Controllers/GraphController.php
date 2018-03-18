@@ -167,6 +167,8 @@ class GraphController extends Controller
                     $month[$i] = "Dec";
             }
 
+        dd($month);
+
         return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'month' => $month, 'display_results' => $display_results));
     }
 
