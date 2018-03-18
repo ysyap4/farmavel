@@ -127,14 +127,11 @@ class GraphController extends Controller
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
 
-        $a = Input::get('get_slider_value1');
-        $b = Input::get('get_slider_value2');
+        $start_month = Input::get('get_slider_value1');
+        $end_month = Input::get('get_slider_value2');
+        $display_results = Input::get('display_results');
 
-        dd($a);
-        dd($b);
-
-
-        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'start_month' => $start_month, 'end_month' => $end_month));
     }
 
     public function manage_user_index()
