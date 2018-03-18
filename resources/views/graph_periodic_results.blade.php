@@ -194,7 +194,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Bar Chart Example {{$display_results->display_count[0]}} </h5>
+                            <h5>Bar Chart Example {{$display_results->display_count}} </h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
