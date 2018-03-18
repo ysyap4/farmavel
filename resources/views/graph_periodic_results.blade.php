@@ -366,7 +366,7 @@
             var i;
             for (i = {{$start_month}}; i < {{$end_month}}; i++) 
             {
-                barData[0].labels.push(i);
+                barData.labels.push(i);
             }
         
             var barData = {
