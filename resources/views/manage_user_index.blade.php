@@ -94,7 +94,7 @@
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
+                                <a href="#" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/users.png')}}">
                                 </a>
                                 <div>
@@ -107,7 +107,7 @@
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
+                                <a href="#" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/medicine.png')}}">
                                 </a>
                                 <div class="media-body ">
@@ -120,7 +120,7 @@
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
+                                <a href="#" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/report.png')}}">
                                 </a>
                                 <div>
@@ -133,7 +133,7 @@
                         <li class="divider"></li>
                         <li>
                             <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
+                                <a href="#" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/appointment.png')}}">
                                 </a>
                                 <div>
