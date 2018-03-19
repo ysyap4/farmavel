@@ -162,48 +162,48 @@
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-success pull-right">in system</span>
+                        <span class="label label-success pull-right">Total</span>
                         <h5>Users</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success"> {{$user_count}} </h1>
-                        <small>Total users</small>
+                        <small>Users in system</small>
                     </div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">in system</span>
+                        <span class="label label-info pull-right">Total</span>
                         <h5>Medicine</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success">{{$med_count}}</h1>
-                        <small>Total medicine</small>
+                        <small>Medicine in system</small>
                     </div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">in system</span>
+                        <span class="label label-info pull-right">Total</span>
                         <h5>Report</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success">{{$rep_count}}</h1>
-                        <small>Total report</small>
+                        <small>Report in system</small>
                     </div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">in system</span>
+                        <span class="label label-info pull-right">Total</span>
                         <h5>Appointment</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success">{{$app_count}}</h1>
-                        <small>Total appointment</small>
+                        <small>Appointment in system</small>
                     </div>
                 </div>
             </div>
