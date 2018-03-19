@@ -47,19 +47,19 @@ class HomeController extends Controller
                                         ->take(2)
                                         ->get();
 
-        $med_sub_count = medicine::select(DB::raw('count(*) as sub_count, type'))
+        $med_sub_count = medicine::select(DB::raw('count(*) as sub_count, med_category'))
                                         ->groupBy('med_category')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(2)
                                         ->get();
 
-        $rep_sub_count = report::select(DB::raw('count(*) as sub_count, type'))
+        $rep_sub_count = report::select(DB::raw('count(*) as sub_count, rep_location'))
                                         ->groupBy('rep_location')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(2)
                                         ->get();
 
-        $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, type'))
+        $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, app_method'))
                                         ->groupBy('app_method')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(2)
