@@ -566,7 +566,7 @@ class ManageController extends Controller
             $get_selected_med[$i] = '';
             $show_selected_app[$i] = appointment::find($selected_app[$i]);
             $get_selected_user[$i] = users::where('id', $show_selected_app[$i]->user_id)->first();
-            $get_selected_med[$i] = medicine::where('id', $edit_selected_app[$i]->med_id)->first();
+            $get_selected_med[$i] = medicine::where('id', $show_selected_app[$i]->med_id)->first();
         }
 
         return View::make('manage_appointment_show',array('show_selected_app' => $show_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
