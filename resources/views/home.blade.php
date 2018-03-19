@@ -169,6 +169,14 @@
                         <h1 class="no-margins font-bold text-success"> {{$user_count}} </h1>
                         <small>Users in system</small>
                     </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$user_sub_count[0]->sub_count}} </h1>
+                        <small>{{$user_sub_count[0]->type}}</small>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$user_sub_count[1]->sub_count}} </h1>
+                        <small>{{$user_sub_count[1]->type}}</small>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
@@ -186,7 +194,7 @@
             <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">Total</span>
+                        <span class="label label-success pull-right">Total</span>
                         <h5>Report</h5>
                     </div>
                     <div class="ibox-content">

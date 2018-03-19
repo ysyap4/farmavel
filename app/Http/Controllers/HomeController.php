@@ -40,6 +40,12 @@ class HomeController extends Controller
         $rep_count = report::count();
         $app_count = appointment::count();
 
-        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count));
+        $user_sub_count = user::select(DB::raw('count(*) as sub_count, type'))
+                                        ->groupBy('type')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(2)
+                                        ->get();
+
+        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count, 'user_sub_count' => $user_sub_count));
     }
 }
