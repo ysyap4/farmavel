@@ -30,16 +30,20 @@ class ManageController extends Controller
         $user = users::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_user_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_user_index', array('user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_user_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_user_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_user_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_user_create_process()
@@ -84,6 +88,8 @@ class ManageController extends Controller
         $user = users::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_user = Input::get('selected_user');
 
@@ -95,7 +101,7 @@ class ManageController extends Controller
             $show_selected_user[$i] = users::find($selected_user[$i]);
         }
 
-        return View::make('manage_user_show', array('show_selected_user' => $show_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_user_show', array('show_selected_user' => $show_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_user_edit()
@@ -103,6 +109,8 @@ class ManageController extends Controller
         $user = users::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_user = Input::get('selected_user');
 
@@ -115,7 +123,7 @@ class ManageController extends Controller
         }
 
         
-        return View::make('manage_user_edit')->with(array('edit_selected_user' => $edit_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_user_edit')->with(array('edit_selected_user' => $edit_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_user_edit_process()
