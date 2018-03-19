@@ -123,8 +123,8 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right">NEW report</small>
-                                    Report of<strong>{{$lastest_rep->rep_medicine}}</strong> at <strong>{{$lastest_rep->rep_location}}</strong> is submitted. <br>
+                                    <small class="pull-right text-navy">NEW report</small>
+                                    <strong>{{$lastest_rep->rep_medicine}}</strong> at <strong>{{$lastest_rep->rep_location}}</strong> is reported. <br>
                                     <small class="text-muted">{{$lastest_rep->created_at}}</small>
                                 </div>
                             </div>
@@ -136,8 +136,8 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right">NEW appointment</small>
-                                    New appointment at <strong>{{$lastest_app->app_location}}</strong> by <strong>{{$lastest_app->app_method}}</strong> is confirmed. <br>
+                                    <small class="pull-right text-navy">NEW appointment</small>
+                                    Appointment at <strong>{{$lastest_app->app_location}}</strong> by <strong>{{$lastest_app->app_method}}</strong> is confirmed. <br>
                                     <small class="text-muted">{{$lastest_rep->created_at}}</small>
                                 </div>
                             </div>
