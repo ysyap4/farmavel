@@ -47,6 +47,24 @@ class HomeController extends Controller
                                         ->take(2)
                                         ->get();
 
-        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count, 'user_sub_count' => $user_sub_count));
+        $med_sub_count = medicine::select(DB::raw('count(*) as sub_count, type'))
+                                        ->groupBy('med_category')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(2)
+                                        ->get();
+
+        $rep_sub_count = report::select(DB::raw('count(*) as sub_count, type'))
+                                        ->groupBy('rep_location')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(2)
+                                        ->get();
+
+        $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, type'))
+                                        ->groupBy('app_method')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(2)
+                                        ->get();
+
+        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count, 'user_sub_count' => $user_sub_count, 'med_sub_count' => $med_sub_count, 'rep_sub_count' => $rep_sub_count, 'app_sub_count' => $app_sub_count));
     }
 }

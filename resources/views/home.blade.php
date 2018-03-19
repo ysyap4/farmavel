@@ -189,6 +189,14 @@
                         <h1 class="no-margins font-bold text-success">{{$med_count}}</h1>
                         <small>Medicine in system</small>
                     </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$med_sub_count[0]->sub_count}} </h1>
+                        <small>{{$med_sub_count[0]->med_category}}</small>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$med_sub_count[1]->sub_count}} </h1>
+                        <small>{{$med_sub_count[1]->med_category}}</small>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
@@ -201,6 +209,14 @@
                         <h1 class="no-margins font-bold text-success">{{$rep_count}}</h1>
                         <small>Report in system</small>
                     </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$rep_sub_count[0]->sub_count}} </h1>
+                        <small>{{$rep_sub_count[0]->rep_location}}</small>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$rep_sub_count[1]->sub_count}} </h1>
+                        <small>{{$rep_sub_count[1]->rep_location}}</small>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
@@ -212,6 +228,14 @@
                     <div class="ibox-content">
                         <h1 class="no-margins font-bold text-success">{{$app_count}}</h1>
                         <small>Appointment in system</small>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$app_sub_count[0]->sub_count}} </h1>
+                        <small>{{$app_sub_count[0]->app_method}}</small>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success"> {{$app_sub_count[1]->sub_count}} </h1>
+                        <small>{{$app_sub_count[1]->app_method}}</small>
                     </div>
                 </div>
             </div>
