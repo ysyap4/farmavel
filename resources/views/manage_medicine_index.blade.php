@@ -71,6 +71,13 @@
                         <li><a href="{{URL::route('manage_vas_index')}}">Value Added Service</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graph</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{{URL::route('graph_alltime_index')}}">All-Time Charts</a></li>
+                        <li><a href="{{URL::route('graph_periodic_index')}}">Periodic Charts</a></li>
+                    </ul>
+                </li>
                 
             </ul>
 
