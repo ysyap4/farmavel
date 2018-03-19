@@ -123,18 +123,23 @@
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile.jpg')}}">
                                 </a>
                                 <div>
-                                    <small class="pull-right">23h ago</small>
-                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                    <small class="pull-right">NEW report</small>
+                                    Report of<strong>{{$lastest_rep->rep_medicine}}</strong> at <strong>{{$lastest_rep->rep_location}}</strong> is submitted. <br>
+                                    <small class="text-muted">{{$lastest_rep->created_at}}</small>
                                 </div>
                             </div>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile.jpg')}}">
                                 </a>
+                                <div>
+                                    <small class="pull-right">NEW appointment</small>
+                                    New appointment at <strong>{{$lastest_app->app_location}}</strong> by <strong>{{$lastest_app->app_method}}</strong> is confirmed. <br>
+                                    <small class="text-muted">{{$lastest_rep->created_at}}</small>
+                                </div>
                             </div>
                         </li>
                     </ul>
