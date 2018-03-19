@@ -378,9 +378,9 @@
             for (var j = 0; j < 3; j++) 
             {
                 dataset_value[j] = '';
-                dataset_value[j] = {{$dataset_value <?php echo [j] ?> }};
+                dataset_value[j] = {{$dataset_value [j] }};
                 dataset_name[j] = '';
-                dataset_name[j] = {{$dataset_name <?php echo [j] ?> }};
+                dataset_name[j] = {{$dataset_name  [j]  }};
             };
 
             for (var k = 0; k < 3; k++)
