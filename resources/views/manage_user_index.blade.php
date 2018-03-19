@@ -95,12 +95,12 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a7.jpg')}}">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/users.png')}}">
                                 </a>
                                 <div>
                                     <small class="pull-right text-navy">NEW user</small>
-                                    <strong> {{$lastest_user->name}} </strong> is registered to <strong>Farmavel</strong>. <br>
-                                    <small class="text-muted"> {{$lastest_user->created_at}} </small>
+                                    <strong>{{$lastest_user->name}}</strong> is registered to <strong>{{$lastest_user->type}}</strong>. <br>
+                                    <small class="text-muted">{{$lastest_user->created_at}}</small>
                                 </div>
                             </div>
                         </li>
@@ -108,11 +108,11 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/a4.jpg')}}">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/medicine.png')}}">
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">NEW medicine</small>
-                                    <strong> {{$lastest_med->med_name}} </strong> is added as <strong>{{$lastest_med->med_number}}</strong>. <br>
+                                    <strong>{{$lastest_med->med_name}}</strong> is added as <strong>{{$lastest_med->med_number}}</strong>. <br>
                                     <small class="text-muted">{{$lastest_med->created_at}}</small>
                                 </div>
                             </div>
@@ -121,21 +121,26 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile.jpg')}}">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/report.png')}}">
                                 </a>
-                                <div class="media-body ">
-                                    <small class="pull-right">23h ago</small>
-                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                <div>
+                                    <small class="pull-right text-navy">NEW report</small>
+                                    <strong>{{$lastest_rep->rep_medicine}}</strong> at <strong>{{$lastest_rep->rep_location}}</strong> is reported. <br>
+                                    <small class="text-muted">{{$lastest_rep->created_at}}</small>
                                 </div>
                             </div>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/appointment.png')}}">
                                 </a>
+                                <div>
+                                    <small class="pull-right text-navy">NEW appointment</small>
+                                    Appointment at <strong>{{$lastest_app->app_location}}</strong> by <strong>{{$lastest_app->app_method}}</strong> is confirmed. <br>
+                                    <small class="text-muted">{{$lastest_rep->created_at}}</small>
+                                </div>
                             </div>
                         </li>
                     </ul>
