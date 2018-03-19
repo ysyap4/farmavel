@@ -136,31 +136,18 @@ class GraphController extends Controller
         $end_month = Input::get('get_slider_value2');
 
         $display_results = array();
-        $dataset_value = array();
-        $dataset_name = array();
 
-        for ($i = 0; $i < $end_month - $start_month + 1; $i++) 
-        {
-            $display_results[$i] = '';
-            $display_results[$i] = report::select(DB::raw('count(*) as display_count, rep_medicine'))
-                                    ->whereMonth('created_at', $start_month + $i)
-                                    ->groupBy('rep_medicine')
-                                    ->orderBy('display_count', 'desc')
-                                    ->take(3)
-                                    ->get();
+        
+        $display_results = '';
+        $display_results = report::select(DB::raw('count(*) as display_count, rep_medicine'))
+                                ->whereMonth('created_at', '>=', $start_month)
+                                ->whereMonth('created_at', '<=', $end_month)
+                                ->groupBy('rep_medicine')
+                                ->orderBy('display_count', 'desc')
+                                ->take(3)
+                                ->get();
 
-            for ($j = 0; $j < 3; $j++)
-            {
-                $dataset_value[$i][$j] = '';
-                $dataset_value[$i][$j] = $display_results[$i][$j]->display_count;
-                $dataset_name[$i][$j] = '';
-                $dataset_name[$i][$j] = $display_results[$i][$j]->rep_medicine;
-            }
-        }
-
-
-
-        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results, 'dataset_value' => $dataset_value, 'dataset_name' => $dataset_name));
+        return View::make('graph_periodic_results', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'report' => $report, 'appointment' => $appointment, 'start_month' => $start_month, 'end_month' => $end_month, 'display_results' => $display_results));
     }
 
     public function manage_user_index()
