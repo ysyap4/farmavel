@@ -259,6 +259,16 @@
                             <div class="flot-chart-content" id="flot-chart1"></div>
                         </div>
                     </div>
+                    <div class="ibox-content no-padding">
+                        <div class="flot-chart m-t-lg" style="height: 55px;">
+                            <div class="flot-chart-content" id="flot-chart1"></div>
+                        </div>
+                    </div>
+                    <div class="ibox-content no-padding">
+                        <div class="flot-chart m-t-lg" style="height: 55px;">
+                            <div class="flot-chart-content" id="flot-chart1"></div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
