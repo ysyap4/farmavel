@@ -93,7 +93,7 @@
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
+                                <a href="#" class="pull-left">
                                     <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/users.png')}}">
                                 </a>
                                 <div>

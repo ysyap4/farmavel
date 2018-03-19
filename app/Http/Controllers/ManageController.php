@@ -181,16 +181,20 @@ class ManageController extends Controller
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_medicine_index', array('med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_medicine_index', array('med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_medicine_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_medicine_create_process()
@@ -237,6 +241,8 @@ class ManageController extends Controller
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_med = Input::get('selected_med');
 
@@ -248,7 +254,7 @@ class ManageController extends Controller
             $show_selected_med[$i] = medicine::find($selected_med[$i]);
         }
 
-        return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_medicine_edit()
@@ -256,6 +262,8 @@ class ManageController extends Controller
         $medicine = medicine::all();
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_med = Input::get('selected_med');
 
@@ -268,7 +276,7 @@ class ManageController extends Controller
         }
 
         
-        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_medicine_edit_process()
@@ -329,16 +337,20 @@ class ManageController extends Controller
 
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_report_index', array('rep' => $report, 'user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_index', array('rep' => $report, 'user' => $user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_report_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_report_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_report_create_process()
@@ -390,6 +402,8 @@ class ManageController extends Controller
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_rep = Input::get('selected_rep');
 
@@ -404,13 +418,15 @@ class ManageController extends Controller
             $get_selected_user[$i] = users::where('id', $show_selected_rep[$i]->user_id)->first();
         }
 
-        return View::make('manage_report_show',array('show_selected_rep' => $show_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_show',array('show_selected_rep' => $show_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_report_edit()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_rep = Input::get('selected_rep');
 
@@ -425,7 +441,7 @@ class ManageController extends Controller
             $get_selected_user[$i] = users::where('id', $edit_selected_rep[$i]->user_id)->first();
         }
         
-        return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_report_edit_process()
@@ -485,16 +501,20 @@ class ManageController extends Controller
 
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_appointment_index', array('app' => $appointment, 'user' => $user, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_appointment_index', array('app' => $appointment, 'user' => $user, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_appointment_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_appointment_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_appointment_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_appointment_create_process()
@@ -560,6 +580,8 @@ class ManageController extends Controller
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_app = Input::get('selected_app');
 
@@ -577,13 +599,15 @@ class ManageController extends Controller
             $get_selected_med[$i] = medicine::where('id', $show_selected_app[$i]->med_id)->first();
         }
 
-        return View::make('manage_appointment_show',array('show_selected_app' => $show_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_appointment_show',array('show_selected_app' => $show_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_appointment_edit()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_app = Input::get('selected_app');
 
@@ -601,7 +625,7 @@ class ManageController extends Controller
             $get_selected_med[$i] = medicine::where('id', $edit_selected_app[$i]->med_id)->first();
         }
         
-        return View::make('manage_appointment_edit')->with(array('edit_selected_app' => $edit_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_appointment_edit')->with(array('edit_selected_app' => $edit_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_appointment_edit_process()
@@ -668,16 +692,20 @@ class ManageController extends Controller
 
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_vas_index', array('vas' => $vas, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_vas_index', array('vas' => $vas, 'med' => $medicine, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_vas_create()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
-        return View::make('manage_vas_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_vas_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_vas_create_process()
@@ -733,6 +761,8 @@ class ManageController extends Controller
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_vas = Input::get('selected_vas');
 
@@ -747,13 +777,15 @@ class ManageController extends Controller
             $get_selected_med[$i] = medicine::where('id', $show_selected_vas[$i]->med_id)->first();
         }
 
-        return View::make('manage_vas_show',array('show_selected_vas' => $show_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_vas_show',array('show_selected_vas' => $show_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_vas_edit()
     {
         $lastest_user = users::orderBy('created_at', 'desc')->first();
         $lastest_med = medicine::orderBy('created_at', 'desc')->first();
+        $lastest_rep = report::orderBy('created_at', 'desc')->first();
+        $lastest_app = appointment::orderBy('created_at', 'desc')->first();
 
         $selected_vas = Input::get('selected_vas');
 
@@ -768,7 +800,7 @@ class ManageController extends Controller
             $get_selected_med[$i] = medicine::where('id', $edit_selected_vas[$i]->med_id)->first();
         }
         
-        return View::make('manage_vas_edit')->with(array('edit_selected_vas' => $edit_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med));
+        return View::make('manage_vas_edit')->with(array('edit_selected_vas' => $edit_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_vas_edit_process()
