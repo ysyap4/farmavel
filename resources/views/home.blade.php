@@ -183,30 +183,32 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-primary pull-right">Today</span>
-                        <h5>Vistits</h5>
+                        <span class="label label-info pull-right">in system</span>
+                        <h5>Report</h5>
                     </div>
                     <div class="ibox-content">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1 class="no-margins">$ 406,420</h1>
-                                <div class="font-bold text-navy">44% <i class="fa fa-level-up"></i> <small>Rapid pace</small></div>
-                            </div>
-                            <div class="col-md-6">
-                                <h1 class="no-margins">206,120</h1>
-                                <div class="font-bold text-navy">22% <i class="fa fa-level-up"></i> <small>Slow pace</small></div>
-                            </div>
-                        </div>
-
-
+                        <h1 class="no-margins font-bold text-success">{{$rep_count}}</h1>
+                        <small>Total report</small>
                     </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">in system</span>
+                        <h5>Appointment</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold text-success">{{$app_count}}</h1>
+                        <small>Total appointment</small>
+                    </div>
+                </div>
+            </div>
+
+            
             <div class="col-md-4">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
