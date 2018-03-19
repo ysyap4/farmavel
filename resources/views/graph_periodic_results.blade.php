@@ -367,31 +367,42 @@
             var month = new Array();
             var display_results = new Array();
             var dataset_value = new Array();
-            dataset_value = parseInt({{$dataset_value}}, 10);
             var dataset_name = new Array();
-            dataset_name = {{$dataset_name}};
 
             for (var i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
-
-                for (var j = 0; j < 3; j++)
-                {
-                    display_results[i] ={
-                                            label: "a",
-                                            fillColor: "rgba(220,220,220,0.5)",
-                                            strokeColor: "rgba(220,220,220,0.8)",
-                                            highlightFill: "rgba(220,220,220,0.75)",
-                                            highlightStroke: "rgba(220,220,220,1)",
-                                            data: dataset_value[i][j]
-                                        }
-                }
             };
         
             var barData = {
                 labels: month,
-                datasets: display_results
+                datasets: [
+                    {
+                        label: "a",
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,0.8)",
+                        highlightFill: "rgba(220,220,220,0.75)",
+                        highlightStroke: "rgba(220,220,220,1)",
+                        data: [1,2,3,4,5,6,7,8,9,10,11,12]
+                    },
+                    {
+                        label: "b",
+                        fillColor: "rgba(26,179,148,0.5)",
+                        strokeColor: "rgba(26,179,148,0.8)",
+                        highlightFill: "rgba(26,179,148,0.75)",
+                        highlightStroke: "rgba(26,179,148,1)",
+                        data: [6,6,6,6,6,6,6,6,6,6,6,6]
+                    },
+                    {
+                        label: "c",
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,0.8)",
+                        highlightFill: "rgba(220,220,220,0.75)",
+                        highlightStroke: "rgba(220,220,220,1)",
+                        data: [12,12,12,12,12,12,12,12,12,12,12,12]
+                    }
+                ]
             };
         
             var barOptions = {
