@@ -194,7 +194,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Bar Chart Example</h5>
+                            <h5>Bar Chart: Top 3 most reported medicine by each months</h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
@@ -317,8 +317,19 @@
         
         $(function () {
 
+            var month = new Array();
+            var display_results = new Array();
+            var dataset_value = new Array();
+            var dataset_name = new Array();
+
+            for (var i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
+            {
+                month[i] = '';
+                month[i] = {{$start_month}} + i;
+            };
+
             var lineData = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: month,
                 datasets: [
                     {
                         label: "Example dataset",
@@ -328,7 +339,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40]
+                        data: [65, 59, 80, 81, 56, 55, 40, 33, 41, 87, 65, 92]
                     },
                     {
                         label: "Example dataset",
@@ -338,7 +349,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(26,179,148,1)",
-                        data: [28, 48, 40, 19, 86, 27, 90]
+                        data: [28, 48, 40, 19, 86, 27, 90, 65, 43, 21, 25, 35]
                     }
                 ]
             };
@@ -362,18 +373,6 @@
         
             var ctx = document.getElementById("lineChart").getContext("2d");
             var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
-
-
-            var month = new Array();
-            var display_results = new Array();
-            var dataset_value = new Array();
-            var dataset_name = new Array();
-
-            for (var i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
-            {
-                month[i] = '';
-                month[i] = {{$start_month}} + i;
-            };
         
             var barData = {
                 labels: month,
