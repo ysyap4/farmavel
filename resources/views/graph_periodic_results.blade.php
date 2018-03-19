@@ -367,33 +367,27 @@
             var month = new Array();
             var display_results = new Array();
             var dataset_value = new Array();
+            dataset_value = {{$dataset_value}};
             var dataset_name = new Array();
+            dataset_name = {{$dataset_name}};
 
             for (var i = 0; i < {{$end_month}} - {{$start_month}} + 1; i++) 
             {
                 month[i] = '';
                 month[i] = {{$start_month}} + i;
-            };
 
-            for (var j = 0; j < 3; j++) 
-            {
-                dataset_value[j] = '';
-                dataset_value[j] = {{$dataset_value [j] }};
-                dataset_name[j] = '';
-                dataset_name[j] = {{$dataset_name  [j]  }};
+                for (var j = 0; j < 3; j++)
+                {
+                    display_results[i] ={
+                                            label: dataset_name[i][j],
+                                            fillColor: "rgba(220,220,220,0.5)",
+                                            strokeColor: "rgba(220,220,220,0.8)",
+                                            highlightFill: "rgba(220,220,220,0.75)",
+                                            highlightStroke: "rgba(220,220,220,1)",
+                                            data: dataset_value[i][j]
+                                        }
+                }
             };
-
-            for (var k = 0; k < 3; k++)
-            {
-                display_results[k] ={
-                                        label: dataset_name[k],
-                                        fillColor: "rgba(220,220,220,0.5)",
-                                        strokeColor: "rgba(220,220,220,0.8)",
-                                        highlightFill: "rgba(220,220,220,0.75)",
-                                        highlightStroke: "rgba(220,220,220,1)",
-                                        data: dataset_value[k]
-                                    }
-            }
         
             var barData = {
                 labels: month,
