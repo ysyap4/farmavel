@@ -40,7 +40,7 @@ class HomeController extends Controller
         $rep_count = report::count();
         $app_count = appointment::count();
 
-        $user_sub_count = user::select(DB::raw('count(*) as sub_count, type'))
+        $user_sub_count = users::select(DB::raw('count(*) as sub_count, type'))
                                         ->groupBy('type')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(2)
