@@ -379,12 +379,12 @@
                 for (var j = 0; j < 3; j++)
                 {
                     display_results[i] ={
-                                            label: dataset_name[i][j],
+                                            label: [dataset_name[i][j]],
                                             fillColor: "rgba(220,220,220,0.5)",
                                             strokeColor: "rgba(220,220,220,0.8)",
                                             highlightFill: "rgba(220,220,220,0.75)",
                                             highlightStroke: "rgba(220,220,220,1)",
-                                            data: dataset_value[i][j]
+                                            data: [dataset_value[i][j]]
                                         }
                 }
             };
