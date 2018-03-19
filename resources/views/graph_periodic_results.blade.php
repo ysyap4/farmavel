@@ -367,7 +367,7 @@
             var month = new Array();
             var display_results = new Array();
             var dataset_value = new Array();
-            dataset_value = {{$dataset_value}};
+            dataset_value = parseInt({{$dataset_value}}, 10);
             var dataset_name = new Array();
             dataset_name = {{$dataset_name}};
 
@@ -379,7 +379,7 @@
                 for (var j = 0; j < 3; j++)
                 {
                     display_results[i] ={
-                                            label: string(dataset_name[i][j]),
+                                            label: "a",
                                             fillColor: "rgba(220,220,220,0.5)",
                                             strokeColor: "rgba(220,220,220,0.8)",
                                             highlightFill: "rgba(220,220,220,0.75)",
