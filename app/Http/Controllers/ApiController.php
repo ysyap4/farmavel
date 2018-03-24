@@ -31,6 +31,9 @@ class ApiController extends Controller
         {
             if(Hash::check($request->input('password'), $user->password)) 
             {
+                $remember_token = bcrypt($user->id.time());
+                $user->remember_token = $remember_token;
+                $user->save();
                 $data = [
                     'status' => 'success',
                     'data' => $user
