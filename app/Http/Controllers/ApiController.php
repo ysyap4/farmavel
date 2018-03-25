@@ -27,9 +27,9 @@ class ApiController extends Controller
     {
         $user = users::where('email', $request->input('email'))->get()->first();
         
-        if($user) 
+        if ($user) 
         {
-            if(Hash::check($request->input('password'), $user->password)) 
+            if (Hash::check($request->input('password'), $user->password)) 
             {
                 $remember_token = bcrypt($user->id.time());
                 $user->remember_token = $remember_token;
