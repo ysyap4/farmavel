@@ -29,3 +29,8 @@ Route::post('/signup', [
 	'as' => 'api.signup', 
 	'uses' => 'ApiController@signup'
 	]);
+
+Route::post('/logout', [
+	'as' => 'api.logout', 
+	'uses' => 'ApiController@logout'
+	]);

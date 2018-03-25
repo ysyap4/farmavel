@@ -81,4 +81,26 @@ class ApiController extends Controller
 
         return response()->json($data);
     }
+
+    public function logout(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
+
+        if($user) 
+        {
+            $user->remember_token = null;
+            $user->save();
+            $data = [
+                'status' => 'success'
+            ];
+        }
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'Invalid session.'
+            ];
+        }
+        return response()->json($data);
+    }
 }
