@@ -124,7 +124,10 @@ class ApiController extends Controller
         }
         else 
         {
-            
+            $data = [
+                'status' => 'invalid',
+                'message' => 'Invalid session.'
+            ];
         }
     }
 
