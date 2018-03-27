@@ -107,9 +107,9 @@ class ApiController extends Controller
 
     public function check_medicine_authenticity(Request $request) 
     {
-        $user = users::where('remember_token', $request->input('remember_token'))->get(['id'])->first();
+        //$user = users::where('remember_token', $request->input('remember_token'))->get(['id'])->first();
 
-        if($user) {
+        //if($user) {
 
         $searchTerm = $request->input('searchTerm');
 
@@ -129,7 +129,7 @@ class ApiController extends Controller
                 'message' => 'Invalid session.'
             ];
         }
-    }
+    //}
 
         return response()->json($data);
     }
