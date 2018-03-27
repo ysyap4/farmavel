@@ -107,6 +107,10 @@ class ApiController extends Controller
 
     public function check_medicine_authenticity(Request $request) 
     {
+        $user = users::where('remember_token', $request->input('remember_token'))->get(['id'])->first();
+
+        if($user) {
+
         $searchTerm = $request->input('searchTerm');
 
         $get_medicine = medicine::where('med_name', $searchTerm)->get()->first();
@@ -122,6 +126,7 @@ class ApiController extends Controller
         {
             
         }
+    }
 
         return response()->json($data);
     }
