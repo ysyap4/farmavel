@@ -101,6 +101,31 @@ class ApiController extends Controller
                 'message' => 'Invalid session.'
             ];
         }
+
+        return response()->json($data);
+    }
+
+    public function check_medicine_authenticity(Request $request) 
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        $get_medicine = medicine::where('med_name', $searchTerm)->get()->first();
+
+        if($get_medicine) 
+        {
+            $data = [
+                'status' => 'success',
+                'data' => $get_medicine
+            ];
+        }
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'Invalid session.'
+            ];
+        }
+
         return response()->json($data);
     }
 }
