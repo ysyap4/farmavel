@@ -107,13 +107,13 @@ class ApiController extends Controller
 
     public function check_medicine_authenticity(Request $request) 
     {
-        $user = users::where('remember_token', $request->input('remember_token'))->get(['id'])->first();
+        $user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
 
         if ($user) 
         {
-            $searchTerm = $request->input('searchTerm');
+            $medicine = $request->input('medicine');
     
-            $get_medicine = medicine::where('med_name', $request->input('searchTerm'))->get()->first();
+            $get_medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
     
             if ($get_medicine) 
             {
