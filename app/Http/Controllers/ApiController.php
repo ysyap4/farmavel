@@ -126,7 +126,7 @@ class ApiController extends Controller
             {
                 $data = [
                     'status' => 'invalid',
-                    'message' => 'Invalid session.'
+                    'message' => 'The medicine is not found.'
                 ];
             }
         }
