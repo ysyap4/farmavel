@@ -35,7 +35,12 @@ Route::post('/logout', [
 	'uses' => 'ApiController@logout'
 	]);
 
-Route::post('/check_medicine_authenticity', [
-	'as' => 'api.check_medicine_authenticity', 
-	'uses' => 'ApiController@check_medicine_authenticity'
+Route::post('/check_medicine_information', [
+	'as' => 'api.check_medicine_information', 
+	'uses' => 'ApiController@check_medicine_information'
+	]);
+
+Route::post('/submit_report', [
+	'as' => 'api.submit_report', 
+	'uses' => 'ApiController@submit_report'
 	]);

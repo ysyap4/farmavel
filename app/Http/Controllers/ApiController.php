@@ -105,7 +105,7 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
-    public function check_medicine_authenticity(Request $request) 
+    public function check_medicine_information(Request $request) 
     {
         $user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
 
@@ -127,6 +127,41 @@ class ApiController extends Controller
                 $data = [
                     'status' => 'invalid',
                     'message' => 'The medicine is not found.'
+                ];
+            }
+        }
+
+        return response()->json($data);
+    }
+
+    public function submit_report(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
+
+        if ($user) 
+        {
+            $add = new report;
+            $add->rep_medicine = $request->input('rep_medicine');
+            $add->rep_location = $request->input('rep_location');
+            $add->rep_info = $request->input('rep_info');
+
+            $add->save();
+
+            $get_report = $add;
+    
+            if ($get_report) 
+            {
+                $data = [
+                    'status' => 'success',
+                    'data' => $get_report,
+                    'message' => 'The report is submitted successfully.'
+                ];
+            }
+            else 
+            {
+                $data = [
+                    'status' => 'invalid',
+                    'message' => 'The report is failed to submit.'
                 ];
             }
         }
