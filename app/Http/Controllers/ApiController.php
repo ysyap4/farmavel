@@ -147,9 +147,9 @@ class ApiController extends Controller
 
             $add->save();
 
-            $get_report = report::where('rep_medicine', $add->rep_medicine)
-                                    ->where('rep_location', $add->rep_location)
-                                    ->where('rep_info', $add->rep_info)
+            $get_report = report::where('rep_medicine', $request->input('rep_medicine'))
+                                    ->where('rep_location', $request->input('rep_location'))
+                                    ->where('rep_info', $request->input('rep_info'))
                                     ->get()
                                     ->first();
     
