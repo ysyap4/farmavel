@@ -141,17 +141,19 @@ class ApiController extends Controller
         if ($user) 
         {
             $add = new report;
+            $add->user_id = $user->id;
             $add->rep_medicine = $request->input('rep_medicine');
             $add->rep_location = $request->input('rep_location');
             $add->rep_info = $request->input('rep_info');
 
             $add->save();
 
-            $get_report = report::where('rep_medicine', $request->input('rep_medicine'))
-                                    ->where('rep_location', $request->input('rep_location'))
-                                    ->where('rep_info', $request->input('rep_info'))
-                                    ->get()
-                                    ->first();
+            $get_report = report::where('user_id', $user->id)
+                                ->where('rep_medicine', $request->input('rep_medicine'))
+                                ->where('rep_location', $request->input('rep_location'))
+                                ->where('rep_info', $request->input('rep_info'))
+                                ->get()
+                                ->first();
     
             if ($get_report) 
             {
