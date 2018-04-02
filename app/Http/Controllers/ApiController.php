@@ -157,8 +157,7 @@ class ApiController extends Controller
             {
                 $data = [
                     'status' => 'success',
-                    'data' => $get_report,
-                    'message' => 'The report is submitted successfully.'
+                    'data' => $get_report
                 ];
             }
             else 
