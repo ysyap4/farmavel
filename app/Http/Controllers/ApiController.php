@@ -177,7 +177,7 @@ class ApiController extends Controller
 
     public function get_user(Request $request) 
     {
-        $get_user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
+        $get_user = users::where('remember_token', $request->input('token'))->get();
 
         if ($get_user) 
         {
