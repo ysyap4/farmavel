@@ -185,6 +185,7 @@ class ApiController extends Controller
                 'status' => 'success',
                 'data' => $get_user
             ];
+        }
         else 
         {
             $data = [
