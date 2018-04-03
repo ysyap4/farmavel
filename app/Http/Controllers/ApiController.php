@@ -174,4 +174,25 @@ class ApiController extends Controller
 
         return response()->json($data);
     }
+
+    public function get_user(Request $request) 
+    {
+        $get_user = users::where('remember_token', $request->input('token'))->get(['id'])->first();
+
+        if ($get_user) 
+        {
+            $data = [
+                'status' => 'success',
+                'data' => $get_user
+            ];
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The user data is not valid.'
+            ];
+        }
+
+        return response()->json($data);
+    }
 }

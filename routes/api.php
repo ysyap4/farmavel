@@ -44,3 +44,8 @@ Route::post('/submit_report', [
 	'as' => 'api.submit_report', 
 	'uses' => 'ApiController@submit_report'
 	]);
+
+Route::post('/get_user', [
+	'as' => 'api.get_user', 
+	'uses' => 'ApiController@get_user'
+	]);
