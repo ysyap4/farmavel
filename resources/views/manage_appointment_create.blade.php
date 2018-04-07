@@ -261,8 +261,6 @@
                                             <option value="Muar">Muar</option>
                                             <option value="Segamat">Segamat</option>
                                             <option value="Kulaijaya">Kulaijaya</option>
-                                            <option value="Skudai">Skudai</option>
-                                            <option value="Pasir Gudang">Pasir Gudang</option>
                                         </select>
                                     </div>
                                 </div>

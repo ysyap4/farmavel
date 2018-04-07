@@ -49,3 +49,8 @@ Route::post('/get_user', [
 	'as' => 'api.get_user', 
 	'uses' => 'ApiController@get_user'
 	]);
+
+Route::post('/make_appointment', [
+	'as' => 'api.make_appointment', 
+	'uses' => 'ApiController@make_appointment'
+	]);
