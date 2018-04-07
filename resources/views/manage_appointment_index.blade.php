@@ -234,7 +234,7 @@
                         @endforeach
                         @foreach($med as $value3)
                             @if($value->med_id === $value3->id)
-                                <td> {{$value2->name}} </td>
+                                <td> {{$value3->med_name}} </td>
                             @endif
                         @endforeach
                         <td>{{ $value->app_date }}</td>
