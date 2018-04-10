@@ -312,7 +312,8 @@ class ApiController extends Controller
 
                     $data = [
                         'status' => 'success',
-                        'data' => $get_medicine, $get_vas
+                        'medicine_data' => $get_medicine,
+                        'vas_data' =>  $get_vas
                     ];
                 }
                 else
