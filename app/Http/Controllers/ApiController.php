@@ -269,4 +269,74 @@ class ApiController extends Controller
 
         return response()->json($data);
     }
+
+    public function check_medicine_availability(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get()->first();
+        $medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
+        $vas = vas::where('med_id', $medicine->id)->get()->first();
+        $location = $request->input('location');
+
+        if ($user) 
+        {
+            if ($medicine)
+            {
+                if ($vas)
+                {
+                    if ($location == "Batu Pahat")
+                    {
+                        $vas_availability = $vas->vas_availability_batupahat;
+                    }
+                    else if ($location == "Johor Bahru")
+                    {
+                        $vas_availability = $vas->vas_availability_johorbahru;
+                    }
+                    else if ($location == "Muar")
+                    {
+                        $vas_availability = $vas->vas_availability_muar;
+                    }
+                    else if ($location == "Segamat")
+                    {
+                        $vas_availability = $vas->vas_availability_segamat;
+                    }
+                    else if ($location == "Kulaijaya")
+                    {
+                        $vas_availability = $vas->vas_availability_kulaijaya;
+                    }
+
+                    $get_medicine->med_name = $medicine;
+                    $get_medicine->med_availability = $vas_availability;
+
+                    $data = [
+                        'status' => 'success',
+                        'data' => $get_medicine
+                    ];
+                }
+                else
+                {
+                    $data = [
+                        'status' => 'invalid',
+                        'message' => 'The value added service is not available.'
+                    ];
+                }
+            }
+            else
+            {
+                $data = [
+                    'status' => 'invalid',
+                    'message' => 'The medicine is not available.'
+                ];
+            }
+        }    
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The user is not found.'
+            ];
+            
+        }
+
+        return response()->json($data);
+    }
 }

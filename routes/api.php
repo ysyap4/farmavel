@@ -54,3 +54,8 @@ Route::post('/make_appointment', [
 	'as' => 'api.make_appointment', 
 	'uses' => 'ApiController@make_appointment'
 	]);
+
+Route::post('/check_medicine_availability', [
+	'as' => 'api.check_medicine_availability', 
+	'uses' => 'ApiController@check_medicine_availability'
+	]);
