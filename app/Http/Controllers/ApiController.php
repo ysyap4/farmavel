@@ -283,33 +283,36 @@ class ApiController extends Controller
             {
                 if ($vas)
                 {
-                    if ($location == "Batu Pahat")
-                    {
-                        $vas_availability = $vas->vas_availability_batupahat;
-                    }
-                    else if ($location == "Johor Bahru")
-                    {
-                        $vas_availability = $vas->vas_availability_johorbahru;
-                    }
-                    else if ($location == "Muar")
-                    {
-                        $vas_availability = $vas->vas_availability_muar;
-                    }
-                    else if ($location == "Segamat")
-                    {
-                        $vas_availability = $vas->vas_availability_segamat;
-                    }
-                    else if ($location == "Kulaijaya")
-                    {
-                        $vas_availability = $vas->vas_availability_kulaijaya;
-                    }
+                    // if ($location == "Batu Pahat")
+                    // {
+                    //     $vas_availability = $vas->vas_availability_batupahat;
+                    // }
+                    // else if ($location == "Johor Bahru")
+                    // {
+                    //     $vas_availability = $vas->vas_availability_johorbahru;
+                    // }
+                    // else if ($location == "Muar")
+                    // {
+                    //     $vas_availability = $vas->vas_availability_muar;
+                    // }
+                    // else if ($location == "Segamat")
+                    // {
+                    //     $vas_availability = $vas->vas_availability_segamat;
+                    // }
+                    // else if ($location == "Kulaijaya")
+                    // {
+                    //     $vas_availability = $vas->vas_availability_kulaijaya;
+                    // }
 
-                    $get_medicine->med_name = $medicine;
-                    $get_medicine->med_availability = $vas_availability;
+                    // $get_medicine->med_name = $medicine;
+                    // $get_medicine->med_availability = $vas_availability;
+
+                    $get_medicine = $medicine;
+                    $get_vas = $vas;
 
                     $data = [
                         'status' => 'success',
-                        'data' => $get_medicine
+                        'data' => $get_medicine, $get_vas
                     ];
                 }
                 else
