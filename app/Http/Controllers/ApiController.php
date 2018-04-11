@@ -323,8 +323,13 @@ class ApiController extends Controller
                         'message' => 'The value added service is not available.'
                     ];
                 }
+
+                $data = [
+                        'status' => 'invalid',
+                        'message' => 'The haha is not available.'
+                    ];
             }
-            else if (is_null($medicine))
+            else
             {
                 $data = [
                     'status' => 'invalid',
