@@ -274,13 +274,14 @@ class ApiController extends Controller
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
         $medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
-        $vas = vas::where('med_id', $medicine->id)->get()->first();
         $location = $request->input('location');
 
         if ($user) 
         {
             if ($medicine)
             {
+                $vas = vas::where('med_id', $medicine->id)->get()->first();
+                
                 if ($vas)
                 {
                     // if ($location == "Batu Pahat")
