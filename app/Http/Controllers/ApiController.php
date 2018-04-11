@@ -277,11 +277,11 @@ class ApiController extends Controller
         $vas = vas::where('med_id', $medicine->id)->get()->first();
         $location = $request->input('location');
 
-        if ($user) 
+        if ($user->first()) 
         {
-            if ($medicine)
+            if ($medicine->first())
             {
-                if ($vas)
+                if ($vas->first())
                 {
                     // if ($location == "Batu Pahat")
                     // {
