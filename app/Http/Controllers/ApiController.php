@@ -324,7 +324,7 @@ class ApiController extends Controller
                     ];
                 }
             }
-            else if ($medicine->isEmpty())
+            else if (is_null($medicine))
             {
                 $data = [
                     'status' => 'invalid',
