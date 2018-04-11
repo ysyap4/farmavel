@@ -266,6 +266,13 @@ class ApiController extends Controller
                 ];
             }
         }
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The appointment is failed to submit.'
+            ];
+        }
 
         return response()->json($data);
     }
@@ -281,7 +288,7 @@ class ApiController extends Controller
             if ($medicine)
             {
                 $vas = vas::where('med_id', $medicine->id)->get()->first();
-                
+
                 if ($vas)
                 {
                     // if ($location == "Batu Pahat")
