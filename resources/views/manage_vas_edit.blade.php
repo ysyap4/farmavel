@@ -210,7 +210,7 @@
                                 <div class="form-group{{ $errors->has('med_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">VAS Medicine Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="med_name[]" class="form-control" name="med_name[]" placeholder="VAS Medicine Name" value="{{$edit_selected_vas[$i]->med_name}}">
+                                        <input type="text" id="med_name[]" class="form-control" name="med_name[]" placeholder="VAS Medicine Name" value="{{$get_selected_med[$i]->med_name}}">
                                         @if ($errors->has('med_name'))
                                             <p class="help-block">{{$errors ->first('med_name')}}</p>
                                         @endif
