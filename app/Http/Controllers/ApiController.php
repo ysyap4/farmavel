@@ -200,69 +200,96 @@ class ApiController extends Controller
     public function make_appointment(Request $request) 
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
-        $medicine = medicine::where('med_name', $request->input('app_medicine'))->get()->first();
-        $vas = vas::where('med_id', $medicine->id)->get()->first();
 
-
-        if ($vas)
+        if ($user)
         {
-            if ($request->input('app_location') == "Batu Pahat")
-            {
-                $vas_availability = $vas->vas_availability_batupahat;
-            }
-            else if ($request->input('app_location') == "Johor Bahru")
-            {
-                $vas_availability = $vas->vas_availability_johorbahru;
-            }
-            else if ($request->input('app_location') == "Muar")
-            {
-                $vas_availability = $vas->vas_availability_muar;
-            }
-            else if ($request->input('app_location') == "Segamat")
-            {
-                $vas_availability = $vas->vas_availability_segamat;
-            }
-            else if ($request->input('app_location') == "Kulaijaya")
-            {
-                $vas_availability = $vas->vas_availability_kulaijaya;
-            }
-        }
+            $medicine = medicine::where('med_name', $request->input('app_medicine'))->get()->first();
 
-
-        if ($user && $medicine && $vas && $vas_availability == "1")
-        {
-            $add = new appointment;
-            $add->user_id = $user->id;
-            $add->med_id = $medicine->id;
-            $add->app_date = $request->input('app_date');
-            $add->app_time = $request->input('app_time');
-            $add->app_location = $request->input('app_location');
-            $add->app_method = $request->input('app_method');
-
-            $add->save();
-
-            $get_appointment = appointment::where('user_id', $user->id)
-                                ->where('med_id', $medicine->id)
-                                ->where('app_date', $request->input('app_date'))
-                                ->where('app_time', $request->input('app_time'))
-                                ->where('app_location', $request->input('app_location'))
-                                ->where('app_method', $request->input('app_method'))
-                                ->get()
-                                ->first();
+            if ($medicine)
+            {
+                $vas = vas::where('med_id', $medicine->id)->get()->first();
     
-            if ($get_appointment) 
-            {
-                $data = [
-                    'status' => 'success',
-                    'data' => $get_appointment,
-                    'message' => 'The appointment is submitted successfully.'
-                ];
+                if ($vas)
+                {
+                    if ($request->input('app_location') == "Batu Pahat")
+                    {
+                        $vas_availability = $vas->vas_availability_batupahat;
+                    }
+                    else if ($request->input('app_location') == "Johor Bahru")
+                    {
+                        $vas_availability = $vas->vas_availability_johorbahru;
+                    }
+                    else if ($request->input('app_location') == "Muar")
+                    {
+                        $vas_availability = $vas->vas_availability_muar;
+                    }
+                    else if ($request->input('app_location') == "Segamat")
+                    {
+                        $vas_availability = $vas->vas_availability_segamat;
+                    }
+                    else if ($request->input('app_location') == "Kulaijaya")
+                    {
+                        $vas_availability = $vas->vas_availability_kulaijaya;
+                    }
+    
+                    if ($vas_availability == "1")
+                    {
+                        $add = new appointment;
+                        $add->user_id = $user->id;
+                        $add->med_id = $medicine->id;
+                        $add->app_date = $request->input('app_date');
+                        $add->app_time = $request->input('app_time');
+                        $add->app_location = $request->input('app_location');
+                        $add->app_method = $request->input('app_method');
+    
+                        $add->save();
+    
+                        $get_appointment = appointment::where('user_id', $user->id)
+                                            ->where('med_id', $medicine->id)
+                                            ->where('app_date', $request->input('app_date'))
+                                            ->where('app_time', $request->input('app_time'))
+                                            ->where('app_location', $request->input('app_location'))
+                                            ->where('app_method', $request->input('app_method'))
+                                            ->get()
+                                            ->first();
+                
+                        if ($get_appointment) 
+                        {
+                            $data = [
+                                'status' => 'success',
+                                'data' => $get_appointment,
+                                'message' => 'The appointment is submitted successfully.'
+                            ];
+                        }
+                        else 
+                        {
+                            $data = [
+                                'status' => 'invalid',
+                                'message' => 'The appointment is failed to submit.'
+                            ];
+                        }
+                    }
+                    else 
+                    {
+                        $data = [
+                            'status' => 'invalid',
+                            'message' => 'The medicine is not available temporarily.'
+                        ];
+                    }
+                }
+                else 
+                {
+                    $data = [
+                        'status' => 'invalid',
+                        'message' => 'The value added service is not available.'
+                    ];
+                }
             }
             else 
             {
                 $data = [
                     'status' => 'invalid',
-                    'message' => 'The appointment is failed to submit.'
+                    'message' => 'The medicine is not available.'
                 ];
             }
         }
@@ -270,7 +297,7 @@ class ApiController extends Controller
         {
             $data = [
                 'status' => 'invalid',
-                'message' => 'The appointment is failed to submit.'
+                'message' => 'The user is not valid.'
             ];
         }
 
@@ -280,11 +307,12 @@ class ApiController extends Controller
     public function check_medicine_availability(Request $request) 
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
-        $medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
         $location = $request->input('location');
 
         if ($user) 
         {
+            $medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
+            
             if ($medicine)
             {
                 $vas = vas::where('med_id', $medicine->id)->get()->first();
