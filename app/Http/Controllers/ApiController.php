@@ -272,16 +272,16 @@ class ApiController extends Controller
 
     public function check_medicine_availability(Request $request) 
     {
-        $user = users::where('remember_token', $request->input('token'))->get()->first();
-        $medicine = medicine::where('med_name', $request->input('medicine'))->get()->first();
-        $vas = vas::where('med_id', $medicine->id)->get()->first();
+        $user = users::where('remember_token', $request->input('token'))->first();
+        $medicine = medicine::where('med_name', $request->input('medicine'))->first();
+        $vas = vas::where('med_id', $medicine->id)->first();
         $location = $request->input('location');
 
-        if (count($user)) 
+        if ($user) 
         {
-            if (count($medicine))
+            if ($medicine)
             {
-                if (count($vas))
+                if ($vas)
                 {
                     // if ($location == "Batu Pahat")
                     // {
