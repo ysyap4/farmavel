@@ -60,24 +60,54 @@ class ApiController extends Controller
 
     public function signup(Request $request) 
     {
-        $add = new users;
-        $add->name = $request->input('name');
-        $add->email = $request->input('email');
-        $add->phone = $request->input('phone');
-        $add->password = bcrypt($request->input('password'));
-        $add->type = 'Patient';
+        if ($request->has('name') && $request->has('email') && $request->has('phone') && $request->has('password'))
+        {
+            $rules = array(
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required',
+            'password' => 'required',
+            'c_password' => 'required|same:password',
+            );
 
-        $add->save();
-
-        $registered_user = users::where('email', $request->input('email'))->get()->first();
-        $remember_token = bcrypt($registered_user->id + time());
-        $registered_user->remember_token = $remember_token;
-        $registered_user->save();
-
-        $data = [
-            'status' => 'success',
-            'data' => $registered_user
-        ];
+            $validator = Validator::make($request->all(), $rules);
+    
+            if($validator->fails())
+            {
+                $data = [
+                'status' => 'invalid',
+                'message' => 'All correct information must be filled.'
+            ];
+            }
+            else
+            {
+                $add = new users;
+                $add->name = $request->input('name');
+                $add->email = $request->input('email');
+                $add->phone = $request->input('phone');
+                $add->password = bcrypt($request->input('password'));
+                $add->type = 'Patient';
+    
+                $add->save();
+    
+                $registered_user = users::where('email', $request->input('email'))->get()->first();
+                $remember_token = bcrypt($registered_user->id + time());
+                $registered_user->remember_token = $remember_token;
+                $registered_user->save();
+    
+                $data = [
+                    'status' => 'success',
+                    'data' => $registered_user
+                ];
+            }
+        }
+        else
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'All valid information must be filled.'
+            ];
+        }
 
         return response()->json($data);
     }

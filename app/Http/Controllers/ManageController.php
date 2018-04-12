@@ -48,7 +48,7 @@ class ManageController extends Controller
 
     public function manage_user_create_process()
     {
-         $rules = array(
+        $rules = array(
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'phone' => 'required',
