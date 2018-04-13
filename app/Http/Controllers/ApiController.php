@@ -34,9 +34,14 @@ class ApiController extends Controller
                 $remember_token = bcrypt($user->id.time());
                 $user->remember_token = $remember_token;
                 $user->save();
+                $get_user = users::where('email', $request->input('email'))
+                                ->where('password', Hash::make($request->input('password')))
+                                ->where('remember_token', $remember_token)
+                                ->get()
+                                ->first();
                 $data = [
                     'status' => 'success',
-                    'data' => $user
+                    'data' => $get_user
                 ];
             }
             else 
