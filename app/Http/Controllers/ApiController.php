@@ -61,7 +61,7 @@ class ApiController extends Controller
 
     public function signup(Request $request) 
     {
-        if ($request->has('name') && $request->has('email') && $request->has('phone') && $request->has('password'))
+        if ($request->has('name') && $request->has('email') && $request->has('phone') && $request->has('password') && $request->has('c_password'))
         {
             $rules = array(
             'name' => 'required',
@@ -410,6 +410,64 @@ class ApiController extends Controller
                 'message' => 'The user is not found.'
             ];
             
+        }
+
+        return response()->json($data);
+    }
+
+    public function edit_profile(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get()->first();
+
+        if ($user)
+        {
+            if ($request->has('name') && $request->has('phone') && $request->has('password') && $request->has('c_password'))
+            {
+                $rules = array(
+                'name' => 'required',
+                'phone' => 'required',
+                'password' => 'required',
+                'c_password' => 'required|same:password',
+                );
+    
+                $validator = Validator::make($request->all(), $rules);
+        
+                if($validator->fails())
+                {
+                    $data = [
+                    'status' => 'invalid',
+                    'message' => 'All correct information must be filled.'
+                ];
+                }
+                else
+                {
+                    $edit = users::where('remember_token', $request->input('token'))->get()->first();
+                    $edit->name = $request->input('name');
+                    $edit->phone = $request->input('phone');
+                    $edit->password = bcrypt($request->input('password'));
+        
+                    $edit->save();
+
+                    $data = [
+                        'status' => 'success',
+                        'data' => $edit
+                    ];
+                }
+            }
+            else
+            {
+                $data = [
+                    'status' => 'invalid',
+                    'message' => 'All valid information must be filled.'
+                ];
+            }
+        }
+        else
+        {
+            $data = [
+                    'status' => 'invalid',
+                    'message' => 'Failed to update profile.'
+                ];
         }
 
         return response()->json($data);

@@ -59,3 +59,8 @@ Route::post('/check_medicine_availability', [
 	'as' => 'api.check_medicine_availability', 
 	'uses' => 'ApiController@check_medicine_availability'
 	]);
+
+Route::post('/edit_profile', [
+	'as' => 'api.edit_profile', 
+	'uses' => 'ApiController@edit_profile'
+	]);
