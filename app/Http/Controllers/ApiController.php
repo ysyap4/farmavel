@@ -34,10 +34,11 @@ class ApiController extends Controller
                 $remember_token = bcrypt($user->id.time());
                 $user->remember_token = $remember_token;
                 $user->save();
-                
+
+                $get_user = users::where('remember_token', $user->remember_token)->get()->first();
                 $data = [
                     'status' => 'success',
-                    'data' => $user
+                    'data' => $get_user
                 ];
             }
             else 
