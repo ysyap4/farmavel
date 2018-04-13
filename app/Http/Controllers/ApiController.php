@@ -450,7 +450,8 @@ class ApiController extends Controller
 
                     $data = [
                         'status' => 'success',
-                        'data' => $edit
+                        'data' => $edit,
+                        'message' => 'New information is updated.'
                     ];
                 }
             }
