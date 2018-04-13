@@ -35,11 +35,9 @@ class ApiController extends Controller
                 $user->remember_token = $remember_token;
                 $user->save();
 
-                $get_user = users::where('email', $request->input('email'))->get()->first();
-                
                 $data = [
                     'status' => 'success',
-                    'data' => $get_user
+                    'data' => $user
                 ];
             }
             else 
