@@ -168,7 +168,7 @@ class ApiController extends Controller
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
 
-        if ($user) 
+        if ($user && $request->has('rep_medicine') && $request->has('rep_location')) 
         {
             $add = new report;
             $add->user_id = $user->id;
