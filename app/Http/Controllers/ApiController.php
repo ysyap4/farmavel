@@ -36,6 +36,7 @@ class ApiController extends Controller
                 $user->save();
 
                 $get_user = users::where('email', $request->input('email'))->get()->first();
+                
                 $data = [
                     'status' => 'success',
                     'data' => $get_user
