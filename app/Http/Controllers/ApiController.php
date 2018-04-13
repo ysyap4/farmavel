@@ -201,6 +201,13 @@ class ApiController extends Controller
                 ];
             }
         }
+        else 
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The valid information must be filled.'
+            ];
+        }
 
         return response()->json($data);
     }
