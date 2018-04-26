@@ -332,13 +332,6 @@
                 "New row" ] );
 
         }
-
-        $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
-        });
     </script>
 
     <script type="text/javascript">
@@ -471,6 +464,11 @@
 
     .dataTables_filter label {
         margin-right: 5px;
+    }
+
+    .i-checks {
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
     }
 </style>
 </body>
