@@ -464,7 +464,6 @@
 
     .dataTables_filter label {
         margin-right: 5px;
-
     }
 </style>
 </body>
