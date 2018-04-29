@@ -283,7 +283,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h4>Preview image</h4>
-                                        <div class="img-preview img-preview-sm"></div>
+                                        <div class="img-preview img-preview-sm" style="width: 200px; height:200px;"></div>
                                         <h4>Comon method</h4>
                                         <p>
                                             You can upload new image to crop container and easy download new cropped image.
