@@ -290,13 +290,16 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <h4>Preview image</h4>
+                                            <h5>Preview image</h5>
                                             <div class="img-preview img-preview-sm" style="width: 200px; height:200px;"></div>
+                                            <br>
                                             <div class="btn-group">
                                                 <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
                                                 <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
+                                                <br>
                                                 <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
-                                                <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</ button>
+                                                <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
+                                                <br>
                                                 <button class="btn btn-warning" id="setDrag" type="button">New crop</button>
                                             </div>
                                         </div>
