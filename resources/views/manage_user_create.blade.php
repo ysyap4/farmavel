@@ -254,7 +254,7 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                   <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
+                                <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
 
                                     <div class="col-sm-10">
                                         <input type="password" id="c_password" class="form-control" name="c_password" placeholder="Confirm Password" value="">
@@ -275,36 +275,38 @@
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="image-crop">
-                                            <img src="{{URL::asset('user_image/no_image.png')}}">
+                                <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Image</label>
+                                    <div class="row col-sm-10">
+                                        <div class="col-md-6">
+                                            <div class="image-crop">
+                                                <img src="{{URL::asset('user_image/no_image.png')}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h4>Preview image</h4>
-                                        <div class="img-preview img-preview-sm" style="width: 200px; height:200px;"></div>
-                                        <h4>Comon method</h4>
-                                        <p>
-                                            You can upload new image to crop container and easy download new cropped image.
-                                        </p>
-                                        <div class="btn-group">
-                                            <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                <input type="file" accept="image/*" name="file" id="inputImage" class="hide">
-                                                Upload new image
-                                            </label>
-                                            <label title="Donload image" id="download" class="btn btn-primary">Download</label>
-                                        </div>
-                                        <h4>Other method</h4>
-                                        <p>
-                                            You may set cropper options with <code>$({image}).cropper(options)</code>
-                                        </p>
-                                        <div class="btn-group">
-                                            <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
-                                            <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
-                                            <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
-                                            <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
-                                            <button class="btn btn-warning" id="setDrag" type="button">New crop</button>
+                                        <div class="col-md-6">
+                                            <h4>Preview image</h4>
+                                            <div class="img-preview img-preview-sm" style="width: 200px; height:200px;"></div>
+                                            <h4>Comon method</h4>
+                                            <p>
+                                                You can upload new image to crop container and easy download new cropped image.
+                                            </p>
+                                            <div class="btn-group">
+                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                                    <input type="file" accept="image/*" name="image" id="inputImage" class="hide    ">
+                                                    Upload new image
+                                                </label>
+                                                <label title="Donload image" id="download" class="btn btn-primary">Download</   label>
+                                            </div>
+                                            <h4>Other method</h4>
+                                            <p>
+                                                You may set cropper options with <code>$({image}).cropper(options)</code>
+                                            </p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
+                                                <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
+                                                <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
+                                                <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</ button>
+                                                <button class="btn btn-warning" id="setDrag" type="button">New crop</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
