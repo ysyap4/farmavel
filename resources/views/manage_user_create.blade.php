@@ -277,7 +277,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="image-crop">
-                                            <img src="{{URL::asset('public/user_image/no_image.png')}}">
+                                            <img src="{{URL::asset('user_image/no_image.png')}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
