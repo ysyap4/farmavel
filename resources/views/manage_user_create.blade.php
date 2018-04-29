@@ -397,10 +397,10 @@
             $image.cropper("zoom", -0.1);
         });
         $("#rotateLeft").click(function() {
-            $image.cropper("rotate", 45);
+            $image.cropper("rotate", 90);
         });
         $("#rotateRight").click(function() {
-            $image.cropper("rotate", -45);
+            $image.cropper("rotate", -90);
         });
         $("#setDrag").click(function() {
             $image.cropper("setDragMode", "crop");
