@@ -299,12 +299,12 @@
                                                 <br>
                                                 <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
                                                 <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
-                                                <br>
-                                                <button class="btn btn-warning" id="setDrag" type="button">New crop</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
@@ -312,6 +312,7 @@
                                         <button class="btn btn-primary" type="submit">Add User</button>
                                     </div>
                                 </div>
+                                
                             </form>
                         </div>
                     </div>
