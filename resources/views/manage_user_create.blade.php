@@ -413,7 +413,7 @@
               formData.append('croppedImage', blob);
             
               // Use `jQuery.ajax` method
-              $.ajax('/user_image/', {
+              $.ajax('user_image', {
                 method: "POST",
                 data: formData,
                 processData: false,

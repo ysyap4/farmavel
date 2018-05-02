@@ -78,7 +78,7 @@ class ManageController extends Controller
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');
 
-            $image = $request->file('image');
+            $image = $request->croppedImage;
             $image_filename = $image->getClientOriginalName();
             $image_extension = $image->getClientOriginalExtension();
             //$destinationPath = public_path(). '/user_image/';
