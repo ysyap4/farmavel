@@ -47,7 +47,7 @@ class ManageController extends Controller
         return View::make('manage_user_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_user_create_process()
+    public function manage_user_create_process(Request $request)
     {
         $rules = array(
             'name' => 'required',
@@ -55,6 +55,7 @@ class ManageController extends Controller
             'phone' => 'required',
             'password' => 'required',
             'c_password' => 'required|same:password',
+            'image' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
@@ -77,7 +78,7 @@ class ManageController extends Controller
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');
 
-            $image = Input::file('image');
+            $image = $request->file('image');
             $image_filename = $image->getClientOriginalName();
             $image_extension = $image->getClientOriginalExtension();
             //$destinationPath = public_path(). '/user_image/';
