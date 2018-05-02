@@ -78,25 +78,28 @@ class ManageController extends Controller
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');
 
-            $image = $request->file('image');
-            $image_filename = $image->getClientOriginalName();
-            $image_extension = $image->getClientOriginalExtension();
-            //$destinationPath = public_path(). '/user_image/';
-            //$image->move($destinationPath, $image_filename);
-            $image->storeAs('public/user_image', $add->id);
-            
-            $add->image = $image_filename;
-
-            // // Get filename withe the extention
-            // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
-            // // Get just filename
-            // $filename = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
-            // // Get just ext
-            // $extension = $request->file('profile_image')->getClientOriginalExtension();
-            // // Filename to store
-            // $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            // // Uplaod image
-            // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
+            if($request->hasFile('image'))
+            {
+                $image = Input::file('image');
+                $image_filename = $image->getClientOriginalName();
+                $image_extension = $image->getClientOriginalExtension();
+                //$destinationPath = public_path(). '/user_image/';
+                //$image->move($destinationPath, $image_filename);
+                $image->storeAs('public/user_image', $image_filename);
+                
+                $add->image = $image_filename;
+    
+                // // Get filename withe the extention
+                // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
+                // // Get just filename
+                // $filename = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
+                // // Get just ext
+                // $extension = $request->file('profile_image')->getClientOriginalExtension();
+                // // Filename to store
+                // $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                // // Uplaod image
+                // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
+            }
 
             $add->save();
 
