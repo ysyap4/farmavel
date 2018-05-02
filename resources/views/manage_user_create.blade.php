@@ -309,10 +309,10 @@
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <a class="btn btn-white" href="{{ url()->previous() }}">Cancel</a>
-                                        <button class="btn btn-primary" type="submit">Add User</button>
+                                        <button class="btn btn-primary" type="submit" id="add_user">Add User</button>
                                     </div>
                                 </div>
-                                
+
                             </form>
                         </div>
                     </div>
@@ -403,6 +403,30 @@
         $("#setDrag").click(function() {
             $image.cropper("setDragMode", "crop");
         });
+        
+        $('button#add_user').on('click',
+        function(){
+            // Upload cropped image to server if the browser supports `HTMLCanvasElement.toBlob`
+            cropper.getCroppedCanvas().toBlob(function (blob) {
+              var formData = new FormData();
+            
+              formData.append('croppedImage', blob);
+            
+              // Use `jQuery.ajax` method
+              $.ajax('/user_image/', {
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function () {
+                  console.log('Upload success');
+                },
+                error: function () {
+                  console.log('Upload error');
+                }
+              });
+            });
+        })
     </script>
 
 </body>
