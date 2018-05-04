@@ -203,7 +203,7 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}" enctype="multipart/form-data">
+                            <form method="POST" class="form-horizontal" action="{{ URL::route ('manage_user_create_process')}}" novalidate role="form" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
