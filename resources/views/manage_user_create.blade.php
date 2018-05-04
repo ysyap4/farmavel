@@ -279,9 +279,7 @@
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
-                                                <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image" style="
-  height: 200px;
-  width: 200px;">
+                                                <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image" style="height: 200px; width: 200px;">
                                             </div>
                                             <br>
                                             <div class="btn-group">
@@ -289,20 +287,6 @@
                                                     <input type="file" accept="image/*" name="image" value=" " id="inputImage" class="hide">
                                                     Upload new image
                                                 </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h5>Preview image</h5>
-                                            <div class="img-preview img-preview-sm" style="width: 200px; height:200px;">
-                                                <img src="" id="change_image">
-                                            </div>
-                                            <br>
-                                            <div class="btn-group">
-                                                <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
-                                                <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
-                                                <br>
-                                                <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
-                                                <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
                                             </div>
                                         </div>
                                     </div>
