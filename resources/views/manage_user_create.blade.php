@@ -279,7 +279,7 @@
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
-                                                <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image">
+                                                <img src="{{URL::asset('user_image/no_image.png')}}">
                                             </div>
                                             <br>
                                             <div class="btn-group">
@@ -291,7 +291,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <h5>Preview image</h5>
-                                            <div class="img-preview img-preview-sm" style="width: 200px; height:200px;"></div>
+                                            <div class="img-preview img-preview-sm" style="width: 200px; height:200px;">
+                                                <img src="" id="change_image">
+                                            </div>
                                             <br>
                                             <div class="btn-group">
                                                 <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
