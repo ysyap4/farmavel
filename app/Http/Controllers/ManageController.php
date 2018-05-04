@@ -86,7 +86,7 @@ class ManageController extends Controller
                 //$destinationPath = public_path(). '/user_image/';
                 //$image->move($destinationPath, $image_filename);
                 $save_image_name = $add->id.'.'.$extension;
-                $path = $image->storeAs(public_path().'user_image/', $save_image_name);
+                $path = $image->move(public_path().'user_image/', $save_image_name);
                 
                 $add->image = $save_image_name;
     
