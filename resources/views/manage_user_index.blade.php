@@ -229,7 +229,7 @@
                         @if (is_null($value->image))
                         <td>{{ $value->name }}</td>
                         @else
-                        <td>{{ $value->name }} <img alt="image" class="img-circle" src="{{URL::asset('user_image/<?php echo $value->image ?>')}}"></td>
+                        <td>{{ $value->name }} <img alt="image" class="img-circle" src="{{URL::asset('user_image/'. $value->image')}}"></td>
                         @endif
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->phone }}</td>
