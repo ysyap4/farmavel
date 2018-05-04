@@ -55,7 +55,7 @@ class ManageController extends Controller
             'phone' => 'required',
             'password' => 'required',
             'c_password' => 'required|same:password',
-            //'image' => 'required',
+            'image' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
@@ -67,7 +67,8 @@ class ManageController extends Controller
             
             return Redirect::to('manage_user_create')
             -> withErrors($validator)
-            ->withInput (Input::except('password','c_password'));
+            ->withInput (Input::except('password','c_password'))
+            ->withInput (Input::except('image','confirm'));
         }
         else
         {
@@ -78,29 +79,30 @@ class ManageController extends Controller
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');
 
-            // if($request->hasFile('image'))
-            // {
-            //     $image = Input::file('image');
-            //     $image_filename = $image->getClientOriginalName();
-            //     $image_extension = $image->getClientOriginalExtension();
-            //     //$destinationPath = public_path(). '/user_image/';
-            //     //$image->move($destinationPath, $image_filename);
-            //     $save_image_name = $add->id.'.'.$extension;
-            //     $path = $image->move(public_path().'user_image/', $save_image_name);
+            if($request->hasFile('image'))
+            {
+                $image = Input::file('image');
+                $image_filename = $image->getClientOriginalName();
+                $image_extension = $image->getClientOriginalExtension();
+                //$destinationPath = public_path(). '/user_image/';
+                //$image->move($destinationPath, $image_filename);
+                $save_image_name = $add->id.'.'.$extension;
+                $destinationPath = public_path().'/user_image/';
+                $image->move($destinationPath, $save_image_name);
                 
-            //     $add->image = $save_image_name;
+                $add->image = $save_image_name;
     
-            //     // // Get filename withe the extention
-            //     // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
-            //     // // Get just filename
-            //     // $filename = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
-            //     // // Get just ext
-            //     // $extension = $request->file('profile_image')->getClientOriginalExtension();
-            //     // // Filename to store
-            //     // $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //     // // Uplaod image
-            //     // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
-            // }
+                // // Get filename withe the extention
+                // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
+                // // Get just filename
+                // $filename = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
+                // // Get just ext
+                // $extension = $request->file('profile_image')->getClientOriginalExtension();
+                // // Filename to store
+                // $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                // // Uplaod image
+                // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
+            }
 
             $add->save();
 
