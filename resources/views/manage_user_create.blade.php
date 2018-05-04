@@ -283,10 +283,9 @@
                                             </div>
                                             <br>
                                             <div class="btn-group">
-                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                                <label title="Upload image file" for="inputImage" class="btn btn-primary"></label>
                                                     <input type="file" accept="image/*" name="image" value=" " id="inputImage" class="hide">
-                                                    Upload new image
-                                                </label>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-md-6">
