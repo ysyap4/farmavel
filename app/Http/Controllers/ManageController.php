@@ -79,6 +79,8 @@ class ManageController extends Controller
             $add->password = Hash::make(Input::get('password'));
             $add->type = Input::get('type');
 
+            $add->save();
+
             if($request->hasFile('image'))
             {
                 $image = Input::file('image');
@@ -88,9 +90,10 @@ class ManageController extends Controller
                 //$image->move($destinationPath, $image_filename);
                 $save_image_name = $add->id.'.'.$image_extension;
                 $destinationPath = public_path().'/user_image/';
-                $image->move($destinationPath, $save_image_name);
+                $image->storeAs($destinationPath, $save_image_name);
                 
-                $add->image = $save_image_name;
+                //$add->image = $save_image_name;
+                users::where('id', $add->id)->update(['image' => $save_image_name]);
     
                 // // Get filename withe the extention
                 // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
@@ -103,8 +106,6 @@ class ManageController extends Controller
                 // // Uplaod image
                 // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
             }
-
-            $add->save();
 
             Session::flash('message','Successfully created user!');
             return Redirect::to('manage_user_index');
