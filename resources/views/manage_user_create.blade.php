@@ -279,7 +279,7 @@
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
-                                                <img src="{{URL::asset('user_image/no_image.png')}}">
+                                                <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image">
                                             </div>
                                             <br>
                                             <div class="btn-group">
@@ -354,33 +354,22 @@
             });
         });
 
-        var $image = $(".image-crop > img")
-        $($image).cropper({
-            aspectRatio: 1/1,
-            preview: ".img-preview",
-            done: function(data) {
-                // Output the result data for cropping image.
+        
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#change_image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
             }
-        });
-        var $inputImage = $("#inputImage");
-        if (window.FileReader) {
-            $inputImage.change(function() {
-                var fileReader = new FileReader(),
-                        files = this.files,
-                        file;
-                if (!files.length) {
-                    return;
-                }
-                file = files[0];
-                if (/^image\/\w+$/.test(file.type)) {
-                    fileReader.readAsDataURL(file);
-                } else {
-                    showMessage("Please choose an image file.");
-                }
-            });
-        } else {
-            $inputImage.addClass("hide");
         }
+        $("#inputImage").change(function(){
+            readURL(this);
+        });
+
         $("#download").click(function() {
             window.open($image.cropper("getDataURL"));
         });
