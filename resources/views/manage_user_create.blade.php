@@ -279,7 +279,7 @@
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
-                                                <img src="{{URL::asset('user_image/no_image.png')}}">
+                                                <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image">
                                             </div>
                                             <br>
                                             <div class="btn-group">
@@ -367,8 +367,8 @@
             }
         }
         $("#inputImage").change(function(){
-            var maxWidth = 100; // Max width for the image
-            var maxHeight = 100;    // Max height for the image
+            var maxWidth = 200; // Max width for the image
+            var maxHeight = 200;    // Max height for the image
             var ratio = 0;  // Used for aspect ratio
             var width = $(this).width();    // Current image width
             var height = $(this).height();  // Current image height
