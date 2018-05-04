@@ -283,9 +283,10 @@
                                             </div>
                                             <br>
                                             <div class="btn-group">
-                                                <label title="Upload image file" for="inputImage" class="btn btn-primary"></label>
+                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
                                                     <input type="file" accept="image/*" name="image" value=" " id="inputImage" class="hide">
-                                                
+                                                    Upload new image
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -353,55 +354,7 @@
             });
         });
 
-        var $image = $(".image-crop > img")
-        $($image).cropper({
-            aspectRatio: 1/1,
-            preview: ".img-preview",
-            done: function(data) {
-                // Output the result data for cropping image.
-            }
-        });
-        var $inputImage = $("#inputImage");
-        if (window.FileReader) {
-            $inputImage.change(function() {
-                var fileReader = new FileReader(),
-                        files = this.files,
-                        file;
-                if (!files.length) {
-                    return;
-                }
-                file = files[0];
-                if (/^image\/\w+$/.test(file.type)) {
-                    fileReader.readAsDataURL(file);
-                    fileReader.onload = function () {
-                        $inputImage.val("");
-                        $image.cropper("reset", true).cropper("replace", this.result);
-                    };
-                } else {
-                    showMessage("Please choose an image file.");
-                }
-            });
-        } else {
-            $inputImage.addClass("hide");
-        }
-        $("#download").click(function() {
-            window.open($image.cropper("getDataURL"));
-        });
-        $("#zoomIn").click(function() {
-            $image.cropper("zoom", 0.1);
-        });
-        $("#zoomOut").click(function() {
-            $image.cropper("zoom", -0.1);
-        });
-        $("#rotateLeft").click(function() {
-            $image.cropper("rotate", 90);
-        });
-        $("#rotateRight").click(function() {
-            $image.cropper("rotate", -90);
-        });
-        $("#setDrag").click(function() {
-            $image.cropper("setDragMode", "crop");
-        });
+        
     </script>
 
 </body>
