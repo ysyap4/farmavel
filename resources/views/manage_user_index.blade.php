@@ -226,7 +226,11 @@
                     <tr>
                         <td style="text-align: center;"><div class="checkbox i-checks"> <input type="checkbox" name="selected_user[]" value="{{ $value->id }}" id="selected_user"> <i></i> </div></td>
                         <td style="text-align: center;"><?php echo $no ?></td>
+                        @if (is_null($value->image))
                         <td>{{ $value->name }}</td>
+                        @else
+                        <td>{{ $value->name }} <img alt="image" class="img-circle" src="{{URL::asset('user_image/{{ $value->image }}')}}"></td>
+                        @endif
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->phone }}</td>
                         <td>{{ $value->type }}</td>
