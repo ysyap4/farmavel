@@ -354,6 +354,14 @@
             });
         });
 
+        var $image = $(".image-crop > img")
+        $($image).cropper({
+            aspectRatio: 1/1,
+            preview: ".img-preview",
+            done: function(data) {
+                // Output the result data for cropping image.
+            }
+        });
         
     </script>
 
