@@ -434,6 +434,10 @@
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
+
+            $('.data-table').on('draw.dt', function () {
+                turn_on_icheck();
+            });
         });
     </script>
 
