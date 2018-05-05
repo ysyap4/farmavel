@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
+use Illuminate\Contracts\Filesystem\Filesystem;
 
 use App\Http\Requests;
 use View;
@@ -93,7 +94,7 @@ class ManageController extends Controller
                 $destinationPath = public_path().'/user_image/';
                 $image->move($destinationPath, $save_image_name);
                 $path = "user_image/".$save_image_name;                
-                Storage::disk('s3')->put($path, $image);
+                Storage::disk('s3')->put($path, file_get_contents($image));
 
                 //$add->image = $save_image_name;
                 users::where('id', $add->id)->update(['image' => $save_image_name]);
