@@ -96,17 +96,6 @@ class ManageController extends Controller
 
                 //$add->image = $save_image_name;
                 users::where('id', $add->id)->update(['image' => $save_image_name]);
-    
-                // // Get filename withe the extention
-                // $fileNameWithExt = $request->file('profile_image')->getClientOriginalName();
-                // // Get just filename
-                // $filename = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
-                // // Get just ext
-                // $extension = $request->file('profile_image')->getClientOriginalExtension();
-                // // Filename to store
-                // $fileNameToStore = $filename.'_'.time().'.'.$extension;
-                // // Uplaod image
-                // $path = $request->file('profile_image')->storeAs('public/profile_image', $fileNameToStore);
             }
 
             Session::flash('message','Successfully created user!');
