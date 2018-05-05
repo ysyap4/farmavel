@@ -91,7 +91,7 @@ class ManageController extends Controller
                 //$image->move($destinationPath, $image_filename);
                 $save_image_name = $add->id.'.'.$image_extension;
                 $destinationPath = public_path().'/user_image/';
-                $path = $image->storeAs('user_image/', $save_image_name);
+                $image->storeAs('user_image/', $save_image_name);
                 Storage::disk('s3')->putFileAs($image, new File('user_image/'), $save_image_name);
 
                 //$add->image = $save_image_name;
