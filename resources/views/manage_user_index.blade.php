@@ -229,7 +229,7 @@
                         @if (is_null($value->image))
                         <td>{{ $value->name }}</td>
                         @else
-                        <td>{{ $value->name }} <img alt="image" class="img-circle" src="{{URL::asset(Storage::disk('s3')->url('user_image/' .$value->image))}}" style="height:5px; width:5px;"></td>
+                        <td>{{ $value->name }} <img alt="image" class="img-circle" src="{{URL::asset(Storage::disk('s3')->url('user_image/' .$value->image))}}" style="height:50px; width:50px;"></td>
                         @endif
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->phone }}</td>
