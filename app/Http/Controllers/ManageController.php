@@ -85,7 +85,7 @@ class ManageController extends Controller
 
             if($request->hasFile('image'))
             {
-                $image = $request->file('image');
+                $image = Input::file('image');
                 $image_filename = $image->getClientOriginalName();
                 $image_extension = $image->getClientOriginalExtension();
                 //$destinationPath = public_path(). '/user_image/';
