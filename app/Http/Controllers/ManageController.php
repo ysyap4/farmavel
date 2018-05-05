@@ -83,14 +83,14 @@ class ManageController extends Controller
 
             if($request->hasFile('image'))
             {
-                $image = Input::file('image');
+                $image = $request->file('image');
                 $image_filename = $image->getClientOriginalName();
                 $image_extension = $image->getClientOriginalExtension();
                 //$destinationPath = public_path(). '/user_image/';
                 //$image->move($destinationPath, $image_filename);
                 $save_image_name = 'user_'.$add->id.'.'.$image_extension;
                 $destinationPath = public_path().'/user_image/';
-                $image->storeAs($destinationPath, $save_image_name);
+                $path = $image->storeAs('user_image/', $save_image_name);
                 
                 //$add->image = $save_image_name;
                 users::where('id', $add->id)->update(['image' => $save_image_name]);
