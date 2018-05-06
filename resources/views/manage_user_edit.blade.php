@@ -215,7 +215,7 @@
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Full Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="name[]" class="form-control" name="name[]" placeholder="Full Name" value="{{$edit_selected_user[$i]->name}}">
+                                        <input type="text" id="name{{$i}}" class="form-control" name="name[]" placeholder="Full Name" value="{{$edit_selected_user[$i]->name}}">
                                         @if ($errors->has('name'))
                                             <p class="help-block">{{$errors ->first('name')}}</p>
                                         @endif
@@ -227,7 +227,7 @@
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="email[]" class="form-control" name="email[]" placeholder="Email" value="{{$edit_selected_user[$i]->email}}">
+                                        <input type="text" id="email{{$i}}" class="form-control" name="email[]" placeholder="Email" value="{{$edit_selected_user[$i]->email}}">
                                         @if ($errors->has('email'))
                                             <p class="help-block">{{$errors ->first('email')}}</p>
                                         @endif
@@ -239,7 +239,7 @@
                                 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Phone</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="phone[]" class="form-control" name="phone[]" placeholder="Phone" value="{{$edit_selected_user[$i]->phone}}">
+                                        <input type="text" id="phone{{$i}}" class="form-control" name="phone[]" placeholder="Phone" value="{{$edit_selected_user[$i]->phone}}">
                                         @if ($errors->has('phone'))
                                             <p class="help-block">{{$errors ->first('phone')}}</p>
                                         @endif
@@ -251,7 +251,7 @@
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Password</label>
 
                                     <div class="col-sm-10">
-                                        <input type="password" id="password[]" class="form-control" name="password[]" placeholder="Password" value="">
+                                        <input type="password" id="password{{$i}}" class="form-control" name="password[]" placeholder="Password" value="">
                                         @if ($errors->has('password'))
                                             <p class="help-block">{{$errors ->first('password')}}</p>
                                         @endif
@@ -263,7 +263,7 @@
                                    <div class="form-group{{ $errors->has('c_password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Confirm Password</label>
 
                                     <div class="col-sm-10">
-                                        <input type="password" id="c_password[]" class="form-control" name="c_password[]" placeholder="Confirm Password" value="">
+                                        <input type="password" id="c_password{{$i}}" class="form-control" name="c_password[]" placeholder="Confirm Password" value="">
                                         @if ($errors->has('c_password'))
                                             <p class="help-block">{{$errors ->first('c_password')}}</p>
                                         @endif
@@ -275,7 +275,7 @@
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" id="type[]" class="form-control" name="type[]" placeholder="Type" value="{{$edit_selected_user[$i]->type}}">
+                                        <input type="text" id="type{{$i}}" class="form-control" name="type[]" placeholder="Type" value="{{$edit_selected_user[$i]->type}}">
                                         @if ($errors->has('type'))
                                             <p class="help-block">{{$errors ->first('type')}}</p>
                                         @endif
@@ -367,7 +367,8 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("input[type='file']").change(function(){
+
+        $("form#manage_user_edit_process input[type='file']").change(function(){
             readURL(this);
         });
     </script>
