@@ -291,13 +291,13 @@
                                                 @if (is_null($edit_selected_user[$i]->image))
                                                     <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image{{[$i]}}" style="height: 200px; width: 200px;">
                                                 @else
-                                                    <img src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $edit_selected_user[$i]->image))}}" id="change_image{{$i}}" style="height:200px; width:200px;">
+                                                    <img src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $edit_selected_user[$i]->image))}}" id="change_image" style="height:200px; width:200px;">
                                                 @endif
                                             </div>
                                             <br>
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage{{$i}}" class="hide">
+                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage" class="hide">
                                                     Upload new image
                                                 </label>
                                             </div>
