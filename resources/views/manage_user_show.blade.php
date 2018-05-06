@@ -210,15 +210,17 @@
                         </div>
                         <div class="ibox-content">
 
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-4">
-                                    @if (is_null(Auth::user()->image))
-                                        <img alt="image" class="img-circle" style="height:75px; width:75px;" src="      {{URL::asset('user_image/no_image.png')}}"/>
-                                    @else
-                                        <img alt="image" class="img-circle" style="height:75px; width:75px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $show_selected_user[$i]->image))}}">
-                                    @endif
+                                <div class="form-group">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-4">
+                                        @if (is_null(Auth::user()->image))
+                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="          {{URL::asset('user_image/no_image.png')}}"/>
+                                        @else
+                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="  {{URL::asset(Storage::disk('s3')->url('user_image/' . $show_selected_user[$i]->   image))}}">
+                                        @endif
+                                    </div>
+                                    <div class="col-sm-3"></div>
                                 </div>
-                                <div class="col-sm-3"></div>
 
                                 <div class="hr-line-dashed"></div>
 
