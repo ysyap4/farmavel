@@ -28,8 +28,12 @@
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="{{URL::asset('inspinia-master/assets/img/profile_small.jpg')}}" />
-                             </span>
+                            @if (is_null(Auth::user()->image))
+                            <img alt="image" class="img-circle" style="height:48px; width:48px;" src="{{URL::asset('user_image/no_image.png')}}"/>
+                            @else
+                            <img alt="image" class="img-circle" style="height:48px; width:48px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . Auth::user()->image))}}">
+                            @endif
+                            </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
                              </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> </a>
@@ -205,6 +209,19 @@
                             </div>
                         </div>
                         <div class="ibox-content">
+
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-4">
+                                    @if (is_null(Auth::user()->image))
+                                        <img alt="image" class="img-circle" style="height:75px; width:75px;" src="      {{URL::asset('user_image/no_image.png')}}"/>
+                                    @else
+                                        <img alt="image" class="img-circle" style="height:75px; width:75px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $show_selected_user[$i]->image))}}">
+                                    @endif
+                                </div>
+                                <div class="col-sm-3"></div>
+
+                                <div class="hr-line-dashed"></div>
+
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_user[$i]->name}} </div>
@@ -232,14 +249,6 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
                                         <div class="form-control"> {{$show_selected_user[$i]->type}} </div>
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group"><label class="col-sm-2 control-label">Register with</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_user[$i]->provider}} </div>
                                     </div>
                                 </div>
 

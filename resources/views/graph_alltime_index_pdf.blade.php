@@ -17,107 +17,103 @@
 </head>
 
 <body>
-    
-        <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="wrapper wrapper-content animated fadeInRight">  
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Pie Chart: Legal and Illegal Medicine</
+                        <div ibox-tools></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div style="width:800px; height:200;">
+                            <canvas id="doughnutChart" height="140"></canvas>
+                        </div>
+                        <h5><div class="color-box blue"></div> {{$pie_medicine_legal_count}} Legal </h5>
+                        <h5><div class="color-box grey"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Polar Area: Medicine Categories</
+                        <div ibox-tools></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="text-center" style="width:800px; height:200;">
+                            <canvas id="polarChart" height="140"></canvas>
+                        </div>
+                        <h5><div class="color-box blue"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
+                        <h5><div class="color-box grey"></div> {{$polar_medicine_natural_count}} Natural ingredient >
+                        <h5><div class="color-box purple"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Radar Chart: Number of Illegal Medicine Reports by Respective Locations </h5>
+                        <div ibox-tools></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div style="width:800px; height:200;">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                        <table class="table-align-center">
+                        <thead class="thead">
+                            <tr>
+                                <th><h5>Area</h5></th>
+                                <th><h5><div class="color-box blue"></div>Number</h5></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><h5>Batu Pahat</h5></td>
+                                <td><h5>{{$radar_report_batupahat_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Johor Bahru</h5></td>
+                                <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Muar</h5></td>
+                                <td><h5>{{$radar_report_muar_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Segamat</h5></td>
+                                <td><h5>{{$radar_report_segamat_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Kulaijaya</h5></td>
+                                <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Skudai</h5></td>
+                                <td><h5>{{$radar_report_skudai_count}}</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Pasir Gudang</h5></td>
+                                <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> Farmavel &copy; 2018
+                </div>
+            </div>
             
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Pie Chart: Legal and Illegal Medicine</h5>
-
-                            <div ibox-tools></div>
-                        </div>
-                        <div class="ibox-content">
-                            <div style="width:800px; height:200;">
-                                <canvas id="doughnutChart" height="140"></canvas>
-                            </div>
-                            <h5><div class="color-box blue"></div> {{$pie_medicine_legal_count}} Legal </h5>
-                            <h5><div class="color-box grey"></div> {{$pie_medicine_illegal_count}} Illegal </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Polar Area: Medicine Categories</h5>
-
-                            <div ibox-tools></div>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="text-center" style="width:800px; height:200;">
-                                <canvas id="polarChart" height="140"></canvas>
-                            </div>
-                            <h5><div class="color-box blue"></div> {{$polar_medicine_traditional_count}} Traditional </h5>
-                            <h5><div class="color-box grey"></div> {{$polar_medicine_natural_count}} Natural ingredient </h5>
-                            <h5><div class="color-box purple"></div> {{$polar_medicine_supplement_count}} Supplement </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Radar Chart: Number of Illegal Medicine Reports by Respective Locations </h5>
-                            <div ibox-tools></div>
-                        </div>
-                        <div class="ibox-content">
-                            <div style="width:800px; height:200;">
-                                <canvas id="radarChart"></canvas>
-                            </div>
-                            <table class="table-align-center">
-                            <thead class="thead">
-                                <tr>
-                                    <th><h5>Area</h5></th>
-                                    <th><h5><div class="color-box blue"></div>Number</h5></th>
-                                </tr>
-                            </thead>
-                            <tbody class="tbody">
-                                <tr>
-                                    <td><h5>Batu Pahat</h5></td>
-                                    <td><h5>{{$radar_report_batupahat_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Johor Bahru</h5></td>
-                                    <td><h5>{{$radar_report_johorbahru_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Muar</h5></td>
-                                    <td><h5>{{$radar_report_muar_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Segamat</h5></td>
-                                    <td><h5>{{$radar_report_segamat_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Kulaijaya</h5></td>
-                                    <td><h5>{{$radar_report_kulaijaya_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Skudai</h5></td>
-                                    <td><h5>{{$radar_report_skudai_count}}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Pasir Gudang</h5></td>
-                                    <td><h5>{{$radar_report_pasirgudang_count}}</h5></td>
-                                </tr>
-                            </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <div class="footer">
-            <div>
-                <strong>Copyright</strong> Farmavel &copy; 2018
-            </div>
-        </div>
-
-        </div>
-        </div>
+    </div>
 
 
 
