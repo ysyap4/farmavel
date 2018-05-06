@@ -368,8 +368,7 @@
             }
         }
 
-        a = "#inputImage".attr('id');
-        $(a).change(function(){
+        $("form#manage_user_edit_process input[type='file']").change(function(){
             readURL(this);
         });
     </script>
