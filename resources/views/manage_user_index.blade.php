@@ -431,8 +431,12 @@
     <script>
         $(document).ready(function () {
             $('.i-checks').iCheck({
-                handle: 'checkbox',
                 checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+            $('.i-checks').on('draw.dt', function () {
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
             });
         });
     </script>
