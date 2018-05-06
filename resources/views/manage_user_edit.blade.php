@@ -361,12 +361,12 @@
                 var reader = new FileReader();
                 
                 reader.onload = function (e) {
-                    $('#change_image<? php echo \\[$i\\] ?>').attr('src', e.target.result);
+                    $('#change_image<? php echo [$i] ?>').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#inputImage<? php echo \\[$i\\] ?>").change(function(){
+        $("#inputImage<? php echo [$i] ?>").change(function(){
             readURL(this);
         });
     </script>
