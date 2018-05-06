@@ -194,7 +194,7 @@
 
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-    <form method="POST" class="form-horizontal" name="manage_user_edit_process" id="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}">
+    <form method="POST" class="form-horizontal" name="manage_user_edit_process" id="manage_user_edit_process" action="{{ URL::route ('manage_user_edit_process')}}" novalidate role="form" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     @for ($i=0; $i < sizeof($edit_selected_user); $i++)
                 <div class="col-lg-6">
@@ -291,7 +291,7 @@
                                                 @if (is_null($edit_selected_user[$i]->image))
                                                     <img src="{{URL::asset('user_image/no_image.png')}}" id="change_image" style="height: 200px; width: 200px;">
                                                 @else
-                                                    <img alt="image" class="img-circle" style="height:75px; width:75px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $edit_selected_user[$i]->image))}}">
+                                                    <img alt="image" class="img-circle" style="height:200px; width:200px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . $edit_selected_user[$i]->image))}}">
                                                 @endif
                                             </div>
                                             <br>
