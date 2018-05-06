@@ -142,12 +142,19 @@ class ManageController extends Controller
 
         $selected_user = Input::get('selected_user');
 
-        $edit_selected_user = array();
-
-        for ($i=0; $i < sizeof($selected_user); $i++)
+        if (is_null($selected_user))
         {
-            $edit_selected_user[$i] = '';
-            $edit_selected_user[$i] = users::find($selected_user[$i]);
+            return Redirect::to('manage_user_index');
+        }
+        else
+        {
+            $edit_selected_user = array();
+
+            for ($i=0; $i < sizeof($selected_user); $i++)
+            {
+                $edit_selected_user[$i] = '';
+                $edit_selected_user[$i] = users::find($selected_user[$i]);
+            }
         }
 
         
@@ -274,12 +281,19 @@ class ManageController extends Controller
 
         $selected_med = Input::get('selected_med');
 
-        $show_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_med); $i++)
+        if (is_null($selected_med))
         {
-            $show_selected_med[$i] = '';
-            $show_selected_med[$i] = medicine::find($selected_med[$i]);
+            return Redirect::to('manage_medicine_index');
+        }
+        else
+        {
+            $show_selected_med = array();
+
+            for ($i=0; $i < sizeof($selected_med); $i++)
+            {
+                $show_selected_med[$i] = '';
+                $show_selected_med[$i] = medicine::find($selected_med[$i]);
+            }
         }
 
         return View::make('manage_medicine_show',array('show_selected_med' => $show_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -295,12 +309,19 @@ class ManageController extends Controller
 
         $selected_med = Input::get('selected_med');
 
-        $edit_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_med); $i++)
+        if (is_null($selected_med))
         {
-            $edit_selected_med[$i] = '';
-            $edit_selected_med[$i] = medicine::find($selected_med[$i]);
+            return Redirect::to('manage_medicine_index');
+        }
+        else
+        {
+            $edit_selected_med = array();
+
+            for ($i=0; $i < sizeof($selected_med); $i++)
+            {
+                $edit_selected_med[$i] = '';
+                $edit_selected_med[$i] = medicine::find($selected_med[$i]);
+            }
         }
 
         
@@ -435,15 +456,22 @@ class ManageController extends Controller
 
         $selected_rep = Input::get('selected_rep');
 
-        $show_selected_rep = array();
-        $get_selected_user = array();
-
-        for ($i=0; $i < sizeof($selected_rep); $i++)
+        if (is_null($selected_rep))
         {
-            $show_selected_rep[$i] = '';
-            $get_selected_user[$i] = '';
-            $show_selected_rep[$i] = report::find($selected_rep[$i]);
-            $get_selected_user[$i] = users::where('id', $show_selected_rep[$i]->user_id)->first();
+            return Redirect::to('manage_report_index');
+        }
+        else
+        {
+            $show_selected_rep = array();
+            $get_selected_user = array();
+    
+            for ($i=0; $i < sizeof($selected_rep); $i++)
+            {
+                $show_selected_rep[$i] = '';
+                $get_selected_user[$i] = '';
+                $show_selected_rep[$i] = report::find($selected_rep[$i]);
+                $get_selected_user[$i] = users::where('id', $show_selected_rep[$i]->user_id)->first();
+            }
         }
 
         return View::make('manage_report_show',array('show_selected_rep' => $show_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -458,15 +486,22 @@ class ManageController extends Controller
 
         $selected_rep = Input::get('selected_rep');
 
-        $edit_selected_rep = array();
-        $get_selected_user = array();
-
-        for ($i=0; $i < sizeof($selected_rep); $i++)
+        if (is_null($selected_rep))
         {
-            $edit_selected_rep[$i] = '';
-            $get_selected_user[$i] = '';
-            $edit_selected_rep[$i] = report::find($selected_rep[$i]);
-            $get_selected_user[$i] = users::where('id', $edit_selected_rep[$i]->user_id)->first();
+            return Redirect::to('manage_report_index');
+        }
+        else
+        {
+            $edit_selected_rep = array();
+            $get_selected_user = array();
+    
+            for ($i=0; $i < sizeof($selected_rep); $i++)
+            {
+                $edit_selected_rep[$i] = '';
+                $get_selected_user[$i] = '';
+                $edit_selected_rep[$i] = report::find($selected_rep[$i]);
+                $get_selected_user[$i] = users::where('id', $edit_selected_rep[$i]->user_id)->first();
+            }
         }
         
         return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -613,18 +648,25 @@ class ManageController extends Controller
 
         $selected_app = Input::get('selected_app');
 
-        $show_selected_app = array();
-        $get_selected_user = array();
-        $get_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_app); $i++)
+        if (is_null($selected_app))
         {
-            $show_selected_app[$i] = '';
-            $get_selected_user[$i] = '';
-            $get_selected_med[$i] = '';
-            $show_selected_app[$i] = appointment::find($selected_app[$i]);
-            $get_selected_user[$i] = users::where('id', $show_selected_app[$i]->user_id)->first();
-            $get_selected_med[$i] = medicine::where('id', $show_selected_app[$i]->med_id)->first();
+            return Redirect::to('manage_appointment_index');
+        }
+        else
+        {
+            $show_selected_app = array();
+            $get_selected_user = array();
+            $get_selected_med = array();
+    
+            for ($i=0; $i < sizeof($selected_app); $i++)
+            {
+                $show_selected_app[$i] = '';
+                $get_selected_user[$i] = '';
+                $get_selected_med[$i] = '';
+                $show_selected_app[$i] = appointment::find($selected_app[$i]);
+                $get_selected_user[$i] = users::where('id', $show_selected_app[$i]->user_id)->first();
+                $get_selected_med[$i] = medicine::where('id', $show_selected_app[$i]->med_id)->first();
+            }
         }
 
         return View::make('manage_appointment_show',array('show_selected_app' => $show_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -639,18 +681,25 @@ class ManageController extends Controller
 
         $selected_app = Input::get('selected_app');
 
-        $edit_selected_app = array();
-        $get_selected_user = array();
-        $get_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_app); $i++)
+        if (is_null($selected_app))
         {
-            $edit_selected_app[$i] = '';
-            $get_selected_user[$i] = '';
-            $get_selected_med[$i] = '';
-            $edit_selected_app[$i] = appointment::find($selected_app[$i]);
-            $get_selected_user[$i] = users::where('id', $edit_selected_app[$i]->user_id)->first();
-            $get_selected_med[$i] = medicine::where('id', $edit_selected_app[$i]->med_id)->first();
+            return Redirect::to('manage_appointment_index');
+        }
+        else
+        {
+            $edit_selected_app = array();
+            $get_selected_user = array();
+            $get_selected_med = array();
+    
+            for ($i=0; $i < sizeof($selected_app); $i++)
+            {
+                $edit_selected_app[$i] = '';
+                $get_selected_user[$i] = '';
+                $get_selected_med[$i] = '';
+                $edit_selected_app[$i] = appointment::find($selected_app[$i]);
+                $get_selected_user[$i] = users::where('id', $edit_selected_app[$i]->user_id)->first();
+                $get_selected_med[$i] = medicine::where('id', $edit_selected_app[$i]->med_id)->first();
+            }
         }
         
         return View::make('manage_appointment_edit')->with(array('edit_selected_app' => $edit_selected_app, 'get_selected_user' => $get_selected_user, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -794,15 +843,22 @@ class ManageController extends Controller
 
         $selected_vas = Input::get('selected_vas');
 
-        $show_selected_vas = array();
-        $get_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_vas); $i++)
+        if (is_null($selected_vas))
         {
-            $show_selected_vas[$i] = '';
-            $get_selected_med[$i] = '';
-            $show_selected_vas[$i] = vas::find($selected_vas[$i]);
-            $get_selected_med[$i] = medicine::where('id', $show_selected_vas[$i]->med_id)->first();
+            return Redirect::to('manage_vas_index');
+        }
+        else
+        {
+            $show_selected_vas = array();
+            $get_selected_med = array();
+    
+            for ($i=0; $i < sizeof($selected_vas); $i++)
+            {
+                $show_selected_vas[$i] = '';
+                $get_selected_med[$i] = '';
+                $show_selected_vas[$i] = vas::find($selected_vas[$i]);
+                $get_selected_med[$i] = medicine::where('id', $show_selected_vas[$i]->med_id)->first();
+            }
         }
 
         return View::make('manage_vas_show',array('show_selected_vas' => $show_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
@@ -817,15 +873,22 @@ class ManageController extends Controller
 
         $selected_vas = Input::get('selected_vas');
 
-        $edit_selected_vas = array();
-        $get_selected_med = array();
-
-        for ($i=0; $i < sizeof($selected_vas); $i++)
+        if (is_null($selected_vas))
         {
-            $edit_selected_vas[$i] = '';
-            $get_selected_med[$i] = '';
-            $edit_selected_vas[$i] = vas::find($selected_vas[$i]);
-            $get_selected_med[$i] = medicine::where('id', $edit_selected_vas[$i]->med_id)->first();
+            return Redirect::to('manage_vas_index');
+        }
+        else
+        {
+            $edit_selected_vas = array();
+            $get_selected_med = array();
+    
+            for ($i=0; $i < sizeof($selected_vas); $i++)
+            {
+                $edit_selected_vas[$i] = '';
+                $get_selected_med[$i] = '';
+                $edit_selected_vas[$i] = vas::find($selected_vas[$i]);
+                $get_selected_med[$i] = medicine::where('id', $edit_selected_vas[$i]->med_id)->first();
+            }
         }
         
         return View::make('manage_vas_edit')->with(array('edit_selected_vas' => $edit_selected_vas, 'get_selected_med' => $get_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
