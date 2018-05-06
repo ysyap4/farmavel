@@ -297,7 +297,7 @@
                                             <br>
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage" class="inputImage">
+                                                    <input type="file" accept="image/*" name="image[]" value=" "  class="inputImage hide">
                                                     Upload new image
                                                 </label>
                                             </div>
@@ -360,8 +360,8 @@
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 
+                var imgId = '#change_image'+$(input).attr('id');
                 reader.onload = function (e) {
-                    var imgId = '#change_image'+$(input).attr('id');
                     $(imgId).attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
