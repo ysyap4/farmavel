@@ -114,12 +114,19 @@ class ManageController extends Controller
 
         $selected_user = Input::get('selected_user');
 
-        $show_selected_user = array();
-
-        for ($i=0; $i < sizeof($selected_user); $i++)
+        if (is_null($selected_user))
         {
-            $show_selected_user[$i] = '';
-            $show_selected_user[$i] = users::find($selected_user[$i]);
+            return Redirect::to('manage_user_index');
+        }
+        else
+        {
+            $show_selected_user = array();
+    
+            for ($i=0; $i < sizeof($selected_user); $i++)
+            {
+                $show_selected_user[$i] = '';
+                $show_selected_user[$i] = users::find($selected_user[$i]);
+            }            
         }
 
         return View::make('manage_user_show', array('show_selected_user' => $show_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));

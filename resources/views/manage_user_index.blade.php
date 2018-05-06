@@ -213,7 +213,7 @@
                     <tr>
                         <th style="text-align: center;">Select</th>
                         <th style="text-align: center;">Number</th>
-                        <th><div class="col-sm-2"></div>Name</th>
+                        <th><div class="col-sm-3"></div>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Type</th>
