@@ -228,13 +228,21 @@
                         <td style="text-align: center;"><?php echo $no ?></td>
                         @if (is_null($value->image))
                         <td>
-                            <img alt="image" class="img-circle" src="{{URL::asset('user_image/no_image.png')}}" style="height:25px; width:25px;">
-                            {{ $value->name }}
+                            <div class="col-sm-2">
+                                <img alt="image" class="img-circle" src="{{URL::asset('user_image/no_image.png')}}" style="height:25px; width:25px;">
+                            </div>
+                            <div class="col-sm-10">
+                                {{ $value->name }}
+                            </div>
                         </td>
                         @else
-                        <td> 
-                            <img alt="image" class="img-circle" src="{{URL::asset(Storage::disk('s3')->url('user_image/' .$value->image))}}" style="height:25px; width:25px;"> 
-                            {{ $value->name }} 
+                        <td>
+                            <div class="col-sm-2">
+                                <img alt="image" class="img-circle" src="{{URL::asset(Storage::disk('s3')->url('user_image/' .$value->image))}}" style="height:25px; width:25px;">
+                            </div>
+                            <div class="col-sm-10">
+                                {{ $value->name }}
+                            </div>
                         </td>
                         @endif
                         <td>{{ $value->email }}</td>
