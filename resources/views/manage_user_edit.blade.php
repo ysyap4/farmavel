@@ -368,7 +368,7 @@
             }
         }
 
-        $(".inputImage").change(function(){
+        $(".inputImage hide").change(function(){
             readURL(this);
         });
     </script>
