@@ -27,9 +27,9 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
                             @if (is_null(Auth::user()->image))
-                            <img alt="image" class="img-circle" src="{{URL::asset('user_image/no_image.png')}}"/>
+                            <img alt="image" class="img-circle" style="height:25px; width:25px;" src="{{URL::asset('user_image/no_image.png')}}"/>
                             @else
-                            <img alt="image" class="img-circle" src="{{URL::asset(Storage::disk('s3')->url('user_image/'    .Auth::user()->image))}}"
+                            <img alt="image" class="img-circle" style="height:25px; width:25px;" src="{{URL::asset(Storage::disk('s3')->url('user_image/' . Auth::user()->image))}}"
                             @endif
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
