@@ -434,7 +434,7 @@
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
-            $('.i-checks').on('draw.dt', function () {
+            $('.table').on('draw.dt', function () {
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
