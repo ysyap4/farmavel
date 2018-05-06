@@ -297,7 +297,7 @@
                                             <br>
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage{{$i}}" class="hide">
+                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage" class="hide">
                                                     Upload new image
                                                 </label>
                                             </div>
@@ -368,7 +368,7 @@
             }
         }
 
-        $("form#manage_user_edit_process input[type='file']").change(function(){
+        $("#inputImage").change(function(){
             readURL(this);
         });
     </script>
