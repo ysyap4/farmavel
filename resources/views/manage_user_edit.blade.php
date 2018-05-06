@@ -297,7 +297,7 @@
                                             <br>
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage" class="hide">
+                                                    <input type="file" accept="image/*" name="image[]" value=" " id="inputImage" class="inputImage">
                                                     Upload new image
                                                 </label>
                                             </div>
@@ -368,7 +368,7 @@
             }
         }
 
-        $("#inputImage").change(function(){
+        $(".inputImage").change(function(){
             readURL(this);
         });
     </script>
