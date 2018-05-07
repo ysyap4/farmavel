@@ -184,6 +184,7 @@ class ManageController extends Controller
         }
         else
         {
+            $user = users::all();
             $edit_selected_user = Input::get('edit_selected_user');
             $name = Input::get('name');
             $email = Input::get('email');
