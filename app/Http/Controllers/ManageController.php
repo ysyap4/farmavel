@@ -159,7 +159,7 @@ class ManageController extends Controller
         return View::make('manage_user_edit')->with(array('edit_selected_user' => $edit_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_user_edit_process()
+    public function manage_user_edit_process(Request $request)
     {
         // $rules = array(
         //     'name.*' => 'required',
