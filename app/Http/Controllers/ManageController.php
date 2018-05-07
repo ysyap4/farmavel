@@ -204,6 +204,8 @@ class ManageController extends Controller
                 $edit[$i]->password = Hash::make($password[$i]);
                 $edit[$i]->type = $type[$i];
                
+                $edit[$i]->save();
+
                 if($request->hasFile('image'.$i))
                 {
                     $image[$i] = $request->file('image'.$i);
@@ -225,11 +227,9 @@ class ManageController extends Controller
                         Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
                     }
     
-                    //users::where('id', $edit[$i]->id)->update([('image'.$i) => $save_image_name[$i]]);
-                    $edit[$i]->image = $save_image_name[$i];
+                    users::where('id', $edit[$i]->id)->update(['image' => $save_image_name[$i]]);
+                    //$edit[$i]->image = $save_image_name[$i];
                 }
-
-                $edit[$i]->save();
             }
 
             Session::flash('message','Successfully updated user(s)!');
