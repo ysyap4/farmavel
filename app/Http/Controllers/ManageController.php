@@ -193,8 +193,6 @@ class ManageController extends Controller
             $type = Input::get('type');
     
             $edit = array();
-
-            dd($request);
     
             for ($i=0; $i < sizeof($edit_selected_user); $i++)
             {
