@@ -204,32 +204,32 @@ class ManageController extends Controller
                 $edit[$i]->password = Hash::make($password[$i]);
                 $edit[$i]->type = $type[$i];
                
-                if($request->hasFile('image'.$i))
-                {
-                    $image[$i] = $request->file('image'.$i);
-                    $image_filename[$i] = $image[$i]->getClientOriginalName();
-                    $image_extension[$i] = $image[$i]->getClientOriginalExtension();
+                // if($request->hasFile('image'.$i))
+                // {
+                //     $image[$i] = $request->file('image'.$i);
+                //     $image_filename[$i] = $image[$i]->getClientOriginalName();
+                //     $image_extension[$i] = $image[$i]->getClientOriginalExtension();
     
-                    $save_image_name[$i] = $edit[$i]->id.'.'.$image_extension[$i];
-                    // $destinationPath = public_path().'/user_image/';
-                    // $image->move($destinationPath, $save_image_name);
-                    //$path = 'user_image/'.$save_image_name[$i];
-                    //Storage::disk('s3')->put('user_image', $image);
-                    if (is_null($edit[$i]->image))
-                    {
-                        Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
-                    }
-                    else
-                    {
-                        Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
-                        Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
-                    }
+                //     $save_image_name[$i] = $edit[$i]->id.'.'.$image_extension[$i];
+                //     // $destinationPath = public_path().'/user_image/';
+                //     // $image->move($destinationPath, $save_image_name);
+                //     //$path = 'user_image/'.$save_image_name[$i];
+                //     //Storage::disk('s3')->put('user_image', $image);
+                //     if (is_null($edit[$i]->image))
+                //     {
+                //         Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
+                //     }
+                //     else
+                //     {
+                //         Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
+                //         Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
+                //     }
     
-                    //users::where('id', $edit[$i]->id)->update([('image'.$i) => $save_image_name[$i]]);
-                    $edit[$i]->image = $save_image_name[$i];
+                //     //users::where('id', $edit[$i]->id)->update([('image'.$i) => $save_image_name[$i]]);
+                //     $edit[$i]->image = $save_image_name[$i];
 
                     $edit[$i]->save();
-                }
+                //}
             }
 
             Session::flash('message','Successfully updated user(s)!');
