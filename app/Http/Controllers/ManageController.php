@@ -191,7 +191,7 @@ class ManageController extends Controller
             $phone = Input::get('phone');
             $password = Input::get('password');
             $type = Input::get('type');
-            $image = $request->file('image');
+            $image = Input::file('image');
     
             $edit = array();
     
