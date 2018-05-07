@@ -221,7 +221,7 @@ class ManageController extends Controller
                     }
                     else
                     {
-                        Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
+                        //Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
                         Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
                     }
     
