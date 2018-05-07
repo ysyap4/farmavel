@@ -57,7 +57,6 @@ class ManageController extends Controller
             'phone' => 'required',
             'password' => 'required',
             'c_password' => 'required|same:password',
-            'image' => 'required',
             );
 
         $validator = Validator::make(Input::all(),$rules);
@@ -92,7 +91,7 @@ class ManageController extends Controller
                 $save_image_name = $add->id.'.'.$image_extension;
                 // $destinationPath = public_path().'/user_image/';
                 // $image->move($destinationPath, $save_image_name);
-                $path = 'user_image/'.$save_image_name;
+                //$path = 'user_image/'.$save_image_name;
                 //Storage::disk('s3')->put('user_image', $image);
                 Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
 
@@ -157,37 +156,76 @@ class ManageController extends Controller
             }
         }
 
-        
         return View::make('manage_user_edit')->with(array('edit_selected_user' => $edit_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
     public function manage_user_edit_process()
     {
-        $user = users::all();
-        $edit_selected_user = Input::get('edit_selected_user');
-        $name = Input::get('name');
-        $email = Input::get('email');
-        $phone = Input::get('phone');
-        $password = Input::get('password');
-        $type = Input::get('type');
+        $rules = array(
+            'name.*' => 'required',
+            'email.*' => 'required|email|unique:users',
+            'phone.*' => 'required',
+            'password.*' => 'required',
+            'c_password.*' => 'required|same:password',
+            );
 
-        $edit = array();
+        $validator = Validator::make(Input::all(),$rules);
 
-        for ($i=0; $i < sizeof($edit_selected_user); $i++)
+        if($validator->fails())
         {
-            $edit[$i] = '';
-            $edit[$i] = users::find($edit_selected_user[$i]);
-            $edit[$i]->name = $name[$i];
-            $edit[$i]->email = $email[$i];
-            $edit[$i]->phone = $phone[$i];
-            $edit[$i]->password = Hash::make($password[$i]);
-            $edit[$i]->type = $type[$i];
 
-            $edit[$i]->save();
+            $messages = $validator->messages();
+            
+            // return Redirect::to('manage_user_edit')
+            // -> withErrors($validator)
+            // ->withInput (Input::except('password','c_password'))
+            // ->withInput (Input::except('image','confirm'));
+            return redirect()->back();
         }
+        else
+        {
+            $edit_selected_user = Input::get('edit_selected_user');
+            $name = Input::get('name');
+            $email = Input::get('email');
+            $phone = Input::get('phone');
+            $password = Input::get('password');
+            $type = Input::get('type');
+    
+            $edit = array();
+    
+            for ($i=0; $i < sizeof($edit_selected_user); $i++)
+            {
+                $edit[$i] = '';
+                $edit[$i] = users::find($edit_selected_user[$i]);
+                $edit[$i]->name = $name[$i];
+                $edit[$i]->email = $email[$i];
+                $edit[$i]->phone = $phone[$i];
+                $edit[$i]->password = Hash::make($password[$i]);
+                $edit[$i]->type = $type[$i];
+    
+                $edit[$i]->save();
+               
+                if($request->hasFile('image.'.$i))
+                {
+                    $image[$i] = $request->file('image.'.$i));
+                    $image_filename[$i] = $image[$i]->getClientOriginalName();
+                    $image_extension[$i] = $image[$i]->getClientOriginalExtension();
+    
+                    $save_image_name[$i] = $edit[$i]->id.'.'.$image_extension[$i];
+                    // $destinationPath = public_path().'/user_image/';
+                    // $image->move($destinationPath, $save_image_name);
+                    //$path = 'user_image/'.$save_image_name[$i];
+                    //Storage::disk('s3')->put('user_image', $image);
+                    Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
+                    Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]);
+    
+                    users::where('id', $edit[$i]->id)->update(['image.'.$i => $save_image_name[$i]]);
+                }
+            }
 
-        Session::flash('message','Successfully updated user(s)!');
-        return Redirect::to('manage_user_index');
+            Session::flash('message','Successfully updated user(s)!');
+            return Redirect::to('manage_user_index');
+        }
     }
 
     public function manage_user_delete()
