@@ -203,12 +203,13 @@ class ManageController extends Controller
                 $edit[$i]->phone = $phone[$i];
                 $edit[$i]->password = Hash::make($password[$i]);
                 $edit[$i]->type = $type[$i];
+                dd($request);
                
                 $edit[$i]->save();
 
-                if($request->hasFile('image')[$i])
+                if($request->hasFile('image'.$i))
                 {
-                    $image[$i] = $request->file('image')[$i];
+                    $image[$i] = $request->file('image'.$i);
                     $image_filename[$i] = $image[$i]->getClientOriginalName();
                     $image_extension[$i] = $image[$i]->getClientOriginalExtension();
     
