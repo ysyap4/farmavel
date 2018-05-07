@@ -211,9 +211,8 @@ class ManageController extends Controller
 
                 if($file->isValid())
                 {
-                    $image[$i] = $file;
-                    $image_filename[$i] = $image[$i]->getClientOriginalName();
-                    $image_extension[$i] = $image[$i]->getClientOriginalExtension();
+                    $image_filename[$i] = $file->getClientOriginalName();
+                    $image_extension[$i] = $file->getClientOriginalExtension();
     
                     $save_image_name[$i] = $edit[$i]->id.'.'.$image_extension[$i];
                     // $destinationPath = public_path().'/user_image/';
@@ -222,12 +221,12 @@ class ManageController extends Controller
                     //Storage::disk('s3')->put('user_image', $image);
                     if (is_null($edit[$i]->image))
                     {
-                        Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
+                        Storage::disk('s3')->putFileAs('user_image', $file, $save_image_name[$i]); 
                     }
                     else
                     {
                         Storage::disk('s3')->delete('user_image/'.$edit[$i]->image);
-                        Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
+                        Storage::disk('s3')->putFileAs('user_image', $file, $save_image_name[$i]); 
                     }
     
                     users::where('id', $edit[$i]->id)->update(['image' => $save_image_name[$i]]);
