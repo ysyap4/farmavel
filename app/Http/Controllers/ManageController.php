@@ -191,7 +191,6 @@ class ManageController extends Controller
             $phone = Input::get('phone');
             $password = Input::get('password');
             $type = Input::get('type');
-            $image = Input::file('image');
     
             $edit = array();
     
@@ -204,9 +203,12 @@ class ManageController extends Controller
                 $edit[$i]->phone = $phone[$i];
                 $edit[$i]->password = Hash::make($password[$i]);
                 $edit[$i]->type = $type[$i];
+    
+                $edit[$i]->save();
                
-                if($image[$i]->hasFile('image'))
+                if($request->hasFile('image'.$i))
                 {
+                    $image[$i] = $request->file('image'.$i);
                     $image_filename[$i] = $image[$i]->getClientOriginalName();
                     $image_extension[$i] = $image[$i]->getClientOriginalExtension();
     
@@ -225,11 +227,8 @@ class ManageController extends Controller
                         Storage::disk('s3')->putFileAs('user_image', $image[$i], $save_image_name[$i]); 
                     }
     
-                    //users::where('id', $edit[$i]->id)->update(['image.'.$i => $save_image_name[$i]]);
-                    $edit[$i]->image = $save_image_name[$i];
+                    users::where('id', $edit[$i]->id)->update([('image'.$i) => $save_image_name[$i]]);
                 }
-
-                $edit[$i]->save();
             }
 
             Session::flash('message','Successfully updated user(s)!');
