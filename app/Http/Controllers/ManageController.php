@@ -207,10 +207,9 @@ class ManageController extends Controller
                
                 $edit[$i]->save();
 
-                $file = $image[$i];
-
-                if(!is_null($file->isValid()))
+                if(!is_null($image[$i]->isValid()))
                 {
+                    $file = $image[$i];
                     $image_filename[$i] = $file->getClientOriginalName();
                     $image_extension[$i] = $file->getClientOriginalExtension();
     
