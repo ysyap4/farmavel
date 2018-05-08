@@ -207,9 +207,10 @@ class ManageController extends Controller
                
                 $edit[$i]->save();
 
-                if($request->hasFile('image')[$i])
+                $file = $image[$i];
+
+                if($file->isValid())
                 {
-                    $file = $image[$i];
                     $image_filename[$i] = $file->getClientOriginalName();
                     $image_extension[$i] = $file->getClientOriginalExtension();
     
@@ -230,6 +231,10 @@ class ManageController extends Controller
     
                     users::where('id', $edit[$i]->id)->update(['image' => $save_image_name[$i]]);
                     //$edit[$i]->image = $save_image_name[$i];
+                }
+                else
+                {
+                    
                 }
             }
 
