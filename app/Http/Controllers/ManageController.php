@@ -161,13 +161,18 @@ class ManageController extends Controller
 
     public function manage_user_edit_process(Request $request)
     {
-        $rules = array(
-            'name.*' => 'required',
-            'email.*' => 'required|email|unique:users',
-            'phone.*' => 'required',
-            'password.*' => 'required',
-            'c_password.*' => 'required|same:password.*',
-            );
+        // $rules = array(
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users',
+        //     'phone' => 'required',
+        //     'password' => 'required',
+        //     'c_password' => 'required|same:password',
+        //     );
+
+        foreach($this->request->get('name') as $key => $val)
+        {
+          $rules['name.'.$key] = 'required';
+        }
 
         $validator = Validator::make(Input::all(),$rules);
 
