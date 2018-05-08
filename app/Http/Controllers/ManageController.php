@@ -169,7 +169,7 @@ class ManageController extends Controller
         //     'c_password' => 'required|same:password',
         //     );
 
-        foreach($this->request->get('name') as $key => $val)
+        foreach($this->$request->get('name') as $key => $val)
         {
           $rules['name.'.$key] = 'required';
         }
