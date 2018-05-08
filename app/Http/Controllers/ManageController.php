@@ -209,7 +209,7 @@ class ManageController extends Controller
 
                 $file = $image[$i];
 
-                if($file->isValid())
+                if($file->isValid() && !is_null($file))
                 {
                     $image_filename[$i] = $file->getClientOriginalName();
                     $image_extension[$i] = $file->getClientOriginalExtension();
@@ -234,7 +234,7 @@ class ManageController extends Controller
                 }
                 else
                 {
-                    
+
                 }
             }
 
