@@ -217,7 +217,7 @@
                                         @if (is_null($show_selected_user[$i]->image))
                                             <img alt="image" class="img-circle" style="height:75px; width:75px;" src="          {{URL::asset('user_image/no_image.png')}}"/>
                                         @else
-                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="  {{Storage::disk('s3')->url('user_image/' . $show_selected_user[$i]->image)}}">
+                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="  {{URL::asset(Storage::disk('s3')->url('user_image/' . $show_selected_user[$i]->image))}}">
                                         @endif
                                     </div>
                                     <div class="col-sm-3"></div>
