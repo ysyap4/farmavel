@@ -162,12 +162,6 @@ class ManageController extends Controller
     public function manage_user_edit_process(Request $request)
     {
         $rules = array(
-            'name' => 'required|array',
-            'email' => 'required|array',
-            'phone' => 'required|array',
-            'password' => 'required|array',
-            'c_password' => 'required|array',
-
             '*.name' => 'required',
             '*.email' => 'required|email|unique:users',
             '*.phone' => 'required',
