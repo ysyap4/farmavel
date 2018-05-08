@@ -179,6 +179,19 @@ class ApiController extends Controller
 
             $add->save();
 
+            if($request->hasFile('rep_image'))
+            {
+                $rep_image = $request->file('rep_image');
+                $rep_image_filename = $rep_image->getClientOriginalName();
+                $rep_image_extension = $rep_image->getClientOriginalExtension();
+
+                $save_rep_image_name = $add->id.'.'.$rep_image_extension;
+
+                Storage::disk('s3')->putFileAs('report_image', $rep_image, $save_rep_image_name);
+
+                users::where('id', $add->id)->update(['rep_image' => $save_rep_image_name]);
+            }
+
             $get_report = report::where('user_id', $user->id)
                                 ->where('rep_medicine', $request->input('rep_medicine'))
                                 ->where('rep_location', $request->input('rep_location'))
@@ -447,6 +460,27 @@ class ApiController extends Controller
                     $edit->password = bcrypt($request->input('password'));
         
                     $edit->save();
+
+                    if($request->hasFile('image'))
+                    {
+                        $image = $request->file('image');
+                        $image_filename = $image->getClientOriginalName();
+                        $image_extension = $image->getClientOriginalExtension();
+        
+                        $save_image_name = $edit->id.'.'.$image_extension;
+
+                        if (is_null($edit->image))
+                        {
+                            Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
+                        }
+                        else
+                        {
+                            Storage::disk('s3')->delete('user_image/'.$edit->image);
+                            Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
+                        }
+        
+                        users::where('id', $edit->id)->update(['image' => $save_image_name]);
+                    }
 
                     $data = [
                         'status' => 'success',
