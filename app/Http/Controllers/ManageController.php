@@ -232,6 +232,10 @@ class ManageController extends Controller
                     users::where('id', $edit[$i]->id)->update(['image' => $save_image_name[$i]]);
                     //$edit[$i]->image = $save_image_name[$i];
                 }
+                else
+                {
+                    
+                }
             }
 
             Session::flash('message','Successfully updated user(s)!');
