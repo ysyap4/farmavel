@@ -161,29 +161,35 @@ class ManageController extends Controller
 
     public function manage_user_edit_process(Request $request)
     {
-        $rules = array(
-            '*.name' => 'required',
-            '*.email' => 'required|email|unique:users',
-            '*.phone' => 'required',
-            '*.password' => 'required',
-            '*.c_password' => 'required|same:password',
-            );
+        // $rules = array(
+        //     'name' => 'required|array',
+        //     'email' => 'required|array',
+        //     'phone' => 'required|array',
+        //     'password' => 'required|array',
+        //     'c_password' => 'required|array',
 
-        $validator = Validator::make(Input::all(),$rules);
+        //     '*.name' => 'required',
+        //     '*.email' => 'required|email|unique:users',
+        //     '*.phone' => 'required',
+        //     '*.password' => 'required',
+        //     '*.c_password' => 'required|same:password',
+        //     );
 
-        if($validator->fails())
-        {
+        // $validator = Validator::make(Input::all(),$rules);
 
-            $messages = $validator->messages();
+        // if($validator->fails())
+        // {
+
+        //     $messages = $validator->messages();
             
-            // return Redirect::to('manage_user_edit')
-            // -> withErrors($validator)
-            // ->withInput (Input::except('password','c_password'))
-            // ->withInput (Input::except('image','confirm'));
-            return redirect()->back();
-        }
-        else
-        {
+        //     // return Redirect::to('manage_user_edit')
+        //     // -> withErrors($validator)
+        //     // ->withInput (Input::except('password','c_password'))
+        //     // ->withInput (Input::except('image','confirm'));
+        //     return redirect()->back();
+        // }
+        // else
+        // {
             $user = users::all();
             $edit_selected_user = Input::get('edit_selected_user');
             $name = Input::get('name');
@@ -192,7 +198,7 @@ class ManageController extends Controller
             $password = Input::get('password');
             $type = Input::get('type');
             $image = $request->file('image');
-    
+            dd($request);
             $edit = array();
     
             for ($i=0; $i < sizeof($edit_selected_user); $i++)
@@ -236,7 +242,7 @@ class ManageController extends Controller
 
             Session::flash('message','Successfully updated user(s)!');
             return Redirect::to('manage_user_index');
-        }
+        //}
     }
 
     public function manage_user_delete()
