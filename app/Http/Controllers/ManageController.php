@@ -163,10 +163,16 @@ class ManageController extends Controller
     {
         $rules = array(
             'name' => 'required|array',
-            'email' => 'required|array|email|unique:users',
+            'email' => 'required|array',
             'phone' => 'required|array',
             'password' => 'required|array',
-            'c_password' => 'required|array|same:password',
+            'c_password' => 'required|array',
+
+            'name.*' => 'required',
+            'email.*' => 'required|email|unique:users',
+            'phone.*' => 'required',
+            'password.*' => 'required',
+            'c_password.*' => 'required|same:password',
             );
 
         $validator = Validator::make(Input::all(),$rules);
