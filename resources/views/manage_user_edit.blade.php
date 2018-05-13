@@ -298,7 +298,7 @@
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="qweImage" class="btn btn-primary">
                                                     <input type="file" accept="image/*" name="image[]" class="inputImage" set-to="change_image{{$i}}" id="qweImage" style="display: none; border: 1px solid #ccc; padding: 6px 12px; cursor: pointer;">
-                                                    Upload new image
+                                                    Upload new imagess
                                                 </label>
                                             </div>
                                         </div>
