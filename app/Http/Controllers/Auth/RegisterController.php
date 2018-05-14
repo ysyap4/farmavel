@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
             'type' => 'Patient',
-            'image' => $data['image'],
+            //'image' => $data['image'],
         ]);
     }
 }
