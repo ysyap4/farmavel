@@ -209,6 +209,22 @@
                             </div>
                         </div>
                         <div class="ibox-content">
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-4">
+                                        @if (is_null($show_selected_med[$i]->med_image))
+                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="          {{URL::asset('medicine_image/no_image.jpg')}}"/>
+                                        @else
+                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="  {{URL::asset(Storage::disk('s3')->url('medicine_image/' . $show_selected_med[$i]->med_image))}}">
+                                        @endif
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Number</label>
                                     <div class="col-sm-10">
                                         <div class="form-control" style="border: none;"> 
