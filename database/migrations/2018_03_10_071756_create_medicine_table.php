@@ -20,7 +20,8 @@ class CreateMedicineTable extends Migration
             $table->string('med_category');
             $table->string('med_authenticity');
             $table->string('med_ingredient');
-            $table->string('med_info');
+            $table->string('med_image')->nullable();
+            $table->string('med_info')->nullable();
             $table->timestamps();
         });
     }

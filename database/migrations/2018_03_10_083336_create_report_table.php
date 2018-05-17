@@ -19,6 +19,7 @@ class CreateReportTable extends Migration
             $table->string('rep_location');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('rep_image')->nullable();
             $table->string('rep_info')->nullable();
             $table->timestamps();
         });
