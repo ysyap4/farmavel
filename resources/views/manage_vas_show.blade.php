@@ -211,7 +211,9 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">VAS Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$get_selected_med[$i]->med_name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$get_selected_med[$i]->med_name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -219,7 +221,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Batu Pahat Availability</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_batupahat}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_vas[$i]->vas_availability_batupahat}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -227,7 +231,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Johor Bahru Availability</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_johorbahru}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_vas[$i]->vas_availability_johorbahru}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -235,7 +241,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Muar Availability</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_muar}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_vas[$i]->vas_availability_muar}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -243,7 +251,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Segamat Availability</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_segamat}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_vas[$i]->vas_availability_segamat}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -251,7 +261,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Kulaijaya Availability</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_vas[$i]->vas_availability_kulaijaya}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_vas[$i]->vas_availability_kulaijaya}}
+                                        </div>
                                     </div>
                                 </div>
 

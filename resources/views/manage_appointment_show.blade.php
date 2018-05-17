@@ -211,7 +211,9 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Patient Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$get_selected_user[$i]->name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$get_selected_user[$i]->name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -219,7 +221,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$get_selected_med[$i]->med_name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$get_selected_med[$i]->med_name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -227,7 +231,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Date</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_app[$i]->app_date}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_app[$i]->app_date}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -235,7 +241,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Time</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_app[$i]->app_time}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_app[$i]->app_time}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -243,7 +251,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Location</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_app[$i]->app_location}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_app[$i]->app_location}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -251,7 +261,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Method</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_app[$i]->app_method}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_app[$i]->app_method}}
+                                        </div>
                                     </div>
                                 </div>
 

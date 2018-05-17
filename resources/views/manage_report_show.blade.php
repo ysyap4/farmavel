@@ -211,7 +211,9 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Reported Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_medicine}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_rep[$i]->rep_medicine}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -219,7 +221,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Reported Location</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_location}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_rep[$i]->rep_location}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -227,7 +231,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Reported by</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$get_selected_user[$i]->name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$get_selected_user[$i]->name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -235,7 +241,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Report Info</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_rep[$i]->rep_info}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_rep[$i]->rep_info}}
+                                        </div>
                                     </div>
                                 </div>
 

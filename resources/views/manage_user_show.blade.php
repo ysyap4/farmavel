@@ -227,7 +227,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_user[$i]->name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_user[$i]->name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -235,7 +237,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_user[$i]->email}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_user[$i]->email}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -243,7 +247,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_user[$i]->phone}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_user[$i]->phone}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -251,7 +257,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Type</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_user[$i]->type}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_user[$i]->type}}
+                                        </div>
                                     </div>
                                 </div>
 

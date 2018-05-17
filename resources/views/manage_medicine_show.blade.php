@@ -211,7 +211,9 @@
                         <div class="ibox-content">
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Number</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_number}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_number}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -219,7 +221,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Name</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_name}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_name}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -227,7 +231,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_category}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_category}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -235,7 +241,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Authenticity</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_authenticity}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_authenticity}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -243,7 +251,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Ingredient</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_ingredient}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_ingredient}}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -251,7 +261,9 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">Medicine Info</label>
                                     <div class="col-sm-10">
-                                        <div class="form-control"> {{$show_selected_med[$i]->med_info}} </div>
+                                        <div class="form-control" style="border: none;"> 
+                                            {{$show_selected_med[$i]->med_info}}
+                                        </div>
                                     </div>
                                 </div>
 
