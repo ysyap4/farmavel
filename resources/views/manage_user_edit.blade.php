@@ -298,7 +298,7 @@
                                             <div class="btn-group">
                                                 <label title="Upload image file" for="inputImage">
                                                     <input type="file" accept="image/*" name="image[]" class="inputImage" set-to="change_image{{$i}}">
-                                                    Upload new image
+                                                    
                                                 </label>
                                             </div>
                                         </div>

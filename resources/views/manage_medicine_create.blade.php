@@ -16,6 +16,7 @@
     <link href="{{URL::asset('inspinia-master/assets/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{URL::asset('inspinia-master/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('inspinia-master/assets/css/plugins/cropper/cropper.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -278,6 +279,26 @@
 
                                 <div class="hr-line-dashed"></div>
 
+                                <div class="form-group{{ $errors->has('med_image') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Medicine Image</label>
+
+                                    <div class="row col-sm-10">
+                                        <div class="col-md-6">
+                                            <div class="image-crop">
+                                                <img src="{{URL::asset('medicine_image/no_image.jpg')}}" id="change_image" style="height: 200px; width: 200px;">
+                                            </div>
+                                            <br>
+                                            <div class="btn-group">
+                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                                    <input type="file" accept="image/*" name="med_image" value=" " id="inputImage" class="hide">
+                                                    Upload new image
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <a class="btn btn-white" href="{{ url()->previous() }}">Cancel</a>
@@ -311,8 +332,11 @@
     <script src="{{URL::asset('inspinia-master/assets/js/inspinia.js')}}"></script>
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/pace/pace.min.js')}}"></script>
 
-        <!-- iCheck -->
+    <!-- iCheck -->
     <script src="{{URL::asset('inspinia-master/assets/js/plugins/iCheck/icheck.min.js')}}"></script>
+
+    <!-- Image cropper -->
+    <script src="{{URL::asset('inspinia-master/assets/js/plugins/cropper/cropper.min.js')}}"></script>
 
     <script>
         $(document).ready(function () {
@@ -320,6 +344,20 @@
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
             });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#change_image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#inputImage").change(function(){
+            readURL(this);
         });
     </script>
 

@@ -271,6 +271,7 @@
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Type</label>
+
                                     <div class="col-sm-10">
                                         <div class="radio i-checks"><label> <input type="radio" value="Patient" name="type" checked=""> <i></i> Patient </label></div>
                                         <div class="radio i-checks"><label> <input type="radio" value="Admin" name="type"> <i></i> Admin </label></div>
@@ -280,6 +281,7 @@
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Image</label>
+                                    
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
