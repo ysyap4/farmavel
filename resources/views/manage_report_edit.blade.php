@@ -259,6 +259,27 @@
 
                                 <div class="hr-line-dashed"></div>
 
+                                <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Report Image</label>
+                                    <div class="row col-sm-10">
+                                        <div class="col-md-6">
+                                            <div class="image-crop">
+                                                @if (is_null($edit_selected_rep[$i]->rep_image))
+                                                    <img src="{{URL::asset('report_image/no_image.jpg')}}" id="change_image{{$i}}" style="height: 200px; width: 200px;">
+                                                @else
+                                                    <img src="{{URL::asset(Storage::disk('s3')->url('report_image/' . $edit_selected_rep[$i]->rep_image))}}" id="change_image{{$i}}" style="height:200px; width:200px;">
+                                                @endif
+                                            </div>
+                                            <br>
+                                            <div class="btn-group">
+                                                <label title="Upload image file" for="inputImage">
+                                                    <input type="file" accept="image/*" name="rep_image[]" class="inputImage" set-to="change_image{{$i}}">
+                                                    
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                         </div>
                     </div>
                 </div>
