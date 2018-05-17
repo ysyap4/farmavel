@@ -186,7 +186,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Pie Chart: Legal and Illegal Medicine</h5>
+                            <h5>Pie Chart: Number of Legal and Illegal Medicines</h5>
 
                             <div ibox-tools></div>
                         </div>
@@ -202,7 +202,7 @@
                 <div class="col-lg-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Polar Chart: Medicine Categories</h5>
+                            <h5>Polar Chart: Number of Medicine by Categories</h5>
 
                             <div ibox-tools></div>
                         </div>
@@ -221,7 +221,7 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Radar Chart: Number of Illegal Medicine Reports by Respective Locations </h5>
+                            <h5>Radar Chart: Number of Illegal Medicine Report by Respective Locations </h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">

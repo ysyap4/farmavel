@@ -327,6 +327,22 @@
                 radioClass: 'iradio_square-green',
             });
         });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                var imgId = $(input).attr('set-to');
+                reader.onload = function (e) {
+                    $('#'+imgId).attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(".inputImage").change(function(){
+            readURL(this);
+        });
     </script>
 
 </body>
