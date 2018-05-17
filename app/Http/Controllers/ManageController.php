@@ -68,8 +68,7 @@ class ManageController extends Controller
             
             return Redirect::to('manage_user_create')
             -> withErrors($validator)
-            ->withInput (Input::except('password','c_password'))
-            ->withInput (Input::except('image','confirm'));
+            ->withInput (Input::except('password','c_password'));
         }
         else
         {
@@ -276,7 +275,7 @@ class ManageController extends Controller
         return View::make('manage_medicine_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_medicine_create_process()
+    public function manage_medicine_create_process(Request $request)
     {
         $rules = array(
             'med_number' => 'required',
@@ -296,7 +295,7 @@ class ManageController extends Controller
             
             return Redirect::to('manage_medicine_create')
             -> withErrors($validator)
-            ->withInput (Input::except('med_number'));
+            ->withInput();
         }
         else
         {
@@ -309,6 +308,19 @@ class ManageController extends Controller
             $add->med_info = Input::get('med_info');
 
             $add->save();
+
+            if($request->hasFile('med_image'))
+            {
+                $med_image = $request->file('med_image');
+                $med_image_filename = $med_image->getClientOriginalName();
+                $med_image_extension = $med_image->getClientOriginalExtension();
+
+                $save_med_image_name = $add->id.'.'.$med_image_extension;
+
+                Storage::disk('s3')->putFileAs('medicine_image', $med_image, $save_med_image_name);
+
+                medicine::where('id', $add->id)->update(['med_image' => $save_med_image_name]);
+            }
 
             Session::flash('message','Successfully created medicine!');
             return Redirect::to('manage_medicine_index');
@@ -372,9 +384,8 @@ class ManageController extends Controller
         return View::make('manage_medicine_edit')->with(array('edit_selected_med' => $edit_selected_med, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_medicine_edit_process()
+    public function manage_medicine_edit_process(Request $request)
     {
-        $medicine = medicine::all();
         $edit_selected_med = Input::get('edit_selected_med');
         $med_number = Input::get('med_number');
         $med_name = Input::get('med_name');
@@ -382,6 +393,7 @@ class ManageController extends Controller
         $med_authenticity = Input::get('med_authenticity');
         $med_ingredient = Input::get('med_ingredient');
         $med_info = Input::get('med_info');
+        $med_image = $request->file('med_image');
 
         $edit = array();
 
@@ -397,6 +409,25 @@ class ManageController extends Controller
             $edit[$i]->med_info = $med_info[$i];
 
             $edit[$i]->save();
+
+            if(isset($med_image[$i]))
+            {
+                $med_image_filename[$i] = $med_image[$i]->getClientOriginalName();
+                $med_image_extension[$i] = $med_image[$i]->getClientOriginalExtension();
+
+                $save_med_image_name[$i] = $edit[$i]->id.'.'.$med_image_extension[$i];
+                if (is_null($edit[$i]->med_image))
+                {
+                    Storage::disk('s3')->putFileAs('medicine_image', $med_image[$i], $save_med_image_name[$i]); 
+                }
+                else
+                {
+                    Storage::disk('s3')->delete('medicine_image/'.$edit[$i]->med_image);
+                    Storage::disk('s3')->putFileAs('medicine_image', $med_image[$i], $save_med_image_name[$i]); 
+                }
+
+                medicine::where('id', $edit[$i]->id)->update(['med_image' => $save_med_image_name[$i]]);
+            }
         }
 
         Session::flash('message','Successfully updated medicine(s)!');
@@ -446,7 +477,7 @@ class ManageController extends Controller
         return View::make('manage_report_create', array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_report_create_process()
+    public function manage_report_create_process(Request $request)
     {
         $rules = array(
             'rep_medicine' => 'required',
@@ -485,6 +516,19 @@ class ManageController extends Controller
             $add->rep_info = Input::get('rep_info');
 
             $add->save();
+
+            if($request->hasFile('rep_image'))
+            {
+                $rep_image = $request->file('rep_image');
+                $rep_image_filename = $rep_image->getClientOriginalName();
+                $rep_image_extension = $rep_image->getClientOriginalExtension();
+
+                $save_rep_image_name = $add->id.'.'.$rep_image_extension;
+
+                Storage::disk('s3')->putFileAs('report_image', $rep_image, $save_rep_image_name);
+
+                report::where('id', $add->id)->update(['rep_image' => $save_rep_image_name]);
+            }
 
             Session::flash('message','Successfully created report!');
             return Redirect::to('manage_report_index');
@@ -551,13 +595,14 @@ class ManageController extends Controller
         return View::make('manage_report_edit')->with(array('edit_selected_rep' => $edit_selected_rep, 'get_selected_user' => $get_selected_user, 'lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app));
     }
 
-    public function manage_report_edit_process()
+    public function manage_report_edit_process(Request $request)
     {
         $edit_selected_rep = Input::get('edit_selected_rep');
         $rep_medicine = Input::get('rep_medicine');
         $rep_location = Input::get('rep_location');
         $get_user_name = Input::get('user_name');
         $rep_info = Input::get('rep_info');
+        $rep_image = $request->file('rep_image');
 
         $edit = array();
         $get_selected_user = array();
@@ -574,6 +619,25 @@ class ManageController extends Controller
             $edit[$i]->rep_info = $rep_info[$i];
 
             $edit[$i]->save();
+
+            if(isset($rep_image[$i]))
+            {
+                $rep_image_filename[$i] = $rep_image[$i]->getClientOriginalName();
+                $rep_image_extension[$i] = $rep_image[$i]->getClientOriginalExtension();
+
+                $save_rep_image_name[$i] = $edit[$i]->id.'.'.$rep_image_extension[$i];
+                if (is_null($edit[$i]->rep_image))
+                {
+                    Storage::disk('s3')->putFileAs('report_image', $rep_image[$i], $save_rep_image_name[$i]); 
+                }
+                else
+                {
+                    Storage::disk('s3')->delete('report_image/'.$edit[$i]->rep_image);
+                    Storage::disk('s3')->putFileAs('report_image', $rep_image[$i], $save_rep_image_name[$i]); 
+                }
+
+                report::where('id', $edit[$i]->id)->update(['rep_image' => $save_rep_image_name[$i]]);
+            }
         }
 
         Session::flash('message','Successfully updated report(s)!');
