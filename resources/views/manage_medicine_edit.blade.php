@@ -288,9 +288,9 @@
                                         <div class="col-md-6">
                                             <div class="image-crop">
                                                 @if (is_null($edit_selected_med[$i]->med_image))
-                                                    <img src="{{URL::asset('medicine_image/no_image.jpg')}}" id="change_image{{$i}}" style="height: 200px; width: 200px;">
+                                                    <img src="{{URL::asset('medicine_image/no_image.jpg')}}" id="change_image{{$i}}" style="height:300px; width:300px;">
                                                 @else
-                                                    <img src="{{URL::asset(Storage::disk('s3')->url('medicine_image/' . $edit_selected_med[$i]->med_image))}}" id="change_image{{$i}}" style="height:200px; width:200px;">
+                                                    <img src="{{URL::asset(Storage::disk('s3')->url('medicine_image/' . $edit_selected_med[$i]->med_image))}}" id="change_image{{$i}}" style="height:300px; width:300px;">
                                                 @endif
                                             </div>
                                             <br>

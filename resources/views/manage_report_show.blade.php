@@ -212,12 +212,12 @@
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"></label>
-                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         @if (is_null($show_selected_rep[$i]->rep_image))
-                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="          {{URL::asset('report_image/no_image.jpg')}}"/>
+                                            <img alt="image" class="img-circle" style="height:250px; width:250px;" src="{{URL::asset('report_image/no_image.jpg')}}"/>
                                         @else
-                                            <img alt="image" class="img-circle" style="height:75px; width:75px;" src="  {{URL::asset(Storage::disk('s3')->url('report_image/' . $show_selected_rep[$i]->rep_image))}}">
+                                            <img alt="image" class="img-circle" style="height:250px; width:250px;" src="{{URL::asset(Storage::disk('s3')->url('report_image/' . $show_selected_rep[$i]->rep_image))}}">
                                         @endif
                                     </div>
                                     <div class="col-sm-3"></div>

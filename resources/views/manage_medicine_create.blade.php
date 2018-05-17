@@ -284,7 +284,7 @@
                                     <div class="row col-sm-10">
                                         <div class="col-md-6">
                                             <div class="image-crop">
-                                                <img src="{{URL::asset('medicine_image/no_image.jpg')}}" id="change_image" style="height: 200px; width: 200px;">
+                                                <img src="{{URL::asset('medicine_image/no_image.jpg')}}" id="change_image" style="height:300px; width:300px;">
                                             </div>
                                             <br>
                                             <div class="btn-group">
