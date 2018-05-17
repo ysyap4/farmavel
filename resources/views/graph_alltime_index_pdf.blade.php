@@ -22,7 +22,7 @@
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Pie Chart: Legal and Illegal Medicine</
+                        <h5>Pie Chart: Legal and Illegal Medicine</h5>
                         <div ibox-tools></div>
                     </div>
                     <div class="ibox-content">
