@@ -232,9 +232,19 @@ class ApiController extends Controller
 
         if ($get_user) 
         {
+            if ($get_user->image)
+            {
+                $image_link = "https://s3.eu-west-2.amazonaws.com/farmavel/user_image/" + $get_user->image;
+            }
+            else
+            {
+                $image_link = "assets/imgs/no_image.png";
+            }
+
             $data = [
                 'status' => 'success',
-                'data' => $get_user
+                'data' => $get_user,
+                'image_link' => $image_link
             ];
         }
         else 
