@@ -471,7 +471,7 @@ class ApiController extends Controller
         
                     $edit->save();
 
-                    if($request->hasFile('image'))
+                    if($request->file('image'))
                     {
                         $image = $request->file('image');
                         $image_filename = $image->getClientOriginalName();
