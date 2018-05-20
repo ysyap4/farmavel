@@ -394,7 +394,7 @@ class ManageController extends Controller
         $med_ingredient = Input::get('med_ingredient');
         $med_info = Input::get('med_info');
         $med_image = $request->file('med_image');
-        dd($request);
+        
         $edit = array();
 
         for ($i=0; $i < sizeof($edit_selected_med); $i++)
@@ -407,7 +407,7 @@ class ManageController extends Controller
             $edit[$i]->med_authenticity = $med_authenticity[$i];
             $edit[$i]->med_ingredient = $med_ingredient[$i];
             $edit[$i]->med_info = $med_info[$i];
-            
+
             $edit[$i]->save();
 
             if(isset($med_image[$i]))
