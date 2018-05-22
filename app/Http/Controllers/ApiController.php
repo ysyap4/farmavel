@@ -192,19 +192,6 @@ class ApiController extends Controller
 
             $add->save();
 
-            if($request->hasFile('rep_image'))
-            {
-                $rep_image = $request->file('rep_image');
-                $rep_image_filename = $rep_image->getClientOriginalName();
-                $rep_image_extension = $rep_image->getClientOriginalExtension();
-
-                $save_rep_image_name = $add->id.'.'.$rep_image_extension;
-
-                Storage::disk('s3')->putFileAs('report_image', $rep_image, $save_rep_image_name);
-
-                users::where('id', $add->id)->update(['rep_image' => $save_rep_image_name]);
-            }
-
             $get_report = report::where('user_id', $user->id)
                                 ->where('rep_medicine', $request->input('rep_medicine'))
                                 ->where('rep_location', $request->input('rep_location'))
@@ -556,6 +543,68 @@ class ApiController extends Controller
                     'status' => 'invalid',
                     'message' => 'Failed to update profile.'
                 ];
+        }
+
+        return response()->json($data);
+    }
+
+    public function upload_report_image(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get()->first();
+        $report = $request->file('get_report');
+        $rep_image = $request->file('rep_image');
+
+        if ($user)
+        {
+            if ($report)
+            {
+                if (isset($rep_image))
+                {
+                    $rep_image_filename = $rep_image->getClientOriginalName();
+                    $rep_image_extension = $rep_image->getClientOriginalExtension();
+    
+                    $save_rep_image_name = $report->id.'.'.$rep_image_extension;
+    
+                    if (is_null($report->rep_image))
+                    {
+                        Storage::disk('s3')->putFileAs('report_image', $rep_image, $save_rep_image_name);
+                    }
+                    else
+                    {
+                        Storage::disk('s3')->delete('report_image/'.$report->rep_image);
+                        Storage::disk('s3')->putFileAs('report_image', $rep_image, $save_rep_image_name);
+                    }
+    
+                    report::where('id', $report->id)->update(['rep_image' => $save_rep_image_name]);
+    
+                    $data = [
+                        'status' => 'success',
+                        'data' => $report,
+                        'message' => 'The report image is updated.'
+                    ]; 
+                }   
+                else
+                {
+                    $data = [
+                        'status' => 'invalid',
+                        'message' => 'The report image is not found.'
+                    ];
+                }
+            }
+            else
+            {
+                $data = [
+                    'status' => 'invalid',
+                    'message' => 'The report is not found.'
+                ];
+            }
+        }
+        else
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The user data is not found.'
+            ];
         }
 
         return response()->json($data);

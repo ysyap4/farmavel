@@ -69,3 +69,8 @@ Route::post('/upload_user_image', [
 	'as' => 'api.upload_user_image', 
 	'uses' => 'ApiController@upload_user_image'
 	]);
+
+Route::post('/upload_report_image', [
+	'as' => 'api.upload_report_image', 
+	'uses' => 'ApiController@upload_report_image'
+	]);
