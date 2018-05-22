@@ -609,4 +609,39 @@ class ApiController extends Controller
 
         return response()->json($data);
     }
+
+    public function home(Request $request)
+    {
+        $user = users::where('remember_token', $request->input('token'))->get()->first();
+
+        if ($user)
+        {
+            $rep_sub_count = report::select(DB::raw('count(*) as sub_count, rep_location'))
+                                        ->groupBy('rep_location')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(3)
+                                        ->get();
+
+            $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, app_time'))
+                                        ->groupBy('app_time')
+                                        ->orderBy('sub_count', 'desc')
+                                        ->take(3)
+                                        ->get();
+
+            $data = [
+                'status' => 'success',
+                'rep_sub_count' => $rep_sub_count,
+                'app_sub_count' => $app_sub_count
+            ];
+        }
+        else
+        {
+            $data = [
+                'status' => 'invalid',
+                'message' => 'The user data is not found.'
+            ];
+        }
+
+        return response()->json($data);
+    }
 }

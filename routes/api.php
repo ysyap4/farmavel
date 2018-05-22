@@ -35,6 +35,11 @@ Route::post('/logout', [
 	'uses' => 'ApiController@logout'
 	]);
 
+Route::post('/home', [
+	'as' => 'api.home', 
+	'uses' => 'ApiController@home'
+	]);
+
 Route::post('/check_medicine_information', [
 	'as' => 'api.check_medicine_information', 
 	'uses' => 'ApiController@check_medicine_information'
