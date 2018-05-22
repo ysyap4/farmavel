@@ -616,13 +616,13 @@ class ApiController extends Controller
 
         if ($user)
         {
-            $rep_sub_count = report::select(DB::raw('count(*) as sub_count, rep_location'))
+            $rep_sub_count = report::select(DB::raw('count(*) as sub_count, rep_medicine, rep_location'))
                                         ->groupBy('rep_location')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(3)
                                         ->get();
 
-            $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, app_time'))
+            $app_sub_count = appointment::select(DB::raw('count(*) as sub_count, app_location, app_time'))
                                         ->groupBy('app_time')
                                         ->orderBy('sub_count', 'desc')
                                         ->take(3)
