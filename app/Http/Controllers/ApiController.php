@@ -551,7 +551,7 @@ class ApiController extends Controller
     public function upload_report_image(Request $request) 
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
-        $report = $request->input('get_report');
+        $report = report::where('id', $request->input('report_id'))->get()->first();
         $rep_image = $request->file('rep_image');
 
         if ($user)
