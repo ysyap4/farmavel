@@ -521,17 +521,17 @@ class ApiController extends Controller
     public function upload_user_image(Request $request) 
     {
         $user = users::where('remember_token', $request->input('token'))->get()->first();
+        $image = $request->file('image');
 
         if ($user)
         {
-            if ($request->hasFile('image'))
+            if (isset($image))
             {
-                $image = $request->file('image');
                 $image_filename = $image->getClientOriginalName();
                 $image_extension = $image->getClientOriginalExtension();
 
                 $save_image_name = $user->id.'.'.$image_extension;
-                
+
                 if (is_null($user->image))
                 {
                     Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
