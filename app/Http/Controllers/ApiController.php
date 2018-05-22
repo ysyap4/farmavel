@@ -507,7 +507,7 @@ class ApiController extends Controller
             if (isset($image))
             {
                 $image_filename = $image->getClientOriginalName();
-                $image_extension = $image->getClientOriginalExtension();
+                $image_extension = 'jpg';
 
                 $save_image_name = $user->id.'.'.$image_extension;
 
@@ -561,7 +561,7 @@ class ApiController extends Controller
                 if (isset($rep_image))
                 {
                     $rep_image_filename = $rep_image->getClientOriginalName();
-                    $rep_image_extension = $rep_image->getClientOriginalExtension();
+                    $rep_image_extension = 'jpg';
     
                     $save_rep_image_name = $report->id.'.'.$rep_image_extension;
     
