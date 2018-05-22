@@ -471,7 +471,7 @@ class ApiController extends Controller
         
                     $edit->save();
 
-                    if($request->file('image'))
+                    if($request->hasFile('image'))
                     {
                         $image = $request->file('image');
                         $image_filename = $image->getClientOriginalName();
@@ -499,6 +499,57 @@ class ApiController extends Controller
                     ];
                 }
             }
+            else
+            {
+                $data = [
+                    'status' => 'invalid',
+                    'message' => 'All valid information must be filled.'
+                ];
+            }
+        }
+        else
+        {
+            $data = [
+                    'status' => 'invalid',
+                    'message' => 'Failed to update profile.'
+                ];
+        }
+
+        return response()->json($data);
+    }
+
+    public function upload_user_image(Request $request) 
+    {
+        $user = users::where('remember_token', $request->input('token'))->get()->first();
+
+        if ($user)
+        {
+            if ($request->hasFile('image'))
+            {
+                $image = $request->file('image');
+                $image_filename = $image->getClientOriginalName();
+                $image_extension = $image->getClientOriginalExtension();
+
+                $save_image_name = $user->id.'.'.$image_extension;
+                
+                if (is_null($user->image))
+                {
+                    Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
+                }
+                else
+                {
+                    Storage::disk('s3')->delete('user_image/'.$user->image);
+                    Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
+                }
+
+                users::where('id', $user->id)->update(['image' => $save_image_name]);
+
+                $data = [
+                'status' => 'success',
+                'data' => $user,
+                'message' => 'New information is updated.'
+                ]; 
+            }   
             else
             {
                 $data = [
