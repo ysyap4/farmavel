@@ -64,3 +64,8 @@ Route::post('/edit_profile', [
 	'as' => 'api.edit_profile', 
 	'uses' => 'ApiController@edit_profile'
 	]);
+
+Route::post('/upload_user_image', [
+	'as' => 'api.upload_user_image', 
+	'uses' => 'ApiController@upload_user_image'
+	]);
