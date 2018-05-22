@@ -151,9 +151,19 @@ class ApiController extends Controller
     
             if ($get_medicine) 
             {
+                if ($get_medicine->med_image)
+                {
+                    $image_link = "https://s3.eu-west-2.amazonaws.com/farmavel/medicine_image/" . $get_medicine->med_image;
+                }
+                else
+                {
+                    $image_link = "assets/imgs/no_image.jpg";
+                }
+
                 $data = [
                     'status' => 'success',
-                    'data' => $get_medicine
+                    'data' => $get_medicine,
+                    'image_link' => $image_link
                 ];
             }
             else 
@@ -473,27 +483,6 @@ class ApiController extends Controller
                     $edit->password = bcrypt($request->input('password'));
         
                     $edit->save();
-
-                    if($request->hasFile('image'))
-                    {
-                        $image = $request->file('image');
-                        $image_filename = $image->getClientOriginalName();
-                        $image_extension = $image->getClientOriginalExtension();
-        
-                        $save_image_name = $edit->id.'.'.$image_extension;
-
-                        if (is_null($edit->image))
-                        {
-                            Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
-                        }
-                        else
-                        {
-                            Storage::disk('s3')->delete('user_image/'.$edit->image);
-                            Storage::disk('s3')->putFileAs('user_image', $image, $save_image_name);
-                        }
-        
-                        users::where('id', $edit->id)->update(['image' => $save_image_name]);
-                    }
 
                     $data = [
                         'status' => 'success',
