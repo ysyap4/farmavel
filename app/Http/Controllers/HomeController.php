@@ -65,7 +65,7 @@ class HomeController extends Controller
                                         ->take(2)
                                         ->get();
 
-        $latest_illegal_medicine = medicine::all()->orderBy('created_at', 'desc')
+        $latest_illegal_medicine = DB::table('medicine')->orderBy('created_at', 'desc')
                                         ->take(3)
                                         ->get();
 
