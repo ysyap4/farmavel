@@ -281,7 +281,7 @@
             <div class="col-lg-8">
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
-                        
+                        <img alt="image" src="{{URL::asset('inspinia-master/assets/img/pharmacy_banner.png')}}">
                     </div>
                 </div>
             </div>
