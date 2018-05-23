@@ -253,24 +253,24 @@
             <div class="col-md-4">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Monthly income</h5>
+                        <h5>Added Illegal Medicine</h5>
                         <div class="ibox-tools">
-                            <span class="label label-primary">Updated 12.2015</span>
+                            <span class="label label-primary">LATEST</span>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content" id="flot-chart1"></div>
+                            <div class="flot-chart-content"></div>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content" id="flot-chart1"></div>
+                            <div class="flot-chart-content"></div>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content" id="flot-chart1"></div>
+                            <div class="flot-chart-content"></div>
                         </div>
                     </div>
 
@@ -281,7 +281,7 @@
             <div class="col-lg-8">
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
-                        <img alt="image" src="{{URL::asset('inspinia-master/assets/img/pharmacy_banner.png')}}">
+                        <img alt="image" src="{{URL::asset('inspinia-master/assets/img/pharmacy_banner.png')}}" style="width: 100%; height: 100%;">
                     </div>
                 </div>
             </div>
