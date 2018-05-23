@@ -258,9 +258,9 @@
                             <span class="label label-primary">LATEST</span>
                         </div>
                     </div>
-                    <div class="ibox-content no-padding">
-                        <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content">
+                    <div class="ibox-content">
+                        <div class="" style="">
+                            <div class="">
                                 <h2 class="no-margins font-bold text-success"> 
                                     {{$latest_illegal_medicine[0]->med_name}}
                                 </h2>
@@ -268,9 +268,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ibox-content no-padding">
-                        <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content">
+                    <div class="ibox-content">
+                        <div class="" style="">
+                            <div class="">
                                 <h2 class="no-margins font-bold text-success"> 
                                     {{$latest_illegal_medicine[1]->med_name}}
                                 </h2>
@@ -278,9 +278,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ibox-content no-padding">
-                        <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content">
+                    <div class="ibox-content">
+                        <div class="" style="">
+                            <div class="">
                                 <h2 class="no-margins font-bold text-success"> 
                                     {{$latest_illegal_medicine[2]->med_name}}
                                 </h2>
