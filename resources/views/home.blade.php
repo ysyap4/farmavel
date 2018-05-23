@@ -260,17 +260,29 @@
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content"></div>
+                            <div class="flot-chart-content">
+                                <h1 class="no-margins font-bold text-success"> 
+                                    {{$latest_illegal_medicine[0]->med_name}}
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content"></div>
+                            <div class="flot-chart-content">
+                                <h1 class="no-margins font-bold text-success"> 
+                                    {{$latest_illegal_medicine[1]->med_name}}
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     <div class="ibox-content no-padding">
                         <div class="flot-chart m-t-lg" style="height: 55px;">
-                            <div class="flot-chart-content"></div>
+                            <div class="flot-chart-content">
+                                <h1 class="no-margins font-bold text-success"> 
+                                    {{$latest_illegal_medicine[2]->med_name}}
+                                </h1>
+                            </div>
                         </div>
                     </div>
 

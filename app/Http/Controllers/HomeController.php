@@ -65,6 +65,10 @@ class HomeController extends Controller
                                         ->take(2)
                                         ->get();
 
-        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count, 'user_sub_count' => $user_sub_count, 'med_sub_count' => $med_sub_count, 'rep_sub_count' => $rep_sub_count, 'app_sub_count' => $app_sub_count));
+        $latest_illegal_medicine = medicine::all()->orderBy('created_at', 'desc')
+                                        ->take(3)
+                                        ->get();
+
+        return View::make('home',array('lastest_user' => $lastest_user, 'lastest_med' => $lastest_med, 'lastest_rep' => $lastest_rep, 'lastest_app' => $lastest_app, 'user_count' => $user_count, 'med_count' => $med_count, 'rep_count' => $rep_count, 'app_count' => $app_count, 'user_sub_count' => $user_sub_count, 'med_sub_count' => $med_sub_count, 'rep_sub_count' => $rep_sub_count, 'app_sub_count' => $app_sub_count, 'latest_illegal_medicine' => $latest_illegal_medicine));
     }
 }
